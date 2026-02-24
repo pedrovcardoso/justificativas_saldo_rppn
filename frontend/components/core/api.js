@@ -1,0 +1,1 @@
+const auth_url = "https://default4c86fd71d0164231a16057311d68b9.51.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6268733c89d34beab95650687b639b00/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ASdpJccB3BlVWq_VnabESl91OirL3FRe6Uxy5L6dgT4"

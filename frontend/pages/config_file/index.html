@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSV para JSON ZIP - Resumo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Fira Code', monospace;
+        }
+
+        input,
+        button {
+            font-family: inherit;
+        }
+
+        table th {
+            background-color: #252526;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #3c3c3c;
+        }
+    </style>
+</head>
+
+<body class="p-6">
+
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">CSV para JSON ZIP - Resumo por Grupo</h1>
+
+        <input type="file" id="csvFile" accept=".csv"
+            class="mb-4 p-2 bg-gray-800 border border-gray-700 rounded w-full text-gray-100" />
+
+        <div class="mb-4">
+            <div class="w-full bg-gray-700 rounded h-4 overflow-hidden">
+                <div id="progressBar" class="bg-green-500 h-4 w-0 transition-all"></div>
+            </div>
+            <p id="progressText" class="mt-1 text-sm"></p>
+        </div>
+
+        <p id="info" class="mb-2"></p>
+
+        <div id="tabela" class="overflow-x-auto max-h-[500px] overflow-y-auto mb-4"></div>
+
+        <button id="baixarZipBtn" class="mt-4 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded"
+            style="display:none;" onclick="baixarZIP()">Baixar ZIP</button>
+    </div>
+
+    <script>
+        let dadosJSON = [];
+        let grupos = {};
+        let primeiraColuna = "";
+
+        // Função utilitária para formatar tamanho de arquivo
+        function formatarTamanho(bytes) {
+            if (bytes < 1024) return bytes + " B";
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + " KB";
+            return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+        }
+
+        document.getElementById("csvFile").addEventListener("change", processarCSV);
+
+        async function processarCSV() {
+            const file = document.getElementById("csvFile").files[0];
+            if (!file) return;
+
+            dadosJSON = [];
+            grupos = {};
+            primeiraColuna = "";
+
+            const chunkSize = 1024 * 1024; // 1MB
+            const totalChunks = Math.ceil(file.size / chunkSize);
+            let leftover = "";
+            let headers = [];
+            const decoder = new TextDecoder("utf-8");
+
+            for (let i = 0; i < totalChunks; i++) {
+                const blob = file.slice(i * chunkSize, (i + 1) * chunkSize);
+                const arrayBuffer = await blob.arrayBuffer();
+                const text = decoder.decode(arrayBuffer, { stream: true });
+                const lines = (leftover + text).split(/\r?\n/);
+                leftover = lines.pop();
+
+                for (const line of lines) {
+                    if (!line.trim()) continue;
+
+                    if (!headers.length) {
+                        headers = line.split('";"').map(h => h.replace(/^"|"$/g, '').trim());
+                        primeiraColuna = headers[0];
+                        continue;
+                    }
+
+                    const valores = line.split('";"').map(v => v.replace(/^"|"$/g, '').trim());
+                    const obj = {};
+                    headers.forEach((h, idx) => obj[h] = valores[idx] ?? null);
+                    dadosJSON.push(obj);
+
+                    // Agrupar incremental
+                    const chave = obj[primeiraColuna];
+                    if (!grupos[chave]) grupos[chave] = [];
+                    grupos[chave].push(obj);
+                }
+
+                const progressPercent = Math.floor(((i + 1) / totalChunks) * 100);
+                document.getElementById("progressBar").style.width = progressPercent + "%";
+                document.getElementById("progressText").textContent = `Processando CSV: ${progressPercent}%`;
+                await new Promise(r => setTimeout(r, 0));
+            }
+
+            // Linha final
+            if (leftover.trim()) {
+                const valores = leftover.split('";"').map(v => v.replace(/^"|"$/g, '').trim());
+                const obj = {};
+                headers.forEach((h, idx) => obj[h] = valores[idx] ?? null);
+                dadosJSON.push(obj);
+                const chave = obj[primeiraColuna];
+                if (!grupos[chave]) grupos[chave] = [];
+                grupos[chave].push(obj);
+            }
+
+            document.getElementById("progressText").textContent = "Processamento concluído!";
+            document.getElementById("info").innerHTML = `Total de linhas: ${dadosJSON.length} <br> Total de grupos (${primeiraColuna}): ${Object.keys(grupos).length}`;
+
+            renderizarTabelaResumo();
+            document.getElementById("baixarZipBtn").style.display = "inline-block";
+        }
+
+    // Renderizar tabela de resumo por grupo, incluindo all.csv no topo
+    function renderizarTabelaResumo() {
+        const div = document.getElementById("tabela");
+        div.innerHTML = "";
+
+        const table = document.createElement("table");
+        table.className = "table-auto border border-gray-700 w-full";
+
+        const thead = document.createElement("thead");
+        thead.className = "bg-gray-800";
+        const trHead = document.createElement("tr");
+        ["Arquivo", "Registros", "Tamanho CSV", "Nome do Arquivo"].forEach(h => {
+            const th = document.createElement("th");
+            th.textContent = h;
+            th.className = "border border-gray-700 px-2 py-1";
+            trHead.appendChild(th);
+        });
+        thead.appendChild(trHead);
+        table.appendChild(thead);
+
+        const tbody = document.createElement("tbody");
+
+        // Linha do all.csv no topo
+        const csvAll = jsonParaCSV(dadosJSON);
+        const tamanhoAllBytes = new Blob([csvAll]).size;
+        const trAll = document.createElement("tr");
+        trAll.innerHTML = `
+        <td class="border border-gray-700 px-2 py-1 font-bold">all.csv</td>
+        <td class="border border-gray-700 px-2 py-1 font-bold">${dadosJSON.length}</td>
+        <td class="border border-gray-700 px-2 py-1 font-bold">${formatarTamanho(tamanhoAllBytes)}</td>
+        <td class="border border-gray-700 px-2 py-1 font-bold">all.csv</td>
+    `;
+        tbody.appendChild(trAll);
+
+        // Cada grupo
+        for (const chave in grupos) {
+            const grupo = grupos[chave];
+            const csvGrupo = jsonParaCSV(grupo);
+            const tamanhoBytes = new Blob([csvGrupo]).size;
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td class="border border-gray-700 px-2 py-1">${chave}</td>
+            <td class="border border-gray-700 px-2 py-1">${grupo.length}</td>
+            <td class="border border-gray-700 px-2 py-1">${formatarTamanho(tamanhoBytes)}</td>
+            <td class="border border-gray-700 px-2 py-1">grupo_${chave}.csv</td>
+        `;
+            tbody.appendChild(tr);
+        }
+
+        table.appendChild(tbody);
+        div.appendChild(table);
+    }
+
+    // Função auxiliar para gerar CSV (mesma do botão ZIP)
+    function jsonParaCSV(arr) {
+        if (!arr.length) return "";
+        const headers = Object.keys(arr[0]);
+        const linhas = arr.map(obj => headers.map(h => `"${obj[h]}"`).join(";"));
+        return `"${headers.join('";"')}"\n` + linhas.join("\n");
+    }
+
+        // Baixar ZIP com todos os grupos + all.json
+        function baixarZIP() {
+            const zip = new JSZip();
+
+            // Função para converter array de objetos em CSV
+            const jsonParaCSV = (arr) => {
+                if (!arr.length) return "";
+                const headers = Object.keys(arr[0]);
+                const linhas = arr.map(obj => headers.map(h => `"${obj[h]}"`).join(";"));
+                return `"${headers.join('";"')}"\n` + linhas.join("\n");
+            };
+
+            // Cada grupo
+            for (const chave in grupos) {
+                const csvGrupo = jsonParaCSV(grupos[chave]);
+                zip.file(`grupo_${chave}.csv`, csvGrupo);
+            }
+
+            // All
+            const csvAll = jsonParaCSV(dadosJSON);
+            zip.file("all.csv", csvAll);
+
+            zip.generateAsync({ type: "blob" })
+                .then(content => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(content);
+                    link.download = "restos_a_pagar_csv.zip";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(link.href);
+                });
+        }
+    </script>
+
+</body>
+
+</html>
