@@ -1,0 +1,38 @@
+[
+    {
+        "icone": "bx-file-text",
+        "titulo": "Lei Complementar nº 101/2000",
+        "descricao": "Lei de Responsabilidade Fiscal (LRF): estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm"
+    },
+    {
+        "icone": "bx-book-content",
+        "titulo": "Lei nº 4.320/1964",
+        "descricao": "Estatui normas gerais de direito financeiro para elaboração e controle dos orçamentos e balanços da União, Estados, Municípios e Distrito Federal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l4320.htm"
+    },
+    {
+        "icone": "bx-notepad",
+        "titulo": "Decreto nº 93.872/1986",
+        "descricao": "Dispõe sobre a unificação dos recursos de caixa do Tesouro Nacional, atualizando normas de execução orçamentária e financeira.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto/d93872.htm"
+    },
+    {
+        "icone": "bx-spreadsheet",
+        "titulo": "Resolução SEF nº 5.200/2023",
+        "descricao": "Dispõe sobre procedimentos para a gestão de restos a pagar no âmbito da Secretaria de Estado de Fazenda de Minas Gerais.",
+        "url": "#"
+    },
+    {
+        "icone": "bx-file-blank",
+        "titulo": "Instrução Normativa STN nº 01/1997",
+        "descricao": "Estabelece normas para elaboração e apresentação dos demonstrativos contábeis da União, Estados e Municípios.",
+        "url": "#"
+    },
+    {
+        "icone": "bx-detail",
+        "titulo": "Portaria Conjunta SEF/SEPLAG nº 01/2024",
+        "descricao": "Aprova as orientações para o encerramento do exercício financeiro de 2024 e abertura de 2025 para órgãos do Estado de Minas Gerais.",
+        "url": "#"
+    }
+]

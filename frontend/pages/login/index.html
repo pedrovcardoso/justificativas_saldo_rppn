@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinal de Entrada — Gestão de RPPN · SEF-MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/globals.css">
+    <style>
+        body {
+            background-color: #001a29;
+            /* Darker variant of #003D5D */
+            background-image: radial-gradient(circle at top right, #003D5D, transparent),
+                radial-gradient(circle at bottom left, #002d45, transparent);
+            min-height: 100vh;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-premium {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .input-premium:focus {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: #FED73A;
+            box-shadow: 0 0 0 8px rgba(254, 215, 58, 0.05);
+        }
+
+        .btn-auth {
+            background: #FED73A;
+            color: #003D5D;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-auth:hover {
+            background: #fcae00;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(252, 174, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center px-6">
+
+    <div class="login-card rounded-[3rem] p-12 w-full max-w-md">
+        <div class="flex flex-col items-center mb-12">
+            <div
+                class="w-20 h-20 bg-[#003D5D] border-2 border-white/10 rounded-[2rem] flex items-center justify-center shadow-2xl mb-8">
+                <img src="../../assets/images/header_logo_sccg.png" alt="SCCG"
+                    class="w-12 h-12 object-contain brightness-0 invert">
+            </div>
+            <h1 class="text-3xl font-black text-white tracking-tight no-uppercase">SEF-MG</h1>
+            <p class="text-[#FED73A] text-[11px] font-bold no-uppercase tracking-widest mt-2 uppercase">Portal de
+                Autenticação</p>
+        </div>
+
+        <div id="alert" class="hidden mb-8 px-6 py-4 rounded-2xl text-[11px] font-bold no-uppercase">
+        </div>
+
+        <div id="stepEmail" class="animate-in fade-in slide-in-from-bottom-6 duration-700">
+            <h2 class="text-white text-xl font-bold mb-3 no-uppercase">Acesso Restrito</h2>
+            <p class="text-slate-400 text-sm mb-10 leading-relaxed font-medium">Use sua identidade corporativa para
+                prosseguir com a gestão técnica.</p>
+
+            <div class="mb-8">
+                <label class="block text-[11px] font-bold text-slate-500 no-uppercase mb-4"
+                    for="inputEmail">Identificador SEF</label>
+                <div class="relative group">
+                    <i
+                        class='bx bx-user-circle absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 text-2xl transition-colors group-focus-within:text-[#FED73A]'></i>
+                    <input id="inputEmail" type="email" placeholder="usuario@sef.mg.gov.br"
+                        class="input-premium w-full text-white rounded-[1.5rem] pl-14 pr-6 py-5 text-sm outline-none font-medium"
+                        autocomplete="email">
+                </div>
+            </div>
+
+            <button id="btnSendOtp" onclick="handleSendOtp()"
+                class="btn-auth w-full text-[11px] font-black no-uppercase py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3">
+                Solicitar Chave de Acesso
+            </button>
+        </div>
+
+        <div id="stepOtp" class="hidden animate-in fade-in slide-in-from-bottom-6 duration-700">
+            <button onclick="goBackToEmail()"
+                class="flex items-center text-slate-500 hover:text-[#FED73A] text-[11px] font-bold no-uppercase mb-8 transition-all group">
+                <i class='bx bx-left-arrow-alt text-xl mr-2 group-hover:-translate-x-1 transition-transform'></i> Voltar
+                ao e-mail
+            </button>
+            <h2 class="text-white text-xl font-bold mb-3 no-uppercase">Segunda Etapa</h2>
+            <p id="otpDesc" class="text-slate-400 text-sm mb-10 leading-relaxed font-medium"></p>
+
+            <div class="mb-8">
+                <label class="block text-[11px] font-bold text-slate-500 no-uppercase mb-4" for="inputOtp">Código
+                    Enviado</label>
+                <input id="inputOtp" type="text" inputmode="numeric" maxlength="8" placeholder="••••••••"
+                    class="input-premium w-full text-white rounded-[1.5rem] px-6 py-5 text-center text-3xl font-black tracking-[0.6em] outline-none"
+                    autocomplete="one-time-code">
+            </div>
+
+            <button id="btnValidateOtp" onclick="handleValidateOtp()"
+                class="btn-auth w-full text-[11px] font-black no-uppercase py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3">
+                Entrar no Sistema
+            </button>
+
+            <button id="btnResend" onclick="handleResend()"
+                class="w-full mt-6 text-[11px] font-bold text-slate-500 hover:text-[#FED73A] no-uppercase transition-all py-3">
+                Reenviar chave
+            </button>
+        </div>
+    </div>
+
+    <script src="../../components/core/api.js"></script>
+    <script src="../../components/core/session.js"></script>
+    <script>
+        (async function () {
+            const s = getSession();
+            if (s) {
+                try {
+                    const res = await validateSession(s.user, s.token);
+                    if (res.ok && res.data?.success) {
+                        window.location.href = "../dashboard/index.html";
+                    } else {
+                        clearSession();
+                    }
+                } catch (e) { }
+            }
+        })();
+
+        let currentUser = "";
+
+        function showAlert(msg, type = "error") {
+            const el = document.getElementById("alert");
+            el.className = `mb-8 px-6 py-4 rounded-2xl text-[11px] font-bold no-uppercase border-2 ${type === "error"
+                ? "bg-rose-500/10 text-rose-400 border-rose-500/20"
+                : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                }`;
+            el.textContent = msg;
+            el.classList.remove("hidden");
+        }
+
+        function hideAlert() { document.getElementById("alert").classList.add("hidden"); }
+
+        function setLoading(btnId, loading, originalText) {
+            const btn = document.getElementById(btnId);
+            if (loading) {
+                btn.disabled = true;
+                btn.innerHTML = `<i class='bx bx-loader-alt spinner text-2xl'></i>`;
+            } else {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        }
+
+        async function handleSendOtp() {
+            hideAlert();
+            const user = document.getElementById("inputEmail").value.trim();
+            if (!user) { showAlert("E-mail corporativo é obrigatório"); return; }
+
+            setLoading("btnSendOtp", true, "Solicitar Código");
+            const res = await sendOtp(user);
+            setLoading("btnSendOtp", false, "Solicitar Chave de Acesso");
+
+            if (res.ok && res.data?.success) {
+                currentUser = user;
+                document.getElementById("otpDesc").textContent = `Enviamos o código para ${user}. Verifique sua caixa de entrada.`;
+                document.getElementById("stepEmail").classList.add("hidden");
+                document.getElementById("stepOtp").classList.remove("hidden");
+            } else {
+                showAlert(res.data?.error || "Erro na solicitação do código");
+            }
+        }
+
+        async function handleValidateOtp() {
+            hideAlert();
+            const otp = document.getElementById("inputOtp").value.trim();
+            if (!otp) { showAlert("Código de segurança obrigatório"); return; }
+
+            setLoading("btnValidateOtp", true, "Validar Acesso");
+            const res = await validateOtp(currentUser, otp);
+            setLoading("btnValidateOtp", false, "Entrar no Sistema");
+
+            if (res.ok && res.data?.success) {
+                const { token, role } = res.data.data;
+                saveSession(currentUser, token, role);
+                window.location.href = "../dashboard/index.html";
+            } else {
+                showAlert(res.data?.error || "Código de segurança inválido");
+            }
+        }
+
+        async function handleResend() {
+            hideAlert();
+            document.getElementById("inputOtp").value = "";
+            setLoading("btnResend", true, "");
+            const res = await sendOtp(currentUser);
+            setLoading("btnResend", false, "Reenviar chave");
+            if (res.ok && res.data?.success) showAlert("Novo código enviado com sucesso", "success");
+            else showAlert("Erro no reenvio do código");
+        }
+
+        function goBackToEmail() {
+            hideAlert();
+            document.getElementById("inputOtp").value = "";
+            document.getElementById("stepOtp").classList.add("hidden");
+            document.getElementById("stepEmail").classList.remove("hidden");
+        }
+
+        document.addEventListener("keydown", e => {
+            if (e.key !== "Enter") return;
+            if (!document.getElementById("stepOtp").classList.contains("hidden")) handleValidateOtp();
+            else handleSendOtp();
+        });
+    </script>
+</body>
+
+</html>

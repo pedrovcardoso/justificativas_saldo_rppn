@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislação — Gestão de RPPN · SEF-MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/globals.css">
+    <style>
+        .card-leg {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-leg:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 61, 93, 0.1);
+            border-color: #003D5D;
+        }
+
+        .btn-access {
+            background: #003D5D;
+            transition: all 0.3s ease;
+        }
+
+        .btn-access:hover {
+            background: #002d45;
+            box-shadow: 0 10px 15px -3px rgba(0, 61, 93, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-[#F6F6F6] font-sans antialiased text-[#000000]">
+    <div class="flex min-h-screen">
+        <aside></aside>
+        <div class="flex-1 flex flex-col h-screen overflow-hidden">
+            <header></header>
+            <main class="flex-1 p-10 bg-[#F6F6F6] overflow-y-auto no-scrollbar">
+                <div class="max-w-6xl mx-auto">
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-black text-[#003D5D] mb-2 no-uppercase">Base Legal</h2>
+                        <p class="text-slate-500 font-medium">Consulte as normas e regulamentações que regem a gestão de
+                            restos a pagar.</p>
+                    </div>
+
+                    <div class="mb-10 relative max-w-lg group">
+                        <input id="searchLeg" type="text" placeholder="Pesquisar por título ou descrição…"
+                            oninput="filterLeg()"
+                            class="w-full pl-12 pr-6 py-4 bg-white border-2 border-slate-200 rounded-2xl text-[14px] font-medium text-slate-700 focus:bg-white focus:ring-8 focus:ring-[#003D5D]/5 focus:border-[#003D5D] shadow-sm transition-all outline-none">
+                        <i
+                            class='bx bx-search-alt absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl transition-colors group-focus-within:text-[#003D5D]'></i>
+                    </div>
+
+                    <div id="legGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="col-span-full flex flex-col items-center justify-center py-40 text-slate-400">
+                            <i class='bx bx-loader-alt text-5xl spinner mb-6 text-[#003D5D]'></i>
+                            <p class="font-bold text-slate-600 no-uppercase">Carregando legislação…</p>
+                        </div>
+                    </div>
+
+                    <p id="legEmpty" class="hidden text-center text-slate-400 mt-20">
+                        <i class='bx bx-info-circle text-4xl mb-4 block'></i>
+                        Nenhum documento encontrado para sua busca.
+                    </p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../../components/core/api.js"></script>
+    <script src="../../components/core/session.js"></script>
+    <script src="../../components/layout/layout.js"></script>
+    <script>
+        const session = requireSession("../login/index.html");
+        let allLegislacoes = [];
+
+        async function init() {
+            try {
+                const res = await fetch("../../assets/legislacao.json");
+                allLegislacoes = await res.json();
+                renderLeg(allLegislacoes);
+            } catch (e) {
+                console.error("Erro ao carregar legislação:", e);
+                document.getElementById("legGrid").innerHTML = `<p class="text-[#D61A21] font-bold">Erro ao carregar dados oficiais.</p>`;
+            }
+        }
+
+        async function handleLogout() { await doLogout("../login/index.html"); }
+
+        function renderLeg(items) {
+            const grid = document.getElementById("legGrid");
+            const empty = document.getElementById("legEmpty");
+            grid.innerHTML = "";
+
+            if (!items.length) {
+                empty.classList.remove("hidden");
+                return;
+            }
+
+            empty.classList.add("hidden");
+            items.forEach(l => {
+                grid.insertAdjacentHTML("beforeend", `
+                <div class="card-leg bg-white rounded-[2rem] border-2 border-slate-200 p-8 flex flex-col h-full group shadow-sm">
+                    <div class="w-14 h-14 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-2xl flex items-center justify-center mb-6 transition-all group-hover:bg-[#FED73A] group-hover:text-[#003D5D] group-hover:border-[#FED73A]">
+                        <i class='bx ${l.icone} text-2xl'></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#003D5D] mb-4 leading-tight group-hover:text-[#FCAE00] transition-colors no-uppercase">
+                        ${l.titulo}
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-8 flex-1 leading-relaxed font-medium no-uppercase">${l.descricao}</p>
+                    <a href="${l.url}" target="_blank" rel="noopener"
+                        class="btn-access inline-flex items-center justify-center gap-3 self-start px-8 py-3.5 text-white text-[11px] font-bold no-uppercase rounded-xl shadow-lg shadow-black/5">
+                        <i class='bx bx-link-external text-lg'></i> Acessar Documento
+                    </a>
+                </div>
+            `);
+            });
+        }
+
+        function filterLeg() {
+            const q = document.getElementById("searchLeg").value.toLowerCase();
+            renderLeg(allLegislacoes.filter(l => l.titulo.toLowerCase().includes(q) || l.descricao.toLowerCase().includes(q)));
+        }
+
+        if (session) {
+            if (typeof Layout !== 'undefined' && Layout.ready) {
+                Layout.ready.then(() => init());
+            } else {
+                window.addEventListener('load', () => {
+                    if (typeof Layout !== 'undefined' && Layout.ready) {
+                        Layout.ready.then(() => init());
+                    } else {
+                        init();
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
