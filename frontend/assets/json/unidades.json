@@ -1,0 +1,4282 @@
+[
+  {
+    "unidade_orcamentaria_codigo": "1011",
+    "unidade_orcamentaria_nome": "ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1010001",
+        "nome": "ASSEMBLEIA LEGISLATIVA MG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1021",
+    "unidade_orcamentaria_nome": "TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1020001",
+        "nome": "TRIBUNAL DE CONTAS"
+      },
+      {
+        "codigo": "1020016",
+        "nome": "TDCO-SEPLAG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1051",
+    "unidade_orcamentaria_nome": "TRIBUNAL DE JUSTICA MILITAR DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1050001",
+        "nome": "TRIBUNAL JUSTICA MILITAR"
+      },
+      {
+        "codigo": "1050002",
+        "nome": "PMMG - COMAVE"
+      },
+      {
+        "codigo": "1050003",
+        "nome": "PMMG - DTS"
+      },
+      {
+        "codigo": "1050004",
+        "nome": "PMMG - DCO"
+      },
+      {
+        "codigo": "1050005",
+        "nome": "CBMMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1071",
+    "unidade_orcamentaria_nome": "GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1070001",
+        "nome": "GAB. MILITAR GOVERNADOR"
+      },
+      {
+        "codigo": "1070004",
+        "nome": "GMG/PMMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1081",
+    "unidade_orcamentaria_nome": "ADVOCACIA GERAL DO ESTADO",
+    "unidades_executoras": [
+      {
+        "codigo": "1080001",
+        "nome": "ADVOCACIA-GERAL DO ESTADO"
+      },
+      {
+        "codigo": "1080002",
+        "nome": "ADVOCACIA-GERAL DO ESTADO"
+      },
+      {
+        "codigo": "1080012",
+        "nome": "PROC.TESOURO-PRECATORIO"
+      },
+      {
+        "codigo": "1080013",
+        "nome": "ACORDO VALE -LEI 23830/21"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1091",
+    "unidade_orcamentaria_nome": "PROCURADORIA GERAL DE JUSTICA",
+    "unidades_executoras": [
+      {
+        "codigo": "1090001",
+        "nome": "MPMG-PROC GERAL JUSTICA"
+      },
+      {
+        "codigo": "1090024",
+        "nome": "TDCO PGJ SEPLAG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1101",
+    "unidade_orcamentaria_nome": "OUVIDORIA-GERAL DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1100002",
+        "nome": "OUVIDORIA - FINANCEIRA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1191",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE FAZENDA",
+    "unidades_executoras": [
+      {
+        "codigo": "1190006",
+        "nome": "SEF - GABINETE"
+      },
+      {
+        "codigo": "1190007",
+        "nome": "CONSELHO CONTRIBUINTES MG"
+      },
+      {
+        "codigo": "1190010",
+        "nome": "SEF - SCAF"
+      },
+      {
+        "codigo": "1190025",
+        "nome": "SEF - SCCG"
+      },
+      {
+        "codigo": "1190029",
+        "nome": "AF/1º NIVEL/BH - 3"
+      },
+      {
+        "codigo": "1190057",
+        "nome": "AF/2ºNIVEL/DIVINOPOLIS"
+      },
+      {
+        "codigo": "1190060",
+        "nome": "AF/2º NIVEL/GOV.VALADARES"
+      },
+      {
+        "codigo": "1190063",
+        "nome": "AF/1º NIVEL/JUIZ DE FORA"
+      },
+      {
+        "codigo": "1190064",
+        "nome": "AF/2º NIVEL/CONTAGEM"
+      },
+      {
+        "codigo": "1190065",
+        "nome": "AF/2º NIVEL/IPATINGA"
+      },
+      {
+        "codigo": "1190079",
+        "nome": "AF/2ºNIVEL/MONTES CLAROS"
+      },
+      {
+        "codigo": "1190105",
+        "nome": "AF/1ºNIVEL/UBERABA"
+      },
+      {
+        "codigo": "1190106",
+        "nome": "AF/1ºNIVEL/UBERLANDIA"
+      },
+      {
+        "codigo": "1190108",
+        "nome": "AF/2ºNIVEL/VARGINHA"
+      },
+      {
+        "codigo": "1190121",
+        "nome": "SPGF"
+      },
+      {
+        "codigo": "1190122",
+        "nome": "SUP.TECNOLOGIA INFORMACAO"
+      },
+      {
+        "codigo": "1190123",
+        "nome": "SUP. DE FISCALIZACAO"
+      },
+      {
+        "codigo": "1190124",
+        "nome": "SUP.ARREC.INF.FISCAL"
+      },
+      {
+        "codigo": "1190125",
+        "nome": "SUP.CENT.GOV.ATIVOS SCGOV"
+      },
+      {
+        "codigo": "1190131",
+        "nome": "SUP CRED COBRANÇA-SUCRED"
+      },
+      {
+        "codigo": "1190133",
+        "nome": "SEINFRA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1221",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONOMICO",
+    "unidades_executoras": [
+      {
+        "codigo": "1220002",
+        "nome": "SEDE/DCF"
+      },
+      {
+        "codigo": "1220051",
+        "nome": "SEDE/SEINFRA/SEGURANÇA HÍ"
+      },
+      {
+        "codigo": "1220052",
+        "nome": "TDCO SEDE/ARMBH/REURB-S"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1231",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE AGRICULTURA, PECUARIA E ABASTECIMENTO",
+    "unidades_executoras": [
+      {
+        "codigo": "1230001",
+        "nome": "SAF"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1251",
+    "unidade_orcamentaria_nome": "POLICIA MILITAR DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1250004",
+        "nome": "C.ADM. PESSOAL CAP PMMG"
+      },
+      {
+        "codigo": "1250008",
+        "nome": "AJUDANCIA GERAL PMMG"
+      },
+      {
+        "codigo": "1250011",
+        "nome": "COL. TIRADENTES PMMG"
+      },
+      {
+        "codigo": "1250012",
+        "nome": "CMI CENTRO MOTOMEC E INTE"
+      },
+      {
+        "codigo": "1250014",
+        "nome": "CSC-SAUDE"
+      },
+      {
+        "codigo": "1250017",
+        "nome": "CAE/APM PMMG"
+      },
+      {
+        "codigo": "1250018",
+        "nome": "8ª RPM"
+      },
+      {
+        "codigo": "1250020",
+        "nome": "11ª RPM"
+      },
+      {
+        "codigo": "1250021",
+        "nome": "4ª RPM"
+      },
+      {
+        "codigo": "1250022",
+        "nome": "5ª RPM"
+      },
+      {
+        "codigo": "1250023",
+        "nome": "6ª RPM"
+      },
+      {
+        "codigo": "1250024",
+        "nome": "2ª RPM"
+      },
+      {
+        "codigo": "1250027",
+        "nome": "10ª RPM"
+      },
+      {
+        "codigo": "1250031",
+        "nome": "13ª RPM"
+      },
+      {
+        "codigo": "1250035",
+        "nome": "12ª RPM"
+      },
+      {
+        "codigo": "1250037",
+        "nome": "15ª RPM"
+      },
+      {
+        "codigo": "1250038",
+        "nome": "17ª RPM"
+      },
+      {
+        "codigo": "1250041",
+        "nome": "7ª RPM"
+      },
+      {
+        "codigo": "1250043",
+        "nome": "19ª RPM"
+      },
+      {
+        "codigo": "1250045",
+        "nome": "16ª RPM"
+      },
+      {
+        "codigo": "1250046",
+        "nome": "18ª RPM"
+      },
+      {
+        "codigo": "1250054",
+        "nome": "COMAVE PMMG"
+      },
+      {
+        "codigo": "1250056",
+        "nome": "CAA-1 PMMG"
+      },
+      {
+        "codigo": "1250057",
+        "nome": "CPE PMMG"
+      },
+      {
+        "codigo": "1250058",
+        "nome": "CPE MAMB"
+      },
+      {
+        "codigo": "1250064",
+        "nome": "3ª RPM"
+      },
+      {
+        "codigo": "1250070",
+        "nome": "CSA-TIC/DTS PMMG"
+      },
+      {
+        "codigo": "1250078",
+        "nome": "ESCOLA DE INTELIGENCIA PM"
+      },
+      {
+        "codigo": "1250079",
+        "nome": "CORREGEDORIA POL. MILITAR"
+      },
+      {
+        "codigo": "1250080",
+        "nome": "CME PMMG"
+      },
+      {
+        "codigo": "1250086",
+        "nome": "14ª RPM"
+      },
+      {
+        "codigo": "1250088",
+        "nome": "9ª RPM"
+      },
+      {
+        "codigo": "1250091",
+        "nome": "CENTRO MAT. BELICO PMMG"
+      },
+      {
+        "codigo": "1250101",
+        "nome": "CENTRO DE PROJETO E OBRAS"
+      },
+      {
+        "codigo": "1250114",
+        "nome": "CSC-PM"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1261",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE EDUCACAO",
+    "unidades_executoras": [
+      {
+        "codigo": "1260001",
+        "nome": "SEE - SRE/METROPOLITANA A"
+      },
+      {
+        "codigo": "1260002",
+        "nome": "SEE - SRE/ALMENARA"
+      },
+      {
+        "codigo": "1260003",
+        "nome": "SEE - SRE/BARBACENA"
+      },
+      {
+        "codigo": "1260004",
+        "nome": "SEE - SRE/CAMPO BELO"
+      },
+      {
+        "codigo": "1260005",
+        "nome": "SEE - SRE/CARANGOLA"
+      },
+      {
+        "codigo": "1260006",
+        "nome": "SEE - SRE/CARATINGA"
+      },
+      {
+        "codigo": "1260007",
+        "nome": "SEE - SRE/CAXAMBU"
+      },
+      {
+        "codigo": "1260008",
+        "nome": "SEE - SRE/CONS. LAFAIETE"
+      },
+      {
+        "codigo": "1260009",
+        "nome": "SEE - SRE/CEL. FABRICIANO"
+      },
+      {
+        "codigo": "1260010",
+        "nome": "SEE - SRE/CURVELO"
+      },
+      {
+        "codigo": "1260011",
+        "nome": "SEE - SRE/DIAMANTINA"
+      },
+      {
+        "codigo": "1260012",
+        "nome": "SEE - SRE/DIVINOPOLIS"
+      },
+      {
+        "codigo": "1260013",
+        "nome": "SEE - SRE/GOV. VALADARES"
+      },
+      {
+        "codigo": "1260014",
+        "nome": "SEE - SRE/GUANHAES"
+      },
+      {
+        "codigo": "1260015",
+        "nome": "SEE - SRE/ITAJUBA"
+      },
+      {
+        "codigo": "1260016",
+        "nome": "SEE - SRE/ITUIUTABA"
+      },
+      {
+        "codigo": "1260017",
+        "nome": "SEE - SRE/JANUARIA"
+      },
+      {
+        "codigo": "1260018",
+        "nome": "SEE - SRE/JUIZ DE FORA"
+      },
+      {
+        "codigo": "1260019",
+        "nome": "SEE - SRE/LEOPOLDINA"
+      },
+      {
+        "codigo": "1260020",
+        "nome": "SEE - SRE/MANHUACU"
+      },
+      {
+        "codigo": "1260021",
+        "nome": "SEE - SRE/MONTE CARMELO"
+      },
+      {
+        "codigo": "1260022",
+        "nome": "SEE - SRE/MONTES CLAROS"
+      },
+      {
+        "codigo": "1260023",
+        "nome": "SEE - SRE/MURIAE"
+      },
+      {
+        "codigo": "1260024",
+        "nome": "SEE - SRE/NOVA ERA"
+      },
+      {
+        "codigo": "1260025",
+        "nome": "SEE - SRE/OURO PRETO"
+      },
+      {
+        "codigo": "1260026",
+        "nome": "SEE - SRE/PARACATU"
+      },
+      {
+        "codigo": "1260027",
+        "nome": "SEE - SRE/PASSOS"
+      },
+      {
+        "codigo": "1260028",
+        "nome": "SEE - SRE/PATOS DE MINAS"
+      },
+      {
+        "codigo": "1260029",
+        "nome": "SEE - SRE/PATROCINIO"
+      },
+      {
+        "codigo": "1260030",
+        "nome": "SEE - SRE/PIRAPORA"
+      },
+      {
+        "codigo": "1260031",
+        "nome": "SEE - SRE/POCOS DE CALDAS"
+      },
+      {
+        "codigo": "1260032",
+        "nome": "SEE - SRE/POUSO ALEGRE"
+      },
+      {
+        "codigo": "1260033",
+        "nome": "SEE - SRE/PONTE NOVA"
+      },
+      {
+        "codigo": "1260034",
+        "nome": "SEE - SRE/S. JOAO DEL REI"
+      },
+      {
+        "codigo": "1260035",
+        "nome": "SEE - SRE/SS PARAISO"
+      },
+      {
+        "codigo": "1260036",
+        "nome": "SEE - SRE/SETE LAGOAS"
+      },
+      {
+        "codigo": "1260037",
+        "nome": "SEE - SRE/TEOFILO OTONI"
+      },
+      {
+        "codigo": "1260038",
+        "nome": "SEE - SRE/UBA"
+      },
+      {
+        "codigo": "1260039",
+        "nome": "SEE - SRE/UBERABA"
+      },
+      {
+        "codigo": "1260040",
+        "nome": "SEE - SRE/UBERLANDIA"
+      },
+      {
+        "codigo": "1260041",
+        "nome": "SEE - SRE/VARGINHA"
+      },
+      {
+        "codigo": "1260042",
+        "nome": "SEE - SRE/METROPOLITANA B"
+      },
+      {
+        "codigo": "1260043",
+        "nome": "SEE - SRE/METROPOLITANA C"
+      },
+      {
+        "codigo": "1260044",
+        "nome": "SEE/SRE/ARACUAI"
+      },
+      {
+        "codigo": "1260045",
+        "nome": "SEE/SRE/JANAUBA"
+      },
+      {
+        "codigo": "1260046",
+        "nome": "SEE/SRE/PARA DE MINAS"
+      },
+      {
+        "codigo": "1260047",
+        "nome": "SEE-SRE/UNAI"
+      },
+      {
+        "codigo": "1260056",
+        "nome": "GABINETE"
+      },
+      {
+        "codigo": "1260057",
+        "nome": "SUBSECR.DES.EDUC.BASICA"
+      },
+      {
+        "codigo": "1260058",
+        "nome": "SUBS.INF.TEC.EDUCACIONAIS"
+      },
+      {
+        "codigo": "1260059",
+        "nome": "SUBS.GESTAO REC.HUMANOS"
+      },
+      {
+        "codigo": "1260060",
+        "nome": "SUBS.ADM.SIST.EDUCACIONAL"
+      },
+      {
+        "codigo": "1260062",
+        "nome": "INTENDENCIA DA CAMG"
+      },
+      {
+        "codigo": "1260064",
+        "nome": "SEPLAG"
+      },
+      {
+        "codigo": "1260067",
+        "nome": "SUBSEC.DE ART.EDUCACIONAL"
+      },
+      {
+        "codigo": "1260070",
+        "nome": "SEE/SES"
+      },
+      {
+        "codigo": "1260071",
+        "nome": "SEE - CEE/CONSELHO"
+      },
+      {
+        "codigo": "1260074",
+        "nome": "SEE/SEDESE"
+      },
+      {
+        "codigo": "1260075",
+        "nome": "SUBSEC.DE ENSINO SUPERIOR"
+      },
+      {
+        "codigo": "1260076",
+        "nome": "SEPLAG/E-SOCIAL"
+      },
+      {
+        "codigo": "1260077",
+        "nome": "SEPLAG/ALMOXARIFADO"
+      },
+      {
+        "codigo": "1260079",
+        "nome": "SEE/UNIMONTES"
+      },
+      {
+        "codigo": "1260080",
+        "nome": "SEE/PMMG"
+      },
+      {
+        "codigo": "1260083",
+        "nome": "FUNDACAO TV MINAS"
+      },
+      {
+        "codigo": "1260084",
+        "nome": "SECRETARIA GERAL"
+      },
+      {
+        "codigo": "1260085",
+        "nome": "SEPLAG/GOV. ELETRONICA"
+      },
+      {
+        "codigo": "1260086",
+        "nome": "SEJUSP"
+      },
+      {
+        "codigo": "1260088",
+        "nome": "SEE/SCPMSO"
+      },
+      {
+        "codigo": "1260089",
+        "nome": "SEPLAG/CONCURSO"
+      },
+      {
+        "codigo": "1260100",
+        "nome": "SEE - DEOP/OBRAS PUBLICAS"
+      },
+      {
+        "codigo": "1260160",
+        "nome": "SUP.PLANEJAMENTO FINANCAS"
+      },
+      {
+        "codigo": "1260260",
+        "nome": "SUPERINT.ADMINISTRATIVA"
+      },
+      {
+        "codigo": "1260460",
+        "nome": "SUP.DE REDE FISICA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1271",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE CULTURA E TURISMO",
+    "unidades_executoras": [
+      {
+        "codigo": "1270001",
+        "nome": "SECULT"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1301",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIAS",
+    "unidades_executoras": [
+      {
+        "codigo": "1300002",
+        "nome": "SETOP"
+      },
+      {
+        "codigo": "1300004",
+        "nome": "SETOP-DER"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1371",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTAVEL",
+    "unidades_executoras": [
+      {
+        "codigo": "1370001",
+        "nome": "SEMAD/SEDE/BELO HORIZONTE"
+      },
+      {
+        "codigo": "1370004",
+        "nome": "SEMAD/SUPRAM CENTRAL"
+      },
+      {
+        "codigo": "1370011",
+        "nome": "SEMAD/URC SUL DE MINAS"
+      },
+      {
+        "codigo": "1370012",
+        "nome": "SEMAD/URC NORTE DE MINAS"
+      },
+      {
+        "codigo": "1370013",
+        "nome": "SEMAD/URC A.JEQUITINHONHA"
+      },
+      {
+        "codigo": "1370014",
+        "nome": "SEMAD/URC A.SAO FRANCISCO"
+      },
+      {
+        "codigo": "1370015",
+        "nome": "SEMAD/URC TRIANG.MINEIRO"
+      },
+      {
+        "codigo": "1370016",
+        "nome": "SEMAD/URC ZONA DA MATA"
+      },
+      {
+        "codigo": "1370017",
+        "nome": "SEMAD/URC LESTE MINEIRO"
+      },
+      {
+        "codigo": "1370018",
+        "nome": "SEMAD/URC NOROESTE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1401",
+    "unidade_orcamentaria_nome": "CORPO DE BOMBEIROS MILITAR DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1400002",
+        "nome": "CBMMG - DRH/PESSOAL"
+      },
+      {
+        "codigo": "1400005",
+        "nome": "AJUDANCIA GERAL"
+      },
+      {
+        "codigo": "1400006",
+        "nome": "CSM NSS (1º BBM)"
+      },
+      {
+        "codigo": "1400007",
+        "nome": "CSM NAVE(2º BBM)"
+      },
+      {
+        "codigo": "1400008",
+        "nome": "CSM NTS (3º BBM)"
+      },
+      {
+        "codigo": "1400011",
+        "nome": "CSM NMEV"
+      },
+      {
+        "codigo": "1400014",
+        "nome": "8º BBM"
+      },
+      {
+        "codigo": "1400017",
+        "nome": "ABM/EXECUTORA"
+      },
+      {
+        "codigo": "1400019",
+        "nome": "CEB EXECUTORA"
+      },
+      {
+        "codigo": "1400021",
+        "nome": "2º COB"
+      },
+      {
+        "codigo": "1400023",
+        "nome": "3º COB"
+      },
+      {
+        "codigo": "1400029",
+        "nome": "5º COB"
+      },
+      {
+        "codigo": "1400030",
+        "nome": "6º COB"
+      },
+      {
+        "codigo": "1400031",
+        "nome": "CSM NSS (OBRAS)"
+      },
+      {
+        "codigo": "1400034",
+        "nome": "4º COB"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1441",
+    "unidade_orcamentaria_nome": "DEFENSORIA PUBLICA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1440005",
+        "nome": "SUPER. DE PLAN. E GESTAO"
+      },
+      {
+        "codigo": "1440006",
+        "nome": "ESDEP-ESCOLA SUPERIOR DPM"
+      },
+      {
+        "codigo": "1440011",
+        "nome": "ASSISTENCIA JURIDICA"
+      },
+      {
+        "codigo": "1440013",
+        "nome": "EXEC.TDCO FRENTISTAS MGS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1451",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE JUSTICA E SEGURANCA PUBLICA",
+    "unidades_executoras": [
+      {
+        "codigo": "1450003",
+        "nome": "DRH SETORIAL OPERACIONAL"
+      },
+      {
+        "codigo": "1450005",
+        "nome": "SULOT"
+      },
+      {
+        "codigo": "1450007",
+        "nome": "GABINETE SECRETARIO"
+      },
+      {
+        "codigo": "1450009",
+        "nome": "AESP/MG"
+      },
+      {
+        "codigo": "1450010",
+        "nome": "COMANDO DE OPER ESPECIAIS"
+      },
+      {
+        "codigo": "1450011",
+        "nome": "SUP INFRAESTRUTURA E LOGI"
+      },
+      {
+        "codigo": "1450012",
+        "nome": "SUBSEC AT SOCIOEDUCATIVO"
+      },
+      {
+        "codigo": "1450013",
+        "nome": "SEJUSP-MG/SEINFRA-MG"
+      },
+      {
+        "codigo": "1450014",
+        "nome": "SUBSEC PREV CRIMINALIDADE"
+      },
+      {
+        "codigo": "1450015",
+        "nome": "SUBSEC INT E ATUAÇÃO"
+      },
+      {
+        "codigo": "1450018",
+        "nome": "CSE SAO COSME"
+      },
+      {
+        "codigo": "1450019",
+        "nome": "SUPERIN. HUMAN. DO ATEND."
+      },
+      {
+        "codigo": "1450020",
+        "nome": "SUP ART INST GES DE VAGAS"
+      },
+      {
+        "codigo": "1450022",
+        "nome": "SEAP"
+      },
+      {
+        "codigo": "1450023",
+        "nome": "CEN AP SAO FRANCISCO"
+      },
+      {
+        "codigo": "1450024",
+        "nome": "CASA ALB JOSE A ROGEDO"
+      },
+      {
+        "codigo": "1450025",
+        "nome": "CASA ALB PRESI J PESSOA"
+      },
+      {
+        "codigo": "1450026",
+        "nome": "PRES A DUTRA LADEIRA"
+      },
+      {
+        "codigo": "1450027",
+        "nome": "COMP PENIT F ESTEVAO PINT"
+      },
+      {
+        "codigo": "1450028",
+        "nome": "HOSP PSIQ J JORGE VAZ"
+      },
+      {
+        "codigo": "1450029",
+        "nome": "HOSP TOX P WILSON V COSTA"
+      },
+      {
+        "codigo": "1450030",
+        "nome": "PENIT AGOSTINHO O JUNIOR"
+      },
+      {
+        "codigo": "1450031",
+        "nome": "PENIT FRANCISCO F PAULA"
+      },
+      {
+        "codigo": "1450032",
+        "nome": "PENIT DENIO M CARVALHO"
+      },
+      {
+        "codigo": "1450033",
+        "nome": "PENIT JOSE E CAVALIERI"
+      },
+      {
+        "codigo": "1450034",
+        "nome": "PENIT JOSE A GONCALVES"
+      },
+      {
+        "codigo": "1450035",
+        "nome": "PENIT JOSE MARIA ALKIMIN"
+      },
+      {
+        "codigo": "1450036",
+        "nome": "COMP PENIT NELSON HUNGRIA"
+      },
+      {
+        "codigo": "1450037",
+        "nome": "PENIT PROF A C PIRES"
+      },
+      {
+        "codigo": "1450038",
+        "nome": "COMP PENIT N SRA DO CARMO"
+      },
+      {
+        "codigo": "1450039",
+        "nome": "PENIT REG PROF JASON S AL"
+      },
+      {
+        "codigo": "1450040",
+        "nome": "COMP PENIT DR PIO CANEDO"
+      },
+      {
+        "codigo": "1450041",
+        "nome": "PENIT PROF J PIMENTA VEIG"
+      },
+      {
+        "codigo": "1450042",
+        "nome": "PRES FLORAMAR"
+      },
+      {
+        "codigo": "1450043",
+        "nome": "PRES PROF JACY DE ASSIS"
+      },
+      {
+        "codigo": "1450044",
+        "nome": "PRES SEBASTIAO SATIRO"
+      },
+      {
+        "codigo": "1450045",
+        "nome": "PENIT FRANCISCO SA"
+      },
+      {
+        "codigo": "1450046",
+        "nome": "PENIT TEOFILO OTONI"
+      },
+      {
+        "codigo": "1450047",
+        "nome": "PRES ARAGUARI"
+      },
+      {
+        "codigo": "1450048",
+        "nome": "CSE MONTES CLAROS"
+      },
+      {
+        "codigo": "1450050",
+        "nome": "CSE STA TEREZINHA"
+      },
+      {
+        "codigo": "1450051",
+        "nome": "CSE SETE LAGOAS"
+      },
+      {
+        "codigo": "1450052",
+        "nome": "CEIP DOM BOSCO"
+      },
+      {
+        "codigo": "1450053",
+        "nome": "CSE SAO FRANCISCO"
+      },
+      {
+        "codigo": "1450054",
+        "nome": "PRES DR CARLOS VITORIANO"
+      },
+      {
+        "codigo": "1450055",
+        "nome": "PRES NOVA SERRANA"
+      },
+      {
+        "codigo": "1450056",
+        "nome": "PRES DE VICOSA"
+      },
+      {
+        "codigo": "1450057",
+        "nome": "GAB SECRETARIO ADJUNTO"
+      },
+      {
+        "codigo": "1450060",
+        "nome": "PENIT DR M M LISBOA JR"
+      },
+      {
+        "codigo": "1450061",
+        "nome": "PENIT TRES CORACOES"
+      },
+      {
+        "codigo": "1450062",
+        "nome": "PENIT DEP EXP F TAVARES"
+      },
+      {
+        "codigo": "1450063",
+        "nome": "PENIT PROF A I OLIVEIRA"
+      },
+      {
+        "codigo": "1450064",
+        "nome": "PRES INSP JOSE M DRUMOND"
+      },
+      {
+        "codigo": "1450065",
+        "nome": "PRES DE VESPASIANO"
+      },
+      {
+        "codigo": "1450067",
+        "nome": "CEIP SAO BENEDITO"
+      },
+      {
+        "codigo": "1450069",
+        "nome": "PRES GOVERNADOR VALADARES"
+      },
+      {
+        "codigo": "1450070",
+        "nome": "CSE SANTA CLARA"
+      },
+      {
+        "codigo": "1450071",
+        "nome": "PRES SETE LAGOAS"
+      },
+      {
+        "codigo": "1450072",
+        "nome": "PRES S JOAQUIM DE BICAS"
+      },
+      {
+        "codigo": "1450074",
+        "nome": "CSE DIVINOPOLIS"
+      },
+      {
+        "codigo": "1450075",
+        "nome": "PRES S JOAO DEL REI"
+      },
+      {
+        "codigo": "1450076",
+        "nome": "PRES PEDRO LEOPOLDO"
+      },
+      {
+        "codigo": "1450077",
+        "nome": "PRES CORONEL FABRICIANO"
+      },
+      {
+        "codigo": "1450078",
+        "nome": "PENIT FORMIGA"
+      },
+      {
+        "codigo": "1450079",
+        "nome": "PRES CARATINGA"
+      },
+      {
+        "codigo": "1450080",
+        "nome": "PRES ANDRADAS"
+      },
+      {
+        "codigo": "1450081",
+        "nome": "PRES JOAO PINHEIRO"
+      },
+      {
+        "codigo": "1450083",
+        "nome": "PRES UNAI"
+      },
+      {
+        "codigo": "1450084",
+        "nome": "PRES ARAXA"
+      },
+      {
+        "codigo": "1450085",
+        "nome": "CERESP BETIM"
+      },
+      {
+        "codigo": "1450086",
+        "nome": "CERESP GAMELEIRA"
+      },
+      {
+        "codigo": "1450087",
+        "nome": "PRES TEOFILO OTONI"
+      },
+      {
+        "codigo": "1450088",
+        "nome": "PRES SAO LOURENCO"
+      },
+      {
+        "codigo": "1450089",
+        "nome": "CSE UBERLANDIA"
+      },
+      {
+        "codigo": "1450090",
+        "nome": "CSE JUIZ DE FORA"
+      },
+      {
+        "codigo": "1450092",
+        "nome": "RISP 4 JUIZ DE FORA-PCMG"
+      },
+      {
+        "codigo": "1450095",
+        "nome": "CSE JUSTINOPOLIS"
+      },
+      {
+        "codigo": "1450097",
+        "nome": "PRES ALVORADA"
+      },
+      {
+        "codigo": "1450098",
+        "nome": "PRESIDIO DE LUZ"
+      },
+      {
+        "codigo": "1450099",
+        "nome": "CERESP JUIZ DE FORA"
+      },
+      {
+        "codigo": "1450100",
+        "nome": "PRES DE COROMANDEL"
+      },
+      {
+        "codigo": "1450101",
+        "nome": "PRES DE GUARANESIA"
+      },
+      {
+        "codigo": "1450102",
+        "nome": "PRES DE LAVRAS"
+      },
+      {
+        "codigo": "1450103",
+        "nome": "PRES DE PASSOS"
+      },
+      {
+        "codigo": "1450104",
+        "nome": "PRES DE PIUMHI"
+      },
+      {
+        "codigo": "1450105",
+        "nome": "PRES S SEBASTIAO PARAISO"
+      },
+      {
+        "codigo": "1450106",
+        "nome": "CERESP IPATINGA"
+      },
+      {
+        "codigo": "1450107",
+        "nome": "PRES REG MONTES CLAROS"
+      },
+      {
+        "codigo": "1450110",
+        "nome": "PRES PRESI OLEGARIO"
+      },
+      {
+        "codigo": "1450111",
+        "nome": "PRES DE CAXAMBU"
+      },
+      {
+        "codigo": "1450113",
+        "nome": "PRES DE JOAO MONLEVADE"
+      },
+      {
+        "codigo": "1450114",
+        "nome": "PRES DE CURVELO"
+      },
+      {
+        "codigo": "1450115",
+        "nome": "PRES DE BARBACENA"
+      },
+      {
+        "codigo": "1450116",
+        "nome": "PRES DE CONS LAFAIETE"
+      },
+      {
+        "codigo": "1450117",
+        "nome": "PRES DE OURO PRETO"
+      },
+      {
+        "codigo": "1450118",
+        "nome": "PRES DE VISC RIO BRANCO"
+      },
+      {
+        "codigo": "1450119",
+        "nome": "PRES DE VARGINHA"
+      },
+      {
+        "codigo": "1450120",
+        "nome": "PRES DE ITUIUTABA"
+      },
+      {
+        "codigo": "1450121",
+        "nome": "PRES DE MURIAE"
+      },
+      {
+        "codigo": "1450122",
+        "nome": "PRES DE POCOS DE CALDAS"
+      },
+      {
+        "codigo": "1450123",
+        "nome": "PRES DE PARACATU"
+      },
+      {
+        "codigo": "1450124",
+        "nome": "PRES DE UBA"
+      },
+      {
+        "codigo": "1450125",
+        "nome": "PRES DE ALFENAS"
+      },
+      {
+        "codigo": "1450126",
+        "nome": "PRES DE ITABIRA"
+      },
+      {
+        "codigo": "1450127",
+        "nome": "PRES DE ITAJUBA"
+      },
+      {
+        "codigo": "1450128",
+        "nome": "PRES DE SANTA LUZIA"
+      },
+      {
+        "codigo": "1450129",
+        "nome": "COMP PENIT DE PONTE NOVA"
+      },
+      {
+        "codigo": "1450130",
+        "nome": "11A RISP/M. CLAROS/SEAP"
+      },
+      {
+        "codigo": "1450131",
+        "nome": "PRES DE OLIVEIRA"
+      },
+      {
+        "codigo": "1450132",
+        "nome": "PRES DE POUSO ALEGRE"
+      },
+      {
+        "codigo": "1450133",
+        "nome": "PRES RMBH II BICAS"
+      },
+      {
+        "codigo": "1450135",
+        "nome": "PRES DE ITAIOBIM"
+      },
+      {
+        "codigo": "1450136",
+        "nome": "CERESP CONTAGEM"
+      },
+      {
+        "codigo": "1450137",
+        "nome": "CEN REF GESTANTE SIST PRI"
+      },
+      {
+        "codigo": "1450138",
+        "nome": "ASSESSORIA DE COMUNICACAO"
+      },
+      {
+        "codigo": "1450144",
+        "nome": "CSE LINDEIA"
+      },
+      {
+        "codigo": "1450146",
+        "nome": "CIA - BH"
+      },
+      {
+        "codigo": "1450148",
+        "nome": "PRES DE ALMENARA"
+      },
+      {
+        "codigo": "1450149",
+        "nome": "PRES DE TIMOTEO"
+      },
+      {
+        "codigo": "1450150",
+        "nome": "PRES CONCEI DAS ALAGOAS"
+      },
+      {
+        "codigo": "1450151",
+        "nome": "PRES CATAGUASES"
+      },
+      {
+        "codigo": "1450152",
+        "nome": "PRES DE CONSELHEIRO PENA"
+      },
+      {
+        "codigo": "1450153",
+        "nome": "PRES DE LEOPOLDINA"
+      },
+      {
+        "codigo": "1450154",
+        "nome": "PRES DE JANUARIA"
+      },
+      {
+        "codigo": "1450155",
+        "nome": "PRES DE MANTENA"
+      },
+      {
+        "codigo": "1450156",
+        "nome": "PRES DE LAGOA DA PRATA"
+      },
+      {
+        "codigo": "1450157",
+        "nome": "PRES DE ABAETE"
+      },
+      {
+        "codigo": "1450158",
+        "nome": "PRES DE MANHUACU"
+      },
+      {
+        "codigo": "1450159",
+        "nome": "PRES DE JANAUBA"
+      },
+      {
+        "codigo": "1450160",
+        "nome": "PRES DE FRUTAL"
+      },
+      {
+        "codigo": "1450161",
+        "nome": "PRES DE ITAUNA"
+      },
+      {
+        "codigo": "1450162",
+        "nome": "PRES DE CAPELINHA"
+      },
+      {
+        "codigo": "1450163",
+        "nome": "PRES DE RIO PIRACICABA"
+      },
+      {
+        "codigo": "1450165",
+        "nome": "PRES DE INHAPIM"
+      },
+      {
+        "codigo": "1450166",
+        "nome": "PRES. DE MATIAS BARBOSA"
+      },
+      {
+        "codigo": "1450167",
+        "nome": "PRES DE MATOZINHOS"
+      },
+      {
+        "codigo": "1450169",
+        "nome": "PMMG RISP BH"
+      },
+      {
+        "codigo": "1450172",
+        "nome": "AISP MONTES CLAROS PMMG"
+      },
+      {
+        "codigo": "1450174",
+        "nome": "AISP 23 OURO PRETO PMMG"
+      },
+      {
+        "codigo": "1450175",
+        "nome": "AISP 56 PALMITAL PMMG"
+      },
+      {
+        "codigo": "1450177",
+        "nome": "AISP 26 NOVA CONTAGEM PCM"
+      },
+      {
+        "codigo": "1450185",
+        "nome": "AISP 68 MORRO ALTO PCMG"
+      },
+      {
+        "codigo": "1450186",
+        "nome": "PRES DE JUATUBA"
+      },
+      {
+        "codigo": "1450188",
+        "nome": "PRES DE CAETE"
+      },
+      {
+        "codigo": "1450189",
+        "nome": "PRES DE NOVA LIMA"
+      },
+      {
+        "codigo": "1450190",
+        "nome": "PRES DE LAGOA SANTA"
+      },
+      {
+        "codigo": "1450192",
+        "nome": "PRES STA RITA DO SAPUCAI"
+      },
+      {
+        "codigo": "1450197",
+        "nome": "RISP 8 GOV.VALADARES-PMMG"
+      },
+      {
+        "codigo": "1450199",
+        "nome": "PRES DE PIRAPORA"
+      },
+      {
+        "codigo": "1450200",
+        "nome": "PRES DE SACRAMENTO"
+      },
+      {
+        "codigo": "1450201",
+        "nome": "CSE HORTO"
+      },
+      {
+        "codigo": "1450203",
+        "nome": "PRES BOA ESPERANCA"
+      },
+      {
+        "codigo": "1450204",
+        "nome": "PRES DE BARAO DE COCAIS"
+      },
+      {
+        "codigo": "1450205",
+        "nome": "PRES DE JABOTICATUBAS"
+      },
+      {
+        "codigo": "1450207",
+        "nome": "CSE IPATINGA"
+      },
+      {
+        "codigo": "1450215",
+        "nome": "PRES DE NANUQUE"
+      },
+      {
+        "codigo": "1450216",
+        "nome": "PRES DE MARIANA"
+      },
+      {
+        "codigo": "1450217",
+        "nome": "PRES DE DIAMANTINA"
+      },
+      {
+        "codigo": "1450218",
+        "nome": "PRES DE  ABRE CAMPO"
+      },
+      {
+        "codigo": "1450219",
+        "nome": "PRES MONTE CARMELO"
+      },
+      {
+        "codigo": "1450220",
+        "nome": "PRES DE ITAMBACURI"
+      },
+      {
+        "codigo": "1450221",
+        "nome": "PRES ARCOS"
+      },
+      {
+        "codigo": "1450222",
+        "nome": "PRES DE TRES PONTAS"
+      },
+      {
+        "codigo": "1450223",
+        "nome": "PRES DE ITURAMA"
+      },
+      {
+        "codigo": "1450224",
+        "nome": "PRES DE  CARANGOLA"
+      },
+      {
+        "codigo": "1450225",
+        "nome": "PRES TUPACIGUARA"
+      },
+      {
+        "codigo": "1450227",
+        "nome": "PRES DE SAO FRANCISCO"
+      },
+      {
+        "codigo": "1450228",
+        "nome": "PRES DE PRATA"
+      },
+      {
+        "codigo": "1450229",
+        "nome": "PRES DE PEDRA AZUL"
+      },
+      {
+        "codigo": "1450230",
+        "nome": "PRES DE CAMPOS GERAIS"
+      },
+      {
+        "codigo": "1450232",
+        "nome": "PRES DE MANHUMIRIM"
+      },
+      {
+        "codigo": "1450233",
+        "nome": "PRES DE MANGA"
+      },
+      {
+        "codigo": "1450236",
+        "nome": "PRES DE AGUAS FORMOSAS"
+      },
+      {
+        "codigo": "1450237",
+        "nome": "PRES SANTOS DUMONT"
+      },
+      {
+        "codigo": "1450238",
+        "nome": "PRES DE JEQUITINHONHA"
+      },
+      {
+        "codigo": "1450239",
+        "nome": "PRES CAMPO BELO"
+      },
+      {
+        "codigo": "1450242",
+        "nome": "PRES DE BOM DESPACHO"
+      },
+      {
+        "codigo": "1450243",
+        "nome": "RIP 5 UBERABA"
+      },
+      {
+        "codigo": "1450246",
+        "nome": "CSE PIRAPORA"
+      },
+      {
+        "codigo": "1450247",
+        "nome": "AISP 9 VENDA NOVA PCMG"
+      },
+      {
+        "codigo": "1450248",
+        "nome": "PRES DE BURITIS"
+      },
+      {
+        "codigo": "1450249",
+        "nome": "PRES DE GUANHAES"
+      },
+      {
+        "codigo": "1450251",
+        "nome": "AISP DOM SILVERIO PMMG"
+      },
+      {
+        "codigo": "1450252",
+        "nome": "PMMG AISP JUIZ DE FORA"
+      },
+      {
+        "codigo": "1450289",
+        "nome": "PRES DE ERVALIA"
+      },
+      {
+        "codigo": "1450291",
+        "nome": "CENTRAL ESCOLTA R. NEVES"
+      },
+      {
+        "codigo": "1450294",
+        "nome": "PRESIDIO DE EXTREMA"
+      },
+      {
+        "codigo": "1450296",
+        "nome": "PRES NOVO CRUZEIRO"
+      },
+      {
+        "codigo": "1450299",
+        "nome": "TORRE TRANS MATEUS LEME"
+      },
+      {
+        "codigo": "1450306",
+        "nome": "PRESIDIO DE CONGONHAS"
+      },
+      {
+        "codigo": "1450310",
+        "nome": "AISP 101 M. CLAROS PMMG"
+      },
+      {
+        "codigo": "1450313",
+        "nome": "DLS/SGTA/SEDS"
+      },
+      {
+        "codigo": "1450314",
+        "nome": "PRESIDIO DE JACINTO"
+      },
+      {
+        "codigo": "1450315",
+        "nome": "PRESIDIO DE ACUCENA"
+      },
+      {
+        "codigo": "1450316",
+        "nome": "PRESIDIO DE BICAS"
+      },
+      {
+        "codigo": "1450317",
+        "nome": "PRESIDIO DE EUGENOPOLIS"
+      },
+      {
+        "codigo": "1450318",
+        "nome": "PRESIDIO DE BOCAIUVA"
+      },
+      {
+        "codigo": "1450320",
+        "nome": "AISP 25 - ELDORADO - PCMG"
+      },
+      {
+        "codigo": "1450321",
+        "nome": "PRESIDIO DE RIO POMBA"
+      },
+      {
+        "codigo": "1450322",
+        "nome": "PRESIDIO DE PECANHA"
+      },
+      {
+        "codigo": "1450323",
+        "nome": "PRESIDIO DE RESENDE COSTA"
+      },
+      {
+        "codigo": "1450324",
+        "nome": "PRES.SAO JOAO EVANGELISTA"
+      },
+      {
+        "codigo": "1450325",
+        "nome": "PRESIDIO DE TURMALINA"
+      },
+      {
+        "codigo": "1450326",
+        "nome": "PRESIDIO DE ITAMARANDIBA"
+      },
+      {
+        "codigo": "1450327",
+        "nome": "PRES.DE VARZEA DA PALMA"
+      },
+      {
+        "codigo": "1450328",
+        "nome": "PRESIDIO DE CORINTO"
+      },
+      {
+        "codigo": "1450329",
+        "nome": "PRESIDIO DE TRES MARIAS"
+      },
+      {
+        "codigo": "1450331",
+        "nome": "PRESIDIO DE MACHADO"
+      },
+      {
+        "codigo": "1450332",
+        "nome": "PRES MONTE SANTO DE MINAS"
+      },
+      {
+        "codigo": "1450333",
+        "nome": "PRESIDIO DE PERDIZES"
+      },
+      {
+        "codigo": "1450334",
+        "nome": "PRESIDIO DE CANAPOLIS"
+      },
+      {
+        "codigo": "1450336",
+        "nome": "PRESIDIO DE SANTA VITORIA"
+      },
+      {
+        "codigo": "1450338",
+        "nome": "PRESIDIO DE TARUMIRIM"
+      },
+      {
+        "codigo": "1450339",
+        "nome": "PRESIDIO DE AIMORES"
+      },
+      {
+        "codigo": "1450340",
+        "nome": "PRESIDIO DE PORTEIRINHA"
+      },
+      {
+        "codigo": "1450341",
+        "nome": "PRESIDIO DE MONTE AZUL"
+      },
+      {
+        "codigo": "1450342",
+        "nome": "PRESIDIO DE SALINAS"
+      },
+      {
+        "codigo": "1450345",
+        "nome": "PRESIDIO DE ITAPAGIPE"
+      },
+      {
+        "codigo": "1450346",
+        "nome": "PRESIDIO ALEM PARAIBA"
+      },
+      {
+        "codigo": "1450352",
+        "nome": "PRESIDIO DO SERRO"
+      },
+      {
+        "codigo": "1450354",
+        "nome": "PRESIDIO DE NOVA ERA"
+      },
+      {
+        "codigo": "1450357",
+        "nome": "PRESIDIO DE MALACACHETA"
+      },
+      {
+        "codigo": "1450358",
+        "nome": "PRESIDIO DE TAIOBEIRAS"
+      },
+      {
+        "codigo": "1450359",
+        "nome": "PRESIDIO DE CARLOS CHAGAS"
+      },
+      {
+        "codigo": "1450369",
+        "nome": "PRESIDIO DE ITACARAMBI"
+      },
+      {
+        "codigo": "1450372",
+        "nome": "RISP 9 UBERLANDIA-PMMG"
+      },
+      {
+        "codigo": "1450381",
+        "nome": "CARCEDO FORUM DE CONT"
+      },
+      {
+        "codigo": "1450385",
+        "nome": "SUPOD"
+      },
+      {
+        "codigo": "1450999",
+        "nome": "UNIDADE SETORIAL PPP"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1481",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1480001",
+        "nome": "SEDESE/GABINETE"
+      },
+      {
+        "codigo": "1480002",
+        "nome": "SEDESE/FINANCEIRO"
+      },
+      {
+        "codigo": "1480049",
+        "nome": "SEDESE/SUBESP"
+      },
+      {
+        "codigo": "1480062",
+        "nome": "SEDESE/SUBDH"
+      },
+      {
+        "codigo": "1480063",
+        "nome": "SEDESE/NÚCLEO REGIONAIS"
+      },
+      {
+        "codigo": "1480071",
+        "nome": "SEDESE/CONVÊNIO PARCERIAS"
+      },
+      {
+        "codigo": "1480074",
+        "nome": "PROGRAMAS ESPECIAIS"
+      },
+      {
+        "codigo": "1480091",
+        "nome": "SEDESE/EDUC. PROFISSIONAL"
+      },
+      {
+        "codigo": "1480096",
+        "nome": "SEDESE/GERAÇÃO DE RENDA"
+      },
+      {
+        "codigo": "1480097",
+        "nome": "SEDESE/ATENDIMENTO TRAB"
+      },
+      {
+        "codigo": "1480098",
+        "nome": "SETE/SFG/1580010"
+      },
+      {
+        "codigo": "1480113",
+        "nome": "SEDESE/SUBPG"
+      },
+      {
+        "codigo": "1480114",
+        "nome": "SEDESE/SUBPH"
+      },
+      {
+        "codigo": "1480115",
+        "nome": "SEDESE/SEG ALIMENTAR"
+      },
+      {
+        "codigo": "1480116",
+        "nome": "SEDESE/SUBPDM"
+      },
+      {
+        "codigo": "1480120",
+        "nome": "TDCO SEDESE/IDENE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1491",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE GOVERNO",
+    "unidades_executoras": [
+      {
+        "codigo": "1490002",
+        "nome": "SEGOV - SETORIAL FINANC."
+      },
+      {
+        "codigo": "1490004",
+        "nome": "SEGOV/PUBLICID. PRODUCAO"
+      },
+      {
+        "codigo": "1490011",
+        "nome": "SEGOV/SGTE/PREFEITURAS"
+      },
+      {
+        "codigo": "1490013",
+        "nome": "SEGOV/SGDO"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1501",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTAO",
+    "unidades_executoras": [
+      {
+        "codigo": "1500002",
+        "nome": "SEPLAG-CONTAB E FINANCAS"
+      },
+      {
+        "codigo": "1500017",
+        "nome": "SERHA-CONT.FINANCAS"
+      },
+      {
+        "codigo": "1500030",
+        "nome": "SEPLAG/SPLOR"
+      },
+      {
+        "codigo": "1500036",
+        "nome": "SEPLAG/SUGESP"
+      },
+      {
+        "codigo": "1500039",
+        "nome": "SEPLAG/SIGES"
+      },
+      {
+        "codigo": "1500041",
+        "nome": "SEPLAG/SUBDIGITAL"
+      },
+      {
+        "codigo": "1500054",
+        "nome": "SEPLAG/SUBLOG"
+      },
+      {
+        "codigo": "1500055",
+        "nome": "CIDADE ADMINISTRATIVA"
+      },
+      {
+        "codigo": "1500056",
+        "nome": "CAMG REMANESCENTE INTENDE"
+      },
+      {
+        "codigo": "1500058",
+        "nome": "TDCO SEPLAG/DER"
+      },
+      {
+        "codigo": "1500060",
+        "nome": "TDCO SCPMSO/DER"
+      },
+      {
+        "codigo": "1500061",
+        "nome": "COORD. EST. GESTAO TRANS"
+      },
+      {
+        "codigo": "1500062",
+        "nome": "SEPLAG/SSISCORP"
+      },
+      {
+        "codigo": "1500064",
+        "nome": "SEPLAG/SUBCOMP"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1511",
+    "unidade_orcamentaria_nome": "POLICIA CIVIL DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1510003",
+        "nome": "SUP.DE INVEST E POL JUDIC"
+      },
+      {
+        "codigo": "1510004",
+        "nome": "SPTC.IML"
+      },
+      {
+        "codigo": "1510005",
+        "nome": "INFORMACAO E INTELIGENCIA"
+      },
+      {
+        "codigo": "1510007",
+        "nome": "POLICIA CIVIL - GABINETE"
+      },
+      {
+        "codigo": "1510011",
+        "nome": "ACADEMIA DE POLICIA CIVIL"
+      },
+      {
+        "codigo": "1510012",
+        "nome": "SPGF - GESTAO"
+      },
+      {
+        "codigo": "1510014",
+        "nome": "1ª DRPC - JUIZ DE FORA"
+      },
+      {
+        "codigo": "1510016",
+        "nome": "2ª DRPC - UBERLANDIA"
+      },
+      {
+        "codigo": "1510017",
+        "nome": "3ª DRPC - ITUIUTABA"
+      },
+      {
+        "codigo": "1510018",
+        "nome": "1ª DRPC - DIVINOPOLIS"
+      },
+      {
+        "codigo": "1510020",
+        "nome": "2ª DRPC - UBA"
+      },
+      {
+        "codigo": "1510021",
+        "nome": "POL. CIVIL - CORREGEDORIA"
+      },
+      {
+        "codigo": "1510022",
+        "nome": "HOSPITAL DA POLICIA CIVIL"
+      },
+      {
+        "codigo": "1510024",
+        "nome": "SPGF - LOGISTICA"
+      },
+      {
+        "codigo": "1510025",
+        "nome": "SIIP - TELECOMUNICACOES"
+      },
+      {
+        "codigo": "1510026",
+        "nome": "SPGF - TRANSPORTES"
+      },
+      {
+        "codigo": "1510028",
+        "nome": "INST. DE IDENTIFICACAO"
+      },
+      {
+        "codigo": "1510029",
+        "nome": "1ª DRPC - MONTES CLAROS"
+      },
+      {
+        "codigo": "1510030",
+        "nome": "4ª DRPC - FORMIGA"
+      },
+      {
+        "codigo": "1510031",
+        "nome": "1ª DRPC - PATOS DE MINAS"
+      },
+      {
+        "codigo": "1510032",
+        "nome": "1ª DRPC - IPATINGA"
+      },
+      {
+        "codigo": "1510033",
+        "nome": "1ª DRPC - GOV.VALADARES"
+      },
+      {
+        "codigo": "1510034",
+        "nome": "1ª DRPC - TEOFILO OTONI"
+      },
+      {
+        "codigo": "1510035",
+        "nome": "1ª DRPC - POCOS DE CALDAS"
+      },
+      {
+        "codigo": "1510036",
+        "nome": "1ª DRPC - POUSO ALEGRE"
+      },
+      {
+        "codigo": "1510038",
+        "nome": "INST. DE CRIMINALISTICA"
+      },
+      {
+        "codigo": "1510039",
+        "nome": "6ª DRPC -  MANHUACU"
+      },
+      {
+        "codigo": "1510040",
+        "nome": "1ª DRPC - LAVRAS"
+      },
+      {
+        "codigo": "1510041",
+        "nome": "1ª DRPC - BARBACENA"
+      },
+      {
+        "codigo": "1510042",
+        "nome": "2ª DRPC - CARATINGA"
+      },
+      {
+        "codigo": "1510047",
+        "nome": "3ª DRPC - PASSOS"
+      },
+      {
+        "codigo": "1510048",
+        "nome": "2ª DRPC - PEDRA AZUL"
+      },
+      {
+        "codigo": "1510049",
+        "nome": "4ª DRPC - JOAO MONLEVADE"
+      },
+      {
+        "codigo": "1510050",
+        "nome": "4ª DRPC - MURIAE"
+      },
+      {
+        "codigo": "1510051",
+        "nome": "3ª DRPC - LEOPOLDINA"
+      },
+      {
+        "codigo": "1510052",
+        "nome": "4ª DRPC - NANUQUE"
+      },
+      {
+        "codigo": "1510054",
+        "nome": "3ª DRPC - JANAUBA"
+      },
+      {
+        "codigo": "1510056",
+        "nome": "3ª DRPC - DIAMANTINA"
+      },
+      {
+        "codigo": "1510057",
+        "nome": "2ª DRPC - GUANHAES"
+      },
+      {
+        "codigo": "1510058",
+        "nome": "2ª DRPC - ITAJUBA"
+      },
+      {
+        "codigo": "1510059",
+        "nome": "2ª DRPC - ALFENAS"
+      },
+      {
+        "codigo": "1510060",
+        "nome": "4ª DRPC - SETE LAGOAS"
+      },
+      {
+        "codigo": "1510061",
+        "nome": "DRSP - SAO JOAO DEL REI"
+      },
+      {
+        "codigo": "1510062",
+        "nome": "2ª DRPC - BOM DESPACHO"
+      },
+      {
+        "codigo": "1510064",
+        "nome": "3ª DRPC - SAO LOURENCO"
+      },
+      {
+        "codigo": "1510066",
+        "nome": "5ª DRPC - PIRAPORA"
+      },
+      {
+        "codigo": "1510067",
+        "nome": "SPGF - SERVICOS  GERAIS"
+      },
+      {
+        "codigo": "1510069",
+        "nome": "SIIP/COORD. TEC. SISTEMAS"
+      },
+      {
+        "codigo": "1510070",
+        "nome": "3ª DRPC - ALMENARA"
+      },
+      {
+        "codigo": "1510071",
+        "nome": "DIHPP - SGPC"
+      },
+      {
+        "codigo": "1510072",
+        "nome": "2ª DRPC - JANUARIA"
+      },
+      {
+        "codigo": "1510073",
+        "nome": "7ª DRPC - VARGINHA"
+      },
+      {
+        "codigo": "1510076",
+        "nome": "4ª DRPC - ARAGUARI"
+      },
+      {
+        "codigo": "1510077",
+        "nome": "3ª DRPC - ITABIRA"
+      },
+      {
+        "codigo": "1510078",
+        "nome": "1ª DRPC - UNAI"
+      },
+      {
+        "codigo": "1510080",
+        "nome": "COE/COORD. AEROTÁTICA"
+      },
+      {
+        "codigo": "1510081",
+        "nome": "9ª DRPC - CAMPO BELO"
+      },
+      {
+        "codigo": "1510082",
+        "nome": "SPGF-ASSES DE PROJETOS"
+      },
+      {
+        "codigo": "1510083",
+        "nome": "LOGISTICA PATRIM.ALMOXARI"
+      },
+      {
+        "codigo": "1510084",
+        "nome": "PCMG-DEOP-MG"
+      },
+      {
+        "codigo": "1510085",
+        "nome": "SPTC - GABINETE"
+      },
+      {
+        "codigo": "1510087",
+        "nome": "1 DEPTO - BELO HORIZONTE"
+      },
+      {
+        "codigo": "1510088",
+        "nome": "2 DEPTO - CONTAGEM"
+      },
+      {
+        "codigo": "1510089",
+        "nome": "3 DEPTO - VESPASIANO"
+      },
+      {
+        "codigo": "1510091",
+        "nome": "DEFAM/SIPJ"
+      },
+      {
+        "codigo": "1510094",
+        "nome": "6º DEPTO - LAVRAS"
+      },
+      {
+        "codigo": "1510095",
+        "nome": "7º DEPTO - DIVINOPOLIS"
+      },
+      {
+        "codigo": "1510099",
+        "nome": "11º DEPTO - MONTES CLAROS"
+      },
+      {
+        "codigo": "1510100",
+        "nome": "12º DEPTO - IPATINGA"
+      },
+      {
+        "codigo": "1510102",
+        "nome": "14º DEPTO - CURVELO"
+      },
+      {
+        "codigo": "1510111",
+        "nome": "1ª DRPC - CONTAGEM"
+      },
+      {
+        "codigo": "1510112",
+        "nome": "2ª DRPC - BETIM"
+      },
+      {
+        "codigo": "1510113",
+        "nome": "3ª DRPC - RIB. DAS NEVES"
+      },
+      {
+        "codigo": "1510114",
+        "nome": "4ª DRPC - IBIRITE"
+      },
+      {
+        "codigo": "1510115",
+        "nome": "5ª DRPC - JUATUBA"
+      },
+      {
+        "codigo": "1510117",
+        "nome": "1ª DRPC - SANTA LUZIA"
+      },
+      {
+        "codigo": "1510119",
+        "nome": "4ª DRPC - SABARA"
+      },
+      {
+        "codigo": "1510120",
+        "nome": "5ª DRPC - OURO PRETO"
+      },
+      {
+        "codigo": "1510121",
+        "nome": "4ª DRPC - ITURAMA"
+      },
+      {
+        "codigo": "1510122",
+        "nome": "2ª DRPC - PATROCINIO"
+      },
+      {
+        "codigo": "1510124",
+        "nome": "17º DPC - POUSO ALEGRE"
+      },
+      {
+        "codigo": "1510125",
+        "nome": "18º DPC - POCOS DE CALDAS"
+      },
+      {
+        "codigo": "1510126",
+        "nome": "PCMG-DEPATRI"
+      },
+      {
+        "codigo": "1510134",
+        "nome": "4ª DPRC TAIOBEIRAS"
+      },
+      {
+        "codigo": "1510135",
+        "nome": "DIRETORIA MATERIAL BELICO"
+      },
+      {
+        "codigo": "1510136",
+        "nome": "19ºDEPPC SETE LAGOAS"
+      },
+      {
+        "codigo": "1510140",
+        "nome": "DEICTRAN"
+      },
+      {
+        "codigo": "1510141",
+        "nome": "2ª DRPC PEDRO LEOPOLDO"
+      },
+      {
+        "codigo": "1510142",
+        "nome": "AUXÍLIO FUNERAL - SPGF"
+      },
+      {
+        "codigo": "1510143",
+        "nome": "COOR. OP. ESTRAT. COE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1521",
+    "unidade_orcamentaria_nome": "CONTROLADORIA-GERAL DO ESTADO",
+    "unidades_executoras": [
+      {
+        "codigo": "1520001",
+        "nome": "CONTROLADORIA-GERAL"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1541",
+    "unidade_orcamentaria_nome": "ESCOLA DE SAUDE PUBLICA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1540002",
+        "nome": "ESCOLA SAUDE FINANCEIRO"
+      },
+      {
+        "codigo": "1540006",
+        "nome": "ESPMG/DER/SEINFRA"
+      },
+      {
+        "codigo": "1540008",
+        "nome": "ESPMG/SEPLAG/AV"
+      },
+      {
+        "codigo": "1540009",
+        "nome": "ESPMG/SECOM/COM"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1631",
+    "unidade_orcamentaria_nome": "SECRETARIA-GERAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1630002",
+        "nome": "FINANCAS"
+      },
+      {
+        "codigo": "1630004",
+        "nome": "PUBLICIDADE"
+      },
+      {
+        "codigo": "1630017",
+        "nome": "IMPRENSA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1711",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DE COMUNICACAO SOCIAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1710002",
+        "nome": "FINANCAS"
+      },
+      {
+        "codigo": "1710004",
+        "nome": "PUBLICIDADE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1721",
+    "unidade_orcamentaria_nome": "SECRETARIA DE ESTADO DA CASA CIVIL",
+    "unidades_executoras": [
+      {
+        "codigo": "1720002",
+        "nome": "SCC  - SETORIAL FINANC"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1911",
+    "unidade_orcamentaria_nome": "EGE SEC.FAZENDA-ENCARGOS DIVERSOS",
+    "unidades_executoras": [
+      {
+        "codigo": "1910026",
+        "nome": "EGE/SEF/SCAF"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1916",
+    "unidade_orcamentaria_nome": "GESTAO DA DIVIDA PUBLICA ESTADUAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1910016",
+        "nome": "GESTAO DIV.PUB.ESTADUAL"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "1941",
+    "unidade_orcamentaria_nome": "EGE-SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTAO",
+    "unidades_executoras": [
+      {
+        "codigo": "1940001",
+        "nome": "EGE-PLANEJ.E GESTAO - APC"
+      },
+      {
+        "codigo": "1940054",
+        "nome": "EGE-SEPLAG/CSC/COMPARTILH"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2011",
+    "unidade_orcamentaria_nome": "INSTITUTO DE PREVIDENCIA DOS SERVIDORES DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2010003",
+        "nome": "DIRETORIA DE SAUDE"
+      },
+      {
+        "codigo": "2010004",
+        "nome": "GERENCIA ODONTOLOGICA"
+      },
+      {
+        "codigo": "2010006",
+        "nome": "CENTRO REGIONAL BARBACENA"
+      },
+      {
+        "codigo": "2010007",
+        "nome": "CENTRO REG.DIAMANTINA"
+      },
+      {
+        "codigo": "2010008",
+        "nome": "CENTRO REG DIVINOPOLIS"
+      },
+      {
+        "codigo": "2010009",
+        "nome": "CENTRO REG GOV VALADARES"
+      },
+      {
+        "codigo": "2010011",
+        "nome": "CENTRO REG.JUIZ DE FORA"
+      },
+      {
+        "codigo": "2010012",
+        "nome": "CENTRO REG.MONTES CLAROS"
+      },
+      {
+        "codigo": "2010013",
+        "nome": "CENTRO REGIONAL PASSOS"
+      },
+      {
+        "codigo": "2010014",
+        "nome": "CENTRO REG.PATOS DE MINAS"
+      },
+      {
+        "codigo": "2010015",
+        "nome": "CENTRO REG.POUSO ALEGRE"
+      },
+      {
+        "codigo": "2010016",
+        "nome": "CENTRO REG.TEOFILO OTONI"
+      },
+      {
+        "codigo": "2010017",
+        "nome": "CENTRO REG.UBERLANDIA"
+      },
+      {
+        "codigo": "2010018",
+        "nome": "CENTRO REGIONAL VARGINHA"
+      },
+      {
+        "codigo": "2010020",
+        "nome": "FINANCEIRA"
+      },
+      {
+        "codigo": "2010021",
+        "nome": "DIPGF"
+      },
+      {
+        "codigo": "2010022",
+        "nome": "DIRETORIA DE PREVIDENCIA"
+      },
+      {
+        "codigo": "2010023",
+        "nome": "DIR DE POLITICAS EM SAUDE"
+      },
+      {
+        "codigo": "2010025",
+        "nome": "CENTRO REGIONAL MURIAE"
+      },
+      {
+        "codigo": "2010030",
+        "nome": "CENTRO REG.DE PONTE NOVA"
+      },
+      {
+        "codigo": "2010032",
+        "nome": "CENTRO REG.SETE LAGOAS"
+      },
+      {
+        "codigo": "2010034",
+        "nome": "CENTRO REGIONAL UBERABA"
+      },
+      {
+        "codigo": "2010042",
+        "nome": "SEINFRA"
+      },
+      {
+        "codigo": "2010045",
+        "nome": "CENTRO DE ESPEC.MEDICAS"
+      },
+      {
+        "codigo": "2010046",
+        "nome": "CENTRO REG.BELO HORIZONTE"
+      },
+      {
+        "codigo": "2010048",
+        "nome": "GECAUA - CADAST/REGIONAIS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2041",
+    "unidade_orcamentaria_nome": "LOTERIA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2040001",
+        "nome": "LEMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2061",
+    "unidade_orcamentaria_nome": "FUNDACAO JOAO PINHEIRO",
+    "unidades_executoras": [
+      {
+        "codigo": "2060001",
+        "nome": "FJP"
+      },
+      {
+        "codigo": "2060003",
+        "nome": "FJP/SEINFRA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2071",
+    "unidade_orcamentaria_nome": "FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2070001",
+        "nome": "FAPEMIG"
+      },
+      {
+        "codigo": "2070005",
+        "nome": "FAPEMIG/F.JOAO PINHEIRO"
+      },
+      {
+        "codigo": "2070012",
+        "nome": "FAPEMIG/EPAMIG"
+      },
+      {
+        "codigo": "2070015",
+        "nome": "FAPEMIG/PMMG"
+      },
+      {
+        "codigo": "2070016",
+        "nome": "FAPEMIG/SECTES"
+      },
+      {
+        "codigo": "2070030",
+        "nome": "FAPEMIG/P.CIVIL"
+      },
+      {
+        "codigo": "2070036",
+        "nome": "FAPEMIG/SEPLAG"
+      },
+      {
+        "codigo": "2070045",
+        "nome": "INTERNA - FAP-UEMG"
+      },
+      {
+        "codigo": "2070046",
+        "nome": "INTERNA - FAP-UNIMONTES"
+      },
+      {
+        "codigo": "2070047",
+        "nome": "INTERNA - FAP/SEDE"
+      },
+      {
+        "codigo": "2070049",
+        "nome": "INTERNA - EPAMIG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2091",
+    "unidade_orcamentaria_nome": "FUNDACAO ESTADUAL DO MEIO AMBIENTE",
+    "unidades_executoras": [
+      {
+        "codigo": "2090001",
+        "nome": "FEAM"
+      },
+      {
+        "codigo": "2090005",
+        "nome": "FEAM/SEINFRA"
+      },
+      {
+        "codigo": "2090008",
+        "nome": "FEAM / URA LESTE DE MINAS"
+      },
+      {
+        "codigo": "2090009",
+        "nome": "FEAM / URA NOROESTE"
+      },
+      {
+        "codigo": "2090010",
+        "nome": "FEAM / URA ALTO PARANAÍBA"
+      },
+      {
+        "codigo": "2090011",
+        "nome": "FEAM / URA SUL DE MINAS"
+      },
+      {
+        "codigo": "2090012",
+        "nome": "FEAM / URA NORTE DE MINAS"
+      },
+      {
+        "codigo": "2090013",
+        "nome": "FEAM / URA JEQUITINHONHA"
+      },
+      {
+        "codigo": "2090014",
+        "nome": "FEAM / URA ALTO SÃO FRANC"
+      },
+      {
+        "codigo": "2090015",
+        "nome": "FEAM / URA TRIÂNGULO MINE"
+      },
+      {
+        "codigo": "2090016",
+        "nome": "FEAM / URA ZONA DA MATA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2101",
+    "unidade_orcamentaria_nome": "INSTITUTO ESTADUAL DE FLORESTAS",
+    "unidades_executoras": [
+      {
+        "codigo": "2100001",
+        "nome": "IEF-SEDE"
+      },
+      {
+        "codigo": "2100002",
+        "nome": "IEF-ESC.R.CENTRO NORTE"
+      },
+      {
+        "codigo": "2100003",
+        "nome": "IEF-ESC.REG.NORDESTE"
+      },
+      {
+        "codigo": "2100004",
+        "nome": "IEF-ESC.REG.RIO DOCE"
+      },
+      {
+        "codigo": "2100005",
+        "nome": "IEF-ESC.REG.MATA"
+      },
+      {
+        "codigo": "2100006",
+        "nome": "IEF-ESC.REG.TRIANGULO"
+      },
+      {
+        "codigo": "2100007",
+        "nome": "IEF-ESC.REG.NOROESTE"
+      },
+      {
+        "codigo": "2100008",
+        "nome": "IEF-ESC.REG.NORTE"
+      },
+      {
+        "codigo": "2100009",
+        "nome": "IEF-ESC.R.CENTRO SUL"
+      },
+      {
+        "codigo": "2100010",
+        "nome": "IEF-ESC.REG.SUL"
+      },
+      {
+        "codigo": "2100011",
+        "nome": "IEF-ESC.R.ALTO PARANAIBA"
+      },
+      {
+        "codigo": "2100012",
+        "nome": "IEF-ESC.R.ALT.MEDIO S.FCO"
+      },
+      {
+        "codigo": "2100013",
+        "nome": "IEF-ESC.R.CENTRO OESTE"
+      },
+      {
+        "codigo": "2100014",
+        "nome": "IEF-ESC.R.ALTO JEQUITINH."
+      },
+      {
+        "codigo": "2100016",
+        "nome": "IEF-CONV.PMMG/HELICOPTERO"
+      },
+      {
+        "codigo": "2100017",
+        "nome": "IEF-ESC.REG.METROPOLITANO"
+      },
+      {
+        "codigo": "2100069",
+        "nome": "IEF/FTP"
+      },
+      {
+        "codigo": "2100075",
+        "nome": "IEF/SEINFRA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2121",
+    "unidade_orcamentaria_nome": "INSTITUTO DE PREVIDENCIA DOS SERVIDORES MILITARES DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2120003",
+        "nome": "NPSM - DIV. ADM. PESSOAL"
+      },
+      {
+        "codigo": "2120009",
+        "nome": "DIVISAO DE PREVIDENCIA"
+      },
+      {
+        "codigo": "2120010",
+        "nome": "IPSM - DIV.ASSIST.A SAUDE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2151",
+    "unidade_orcamentaria_nome": "FUNDACAO HELENA ANTIPOFF",
+    "unidades_executoras": [
+      {
+        "codigo": "2150002",
+        "nome": "FHA - DEP. FINANCAS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2161",
+    "unidade_orcamentaria_nome": "FUNDACAO EDUCACIONAL CAIO MARTINS",
+    "unidades_executoras": [
+      {
+        "codigo": "2160001",
+        "nome": "FUCAM"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2171",
+    "unidade_orcamentaria_nome": "FUNDACAO DE ARTE DE OURO PRETO",
+    "unidades_executoras": [
+      {
+        "codigo": "2170001",
+        "nome": "FAOP"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2181",
+    "unidade_orcamentaria_nome": "FUNDACAO CLOVIS SALGADO",
+    "unidades_executoras": [
+      {
+        "codigo": "2180001",
+        "nome": "FCS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2201",
+    "unidade_orcamentaria_nome": "INSTITUTO ESTADUAL DO PATRIMONIO HISTORICO E ARTISTICO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2200001",
+        "nome": "IEPHA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2211",
+    "unidade_orcamentaria_nome": "FUNDACAO TV MINAS CULTURAL E EDUCATIVA",
+    "unidades_executoras": [
+      {
+        "codigo": "2210001",
+        "nome": "TV MINAS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2241",
+    "unidade_orcamentaria_nome": "INSTITUTO MINEIRO DE GESTAO DAS AGUAS",
+    "unidades_executoras": [
+      {
+        "codigo": "2240001",
+        "nome": "IGAM"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2251",
+    "unidade_orcamentaria_nome": "JUNTA COMERCIAL DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2250001",
+        "nome": "JUCEMG"
+      },
+      {
+        "codigo": "2250002",
+        "nome": "DIR.PLANEJ.GEST.FINANCAS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2261",
+    "unidade_orcamentaria_nome": "FUNDACAO EZEQUIEL DIAS",
+    "unidades_executoras": [
+      {
+        "codigo": "2260002",
+        "nome": "FUNED"
+      },
+      {
+        "codigo": "2260005",
+        "nome": "FUNED - DEOP"
+      },
+      {
+        "codigo": "2260007",
+        "nome": "FUNED/SEPLAG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2271",
+    "unidade_orcamentaria_nome": "FUNDACAO HOSPITALAR DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2270001",
+        "nome": "FHEMIG ADM. CENTRAL"
+      },
+      {
+        "codigo": "2270002",
+        "nome": "FHEMIG-HOSP.JOAO XXIII"
+      },
+      {
+        "codigo": "2270003",
+        "nome": "FHEMIG-HOSP.M.AMELIA LINS"
+      },
+      {
+        "codigo": "2270004",
+        "nome": "HOSP.INF.JOAO PAULO II"
+      },
+      {
+        "codigo": "2270009",
+        "nome": "FHEMIG-HOSP.GALBA VELOSO"
+      },
+      {
+        "codigo": "2270010",
+        "nome": "FHEMIG-INST. RAUL SOARES"
+      },
+      {
+        "codigo": "2270011",
+        "nome": "FHEMIG-HOSP.ED.MENEZES"
+      },
+      {
+        "codigo": "2270012",
+        "nome": "FHEMIG-HOSP.J. KUBITSCHEK"
+      },
+      {
+        "codigo": "2270013",
+        "nome": "FHEMIG-HOSP.CR. MACHADO"
+      },
+      {
+        "codigo": "2270014",
+        "nome": "CASA SAUDE S.IZABEL CSSI"
+      },
+      {
+        "codigo": "2270019",
+        "nome": "FHEMIG-HOSP.ALB.CAVALCANT"
+      },
+      {
+        "codigo": "2270021",
+        "nome": "FHEMIG-MAT. O.VALADARES"
+      },
+      {
+        "codigo": "2270022",
+        "nome": "FHEMIG-C.HOSP.P.BARBACENA"
+      },
+      {
+        "codigo": "2270023",
+        "nome": "FHEMIG-HOSP.REG.ANT.DIAS"
+      },
+      {
+        "codigo": "2270024",
+        "nome": "HOSP.REG.BAR.DR.J.AMERICO"
+      },
+      {
+        "codigo": "2270025",
+        "nome": "FHEMIG-HOSP.REG.J.PENIDO"
+      },
+      {
+        "codigo": "2270026",
+        "nome": "CASA SAUDE STA FE CSSFE"
+      },
+      {
+        "codigo": "2270027",
+        "nome": "CASA SAUDE SF.ASSIS CSSFA"
+      },
+      {
+        "codigo": "2270028",
+        "nome": "CASA SAUDE PE.DAMIAO CSPD"
+      },
+      {
+        "codigo": "2270035",
+        "nome": "SEINFRA"
+      },
+      {
+        "codigo": "2270036",
+        "nome": "TDCO SEPLAG/FHEMIG"
+      },
+      {
+        "codigo": "2270037",
+        "nome": "COMAVE"
+      },
+      {
+        "codigo": "2270038",
+        "nome": "ADC/GLOG"
+      },
+      {
+        "codigo": "2270039",
+        "nome": "ADC/GTIC"
+      },
+      {
+        "codigo": "2270040",
+        "nome": "ADC/GEIP"
+      },
+      {
+        "codigo": "2270041",
+        "nome": "CSPD/CHB"
+      },
+      {
+        "codigo": "2270042",
+        "nome": "CSPD/HRJP"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2281",
+    "unidade_orcamentaria_nome": "FUNDACAO DE EDUCACAO PARA O TRABALHO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2280001",
+        "nome": "UTRAMIG"
+      },
+      {
+        "codigo": "2280002",
+        "nome": "TDCO UTRAMIG/DER"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2301",
+    "unidade_orcamentaria_nome": "DEPARTAMENTO DE ESTRADAS DE RODAGEM DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2300105",
+        "nome": "DG/ASS GESTÃO ESTRATÉGICA"
+      },
+      {
+        "codigo": "2300106",
+        "nome": "DG/ASSESSORIA COM.SOCIAL"
+      },
+      {
+        "codigo": "2300108",
+        "nome": "DG/ASSES.DE MEIO AMBIENTE"
+      },
+      {
+        "codigo": "2300301",
+        "nome": "DPGF/GRH"
+      },
+      {
+        "codigo": "2300403",
+        "nome": "DPGF/GLA-LOGIST.E AQUISIC"
+      },
+      {
+        "codigo": "2300404",
+        "nome": "DPGF/GOF/FINANC.OPERAC."
+      },
+      {
+        "codigo": "2300408",
+        "nome": "DPGF/GTIC"
+      },
+      {
+        "codigo": "2300520",
+        "nome": "DIRETORIA DE CONTRUÇÃO"
+      },
+      {
+        "codigo": "2300601",
+        "nome": "DIR.PLAN.ENG. E INOVACAO"
+      },
+      {
+        "codigo": "2300701",
+        "nome": "01 URG-BELO HORIZONTE"
+      },
+      {
+        "codigo": "2300702",
+        "nome": "02 URG-GUANHÃES"
+      },
+      {
+        "codigo": "2300703",
+        "nome": "03 URG-PARÁ DE MINAS"
+      },
+      {
+        "codigo": "2300704",
+        "nome": "04 URG-BARBACENA"
+      },
+      {
+        "codigo": "2300705",
+        "nome": "05 URG-UBÁ"
+      },
+      {
+        "codigo": "2300706",
+        "nome": "06 URG-MONTES CLAROS"
+      },
+      {
+        "codigo": "2300707",
+        "nome": "07 URG-ARAXÁ"
+      },
+      {
+        "codigo": "2300708",
+        "nome": "08 URG-DIAMANTINA"
+      },
+      {
+        "codigo": "2300709",
+        "nome": "09 URG-CURVELO"
+      },
+      {
+        "codigo": "2300710",
+        "nome": "10 URG-VARGINHA"
+      },
+      {
+        "codigo": "2300711",
+        "nome": "11 URG-UBERLÂNDIA"
+      },
+      {
+        "codigo": "2300712",
+        "nome": "12 URG-ITABIRA"
+      },
+      {
+        "codigo": "2300713",
+        "nome": "13 URG-BRASÍLIA DE MINAS"
+      },
+      {
+        "codigo": "2300714",
+        "nome": "14 URG-PATOS DE MINAS"
+      },
+      {
+        "codigo": "2300715",
+        "nome": "15 URG-POÇOS DE CALDAS"
+      },
+      {
+        "codigo": "2300716",
+        "nome": "16 URG-OLIVEIRA"
+      },
+      {
+        "codigo": "2300717",
+        "nome": "17 URG-PONTE NOVA"
+      },
+      {
+        "codigo": "2300718",
+        "nome": "18 URG-MONTE CARMELO"
+      },
+      {
+        "codigo": "2300719",
+        "nome": "19 URG-ITAJUBÁ"
+      },
+      {
+        "codigo": "2300720",
+        "nome": "20 URG-FORMIGA"
+      },
+      {
+        "codigo": "2300721",
+        "nome": "21 URG-JEQUITINHONHA"
+      },
+      {
+        "codigo": "2300723",
+        "nome": "23 URG-GOVERNAD.VALADARES"
+      },
+      {
+        "codigo": "2300724",
+        "nome": "24 URG-PASSOS"
+      },
+      {
+        "codigo": "2300725",
+        "nome": "25 URG-UBERABA"
+      },
+      {
+        "codigo": "2300726",
+        "nome": "26 URG-PARACATU"
+      },
+      {
+        "codigo": "2300727",
+        "nome": "27 URG-PEDRA AZUL"
+      },
+      {
+        "codigo": "2300728",
+        "nome": "28 URG-TEÓFILO OTONI"
+      },
+      {
+        "codigo": "2300729",
+        "nome": "29 URG-MANHUMIRIM"
+      },
+      {
+        "codigo": "2300730",
+        "nome": "30 URG-JUIZ DE FORA"
+      },
+      {
+        "codigo": "2300731",
+        "nome": "31 URG-ITUIUTABA"
+      },
+      {
+        "codigo": "2300732",
+        "nome": "32 URG-JANAÚBA"
+      },
+      {
+        "codigo": "2300733",
+        "nome": "33 URG-PIRAPORA"
+      },
+      {
+        "codigo": "2300734",
+        "nome": "34 URG-SALINAS"
+      },
+      {
+        "codigo": "2300735",
+        "nome": "35 URG-ABAETÉ"
+      },
+      {
+        "codigo": "2300736",
+        "nome": "36 URG-ARINOS"
+      },
+      {
+        "codigo": "2300737",
+        "nome": "37 URG-JANUÁRIA"
+      },
+      {
+        "codigo": "2300738",
+        "nome": "38 URG-CAPELINHA"
+      },
+      {
+        "codigo": "2300739",
+        "nome": "39 URG-JOÃO PINHEIRO"
+      },
+      {
+        "codigo": "2300740",
+        "nome": "40 URG-CORONEL FABRICIANO"
+      },
+      {
+        "codigo": "2300762",
+        "nome": "DIRETORIA DE MANUTENÇÃO"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2311",
+    "unidade_orcamentaria_nome": "UNIVERSIDADE ESTADUAL DE MONTES CLAROS",
+    "unidades_executoras": [
+      {
+        "codigo": "2310002",
+        "nome": "UNIMONTES-C.ADM.FINANCAS"
+      },
+      {
+        "codigo": "2310005",
+        "nome": "UNIMONTES/SEPLAG/ALMO VIR"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2321",
+    "unidade_orcamentaria_nome": "FUNDACAO CENTRO DE HEMATOLOGIA E HEMOTERAPIA DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2320002",
+        "nome": "HEMOMINAS-DIV. FINANCEIRA"
+      },
+      {
+        "codigo": "2320007",
+        "nome": "UNID REG ALEM PARAIBA"
+      },
+      {
+        "codigo": "2320009",
+        "nome": "UNID REG DIAMANTINA"
+      },
+      {
+        "codigo": "2320010",
+        "nome": "UNID REG DIVINOPOLIS"
+      },
+      {
+        "codigo": "2320011",
+        "nome": "UNID REG GOVERN.VALADARES"
+      },
+      {
+        "codigo": "2320012",
+        "nome": "UNID REG ITUIUTABA"
+      },
+      {
+        "codigo": "2320013",
+        "nome": "UNID REG JUIZ DE FORA"
+      },
+      {
+        "codigo": "2320014",
+        "nome": "UNID REGIONAL MANHUACU"
+      },
+      {
+        "codigo": "2320015",
+        "nome": "UNID REG MONTES CLAROS"
+      },
+      {
+        "codigo": "2320016",
+        "nome": "UNID REG PASSOS"
+      },
+      {
+        "codigo": "2320017",
+        "nome": "UNID REG PATOS DE MINAS"
+      },
+      {
+        "codigo": "2320018",
+        "nome": "UNID REG PONTE NOVA"
+      },
+      {
+        "codigo": "2320019",
+        "nome": "UNID REG POUSO ALEGRE"
+      },
+      {
+        "codigo": "2320020",
+        "nome": "UNID REG SAO JOAO DEL REI"
+      },
+      {
+        "codigo": "2320021",
+        "nome": "UNID REG SETE LAGOAS"
+      },
+      {
+        "codigo": "2320022",
+        "nome": "UNID REG UBERABA"
+      },
+      {
+        "codigo": "2320023",
+        "nome": "UNID REG UBERLANDIA"
+      },
+      {
+        "codigo": "2320024",
+        "nome": "UNIDADE REGIONAL DE BH"
+      },
+      {
+        "codigo": "2320025",
+        "nome": "UNID.COLETA E TRANSF-HJK"
+      },
+      {
+        "codigo": "2320027",
+        "nome": "CETEBIO-LAGOA SANTA"
+      },
+      {
+        "codigo": "2320029",
+        "nome": "SEINFRA/HEMOMINAS"
+      },
+      {
+        "codigo": "2320030",
+        "nome": "HEMOMINAS/SEPLAG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2331",
+    "unidade_orcamentaria_nome": "INSTITUTO DE METROLOGIA E QUALIDADE DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2330001",
+        "nome": "IPEM"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2351",
+    "unidade_orcamentaria_nome": "UNIVERSIDADE DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2350001",
+        "nome": "UEMG - REITORIA"
+      },
+      {
+        "codigo": "2350002",
+        "nome": "UEMG-DESPESAS COMUNS"
+      },
+      {
+        "codigo": "2350004",
+        "nome": "UEMG - ESCOLA DE MUSICA"
+      },
+      {
+        "codigo": "2350005",
+        "nome": "UEMG - ESCOLA GUIGNARD"
+      },
+      {
+        "codigo": "2350006",
+        "nome": "UEMG - FACULDADE EDUCACAO"
+      },
+      {
+        "codigo": "2350007",
+        "nome": "UEMG - ESCOLA DE DESIGN"
+      },
+      {
+        "codigo": "2350008",
+        "nome": "UEMG - DIR.GER.CAMPUS BH"
+      },
+      {
+        "codigo": "2350012",
+        "nome": "UEMG - FINANCEIRA"
+      },
+      {
+        "codigo": "2350013",
+        "nome": "UEMG - PESSOAL"
+      },
+      {
+        "codigo": "2350017",
+        "nome": "UEMG - BARBACENA"
+      },
+      {
+        "codigo": "2350019",
+        "nome": "FAC.P.PUB.TANCREDO NEVES"
+      },
+      {
+        "codigo": "2350020",
+        "nome": "FAC.ENG.JOAO MONLEVADE"
+      },
+      {
+        "codigo": "2350021",
+        "nome": "UEMG/FRUTAL"
+      },
+      {
+        "codigo": "2350022",
+        "nome": "UEMG/UBA"
+      },
+      {
+        "codigo": "2350023",
+        "nome": "MESTRADO UEMG"
+      },
+      {
+        "codigo": "2350024",
+        "nome": "UEMG-LEOPOLDINA"
+      },
+      {
+        "codigo": "2350025",
+        "nome": "IBIRITE - HELENA ANTIPOFF"
+      },
+      {
+        "codigo": "2350026",
+        "nome": "CAMPANHA"
+      },
+      {
+        "codigo": "2350027",
+        "nome": "CARANGOLA"
+      },
+      {
+        "codigo": "2350028",
+        "nome": "DIAMANTINA"
+      },
+      {
+        "codigo": "2350029",
+        "nome": "ITUIUTABA"
+      },
+      {
+        "codigo": "2350030",
+        "nome": "DIVINOPOLIS"
+      },
+      {
+        "codigo": "2350031",
+        "nome": "PASSOS"
+      },
+      {
+        "codigo": "2350032",
+        "nome": "CLAUDIO"
+      },
+      {
+        "codigo": "2350033",
+        "nome": "ABAETE"
+      },
+      {
+        "codigo": "2350034",
+        "nome": "POCOS DE CALDAS"
+      },
+      {
+        "codigo": "2350035",
+        "nome": "FRUTAL - EX HIDROEX"
+      },
+      {
+        "codigo": "2350037",
+        "nome": "CONCURSOS UEMG"
+      },
+      {
+        "codigo": "2350038",
+        "nome": "UEMG-DEER"
+      },
+      {
+        "codigo": "2350041",
+        "nome": "NUCLEO INOVACAO TECNOLOGI"
+      },
+      {
+        "codigo": "2350042",
+        "nome": "UEMG - ARAGUARI"
+      },
+      {
+        "codigo": "2350043",
+        "nome": "UEMG - GUANHAES"
+      },
+      {
+        "codigo": "2350044",
+        "nome": "UEMG/SEPLAG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2371",
+    "unidade_orcamentaria_nome": "INSTITUTO MINEIRO DE AGROPECUARIA",
+    "unidades_executoras": [
+      {
+        "codigo": "2370001",
+        "nome": "IMA - CR ALMENARA"
+      },
+      {
+        "codigo": "2370002",
+        "nome": "IMA - GCF"
+      },
+      {
+        "codigo": "2370003",
+        "nome": "IMA - CR BOM DESPACHO"
+      },
+      {
+        "codigo": "2370004",
+        "nome": "IMA - CR BELO HORIZONTE"
+      },
+      {
+        "codigo": "2370005",
+        "nome": "IMA - CR CURVELO"
+      },
+      {
+        "codigo": "2370006",
+        "nome": "IMA - CR GOV. VALADARES"
+      },
+      {
+        "codigo": "2370007",
+        "nome": "IMA - CR PATOS DE MINAS"
+      },
+      {
+        "codigo": "2370008",
+        "nome": "IMA - CR JUIZ DE FORA"
+      },
+      {
+        "codigo": "2370009",
+        "nome": "IMA - CR MONTES CLAROS"
+      },
+      {
+        "codigo": "2370010",
+        "nome": "IMA - CR OLIVEIRA"
+      },
+      {
+        "codigo": "2370011",
+        "nome": "IMA - CR PASSOS"
+      },
+      {
+        "codigo": "2370012",
+        "nome": "IMA - CR PATROCINIO"
+      },
+      {
+        "codigo": "2370013",
+        "nome": "IMA - CR VARGINHA"
+      },
+      {
+        "codigo": "2370014",
+        "nome": "IMA - CR TEOFILO OTONI"
+      },
+      {
+        "codigo": "2370015",
+        "nome": "IMA - CR UBERABA"
+      },
+      {
+        "codigo": "2370016",
+        "nome": "IMA - CR UBERLANDIA"
+      },
+      {
+        "codigo": "2370017",
+        "nome": "IMA - CR UNAI"
+      },
+      {
+        "codigo": "2370018",
+        "nome": "IMA - CR VICOSA"
+      },
+      {
+        "codigo": "2370019",
+        "nome": "IMA - SEINFRA"
+      },
+      {
+        "codigo": "2370023",
+        "nome": "IMA - GLS"
+      },
+      {
+        "codigo": "2370029",
+        "nome": "IMA - CR GUANHAES"
+      },
+      {
+        "codigo": "2370030",
+        "nome": "IMA - CR JANAUBA"
+      },
+      {
+        "codigo": "2370032",
+        "nome": "IMA - CR POUSO ALEGRE"
+      },
+      {
+        "codigo": "2370034",
+        "nome": "IMA - PMMG"
+      },
+      {
+        "codigo": "2370035",
+        "nome": "IMA - POÇOS DE CALDAS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2421",
+    "unidade_orcamentaria_nome": "INSTITUTO DE DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2420001",
+        "nome": "IDENE"
+      },
+      {
+        "codigo": "2420005",
+        "nome": "ESC.REG DE MONTES CLAROS"
+      },
+      {
+        "codigo": "2420006",
+        "nome": "ESC.REG.DE TEOFILO OTONI"
+      },
+      {
+        "codigo": "2420007",
+        "nome": "ESC.REG. DE DIAMANTINA"
+      },
+      {
+        "codigo": "2420008",
+        "nome": "ESC.REGIONAL JANAUBA"
+      },
+      {
+        "codigo": "2420009",
+        "nome": "ESC.REG.JEQUITINHONHA"
+      },
+      {
+        "codigo": "2420010",
+        "nome": "ESC. REGIONAL SALINAS"
+      },
+      {
+        "codigo": "2420011",
+        "nome": "ESC. REGIONAL ARACUAI"
+      },
+      {
+        "codigo": "2420012",
+        "nome": "ESC. REGIONAL JANUARIA"
+      },
+      {
+        "codigo": "2420017",
+        "nome": "IDENE/REG VALE RIO DOCE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2431",
+    "unidade_orcamentaria_nome": "AGENCIA DE DESENVOLVIMENTO DA REGIAO METROPOLITANA DE BELO HORIZONTE",
+    "unidades_executoras": [
+      {
+        "codigo": "2430001",
+        "nome": "AGENCIA DESENVOLVIMENTO"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2441",
+    "unidade_orcamentaria_nome": "AGENCIA REGULADORA DE SERVICOS DE ABASTECIMENTO DE AGUA E DE ESGOTAMENTO SANITARIO DO ESTADO DE MINA",
+    "unidades_executoras": [
+      {
+        "codigo": "2440001",
+        "nome": "ARSAE-MG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2461",
+    "unidade_orcamentaria_nome": "AGENCIA DE DESENVOLVIMENTO DA REGIAO METROPOLITANA DO VALE DO ACO",
+    "unidades_executoras": [
+      {
+        "codigo": "2460001",
+        "nome": "ARMVA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "2471",
+    "unidade_orcamentaria_nome": "AGENCIA REGULADORA DE TRANSPORTES DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2470002",
+        "nome": "ARTEMIG/EXECUTORA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4031",
+    "unidade_orcamentaria_nome": "FUNDO ESPECIAL DO PODER JUDICIARIO DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1030002",
+        "nome": "TJMG - FEPJ"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4091",
+    "unidade_orcamentaria_nome": "FUNDO PARA A INFANCIA E A ADOLESCENCIA",
+    "unidades_executoras": [
+      {
+        "codigo": "1480104",
+        "nome": "SEDESE/FIA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4101",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE HABITACAO",
+    "unidades_executoras": [
+      {
+        "codigo": "5070001",
+        "nome": "COHAB-FEH"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4121",
+    "unidade_orcamentaria_nome": "FUNDO ESPECIAL DA ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1010003",
+        "nome": "FUNDALEMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4141",
+    "unidade_orcamentaria_nome": "FUNDO PENITENCIARIO ESTADUAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1450005",
+        "nome": "SULOT"
+      },
+      {
+        "codigo": "1450013",
+        "nome": "SEJUSP-MG/SEINFRA-MG"
+      },
+      {
+        "codigo": "1450022",
+        "nome": "SEAP"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4251",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE ASSISTENCIA SOCIAL",
+    "unidades_executoras": [
+      {
+        "codigo": "1480004",
+        "nome": "SEDESE/FEAS/SUBAS"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4291",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE SAUDE",
+    "unidades_executoras": [
+      {
+        "codigo": "1320002",
+        "nome": "C - FINANCEIRA"
+      },
+      {
+        "codigo": "1320003",
+        "nome": "C - SUBSILS/SGP(RH)"
+      },
+      {
+        "codigo": "1320006",
+        "nome": "C - SUBSILS/SG (GESTAO)"
+      },
+      {
+        "codigo": "1320007",
+        "nome": "C - GABINETE"
+      },
+      {
+        "codigo": "1320009",
+        "nome": "C - GABINETE/ASPLAN"
+      },
+      {
+        "codigo": "1320010",
+        "nome": "C - SUBVISA/SVEAST(EPIDE)"
+      },
+      {
+        "codigo": "1320011",
+        "nome": "C - SUBVISA/SVS(SANITARIA"
+      },
+      {
+        "codigo": "1320012",
+        "nome": "C - SES-SUP ATEN. A SAUDE"
+      },
+      {
+        "codigo": "1320013",
+        "nome": "C - GABINETE/ASCOM"
+      },
+      {
+        "codigo": "1320014",
+        "nome": "C - SUP. DE REGULAÇÃO"
+      },
+      {
+        "codigo": "1320015",
+        "nome": "R - BELO HORIZONTE"
+      },
+      {
+        "codigo": "1320016",
+        "nome": "R - BARBACENA"
+      },
+      {
+        "codigo": "1320017",
+        "nome": "R - DIAMANTINA"
+      },
+      {
+        "codigo": "1320018",
+        "nome": "R - JUIZ DE FORA"
+      },
+      {
+        "codigo": "1320019",
+        "nome": "R - MONTES CLAROS"
+      },
+      {
+        "codigo": "1320020",
+        "nome": "R - PATOS DE MINAS"
+      },
+      {
+        "codigo": "1320021",
+        "nome": "R - PONTE NOVA"
+      },
+      {
+        "codigo": "1320022",
+        "nome": "R - ITABIRA"
+      },
+      {
+        "codigo": "1320023",
+        "nome": "R - POUSO ALEGRE"
+      },
+      {
+        "codigo": "1320024",
+        "nome": "R - VARGINHA"
+      },
+      {
+        "codigo": "1320025",
+        "nome": "R - UBERLANDIA"
+      },
+      {
+        "codigo": "1320026",
+        "nome": "R - UBERABA"
+      },
+      {
+        "codigo": "1320027",
+        "nome": "R - SETE LAGOAS"
+      },
+      {
+        "codigo": "1320028",
+        "nome": "R - DIVINOPOLIS"
+      },
+      {
+        "codigo": "1320029",
+        "nome": "R - GOVERNADOR VALADARES"
+      },
+      {
+        "codigo": "1320030",
+        "nome": "R - TEOFILO OTONI"
+      },
+      {
+        "codigo": "1320031",
+        "nome": "R - UBA"
+      },
+      {
+        "codigo": "1320032",
+        "nome": "R - PEDRA AZUL"
+      },
+      {
+        "codigo": "1320033",
+        "nome": "R - SAO JOAO DEL REI"
+      },
+      {
+        "codigo": "1320034",
+        "nome": "R - ALFENAS"
+      },
+      {
+        "codigo": "1320035",
+        "nome": "R - PASSOS"
+      },
+      {
+        "codigo": "1320036",
+        "nome": "R - CEL FABRICIANO"
+      },
+      {
+        "codigo": "1320037",
+        "nome": "R - MANHUACU"
+      },
+      {
+        "codigo": "1320038",
+        "nome": "R - ITUIUTABA"
+      },
+      {
+        "codigo": "1320039",
+        "nome": "R - LEOPOLDINA"
+      },
+      {
+        "codigo": "1320040",
+        "nome": "R - UNAI"
+      },
+      {
+        "codigo": "1320043",
+        "nome": "T - DEOP/DEER"
+      },
+      {
+        "codigo": "1320044",
+        "nome": "T - FHEMIG"
+      },
+      {
+        "codigo": "1320045",
+        "nome": "T - FUNED"
+      },
+      {
+        "codigo": "1320047",
+        "nome": "R - PIRAPORA"
+      },
+      {
+        "codigo": "1320050",
+        "nome": "T - SEDS"
+      },
+      {
+        "codigo": "1320051",
+        "nome": "R - JANUARIA"
+      },
+      {
+        "codigo": "1320054",
+        "nome": "C - SUBGR-GESTAO REGIONAL"
+      },
+      {
+        "codigo": "1320055",
+        "nome": "C - SUBPAS/SAF (FARMACIA)"
+      },
+      {
+        "codigo": "1320056",
+        "nome": "C - GABINETE/CES-CONSELHO"
+      },
+      {
+        "codigo": "1320057",
+        "nome": "T - ESP"
+      },
+      {
+        "codigo": "1320058",
+        "nome": "C - GABINETE/NAJS"
+      },
+      {
+        "codigo": "1320068",
+        "nome": "C - SUBVISA (VIGILANCIA)"
+      },
+      {
+        "codigo": "1320071",
+        "nome": "T - PMMG"
+      },
+      {
+        "codigo": "1320074",
+        "nome": "C - SUBPAS/SRAS(REDES)"
+      },
+      {
+        "codigo": "1320075",
+        "nome": "C - SUBSILS/SPF"
+      },
+      {
+        "codigo": "1320076",
+        "nome": "C - SUBPAS/SAPS(ATEN.PRIM"
+      },
+      {
+        "codigo": "1320077",
+        "nome": "C - SUBREG/SPA(PROGRAMACA"
+      },
+      {
+        "codigo": "1320078",
+        "nome": "C - SUBREG/SCSS(CONTRATO)"
+      },
+      {
+        "codigo": "1320080",
+        "nome": "C - SUBSILS/SILTI"
+      },
+      {
+        "codigo": "1320082",
+        "nome": "C - SEGOV-NUCLEO/INFO"
+      },
+      {
+        "codigo": "1320083",
+        "nome": "C - FES/ASPAR-ASS PARCERI"
+      },
+      {
+        "codigo": "1320084",
+        "nome": "T - FES/SECRETARIA GERAL"
+      },
+      {
+        "codigo": "1320086",
+        "nome": "T-FES/SEDESE"
+      },
+      {
+        "codigo": "1320088",
+        "nome": "C - SES/SEPLAG -SUBCOMP"
+      },
+      {
+        "codigo": "1320092",
+        "nome": "C - SES/FHEMIG-CHU"
+      },
+      {
+        "codigo": "1320134",
+        "nome": "T - INTENDENCIA"
+      },
+      {
+        "codigo": "1320135",
+        "nome": "C - SUBSILS"
+      },
+      {
+        "codigo": "1320136",
+        "nome": "C - GABINETE/AGTI"
+      },
+      {
+        "codigo": "1320137",
+        "nome": "T - OGE"
+      },
+      {
+        "codigo": "1320138",
+        "nome": "T - SEPLAG"
+      },
+      {
+        "codigo": "1320139",
+        "nome": "T - FES/CBMMG"
+      },
+      {
+        "codigo": "1320141",
+        "nome": "C - SUBPAS"
+      },
+      {
+        "codigo": "1320143",
+        "nome": "T - CSC"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4331",
+    "unidade_orcamentaria_nome": "FUNDO DE DESENVOLVIMENTO METROPOLITANO",
+    "unidades_executoras": [
+      {
+        "codigo": "1300041",
+        "nome": "FUNDO DESENV METROPOLITAN"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4341",
+    "unidade_orcamentaria_nome": "FUNDO DE RECUPERACAO, PROTECAO E DESENVOLVIMENTO SUSTENTAVEL DAS BACIAS HIDROGRAFICAS DO ESTADO DE M",
+    "unidades_executoras": [
+      {
+        "codigo": "1370024",
+        "nome": "FHIDRO/IGAM"
+      },
+      {
+        "codigo": "1370031",
+        "nome": "FHIDRO/IEF - CENTRO SUL"
+      },
+      {
+        "codigo": "1370032",
+        "nome": "FHIDRO/IEF - NOROESTE"
+      },
+      {
+        "codigo": "1370033",
+        "nome": "FHIDRO/IEF-SUL"
+      },
+      {
+        "codigo": "1370034",
+        "nome": "FHIDRO/IEF-NORTE"
+      },
+      {
+        "codigo": "1370035",
+        "nome": "FHIDRO/IEF-ALTO JEQUITINH"
+      },
+      {
+        "codigo": "1370036",
+        "nome": "FHIDRO/IEF- CENTRO OESTE"
+      },
+      {
+        "codigo": "1370038",
+        "nome": "FHIDRO/IEF- MATA"
+      },
+      {
+        "codigo": "1370039",
+        "nome": "FHIDRO/IEF-NORDESTE"
+      },
+      {
+        "codigo": "1370049",
+        "nome": "FHIDRO/IEF ALT MED S FRAN"
+      },
+      {
+        "codigo": "1370051",
+        "nome": "FHIDRO/IEF-RIO DOCE"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4381",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE DESENVOLVIMENTO DE TRANSPORTES",
+    "unidades_executoras": [
+      {
+        "codigo": "2300105",
+        "nome": "DG/ASS GESTÃO ESTRATÉGICA"
+      },
+      {
+        "codigo": "2300301",
+        "nome": "DPGF/GRH"
+      },
+      {
+        "codigo": "2300403",
+        "nome": "DPGF/GLA-LOGIST.E AQUISIC"
+      },
+      {
+        "codigo": "2300601",
+        "nome": "DIR.PLAN.ENG. E INOVACAO"
+      },
+      {
+        "codigo": "2300704",
+        "nome": "04 URG-BARBACENA"
+      },
+      {
+        "codigo": "2300706",
+        "nome": "06 URG-MONTES CLAROS"
+      },
+      {
+        "codigo": "2300708",
+        "nome": "08 URG-DIAMANTINA"
+      },
+      {
+        "codigo": "2300713",
+        "nome": "13 URG-BRASÍLIA DE MINAS"
+      },
+      {
+        "codigo": "2300715",
+        "nome": "15 URG-POÇOS DE CALDAS"
+      },
+      {
+        "codigo": "2300726",
+        "nome": "26 URG-PARACATU"
+      },
+      {
+        "codigo": "2300728",
+        "nome": "28 URG-TEÓFILO OTONI"
+      },
+      {
+        "codigo": "2300901",
+        "nome": "DIRET. DE OPERAÇÃO VIÁRIA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4441",
+    "unidade_orcamentaria_nome": "FUNDO ESPECIAL DO MINISTERIO PUBLICO DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1090004",
+        "nome": "FUNEMP"
+      },
+      {
+        "codigo": "1090019",
+        "nome": "TDCO PMMG"
+      },
+      {
+        "codigo": "1090030",
+        "nome": "TDCO FUNEMP PMMG"
+      },
+      {
+        "codigo": "1090032",
+        "nome": "TDCO FUNEMP CBMMG"
+      },
+      {
+        "codigo": "1090042",
+        "nome": "TDCO FUNEMP/CBMMG"
+      },
+      {
+        "codigo": "1090049",
+        "nome": "TDCO FUNEMP - PMMG"
+      },
+      {
+        "codigo": "1090058",
+        "nome": "TDCO PCMG"
+      },
+      {
+        "codigo": "1090063",
+        "nome": "TDCO FUNEMP UBERLANDIA"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4451",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE PROTECAO E DEFESA DO CONSUMIDOR",
+    "unidades_executoras": [
+      {
+        "codigo": "1090005",
+        "nome": "FEPDC"
+      },
+      {
+        "codigo": "1090018",
+        "nome": "TDCO CBMMG"
+      },
+      {
+        "codigo": "1090034",
+        "nome": "TDCO FEPDC-AGE PROCON/MG"
+      },
+      {
+        "codigo": "1090038",
+        "nome": "TDCO FEPDC SEAPA QUEIJO M"
+      },
+      {
+        "codigo": "1090047",
+        "nome": "TDCO FEPDC - AGE"
+      },
+      {
+        "codigo": "1090051",
+        "nome": "TDCO SEPLAG - UAI COMPART"
+      },
+      {
+        "codigo": "1090052",
+        "nome": "TDCO CBMMG PREV INCÊNDIO"
+      },
+      {
+        "codigo": "1090053",
+        "nome": "TDCO CBMMG - PROTEÇÃO DO"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4491",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE CULTURA",
+    "unidades_executoras": [
+      {
+        "codigo": "1270001",
+        "nome": "SECULT"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4541",
+    "unidade_orcamentaria_nome": "FUNDO DE APOIO HABITACIONAL AOS MILITARES DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2120013",
+        "nome": "IPSM/FAHMEMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4551",
+    "unidade_orcamentaria_nome": "FUNDO DE ASSISTENCIA AO PECULIO DOS SERVIDORES DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2010044",
+        "nome": "FUNAPEC"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4601",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DOS DIREITOS DO IDOSO",
+    "unidades_executoras": [
+      {
+        "codigo": "1480109",
+        "nome": "SEDESE/FEI"
+      },
+      {
+        "codigo": "1480112",
+        "nome": "TDCO SEC GERAL"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4621",
+    "unidade_orcamentaria_nome": "FUNDO DE INVESTIMENTO DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "5200001",
+        "nome": "BDMG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4631",
+    "unidade_orcamentaria_nome": "FUNDO DE PAGAMENTO DE PARCERIAS PUBLICO - PRIVADAS DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1300463",
+        "nome": "SEINFRA FDO PAGTO PPP MG"
+      },
+      {
+        "codigo": "1300465",
+        "nome": "FPP/SEJUSP - COMPLEXO PEN"
+      },
+      {
+        "codigo": "1300466",
+        "nome": "FPP/SEPLAG - UAI'S"
+      },
+      {
+        "codigo": "1300468",
+        "nome": "TDCO/FPP-ARTEMIG"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4691",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DE SEGURANCA PUBLICA DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1450005",
+        "nome": "SULOT"
+      },
+      {
+        "codigo": "1450009",
+        "nome": "AESP/MG"
+      },
+      {
+        "codigo": "1450014",
+        "nome": "SUBSEC PREV CRIMINALIDADE"
+      },
+      {
+        "codigo": "1450015",
+        "nome": "SUBSEC INT E ATUAÇÃO"
+      },
+      {
+        "codigo": "1450138",
+        "nome": "ASSESSORIA DE COMUNICACAO"
+      },
+      {
+        "codigo": "1450376",
+        "nome": "PCMG/FESP"
+      },
+      {
+        "codigo": "1450377",
+        "nome": "CBMG/FESP"
+      },
+      {
+        "codigo": "1450378",
+        "nome": "PMMG/FESP"
+      },
+      {
+        "codigo": "1450380",
+        "nome": "SECGERAL/FESP"
+      },
+      {
+        "codigo": "1450382",
+        "nome": "ACINTI"
+      },
+      {
+        "codigo": "1450385",
+        "nome": "SUPOD"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4701",
+    "unidade_orcamentaria_nome": "FUNDO ESTADUAL DO TRABALHO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "1480111",
+        "nome": "SEDESE/FET"
+      }
+    ]
+  },
+  {
+    "unidade_orcamentaria_codigo": "4711",
+    "unidade_orcamentaria_nome": "FUNDO FINANCEIRO DE PREVIDENCIA DO ESTADO DE MINAS GERAIS",
+    "unidades_executoras": [
+      {
+        "codigo": "2010100",
+        "nome": "IPSEMG"
+      },
+      {
+        "codigo": "2010127",
+        "nome": "FINANCEIRA FFP"
+      }
+    ]
+  }
+]

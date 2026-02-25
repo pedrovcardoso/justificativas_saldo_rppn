@@ -1,0 +1,2428 @@
+[
+  {
+    "ano": "1997",
+    "programas": [
+      {
+        "codigo": "99",
+        "descricao": "RESERVA DE CONTINGENCIA"
+      }
+    ]
+  },
+  {
+    "ano": "1998",
+    "programas": [
+      {
+        "codigo": "99",
+        "descricao": "RESERVA DE CONTINGENCIA"
+      }
+    ]
+  },
+  {
+    "ano": "2005",
+    "programas": [
+      {
+        "codigo": "341",
+        "descricao": "APOIO AOS PROGRAMAS HABITACIONAIS"
+      }
+    ]
+  },
+  {
+    "ano": "2006",
+    "programas": [
+      {
+        "codigo": "213",
+        "descricao": "LARES GERAES"
+      }
+    ]
+  },
+  {
+    "ano": "2007",
+    "programas": [
+      {
+        "codigo": "213",
+        "descricao": "LARES GERAES"
+      }
+    ]
+  },
+  {
+    "ano": "2008",
+    "programas": [
+      {
+        "codigo": "25",
+        "descricao": "LARES GERAES"
+      }
+    ]
+  },
+  {
+    "ano": "2009",
+    "programas": [
+      {
+        "codigo": "25",
+        "descricao": "LARES GERAES"
+      },
+      {
+        "codigo": "44",
+        "descricao": "REGIONALIZACAO - URGENCIA E EMERGENCIA"
+      }
+    ]
+  },
+  {
+    "ano": "2011",
+    "programas": [
+      {
+        "codigo": "117",
+        "descricao": "POLITICA PUBLICA DE TRABALHO, EMPREGO E RENDA"
+      },
+      {
+        "codigo": "178",
+        "descricao": "COORDENACAO E MANUTENCAO DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "196",
+        "descricao": "COORDENACAO E GESTAO DO SISTEMA SOCIOEDUCATIVO"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      }
+    ]
+  },
+  {
+    "ano": "2012",
+    "programas": [
+      {
+        "codigo": "2",
+        "descricao": "SAUDE INTEGRADA"
+      },
+      {
+        "codigo": "20",
+        "descricao": "INFRAESTRUTURA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "29",
+        "descricao": "CIDADES: ESPACOS DE INTEGRACAO"
+      },
+      {
+        "codigo": "151",
+        "descricao": "GESTAO DO SISTEMA UNICO DE ASSISTENCIA SOCIAL - SUAS"
+      },
+      {
+        "codigo": "237",
+        "descricao": "ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "275",
+        "descricao": "INCENTIVO A ESTRUTURACAO DA REDE DE ASSISTENCIA FARMACEUTICA"
+      }
+    ]
+  },
+  {
+    "ano": "2013",
+    "programas": [
+      {
+        "codigo": "2",
+        "descricao": "SAUDE INTEGRADA"
+      },
+      {
+        "codigo": "20",
+        "descricao": "INFRAESTRUTURA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "34",
+        "descricao": "MINAS MAIS SEGURA"
+      },
+      {
+        "codigo": "36",
+        "descricao": "TRAVESSIA"
+      },
+      {
+        "codigo": "44",
+        "descricao": "REDES INTEGRADAS DE SERVICOS DE SAUDE"
+      },
+      {
+        "codigo": "49",
+        "descricao": "SAUDE EM CASA"
+      },
+      {
+        "codigo": "52",
+        "descricao": "ALIANCA PELA VIDA"
+      },
+      {
+        "codigo": "162",
+        "descricao": "DESENVOLVIMENTO DAS POLITICAS DE DIREITOS HUMANOS"
+      },
+      {
+        "codigo": "237",
+        "descricao": "ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "239",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "275",
+        "descricao": "INCENTIVO A ESTRUTURACAO DA REDE DE ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      }
+    ]
+  },
+  {
+    "ano": "2014",
+    "programas": [
+      {
+        "codigo": "2",
+        "descricao": "SAUDE INTEGRADA"
+      },
+      {
+        "codigo": "3",
+        "descricao": "MELHOR EMPREGO"
+      },
+      {
+        "codigo": "15",
+        "descricao": "EDUCACAO PARA CRESCER"
+      },
+      {
+        "codigo": "20",
+        "descricao": "INFRAESTRUTURA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "21",
+        "descricao": "GESTAO INTEGRADA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "23",
+        "descricao": "JOVENS MINEIROS PROTAGONISTAS"
+      },
+      {
+        "codigo": "44",
+        "descricao": "REDES INTEGRADAS DE SERVICOS DE SAUDE"
+      },
+      {
+        "codigo": "49",
+        "descricao": "SAUDE EM CASA"
+      },
+      {
+        "codigo": "140",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "194",
+        "descricao": "GESTAO DA SECRETARIA DE ESTADO DE SAUDE"
+      },
+      {
+        "codigo": "237",
+        "descricao": "ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "240",
+        "descricao": "ATENDIMENTO AO ENSINO PROFISSIONAL"
+      },
+      {
+        "codigo": "271",
+        "descricao": "MELHORIA DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "275",
+        "descricao": "ESTRUTURACAO DA REDE ESTADUAL DE ASSISTENCIA FARMACEUTICA."
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      }
+    ]
+  },
+  {
+    "ano": "2015",
+    "programas": [
+      {
+        "codigo": "2",
+        "descricao": "SAUDE INTEGRADA"
+      },
+      {
+        "codigo": "3",
+        "descricao": "MELHOR EMPREGO"
+      },
+      {
+        "codigo": "8",
+        "descricao": "AVANCA MINAS OLIMPICA"
+      },
+      {
+        "codigo": "15",
+        "descricao": "EDUCACAO PARA CRESCER"
+      },
+      {
+        "codigo": "17",
+        "descricao": "PRO-ESCOLA"
+      },
+      {
+        "codigo": "20",
+        "descricao": "INFRAESTRUTURA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "21",
+        "descricao": "GESTAO INTEGRADA DE DEFESA SOCIAL"
+      },
+      {
+        "codigo": "23",
+        "descricao": "JOVENS MINEIROS PROTAGONISTAS"
+      },
+      {
+        "codigo": "29",
+        "descricao": "CIDADES: ESPACOS DE INTEGRACAO"
+      },
+      {
+        "codigo": "34",
+        "descricao": "MINAS MAIS SEGURA"
+      },
+      {
+        "codigo": "44",
+        "descricao": "REDES INTEGRADAS DE SERVICOS DE SAUDE"
+      },
+      {
+        "codigo": "49",
+        "descricao": "SAUDE EM CASA"
+      },
+      {
+        "codigo": "52",
+        "descricao": "ALIANCA PELA VIDA"
+      },
+      {
+        "codigo": "109",
+        "descricao": "PROTECAO DA BIODIVERSIDADE E UNIDADES DE CONSERVACAO"
+      },
+      {
+        "codigo": "121",
+        "descricao": "FORMACAO E CAPACITACAO CULTURAL E ARTISTICA"
+      },
+      {
+        "codigo": "124",
+        "descricao": "PROMOCAO E DIFUSAO CULTURAL"
+      },
+      {
+        "codigo": "152",
+        "descricao": "FOMENTO A GESTAO LOCAL DE POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "194",
+        "descricao": "GESTAO DA SECRETARIA DE ESTADO DE SAUDE"
+      },
+      {
+        "codigo": "237",
+        "descricao": "ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "238",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "239",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "271",
+        "descricao": "MELHORIA DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "275",
+        "descricao": "ESTRUTURACAO DA REDE ESTADUAL DE ASSISTENCIA FARMACEUTICA."
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      },
+      {
+        "codigo": "702",
+        "descricao": "OBRIGACOES ESPECIAIS"
+      }
+    ]
+  },
+  {
+    "ano": "2016",
+    "programas": [
+      {
+        "codigo": "5",
+        "descricao": "EDICAO, IMPRESSAO, COMERCIALIZACAO E DIVULGACAO DO JORNAL MINAS GERAIS E DOS SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "10",
+        "descricao": "DIVERSIDADE E INCLUSAO"
+      },
+      {
+        "codigo": "26",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA MUNICIPAL E REGIONAL"
+      },
+      {
+        "codigo": "99",
+        "descricao": "PRESERVACAO DO PATRIMONIO CULTURAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "114",
+        "descricao": "OFERTA DE PROTECAO SOCIOASSISTENCIAL"
+      },
+      {
+        "codigo": "127",
+        "descricao": "AMPLIACAO E MELHORIA DA QUALIDADE DOS SERVICOS DE ATENDIMENTO AO TRABALHADOR"
+      },
+      {
+        "codigo": "143",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, A FAUNA, E A BIODIVERSIDADE FLORESTAL."
+      },
+      {
+        "codigo": "154",
+        "descricao": "MINAS 2016"
+      },
+      {
+        "codigo": "173",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "174",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "175",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "179",
+        "descricao": "REDES DE ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "180",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "183",
+        "descricao": "REGULACAO"
+      },
+      {
+        "codigo": "186",
+        "descricao": "CIDADE ADMINISTRATIVA"
+      },
+      {
+        "codigo": "192",
+        "descricao": "ATENCAO BASICA A SAUDE"
+      },
+      {
+        "codigo": "194",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "203",
+        "descricao": "PREVENCAO SOCIAL A CRIMINALIDADE"
+      },
+      {
+        "codigo": "204",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DOS ADOLESCENTES DO ESTADO"
+      },
+      {
+        "codigo": "205",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "208",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "211",
+        "descricao": "INFRAESTRUTURA, CUSTEIO E ORGANIZACAO ESCOLAR"
+      },
+      {
+        "codigo": "213",
+        "descricao": "CONVIVENCIA DEMOCRATICA"
+      },
+      {
+        "codigo": "214",
+        "descricao": "DESENVOLVIMENTO DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "220",
+        "descricao": "INTEGRACAO, COORDENACAO E AMPLIACAO DA OFERTA DE SERVICOS E ACOES PARA A JUVENTUDE"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      }
+    ]
+  },
+  {
+    "ano": "2017",
+    "programas": [
+      {
+        "codigo": "41",
+        "descricao": "ASSISTENCIA HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "46",
+        "descricao": "REGULARIZACAO FUNDIARIA E ACESSO A TERRA"
+      },
+      {
+        "codigo": "59",
+        "descricao": "APOIO A PRODUCAO SUSTENTAVEL, AGREGACAO DE VALOR E COMERCIALIZACAO - DO CAMPO A MESA"
+      },
+      {
+        "codigo": "70",
+        "descricao": "COMUNICACAO SOCIAL"
+      },
+      {
+        "codigo": "81",
+        "descricao": "EDUCACAO PARA A JUVENTUDE"
+      },
+      {
+        "codigo": "82",
+        "descricao": "EDUCACAO DO CAMPO, INDIGENA E QUILOMBOLA"
+      },
+      {
+        "codigo": "99",
+        "descricao": "PRESERVACAO DO PATRIMONIO CULTURAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "114",
+        "descricao": "OFERTA DE PROTECAO SOCIOASSISTENCIAL"
+      },
+      {
+        "codigo": "116",
+        "descricao": "MINAS DIGITAL"
+      },
+      {
+        "codigo": "127",
+        "descricao": "INCLUSAO PRODUTIVA PARA O MUNDO DO TRABALHO"
+      },
+      {
+        "codigo": "135",
+        "descricao": "DEMOCRATIZACAO DO ACESSO A CULTURA"
+      },
+      {
+        "codigo": "143",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, A FAUNA, E A BIODIVERSIDADE FLORESTAL."
+      },
+      {
+        "codigo": "173",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "174",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "175",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "179",
+        "descricao": "REDES DE ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "180",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "183",
+        "descricao": "REGULACAO"
+      },
+      {
+        "codigo": "192",
+        "descricao": "ATENCAO PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "194",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "203",
+        "descricao": "PREVENCAO SOCIAL A CRIMINALIDADE"
+      },
+      {
+        "codigo": "204",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DOS ADOLESCENTES DO ESTADO"
+      },
+      {
+        "codigo": "205",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "208",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "211",
+        "descricao": "ESCOLAS SUSTENTAVEIS"
+      },
+      {
+        "codigo": "212",
+        "descricao": "VALORIZACAO E FORMACAO DOS PROFISSIONAIS DA EDUCACAO"
+      },
+      {
+        "codigo": "214",
+        "descricao": "EDUCACAO INTEGRAL E INTEGRADA"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      }
+    ]
+  },
+  {
+    "ano": "2018",
+    "programas": [
+      {
+        "codigo": "9",
+        "descricao": "PROGRAMA ESTADUAL DE COOPERATIVISMO DA AGRICULTURA FAMILIAR E AGROINDUSTRIA FAMILIAR"
+      },
+      {
+        "codigo": "18",
+        "descricao": "ASSISTENCIA HEMATOLOGICA E HEMOTERAPICA"
+      },
+      {
+        "codigo": "41",
+        "descricao": "ASSISTENCIA HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "46",
+        "descricao": "REGULARIZACAO FUNDIARIA E ACESSO A TERRA"
+      },
+      {
+        "codigo": "59",
+        "descricao": "APOIO A PRODUCAO SUSTENTAVEL, AGREGACAO DE VALOR E COMERCIALIZACAO - DO CAMPO A MESA"
+      },
+      {
+        "codigo": "70",
+        "descricao": "COMUNICACAO SOCIAL"
+      },
+      {
+        "codigo": "81",
+        "descricao": "EDUCACAO PARA A JUVENTUDE"
+      },
+      {
+        "codigo": "82",
+        "descricao": "EDUCACAO DO CAMPO, INDIGENA E QUILOMBOLA"
+      },
+      {
+        "codigo": "86",
+        "descricao": "GARANTIA DOS DIREITOS HUMANOS, DIVERSIDADE E INCLUSAO SOCIAL"
+      },
+      {
+        "codigo": "99",
+        "descricao": "PRESERVACAO DO PATRIMONIO CULTURAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "114",
+        "descricao": "OFERTA DE PROTECAO SOCIOASSISTENCIAL"
+      },
+      {
+        "codigo": "116",
+        "descricao": "MINAS DIGITAL"
+      },
+      {
+        "codigo": "143",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA, E DA BIODIVERSIDADE FLORESTAL."
+      },
+      {
+        "codigo": "173",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "174",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "175",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "178",
+        "descricao": "MINAS ESPORTIVA"
+      },
+      {
+        "codigo": "179",
+        "descricao": "REDES DE ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "180",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "183",
+        "descricao": "REGULACAO"
+      },
+      {
+        "codigo": "192",
+        "descricao": "ATENCAO PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "194",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "203",
+        "descricao": "PREVENCAO SOCIAL A CRIMINALIDADE"
+      },
+      {
+        "codigo": "204",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DOS ADOLESCENTES DO ESTADO"
+      },
+      {
+        "codigo": "205",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "208",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "211",
+        "descricao": "ESCOLAS SUSTENTAVEIS"
+      },
+      {
+        "codigo": "212",
+        "descricao": "VALORIZACAO E FORMACAO DOS PROFISSIONAIS DA EDUCACAO"
+      },
+      {
+        "codigo": "214",
+        "descricao": "EDUCACAO INTEGRAL E INTEGRADA"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      },
+      {
+        "codigo": "702",
+        "descricao": "OBRIGACOES ESPECIAIS"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      }
+    ]
+  },
+  {
+    "ano": "2019",
+    "programas": [
+      {
+        "codigo": "3",
+        "descricao": "GESTAO ESTRATEGICA DA INVESTIGACAO CRIMINAL"
+      },
+      {
+        "codigo": "14",
+        "descricao": "GESTAO FISCAL, CONTABIL E FINANCEIRA DO ESTADO"
+      },
+      {
+        "codigo": "41",
+        "descricao": "ASSISTENCIA HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "81",
+        "descricao": "EDUCACAO PARA A JUVENTUDE"
+      },
+      {
+        "codigo": "106",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "110",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "120",
+        "descricao": "GESTAO E DESENVOLVIMENTO SUSTENTAVEL DE RECURSOS HIDRICOS"
+      },
+      {
+        "codigo": "140",
+        "descricao": "FOMENTO E INCENTIVO A CULTURA"
+      },
+      {
+        "codigo": "173",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "174",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "175",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "179",
+        "descricao": "REDES DE ATENCAO A SAUDE"
+      },
+      {
+        "codigo": "180",
+        "descricao": "GESTAO DO SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "183",
+        "descricao": "REGULACAO"
+      },
+      {
+        "codigo": "192",
+        "descricao": "ATENCAO PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "203",
+        "descricao": "PREVENCAO SOCIAL A CRIMINALIDADE"
+      },
+      {
+        "codigo": "204",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DOS ADOLESCENTES DO ESTADO"
+      },
+      {
+        "codigo": "205",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "208",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "211",
+        "descricao": "ESCOLAS SUSTENTAVEIS"
+      },
+      {
+        "codigo": "212",
+        "descricao": "VALORIZACAO E FORMACAO DOS PROFISSIONAIS DA EDUCACAO"
+      },
+      {
+        "codigo": "214",
+        "descricao": "EDUCACAO INTEGRAL E INTEGRADA"
+      },
+      {
+        "codigo": "701",
+        "descricao": "APOIO A ADMINISTRACAO PUBLICA"
+      },
+      {
+        "codigo": "702",
+        "descricao": "OBRIGACOES ESPECIAIS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      }
+    ]
+  },
+  {
+    "ano": "2020",
+    "programas": [
+      {
+        "codigo": "5",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "11",
+        "descricao": "SERVICOS PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "21",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "26",
+        "descricao": "ENFRENTAMENTO DOS EFEITOS DA PANDEMIA DE COVID-19"
+      },
+      {
+        "codigo": "34",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "45",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "65",
+        "descricao": "APRIMORAMENTO DA POLITICA ESTADUAL DE ASSISTENCIA SOCIAL"
+      },
+      {
+        "codigo": "93",
+        "descricao": "INSTRUMENTOS DA POLITICA ESTADUAL DE RECURSOS HIDRICOS"
+      },
+      {
+        "codigo": "106",
+        "descricao": "ENSINO FUNDAMENTAL"
+      },
+      {
+        "codigo": "107",
+        "descricao": "ENSINO MEDIO"
+      },
+      {
+        "codigo": "118",
+        "descricao": "COMUNICACAO INSTITUCIONAL E DE UTILIDADE PUBLICA"
+      },
+      {
+        "codigo": "139",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "143",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DE ADOLESCENTES EM CUMPRIMENTO DE MEDIDA SOCIOEDUCATIVA"
+      },
+      {
+        "codigo": "145",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "150",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "151",
+        "descricao": "SUPORTE AO SISTEMA EDUCACIONAL MINEIRO"
+      },
+      {
+        "codigo": "154",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "156",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "157",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "158",
+        "descricao": "ATENCAO SECUNDARIA E TERCIARIA A SAUDE"
+      },
+      {
+        "codigo": "159",
+        "descricao": "ATENCAO  PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      }
+    ]
+  },
+  {
+    "ano": "2021",
+    "programas": [
+      {
+        "codigo": "1",
+        "descricao": "PESQUISA CIENTIFICA, DESENVOLVIMENTO TECNOLOGICO E INOVACAO"
+      },
+      {
+        "codigo": "5",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "7",
+        "descricao": "VALORIZACAO DO SERVIDOR"
+      },
+      {
+        "codigo": "11",
+        "descricao": "SERVICOS PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "21",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "26",
+        "descricao": "ENFRENTAMENTO DOS EFEITOS DA PANDEMIA DE COVID-19"
+      },
+      {
+        "codigo": "29",
+        "descricao": "PROMOCAO DE CONCESSOES E PARCERIAS"
+      },
+      {
+        "codigo": "43",
+        "descricao": "FOMENTO AO ESPORTE, A ATIVIDADE FISICA E AO LAZER"
+      },
+      {
+        "codigo": "45",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "61",
+        "descricao": "PROTECAO E SALVAGUARDA DE ACERVOS CULTURAIS"
+      },
+      {
+        "codigo": "65",
+        "descricao": "APRIMORAMENTO DA POLITICA ESTADUAL DE ASSISTENCIA SOCIAL"
+      },
+      {
+        "codigo": "70",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "84",
+        "descricao": "TESOURO RESPONSAVEL E TRANSPARENTE"
+      },
+      {
+        "codigo": "93",
+        "descricao": "INSTRUMENTOS DA POLITICA ESTADUAL DE RECURSOS HIDRICOS"
+      },
+      {
+        "codigo": "105",
+        "descricao": "EDUCACAO INTEGRAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "ENSINO FUNDAMENTAL"
+      },
+      {
+        "codigo": "107",
+        "descricao": "ENSINO MEDIO"
+      },
+      {
+        "codigo": "118",
+        "descricao": "COMUNICACAO INSTITUCIONAL E DE UTILIDADE PUBLICA"
+      },
+      {
+        "codigo": "139",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "143",
+        "descricao": "ROMPIMENTO DA TRAJETORIA INFRACIONAL DE ADOLESCENTES EM CUMPRIMENTO DE MEDIDA SOCIOEDUCATIVA"
+      },
+      {
+        "codigo": "145",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "150",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "151",
+        "descricao": "SUPORTE AO SISTEMA EDUCACIONAL MINEIRO"
+      },
+      {
+        "codigo": "154",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "156",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "157",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "158",
+        "descricao": "ATENCAO SECUNDARIA E TERCIARIA A SAUDE"
+      },
+      {
+        "codigo": "159",
+        "descricao": "ATENCAO  PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      }
+    ]
+  },
+  {
+    "ano": "2022",
+    "programas": [
+      {
+        "codigo": "5",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "11",
+        "descricao": "SERVICOS PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "21",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "24",
+        "descricao": "APOIO AO DESENVOLVIMENTO MUNICIPAL, A CAPTACAO E A COORDENACAO DA TRANSFERENCIA DE RECURSOS"
+      },
+      {
+        "codigo": "26",
+        "descricao": "ENFRENTAMENTO DOS EFEITOS DA PANDEMIA DE COVID-19"
+      },
+      {
+        "codigo": "29",
+        "descricao": "PROMOCAO DE CONCESSOES E PARCERIAS"
+      },
+      {
+        "codigo": "34",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "37",
+        "descricao": "ASSISTENCIA AO MILITAR"
+      },
+      {
+        "codigo": "40",
+        "descricao": "FOMENTO E INCENTIVO DE INVESTIMENTOS"
+      },
+      {
+        "codigo": "43",
+        "descricao": "FOMENTO AO ESPORTE, A ATIVIDADE FISICA E AO LAZER"
+      },
+      {
+        "codigo": "45",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "48",
+        "descricao": "ENSINO SUPERIOR - UNIMONTES"
+      },
+      {
+        "codigo": "56",
+        "descricao": "FOMENTO, DEMOCRATIZACAO E ACESSO A CULTURA E AO TURISMO"
+      },
+      {
+        "codigo": "60",
+        "descricao": "FORMACAO CULTURAL"
+      },
+      {
+        "codigo": "64",
+        "descricao": "CAMINHOS PARA O DESENVOLVIMENTO - DESENVOLVIMENTO E INTEGRACAO REGIONAL"
+      },
+      {
+        "codigo": "65",
+        "descricao": "APRIMORAMENTO DA POLITICA ESTADUAL DE ASSISTENCIA SOCIAL"
+      },
+      {
+        "codigo": "68",
+        "descricao": "#ACELERAMINAS - DESENVOLVIMENTO DE POLITICAS DE CIENCIA, TECNOLOGIA E INOVACAO"
+      },
+      {
+        "codigo": "71",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL"
+      },
+      {
+        "codigo": "81",
+        "descricao": "INFRAESTRUTURA RODOVIARIA"
+      },
+      {
+        "codigo": "84",
+        "descricao": "TESOURO RESPONSAVEL E TRANSPARENTE"
+      },
+      {
+        "codigo": "105",
+        "descricao": "EDUCACAO INTEGRAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "ENSINO FUNDAMENTAL"
+      },
+      {
+        "codigo": "107",
+        "descricao": "ENSINO MEDIO"
+      },
+      {
+        "codigo": "108",
+        "descricao": "EDUCACAO PROFISSIONAL"
+      },
+      {
+        "codigo": "110",
+        "descricao": "ORGANIZACAO, AVALIACAO E GESTAO ESCOLAR"
+      },
+      {
+        "codigo": "120",
+        "descricao": "GESTAO AMBIENTAL E SANEAMENTO"
+      },
+      {
+        "codigo": "139",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "143",
+        "descricao": "PROMOCAO DA POLITICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI"
+      },
+      {
+        "codigo": "145",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "150",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "151",
+        "descricao": "SUPORTE AO SISTEMA EDUCACIONAL MINEIRO"
+      },
+      {
+        "codigo": "152",
+        "descricao": "PROGRAMA DE APOIO A AMPLIACAO E A MELHORIA DOS SISTEMAS PRISIONAL E SOCIEDUCATIVO"
+      },
+      {
+        "codigo": "154",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "155",
+        "descricao": "PROMOCAO DE DEFESA CIVIL"
+      },
+      {
+        "codigo": "156",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "157",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "158",
+        "descricao": "ATENCAO SECUNDARIA E TERCIARIA A SAUDE"
+      },
+      {
+        "codigo": "159",
+        "descricao": "ATENCAO  PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      },
+      {
+        "codigo": "734",
+        "descricao": "PRESTACAO JURISDICIONAL MILITAR"
+      }
+    ]
+  },
+  {
+    "ano": "2023",
+    "programas": [
+      {
+        "codigo": "2",
+        "descricao": "ASSISTENCIA A SAUDE DOS SEGURADOS E DOS SEUS DEPENDENTES"
+      },
+      {
+        "codigo": "5",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "11",
+        "descricao": "SERVICOS PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "21",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "24",
+        "descricao": "APOIO AO DESENVOLVIMENTO MUNICIPAL, A CAPTACAO E A COORDENACAO DA TRANSFERENCIA DE RECURSOS"
+      },
+      {
+        "codigo": "29",
+        "descricao": "PROMOCAO DE CONCESSOES E PARCERIAS"
+      },
+      {
+        "codigo": "34",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "37",
+        "descricao": "ASSISTENCIA AO MILITAR"
+      },
+      {
+        "codigo": "43",
+        "descricao": "FOMENTO AO ESPORTE, A ATIVIDADE FISICA E AO LAZER"
+      },
+      {
+        "codigo": "45",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "48",
+        "descricao": "ENSINO SUPERIOR - UNIMONTES"
+      },
+      {
+        "codigo": "49",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS"
+      },
+      {
+        "codigo": "54",
+        "descricao": "EQUIPAMENTOS CULTURAIS, CORPOS ARTISTICOS E ORGAOS COLEGIADOS"
+      },
+      {
+        "codigo": "56",
+        "descricao": "FOMENTO, DEMOCRATIZACAO E ACESSO A CULTURA E AO TURISMO"
+      },
+      {
+        "codigo": "61",
+        "descricao": "PROTECAO E SALVAGUARDA DE ACERVOS CULTURAIS"
+      },
+      {
+        "codigo": "63",
+        "descricao": "MINAS + GERAIS - DIVERSIFICACAO E FORTALECIMENTO DA ECONOMIA"
+      },
+      {
+        "codigo": "64",
+        "descricao": "CAMINHOS PARA O DESENVOLVIMENTO - DESENVOLVIMENTO E INTEGRACAO REGIONAL"
+      },
+      {
+        "codigo": "65",
+        "descricao": "APRIMORAMENTO DA POLITICA ESTADUAL DE ASSISTENCIA SOCIAL"
+      },
+      {
+        "codigo": "67",
+        "descricao": "POLITICAS DE INTEGRACAO E SEGURANCA ALIMENTAR E NUTRICIONAL"
+      },
+      {
+        "codigo": "68",
+        "descricao": "#ACELERAMINAS - DESENVOLVIMENTO DE POLITICAS DE CIENCIA, TECNOLOGIA E INOVACAO"
+      },
+      {
+        "codigo": "70",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "71",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL"
+      },
+      {
+        "codigo": "81",
+        "descricao": "INFRAESTRUTURA RODOVIARIA"
+      },
+      {
+        "codigo": "84",
+        "descricao": "TESOURO RESPONSAVEL E TRANSPARENTE"
+      },
+      {
+        "codigo": "85",
+        "descricao": "ENSINO SUPERIOR"
+      },
+      {
+        "codigo": "89",
+        "descricao": "REDE DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL"
+      },
+      {
+        "codigo": "90",
+        "descricao": "PROMOCAO DO DESENVOLVIMENTO SOCIOECONOMICO DO NORTE E NORDESTE DE MINAS GERAIS"
+      },
+      {
+        "codigo": "102",
+        "descricao": "RECUPERACAO DE AREAS DEGRADADAS E CONTAMINADAS"
+      },
+      {
+        "codigo": "104",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA E DA BIODIVERSIDADE FLORESTAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "ENSINO FUNDAMENTAL"
+      },
+      {
+        "codigo": "107",
+        "descricao": "ENSINO MEDIO"
+      },
+      {
+        "codigo": "108",
+        "descricao": "EDUCACAO PROFISSIONAL"
+      },
+      {
+        "codigo": "110",
+        "descricao": "ORGANIZACAO, AVALIACAO E GESTAO ESCOLAR"
+      },
+      {
+        "codigo": "115",
+        "descricao": "GESTAO DA INFORMACAO COM USO DE TECNOLOGIA E COMUNICACAO"
+      },
+      {
+        "codigo": "118",
+        "descricao": "COMUNICACAO INSTITUCIONAL E DE UTILIDADE PUBLICA"
+      },
+      {
+        "codigo": "134",
+        "descricao": "MORADAS GERAIS"
+      },
+      {
+        "codigo": "139",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "143",
+        "descricao": "PROMOCAO DA POLITICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI"
+      },
+      {
+        "codigo": "145",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "150",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "151",
+        "descricao": "SUPORTE AO SISTEMA EDUCACIONAL MINEIRO"
+      },
+      {
+        "codigo": "154",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "155",
+        "descricao": "PROMOCAO DE DEFESA CIVIL"
+      },
+      {
+        "codigo": "156",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "157",
+        "descricao": "POLITICA ESTADUAL DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "158",
+        "descricao": "ATENCAO SECUNDARIA E TERCIARIA A SAUDE"
+      },
+      {
+        "codigo": "159",
+        "descricao": "ATENCAO  PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "161",
+        "descricao": "GESTAO DA CIDADE ADMINISTRATIVA"
+      },
+      {
+        "codigo": "162",
+        "descricao": "FERROVIAS MINEIRAS"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      },
+      {
+        "codigo": "729",
+        "descricao": "PROCESSO LEGISLATIVO"
+      },
+      {
+        "codigo": "734",
+        "descricao": "PRESTACAO JURISDICIONAL MILITAR"
+      },
+      {
+        "codigo": "737",
+        "descricao": "MODERNIZACAO  INSTITUCIONAL"
+      },
+      {
+        "codigo": "738",
+        "descricao": "PROTECAO E DEFESA DO CONSUMIDOR"
+      }
+    ]
+  },
+  {
+    "ano": "2024",
+    "programas": [
+      {
+        "codigo": "6",
+        "descricao": "ASSISTENCIA A SAUDE DOS SEGURADOS E DOS SEUS DEPENDENTES"
+      },
+      {
+        "codigo": "7",
+        "descricao": "EDUCACAO SUPERIOR"
+      },
+      {
+        "codigo": "18",
+        "descricao": "COMUNICACAO INSTITUCIONAL E DE UTILIDADE PUBLICA"
+      },
+      {
+        "codigo": "19",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "22",
+        "descricao": "CONSTRUINDO O FUTURO POR MEIO DA CIENCIA, DA TECNOLOGIA E DA INOVACAO"
+      },
+      {
+        "codigo": "26",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "27",
+        "descricao": "GESTAO AMBIENTAL."
+      },
+      {
+        "codigo": "31",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA E DA BIODIVERSIDADE FLORESTAL"
+      },
+      {
+        "codigo": "32",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "33",
+        "descricao": "GESTAO DA INFORMACAO COM USO DE TECNOLOGIA E COMUNICACAO"
+      },
+      {
+        "codigo": "37",
+        "descricao": "VALORIZACAO E SAUDE DO SERVIDOR"
+      },
+      {
+        "codigo": "38",
+        "descricao": "TESOURO RESPONSAVEL E TRANSPARENTE"
+      },
+      {
+        "codigo": "39",
+        "descricao": "GESTAO DA ASSISTENCIA A SAUDE"
+      },
+      {
+        "codigo": "41",
+        "descricao": "REGULARIZACAO AMBIENTAL"
+      },
+      {
+        "codigo": "45",
+        "descricao": "RECEITA ESTADUAL DIGITAL, EFICIENTE, MODERNIZADA E MAIS JUSTA"
+      },
+      {
+        "codigo": "52",
+        "descricao": "PROMOCAO DE DEFESA CIVIL"
+      },
+      {
+        "codigo": "53",
+        "descricao": "ATENDIMENTO PRE-HOSPITALAR"
+      },
+      {
+        "codigo": "58",
+        "descricao": "POLITICAS DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "59",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "60",
+        "descricao": "ATENCAO PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "61",
+        "descricao": "ATENCAO ESPECIALIZADA A SAUDE"
+      },
+      {
+        "codigo": "62",
+        "descricao": "ACESSO A SERVICOS DE SAUDE"
+      },
+      {
+        "codigo": "63",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "64",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "65",
+        "descricao": "FORTALECIMENTO DA POLITICA ESTADUAL DE RECURSOS HIDRICOS"
+      },
+      {
+        "codigo": "66",
+        "descricao": "POLITICAS DE TRABALHO E EMPREGO"
+      },
+      {
+        "codigo": "67",
+        "descricao": "REDE DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL"
+      },
+      {
+        "codigo": "69",
+        "descricao": "FOMENTO AO ESPORTE, A ATIVIDADE FISICA E AO LAZER"
+      },
+      {
+        "codigo": "70",
+        "descricao": "POLITICAS DE DIREITOS HUMANOS"
+      },
+      {
+        "codigo": "71",
+        "descricao": "FORTALECIMENTO DO SISTEMA UNICO DE ASSISTENCIA SOCIAL - SUAS"
+      },
+      {
+        "codigo": "73",
+        "descricao": "MORADAS GERAIS"
+      },
+      {
+        "codigo": "78",
+        "descricao": "DEFESA SANITARIA"
+      },
+      {
+        "codigo": "81",
+        "descricao": "DESENVOLVIMENTO SUSTENTAVEL DA INFRAESTRUTURA RODOVIARIA"
+      },
+      {
+        "codigo": "83",
+        "descricao": "POLITICAS DE PROMOCAO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETORIA PARA AUTONOMIA"
+      },
+      {
+        "codigo": "84",
+        "descricao": "POLITICAS DE INTEGRACAO, REGIONALIZACAO E INOVACAO"
+      },
+      {
+        "codigo": "85",
+        "descricao": "PROMOCAO DE CONCESSOES E PARCERIAS"
+      },
+      {
+        "codigo": "86",
+        "descricao": "POLITICA DOS DIREITOS DAS MULHERES"
+      },
+      {
+        "codigo": "87",
+        "descricao": "ASSISTENCIA EM HEMATOLOGIA, HEMOTERAPIA,CELULAS E TECIDOS BIOLOGICOS"
+      },
+      {
+        "codigo": "88",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "91",
+        "descricao": "APRIMORAMENTO DA GESTAO PUBLICA POR MEIO DE ENSINO DE EXCELENCIA"
+      },
+      {
+        "codigo": "95",
+        "descricao": "ASSESSORIA E PESQUISA EM POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "99",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL"
+      },
+      {
+        "codigo": "103",
+        "descricao": "ESPACOS CULTURAIS, CORPOS ARTISTICOS E ORGAOS COLEGIADOS"
+      },
+      {
+        "codigo": "104",
+        "descricao": "ENFRENTAMENTO A VULNERABILIDADE NOS TERRITORIOS DE ATUACAO DA FUCAM"
+      },
+      {
+        "codigo": "106",
+        "descricao": "PROTECAO E SALVAGUARDA DE ACERVOS E BENS CULTURAIS"
+      },
+      {
+        "codigo": "109",
+        "descricao": "GESTAO DE CERIMONIAL E EVENTOS"
+      },
+      {
+        "codigo": "110",
+        "descricao": "REGULARIZACAO FUNDIARIA - AMPLIACAO DA SEGURANCA JURIDICA NO CAMPO"
+      },
+      {
+        "codigo": "114",
+        "descricao": "INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTAVEL"
+      },
+      {
+        "codigo": "117",
+        "descricao": "MOBILIDADE, TRANSPORTES E LOGISTICA"
+      },
+      {
+        "codigo": "119",
+        "descricao": "APOIO AO DESENVOLVIMENTO MUNICIPAL E A COORDENACAO DAS TRANSFERENCIAS ESTADUAIS DE RECURSOS FINANCEIROS"
+      },
+      {
+        "codigo": "124",
+        "descricao": "PROMOCAO DO DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS"
+      },
+      {
+        "codigo": "125",
+        "descricao": "POLITICA DE REGULARIZACAO FUNDIARIA E DE GESTAO DE IMOVEIS"
+      },
+      {
+        "codigo": "128",
+        "descricao": "PROGRAMA DE APOIO A AMPLIACAO E A MELHORIA DOS SISTEMAS PRISIONAL E SOCIOEDUCATIVO"
+      },
+      {
+        "codigo": "129",
+        "descricao": "PREVENCAO A CRIMINALIDADE"
+      },
+      {
+        "codigo": "130",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "133",
+        "descricao": "MINAS GERACAO DE VALOR"
+      },
+      {
+        "codigo": "134",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "135",
+        "descricao": "PROTECAO SOCIAL DOS MILITARES"
+      },
+      {
+        "codigo": "137",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "141",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "143",
+        "descricao": "MG TECH - POLITICAS DE CIENCIA, TECNOLOGIA E INOVACAO"
+      },
+      {
+        "codigo": "146",
+        "descricao": "PROMOCAO DA POLITICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI"
+      },
+      {
+        "codigo": "147",
+        "descricao": "GESTAO DE PESSOAS"
+      },
+      {
+        "codigo": "149",
+        "descricao": "TRANSFORMACAO DIGITAL E ATENDIMENTO AO CIDADAO"
+      },
+      {
+        "codigo": "156",
+        "descricao": "GESTAO DA CIDADE ADMINISTRATIVA"
+      },
+      {
+        "codigo": "159",
+        "descricao": "CENTRALIZACAO DO PROCESSAMENTO DE COMPRAS PUBLICAS"
+      },
+      {
+        "codigo": "160",
+        "descricao": "MELHORIA DA GESTAO LOGISTICA E PATRIMONIAL"
+      },
+      {
+        "codigo": "161",
+        "descricao": "GESTAO DE TRANSITO"
+      },
+      {
+        "codigo": "162",
+        "descricao": "GESTAO DE PESSOAL DA AREA EDUCACIONAL"
+      },
+      {
+        "codigo": "167",
+        "descricao": "APOIO PEDAGOGICO PARA O DESENVOLVIMENTO DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "168",
+        "descricao": "GESTAO DE INFRAESTRUTURA EDUCACIONAL"
+      },
+      {
+        "codigo": "169",
+        "descricao": "SUPORTE AO SISTEMA EDUCACIONAL MINEIRO"
+      },
+      {
+        "codigo": "170",
+        "descricao": "MODALIDADES E TEMATICAS ESPECIAIS DE ENSINO"
+      },
+      {
+        "codigo": "172",
+        "descricao": "COOPERACAO ESTADO-MUNICIPIO NA AREA EDUCACIONAL"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      },
+      {
+        "codigo": "729",
+        "descricao": "PROCESSO LEGISLATIVO"
+      },
+      {
+        "codigo": "734",
+        "descricao": "PRESTACAO JURISDICIONAL MILITAR"
+      },
+      {
+        "codigo": "737",
+        "descricao": "MODERNIZACAO  INSTITUCIONAL"
+      },
+      {
+        "codigo": "738",
+        "descricao": "PROTECAO E DEFESA DO CONSUMIDOR"
+      },
+      {
+        "codigo": "746",
+        "descricao": "CONTROLE EXTERNO DA GESTAO DOS RECURSOS PUBLICOS"
+      }
+    ]
+  },
+  {
+    "ano": "2025",
+    "programas": [
+      {
+        "codigo": "1",
+        "descricao": "MINAS INTEGRA E TRANSPARENTE"
+      },
+      {
+        "codigo": "2",
+        "descricao": "AUDITORIA INTERNA PARA O FUTURO"
+      },
+      {
+        "codigo": "3",
+        "descricao": "ENFRENTAMENTO DA CORRUPCAO E RECUPERACAO DE ATIVOS"
+      },
+      {
+        "codigo": "4",
+        "descricao": "CGE INTEGRADA E EFICIENTE"
+      },
+      {
+        "codigo": "6",
+        "descricao": "ASSISTENCIA A SAUDE DOS SEGURADOS E DOS SEUS DEPENDENTES"
+      },
+      {
+        "codigo": "7",
+        "descricao": "EDUCACAO SUPERIOR"
+      },
+      {
+        "codigo": "8",
+        "descricao": "PRESTACAO DE SERVICOS PREVIDENCIARIOS"
+      },
+      {
+        "codigo": "9",
+        "descricao": "PROGRAMA DE APOIO HABITACIONAL AOS MILITARES DO ESTADO DE MINAS GERAIS"
+      },
+      {
+        "codigo": "10",
+        "descricao": "REGULACAO E FISCALIZACAO DOS SERVICOS DE ABASTECIMENTO DE AGUA E DE ESGOTAMENTO SANITARIO E ATENDIMENTO AOS USUARIOS"
+      },
+      {
+        "codigo": "12",
+        "descricao": "POLITICA PUBLICA DE METROLOGIA E AVALIACAO DA CONFORMIDADE"
+      },
+      {
+        "codigo": "18",
+        "descricao": "COMUNICACAO INSTITUCIONAL E DE UTILIDADE PUBLICA"
+      },
+      {
+        "codigo": "19",
+        "descricao": "ATENCAO HOSPITALAR ESPECIALIZADA"
+      },
+      {
+        "codigo": "21",
+        "descricao": "SANEAMENTO E RESIDUOS ESPECIAIS"
+      },
+      {
+        "codigo": "22",
+        "descricao": "CONSTRUINDO O FUTURO POR MEIO DA CIENCIA, DA TECNOLOGIA E DA INOVACAO"
+      },
+      {
+        "codigo": "23",
+        "descricao": "POLITICAS PARA CRIANCAS E ADOLESCENTES"
+      },
+      {
+        "codigo": "25",
+        "descricao": "MONITORAMENTO, CONTROLE E FISCALIZACAO AMBIENTAL"
+      },
+      {
+        "codigo": "26",
+        "descricao": "DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG"
+      },
+      {
+        "codigo": "27",
+        "descricao": "GESTAO AMBIENTAL."
+      },
+      {
+        "codigo": "28",
+        "descricao": "DESENVOLVIMENTO DE ACOES DE EDUCACAO E PESQUISA PARA O SISTEMA UNICO DE SAUDE"
+      },
+      {
+        "codigo": "29",
+        "descricao": "REGISTRO PUBLICO DE EMPRESAS MERCANTIS E ATIVIDADES AFINS"
+      },
+      {
+        "codigo": "31",
+        "descricao": "PROTECAO DAS AREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA E DA BIODIVERSIDADE FLORESTAL"
+      },
+      {
+        "codigo": "32",
+        "descricao": "INVESTIGACAO"
+      },
+      {
+        "codigo": "33",
+        "descricao": "GESTAO DA INFORMACAO COM USO DE TECNOLOGIA E COMUNICACAO"
+      },
+      {
+        "codigo": "34",
+        "descricao": "SUPORTE AS ACOES DE TRANSPORTE RODOVIARIO"
+      },
+      {
+        "codigo": "36",
+        "descricao": "IDENTIFICACAO CIVIL E CRIMINAL"
+      },
+      {
+        "codigo": "37",
+        "descricao": "VALORIZACAO E SAUDE DO SERVIDOR"
+      },
+      {
+        "codigo": "38",
+        "descricao": "TESOURO RESPONSAVEL E TRANSPARENTE"
+      },
+      {
+        "codigo": "39",
+        "descricao": "GESTAO DA ASSISTENCIA A SAUDE"
+      },
+      {
+        "codigo": "40",
+        "descricao": "RECUPERACAO AMBIENTAL E GESTAO DE BARRAGENS"
+      },
+      {
+        "codigo": "41",
+        "descricao": "REGULARIZACAO AMBIENTAL"
+      },
+      {
+        "codigo": "42",
+        "descricao": "DESENVOLVIMENTO DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "43",
+        "descricao": "DESJUDICIALIZA MINAS"
+      },
+      {
+        "codigo": "44",
+        "descricao": "REPRESENTACAO JURIDICA DO ESTADO E ENTIDADES"
+      },
+      {
+        "codigo": "45",
+        "descricao": "RECEITA ESTADUAL DIGITAL, EFICIENTE, MODERNIZADA E MAIS JUSTA"
+      },
+      {
+        "codigo": "46",
+        "descricao": "SUPORTE AEREO AOS SERVICOS PUBLICOS ESTADUAIS"
+      },
+      {
+        "codigo": "47",
+        "descricao": "SUPORTE AS ACOES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS"
+      },
+      {
+        "codigo": "48",
+        "descricao": "PROTECAO E DEFESA CIVIL"
+      },
+      {
+        "codigo": "49",
+        "descricao": "ADMINISTRACAO DOS PREDIOS GOVERNAMENTAIS"
+      },
+      {
+        "codigo": "50",
+        "descricao": "SEGURANCA E INTELIGENCIA GOVERNAMENTAL"
+      },
+      {
+        "codigo": "51",
+        "descricao": "ATENDIMENTO COMUNITARIO E PSICOPEDAGOGICO NA FUNDACAO HELENA ANTIPOFF"
+      },
+      {
+        "codigo": "52",
+        "descricao": "PROMOCAO DE DEFESA CIVIL"
+      },
+      {
+        "codigo": "53",
+        "descricao": "ATENDIMENTO PRE-HOSPITALAR"
+      },
+      {
+        "codigo": "54",
+        "descricao": "GOVERNANCA PARA INTEGRIDADE E MELHORES RESULTADOS EM SERVICOS PUBLICOS"
+      },
+      {
+        "codigo": "55",
+        "descricao": "CONTROLE SOCIAL ATRAVES DA DEFESA DOS USUARIOS DE SERVICOS PUBLICOS"
+      },
+      {
+        "codigo": "56",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS"
+      },
+      {
+        "codigo": "58",
+        "descricao": "POLITICAS DE ATENCAO HOSPITALAR"
+      },
+      {
+        "codigo": "59",
+        "descricao": "APOIO A GESTAO DO SUS"
+      },
+      {
+        "codigo": "60",
+        "descricao": "ATENCAO PRIMARIA A SAUDE"
+      },
+      {
+        "codigo": "61",
+        "descricao": "ATENCAO ESPECIALIZADA A SAUDE"
+      },
+      {
+        "codigo": "62",
+        "descricao": "ACESSO A SERVICOS DE SAUDE"
+      },
+      {
+        "codigo": "63",
+        "descricao": "VIGILANCIA EM SAUDE"
+      },
+      {
+        "codigo": "64",
+        "descricao": "ASSISTENCIA FARMACEUTICA"
+      },
+      {
+        "codigo": "65",
+        "descricao": "FORTALECIMENTO DA POLITICA ESTADUAL DE RECURSOS HIDRICOS"
+      },
+      {
+        "codigo": "66",
+        "descricao": "POLITICAS DE TRABALHO E EMPREGO"
+      },
+      {
+        "codigo": "67",
+        "descricao": "REDE DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL"
+      },
+      {
+        "codigo": "68",
+        "descricao": "PRIMEIRA INFANCIA MINAS"
+      },
+      {
+        "codigo": "69",
+        "descricao": "FOMENTO AO ESPORTE, A ATIVIDADE FISICA E AO LAZER"
+      },
+      {
+        "codigo": "70",
+        "descricao": "POLITICAS DE DIREITOS HUMANOS"
+      },
+      {
+        "codigo": "71",
+        "descricao": "FORTALECIMENTO DO SISTEMA UNICO DE ASSISTENCIA SOCIAL - SUAS"
+      },
+      {
+        "codigo": "73",
+        "descricao": "MORADAS GERAIS"
+      },
+      {
+        "codigo": "74",
+        "descricao": "SEGURANCA ALIMENTAR E NUTRICIONAL SUSTENTAVEL PARA TODOS OS POVOS DO TERRITORIO MINEIRO"
+      },
+      {
+        "codigo": "76",
+        "descricao": "DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL TECNICA"
+      },
+      {
+        "codigo": "77",
+        "descricao": "CAMINHOS PARA O DESENVOLVIMENTO INTEGRADO METROPOLITANO"
+      },
+      {
+        "codigo": "78",
+        "descricao": "DEFESA SANITARIA"
+      },
+      {
+        "codigo": "80",
+        "descricao": "SEGURANCA DE ALIMENTOS"
+      },
+      {
+        "codigo": "81",
+        "descricao": "DESENVOLVIMENTO SUSTENTAVEL DA INFRAESTRUTURA RODOVIARIA"
+      },
+      {
+        "codigo": "82",
+        "descricao": "PROMOCAO DA SEGURANCA VIARIA"
+      },
+      {
+        "codigo": "83",
+        "descricao": "POLITICAS DE PROMOCAO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETORIA PARA AUTONOMIA"
+      },
+      {
+        "codigo": "84",
+        "descricao": "POLITICAS DE INTEGRACAO, REGIONALIZACAO E INOVACAO"
+      },
+      {
+        "codigo": "85",
+        "descricao": "PROMOCAO DE CONCESSOES E PARCERIAS"
+      },
+      {
+        "codigo": "86",
+        "descricao": "POLITICA DOS DIREITOS DAS MULHERES"
+      },
+      {
+        "codigo": "87",
+        "descricao": "ASSISTENCIA EM HEMATOLOGIA, HEMOTERAPIA,CELULAS E TECIDOS BIOLOGICOS"
+      },
+      {
+        "codigo": "88",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS PELO IPSEMG NA REDE PROPRIA"
+      },
+      {
+        "codigo": "91",
+        "descricao": "APRIMORAMENTO DA GESTAO PUBLICA POR MEIO DE ENSINO DE EXCELENCIA"
+      },
+      {
+        "codigo": "93",
+        "descricao": "PROMOCAO E PRESERVACAO DA MEMORIA TECNICO-CIENTIFICA DO ESTADO DE MINAS GERAIS"
+      },
+      {
+        "codigo": "95",
+        "descricao": "ASSESSORIA E PESQUISA EM POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "96",
+        "descricao": "PRODUCAO DE ESTATISTICAS E INFORMACOES"
+      },
+      {
+        "codigo": "99",
+        "descricao": "DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL"
+      },
+      {
+        "codigo": "100",
+        "descricao": "MAIS TURISTAS"
+      },
+      {
+        "codigo": "102",
+        "descricao": "FOMENTO A ECONOMIA DA CRIATIVIDADE"
+      },
+      {
+        "codigo": "103",
+        "descricao": "ESPACOS CULTURAIS, CORPOS ARTISTICOS E ORGAOS COLEGIADOS"
+      },
+      {
+        "codigo": "104",
+        "descricao": "ENFRENTAMENTO A VULNERABILIDADE NOS TERRITORIOS DE ATUACAO DA FUCAM"
+      },
+      {
+        "codigo": "105",
+        "descricao": "FORMACAO E CAPACITACAO TECNICO-CULTURAL"
+      },
+      {
+        "codigo": "106",
+        "descricao": "PROTECAO E SALVAGUARDA DE ACERVOS E BENS CULTURAIS"
+      },
+      {
+        "codigo": "108",
+        "descricao": "ACESSO A MERCADOS"
+      },
+      {
+        "codigo": "109",
+        "descricao": "GESTAO DE CERIMONIAL E EVENTOS"
+      },
+      {
+        "codigo": "110",
+        "descricao": "REGULARIZACAO FUNDIARIA - AMPLIACAO DA SEGURANCA JURIDICA NO CAMPO"
+      },
+      {
+        "codigo": "111",
+        "descricao": "DESENVOLVIMENTO DAS CADEIAS PRODUTIVAS DA AGROPECUARIA"
+      },
+      {
+        "codigo": "112",
+        "descricao": "CERTIFICACOES E HABILITACOES DE PRODUTOS AGROPECUARIOS E AGROINDUSTRIAIS"
+      },
+      {
+        "codigo": "114",
+        "descricao": "INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTAVEL"
+      },
+      {
+        "codigo": "115",
+        "descricao": "GESTAO DO PROCESSO LEGISLATIVO ESTADUAL SOB A RESPONSABILIDADE DO PODER EXECUTIVO"
+      },
+      {
+        "codigo": "117",
+        "descricao": "MOBILIDADE, TRANSPORTES E LOGISTICA"
+      },
+      {
+        "codigo": "118",
+        "descricao": "EDUCACAO E SUCESSAO RURAL"
+      },
+      {
+        "codigo": "119",
+        "descricao": "APOIO AO DESENVOLVIMENTO MUNICIPAL E A COORDENACAO DAS TRANSFERENCIAS ESTADUAIS DE RECURSOS FINANCEIROS"
+      },
+      {
+        "codigo": "120",
+        "descricao": "PRODUCAO E VEICULACAO DO DIARIO OFICIAL ELETRONICO MINAS GERAIS"
+      },
+      {
+        "codigo": "121",
+        "descricao": "ACESSO E ALCANCE A COMUNICACAO DE INTERESSE PUBLICO"
+      },
+      {
+        "codigo": "122",
+        "descricao": "FORTALECIMENTO DA GESTAO DAS TRANSFERENCIAS ESTADUAIS"
+      },
+      {
+        "codigo": "124",
+        "descricao": "PROMOCAO DO DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS"
+      },
+      {
+        "codigo": "125",
+        "descricao": "POLITICA DE REGULARIZACAO FUNDIARIA E DE GESTAO DE IMOVEIS"
+      },
+      {
+        "codigo": "128",
+        "descricao": "PROGRAMA DE APOIO A AMPLIACAO E A MELHORIA DOS SISTEMAS PRISIONAL E SOCIOEDUCATIVO"
+      },
+      {
+        "codigo": "129",
+        "descricao": "PREVENCAO A CRIMINALIDADE"
+      },
+      {
+        "codigo": "130",
+        "descricao": "INFRAESTRUTURA DO SISTEMA PRISIONAL"
+      },
+      {
+        "codigo": "131",
+        "descricao": "ARTICULACAO INTERFEDERATIVA,  ATRACAO DE INVESTIMENTOS, CAPTACAO E TRANSFERENCIA DE RECURSOS E PARCERIAS"
+      },
+      {
+        "codigo": "132",
+        "descricao": "MINAS EMPREENDEDORA: ESTADO MAIS SIMPLES E LIVRE PARA SE EMPREENDER"
+      },
+      {
+        "codigo": "133",
+        "descricao": "MINAS GERACAO DE VALOR"
+      },
+      {
+        "codigo": "134",
+        "descricao": "GESTAO INTEGRADA DE SEGURANCA PUBLICA"
+      },
+      {
+        "codigo": "135",
+        "descricao": "PROTECAO SOCIAL DOS MILITARES"
+      },
+      {
+        "codigo": "136",
+        "descricao": "EDUCACAO ESCOLAR"
+      },
+      {
+        "codigo": "137",
+        "descricao": "POLICIA OSTENSIVA"
+      },
+      {
+        "codigo": "138",
+        "descricao": "CONCESSAO DE AUXILIO FINANCEIRO, SEGURO E PECULIO"
+      },
+      {
+        "codigo": "141",
+        "descricao": "POLITICAS SOBRE DROGAS"
+      },
+      {
+        "codigo": "143",
+        "descricao": "MG TECH - POLITICAS DE CIENCIA, TECNOLOGIA E INOVACAO"
+      },
+      {
+        "codigo": "146",
+        "descricao": "PROMOCAO DA POLITICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI"
+      },
+      {
+        "codigo": "147",
+        "descricao": "GESTAO DE PESSOAS"
+      },
+      {
+        "codigo": "148",
+        "descricao": "APOIO AS POLITICAS DE DESENVOLVIMENTO SOCIAL"
+      },
+      {
+        "codigo": "149",
+        "descricao": "TRANSFORMACAO DIGITAL E ATENDIMENTO AO CIDADAO"
+      },
+      {
+        "codigo": "150",
+        "descricao": "UNIVERSALIZACAO DO ACESSO AO CONHECIMENTO CIENTIFICO E TECNOLOGICO"
+      },
+      {
+        "codigo": "151",
+        "descricao": "PROMOCAO DA INOVACAO E DA GESTAO ESTRATEGICA"
+      },
+      {
+        "codigo": "152",
+        "descricao": "INOVACAO CIENTIFICA E TECNOLOGICA"
+      },
+      {
+        "codigo": "153",
+        "descricao": "VIGILANCIA LABORATORIAL EM SAUDE PUBLICA"
+      },
+      {
+        "codigo": "154",
+        "descricao": "DESENVOLVIMENTO E PRODUCAO DE MEDICAMENTOS PARA O SISTEMA UNICO DE SAUDE (SUS)"
+      },
+      {
+        "codigo": "155",
+        "descricao": "REPARACAO DOS DANOS DOS ROMPIMENTOS EM BRUMADINHO E MARIANA"
+      },
+      {
+        "codigo": "156",
+        "descricao": "GESTAO DA CIDADE ADMINISTRATIVA"
+      },
+      {
+        "codigo": "157",
+        "descricao": "GESTAO DO PLANEJAMENTO ORCAMENTARIO GOVERNAMENTAL"
+      },
+      {
+        "codigo": "159",
+        "descricao": "CENTRALIZACAO DO PROCESSAMENTO DE COMPRAS PUBLICAS"
+      },
+      {
+        "codigo": "160",
+        "descricao": "MELHORIA DA GESTAO LOGISTICA E PATRIMONIAL"
+      },
+      {
+        "codigo": "161",
+        "descricao": "GESTAO DE TRANSITO"
+      },
+      {
+        "codigo": "162",
+        "descricao": "PROGRAMA DE DESENVOLVIMENTO E GESTAO DE PESSOAS DA REDE ESTADUAL DE ENSINO"
+      },
+      {
+        "codigo": "163",
+        "descricao": "ALIMENTACAO ESCOLAR"
+      },
+      {
+        "codigo": "165",
+        "descricao": "ORGANIZACAO, AVALIACAO E GESTAO ESCOLAR"
+      },
+      {
+        "codigo": "167",
+        "descricao": "PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCACAO BASICA"
+      },
+      {
+        "codigo": "168",
+        "descricao": "GESTAO DA REDE FISICA ESTADUAL DE ENSINO"
+      },
+      {
+        "codigo": "169",
+        "descricao": "GESTAO DO SISTEMA ESTADUAL DE EDUCACAO"
+      },
+      {
+        "codigo": "172",
+        "descricao": "PROGRAMA ESTADUAL DE COOPERACAO ESTADO-MUNICIPIO NA AREA EDUCACIONAL"
+      },
+      {
+        "codigo": "703",
+        "descricao": "PROCESSO JUDICIARIO"
+      },
+      {
+        "codigo": "705",
+        "descricao": "APOIO AS POLITICAS PUBLICAS"
+      },
+      {
+        "codigo": "706",
+        "descricao": "PRESTACAO JURISDICIONAL"
+      },
+      {
+        "codigo": "714",
+        "descricao": "AQUISICAO, CONSTRUCAO, REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "726",
+        "descricao": "ACESSO A JUSTICA"
+      },
+      {
+        "codigo": "729",
+        "descricao": "PROCESSO LEGISLATIVO"
+      },
+      {
+        "codigo": "734",
+        "descricao": "PRESTACAO JURISDICIONAL MILITAR"
+      },
+      {
+        "codigo": "737",
+        "descricao": "MODERNIZACAO  INSTITUCIONAL"
+      },
+      {
+        "codigo": "738",
+        "descricao": "PROTECAO E DEFESA DO CONSUMIDOR"
+      },
+      {
+        "codigo": "746",
+        "descricao": "CONTROLE EXTERNO DA GESTAO DOS RECURSOS PUBLICOS"
+      },
+      {
+        "codigo": "760",
+        "descricao": "CAPACITACAO E ORIENTACAO PARA MELHORAR A GESTAO DOS RECURSOS PUBLICOS"
+      },
+      {
+        "codigo": "765",
+        "descricao": "APOIO HABITACIONAL"
+      }
+    ]
+  }
+]

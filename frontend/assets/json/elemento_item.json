@@ -1,0 +1,4463 @@
+[
+  {
+    "ano": "2002",
+    "itens": [
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3932",
+        "descricao": "LOCACAO DE SERVICOS TECNICOS E ESPECIALIZADOS"
+      }
+    ]
+  },
+  {
+    "ano": "2005",
+    "itens": [
+      {
+        "codigo": "6601",
+        "descricao": "CONCESSAO DE EMPRESTIMOS E FINANCIAMENTOS"
+      }
+    ]
+  },
+  {
+    "ano": "2006",
+    "itens": [
+      {
+        "codigo": "6601",
+        "descricao": "CONCESSAO DE EMPRESTIMOS E FINANCIAMENTOS"
+      }
+    ]
+  },
+  {
+    "ano": "2007",
+    "itens": [
+      {
+        "codigo": "6603",
+        "descricao": "CONCESSAO DE FINANCIAMENTOS HABITACIONAIS"
+      }
+    ]
+  },
+  {
+    "ano": "2008",
+    "itens": [
+      {
+        "codigo": "5111",
+        "descricao": "CONSTRUCAO DE UNIDADES HABITACIONAIS"
+      },
+      {
+        "codigo": "6603",
+        "descricao": "CONCESSAO DE FINANCIAMENTOS HABITACIONAIS"
+      }
+    ]
+  },
+  {
+    "ano": "2009",
+    "itens": [
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "6603",
+        "descricao": "CONCESSAO DE FINANCIAMENTOS HABITACIONAIS"
+      }
+    ]
+  },
+  {
+    "ano": "2011",
+    "itens": [
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3936",
+        "descricao": "SERVICOS DE INFORMATICA EXECUTADOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "3945",
+        "descricao": "SERVICOS DE TRANSPORTE DE PASSAGEIROS"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      }
+    ]
+  },
+  {
+    "ano": "2012",
+    "itens": [
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "5111",
+        "descricao": "CONSTRUCAO DE UNIDADES HABITACIONAIS"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      }
+    ]
+  },
+  {
+    "ano": "2013",
+    "itens": [
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3023",
+        "descricao": "MATERIAL PARA MANUTENCAO DE VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3026",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "LOCACAO DE SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3940",
+        "descricao": "SERVICOS DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3945",
+        "descricao": "SERVICOS DE TRANSPORTE DE PASSAGEIROS"
+      },
+      {
+        "codigo": "3952",
+        "descricao": "CONTRATACAO DE ESTAGIARIOS"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5211",
+        "descricao": "INSTRUMENTOS DE LABORATORIO, MEDICOS E ODONTOLOGICOS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2014",
+    "itens": [
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3025",
+        "descricao": "MATERIAL DE SEGURANCA, APETRECHOS OPERACIONAIS E POLICIAIS"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3927",
+        "descricao": "SERVICOS DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3930",
+        "descricao": "MULTAS DE TRANSITO"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "LOCACAO DE SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3936",
+        "descricao": "SERVICOS DE INFORMATICA EXECUTADOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4802",
+        "descricao": "AUXILIO FINANCEIRO - PROGRAMA POUPANCA JOVEM"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9309",
+        "descricao": "PREMIO DE PRODUTIVIDADE"
+      }
+    ]
+  },
+  {
+    "ano": "2015",
+    "itens": [
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3025",
+        "descricao": "MATERIAL DE SEGURANCA, APETRECHOS OPERACIONAIS E POLICIAIS"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3603",
+        "descricao": "SALARIOS DE INTERNOS"
+      },
+      {
+        "codigo": "3611",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3910",
+        "descricao": "PREMIOS DE SEGUROS"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3927",
+        "descricao": "SERVICOS DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "3936",
+        "descricao": "SERVICOS DE INFORMATICA EXECUTADOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3940",
+        "descricao": "SERVICOS DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3964",
+        "descricao": "SERVICOS DE MAPEAMENTO E GEORREFERENCIAMENTO"
+      },
+      {
+        "codigo": "3970",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4701",
+        "descricao": "OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "4802",
+        "descricao": "AUXILIO FINANCEIRO - PROGRAMA POUPANCA JOVEM"
+      },
+      {
+        "codigo": "4904",
+        "descricao": "AUXILIO TRANSPORTE BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "5111",
+        "descricao": "CONSTRUCAO DE UNIDADES HABITACIONAIS"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5908",
+        "descricao": "PENSOES DECORRENTES DA LEI N 21527 2014"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9319",
+        "descricao": "IND.DECORRENTES DA UTILZ. DE LEITOS DE INSTITUICOES DE SAUDE PRIVADAS"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2016",
+    "itens": [
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3009",
+        "descricao": "FORRAGENS E OUTROS ALIMENTOS PARA ANIMAIS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3011",
+        "descricao": "MATERIAL ODONTOLOGICO"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3030",
+        "descricao": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "codigo": "3031",
+        "descricao": "LIVROS TECNICOS"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3603",
+        "descricao": "SALARIOS DE INTERNOS"
+      },
+      {
+        "codigo": "3605",
+        "descricao": "LOCACAO DE SERVICOS TECNICOS E ESPECIALIZADOS - PESSOA FISICA"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3901",
+        "descricao": "VALE-TRANSPORTE"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3911",
+        "descricao": "ASSINATURAS DE JORNAIS, REVISTAS E PERIODICOS"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3917",
+        "descricao": "LOCACAO DE VEICULOS"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3927",
+        "descricao": "SERVICOS DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3934",
+        "descricao": "SEGUROS DE AERONAVES"
+      },
+      {
+        "codigo": "3936",
+        "descricao": "SERVICOS DE INFORMATICA EXECUTADOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3940",
+        "descricao": "SERVICOS DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3969",
+        "descricao": "CONTRATOS DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3970",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4701",
+        "descricao": "OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5211",
+        "descricao": "INSTRUMENTOS DE LABORATORIO, MEDICOS E ODONTOLOGICOS"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9307",
+        "descricao": "RESSARCIMENTO REFERENTE A PESSOAL REQUISITADO DA ADMINITRACAO ESTADUAL"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  },
+  {
+    "ano": "2017",
+    "itens": [
+      {
+        "codigo": "1103",
+        "descricao": "ADICIONAL POR TEMPO DE SERVICO"
+      },
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3001",
+        "descricao": "ARTIGOS PARA CONFECCAO, VESTUARIO, CAMA, MESA, BANHO E COZINHA"
+      },
+      {
+        "codigo": "3002",
+        "descricao": "ARTIGOS PARA ESPORTE"
+      },
+      {
+        "codigo": "3003",
+        "descricao": "UTENSILIOS PARA REFEITORIO E COZINHA"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3015",
+        "descricao": "MATERIAL FOTOGRAFICO, CINEMATOGRAFICO E DE COMUNICACAO"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3025",
+        "descricao": "MATERIAL DE SEGURANCA, APETRECHOS OPERACIONAIS E POLICIAIS"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3102",
+        "descricao": "PREMIOS LOTERICOS"
+      },
+      {
+        "codigo": "3103",
+        "descricao": "COMISSOES LOTERICAS"
+      },
+      {
+        "codigo": "3104",
+        "descricao": "PREMIACOES"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3304",
+        "descricao": "PASSAGENS - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3503",
+        "descricao": "SERVICOS DE CONSULTORIA-ORGANISMO INTERNACIONAL"
+      },
+      {
+        "codigo": "3603",
+        "descricao": "SALARIOS DE INTERNOS"
+      },
+      {
+        "codigo": "3611",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3701",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3908",
+        "descricao": "PUBLICACAO E DIVULGACAO"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3927",
+        "descricao": "SERVICOS DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3936",
+        "descricao": "SERVICOS DE INFORMATICA EXECUTADOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "3940",
+        "descricao": "SERVICOS DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3970",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "3987",
+        "descricao": "SERVICOS DE GERENCIAMENTO E FORNECIMENTO DE COMBUSTIVEL"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4701",
+        "descricao": "OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "4802",
+        "descricao": "AUXILIO FINANCEIRO - PROGRAMA POUPANCA JOVEM"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5217",
+        "descricao": "VEICULOS"
+      },
+      {
+        "codigo": "5219",
+        "descricao": "INSTRUMENTOS MUSICAIS E ARTISTICOS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  },
+  {
+    "ano": "2018",
+    "itens": [
+      {
+        "codigo": "1101",
+        "descricao": "VENCIMENTOS"
+      },
+      {
+        "codigo": "1103",
+        "descricao": "ADICIONAL POR TEMPO DE SERVICO"
+      },
+      {
+        "codigo": "1144",
+        "descricao": "ABONO DE PERMANENCIA"
+      },
+      {
+        "codigo": "1145",
+        "descricao": "VANTAGEM TEMPORARIA INCORPORAVEL"
+      },
+      {
+        "codigo": "1305",
+        "descricao": "OBRIGACAO PATRONAL - PESSOAL ATIVO"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "1605",
+        "descricao": "FERIAS-PREMIO"
+      },
+      {
+        "codigo": "3003",
+        "descricao": "UTENSILIOS PARA COPA, REFEITORIO E COZINHA"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3020",
+        "descricao": "MATERIAL ELETRICO"
+      },
+      {
+        "codigo": "3021",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE BENS DE DOMINIO PUB. OU DE TERCEIROS"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3024",
+        "descricao": "PECAS E ACESSORIOS P/ EQUIP.  E OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3099",
+        "descricao": "OUTROS MATERIAIS"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3304",
+        "descricao": "PASSAGENS - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3601",
+        "descricao": "ESTAGIARIOS"
+      },
+      {
+        "codigo": "3603",
+        "descricao": "SALARIOS DE INTERNOS"
+      },
+      {
+        "codigo": "3622",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3908",
+        "descricao": "PUBLICACAO E DIVULGACAO"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3917",
+        "descricao": "LOCACAO DE VEICULOS"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3924",
+        "descricao": "CURSOS, EXPOSICOES, CONGRESSOS E CONFERENCIAS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3930",
+        "descricao": "MULTAS DE TRANSITO"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "LOCACAO DE SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3938",
+        "descricao": "SERVICOS DE IMPRESSAO E ENCADERNACAO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4904",
+        "descricao": "AUXILIO TRANSPORTE BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5219",
+        "descricao": "INSTRUMENTOS MUSICAIS E ARTISTICOS"
+      },
+      {
+        "codigo": "8103",
+        "descricao": "COTA PARTE DO ICMS"
+      },
+      {
+        "codigo": "9103",
+        "descricao": "OUTRAS SENTENCAS JUDICIAIS"
+      },
+      {
+        "codigo": "9201",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - PESSOAL"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9307",
+        "descricao": "RESSARCIMENTO REFERENTE A PESSOAL REQUISITADO DA ADMINITRACAO ESTADUAL"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2019",
+    "itens": [
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3004",
+        "descricao": "MATERIAL GRAFICO E IMPRESSOS"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3011",
+        "descricao": "MATERIAL ODONTOLOGICO"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3015",
+        "descricao": "MATERIAL FOTOGRAFICO, CINEMATOGRAFICO E DE COMUNICACAO"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3024",
+        "descricao": "PECAS E ACESSORIOS P/ EQUIP.  E OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "3030",
+        "descricao": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "codigo": "3031",
+        "descricao": "LIVROS TECNICOS"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3603",
+        "descricao": "SALARIOS DE INTERNOS"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3925",
+        "descricao": "ENCARGOS JUDICIAIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3942",
+        "descricao": "SERVICOS GRAFICOS DE SEGURANCA"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3948",
+        "descricao": "CURSOS DE FORMACAO, CAPACITACAO E POS-GRADUACAO PARA SERVIDORES"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3971",
+        "descricao": "SERVICOS TECN DE IMPLANTACAO GESTAO E ADM DO SIST DE OBSERV ELETRONICA"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4904",
+        "descricao": "AUXILIO TRANSPORTE BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "5101",
+        "descricao": "ESTUDOS E PROJETOS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5211",
+        "descricao": "INSTRUMENTOS DE LABORATORIO, MEDICOS E ODONTOLOGICOS"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "6106",
+        "descricao": "IMOVEIS NECESSARIOS A REALIZACAO DE OBRAS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "8102",
+        "descricao": "COTA PARTE DO IPVA"
+      },
+      {
+        "codigo": "8103",
+        "descricao": "COTA PARTE DO ICMS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2020",
+    "itens": [
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3020",
+        "descricao": "MATERIAL ELETRICO"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3030",
+        "descricao": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3910",
+        "descricao": "PREMIOS DE SEGUROS"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3930",
+        "descricao": "MULTAS DE TRANSITO"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "LOCACAO DE SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3948",
+        "descricao": "CURSOS DE FORMACAO, CAPACITACAO E POS-GRADUACAO PARA SERVIDORES"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3968",
+        "descricao": "SERVICO DE IMPRENSA"
+      },
+      {
+        "codigo": "3971",
+        "descricao": "SERVICOS TECN DE IMPLANTACAO GESTAO E ADM DO SIST DE OBSERV ELETRONICA"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4799",
+        "descricao": "OUTROS - OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5217",
+        "descricao": "VEICULOS"
+      },
+      {
+        "codigo": "6102",
+        "descricao": "SALAS E ESCRITORIOS"
+      },
+      {
+        "codigo": "6106",
+        "descricao": "IMOVEIS NECESSARIOS A REALIZACAO DE OBRAS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2021",
+    "itens": [
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3030",
+        "descricao": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "codigo": "3033",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA AERONAVES"
+      },
+      {
+        "codigo": "3041",
+        "descricao": "MATERIAL DE PROTECAO E SEGURANCA"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3601",
+        "descricao": "ESTAGIARIOS"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3705",
+        "descricao": "DESPESAS COM O PAGAMENTO DE ENCARGOS TRABALHISTAS A MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3941",
+        "descricao": "ANUIDADES"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3968",
+        "descricao": "SERVICO DE IMPRENSA"
+      },
+      {
+        "codigo": "3969",
+        "descricao": "CONTRATOS DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3978",
+        "descricao": "SERVICO DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3988",
+        "descricao": "MULTA POR ATO INFRACIONAL"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5203",
+        "descricao": "ARMAMENTO E EQUIPAMENTO DE USO POLICIAL"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5210",
+        "descricao": "FERRAMENTAS, EQUIP. E INSTRUMENTOS P/ OFICINA, MEDICAO E INSPECAO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5213",
+        "descricao": "MATERIAL ESPORTIVO E RECREATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  },
+  {
+    "ano": "2022",
+    "itens": [
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "2701",
+        "descricao": "ENCARGOS PELA HONRA DE AVAIS, GARANTIAS, SEGUROS E SIMILARES"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3020",
+        "descricao": "MATERIAL ELETRICO"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3040",
+        "descricao": "MATERIAL DE CAMA, MESA E BANHO"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3701",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3705",
+        "descricao": "DESPESAS COM O PAGAMENTO DE ENCARGOS TRABALHISTAS A MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3930",
+        "descricao": "MULTAS DE TRANSITO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3951",
+        "descricao": "SERVICOS DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE OBRAS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3963",
+        "descricao": "SERVICOS DE LEVANTAMENTO E CADASTRAMENTO PARA EXECUCAO DE POL PUBLICAS"
+      },
+      {
+        "codigo": "3964",
+        "descricao": "SERVICOS DE MAPEAMENTO E GEORREFERENCIAMENTO"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3987",
+        "descricao": "SERVICOS DE GERENCIAMENTO E FORNECIMENTO DE COMBUSTIVEL"
+      },
+      {
+        "codigo": "3993",
+        "descricao": "APOIO A PROJETOS DE INCENTIVO E INOVAÇAO E A PESQUISA CIENTIFICA E TEC"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4006",
+        "descricao": "AQUISIÇÃO DE SOFTWARE"
+      },
+      {
+        "codigo": "4007",
+        "descricao": "AQUISICAO DE SOFTWARE DESENVOLVIDO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "5101",
+        "descricao": "ESTUDOS E PROJETOS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5106",
+        "descricao": "ESTUDOS E PROJETOS DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5107",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5203",
+        "descricao": "ARMAMENTO E EQUIPAMENTO DE USO POLICIAL"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5218",
+        "descricao": "COLECAO E MATERIAIS BIBLIOGRAFICOS"
+      },
+      {
+        "codigo": "5230",
+        "descricao": "MÁQUINAS E EQUIPAMENTOS ENERGÉTICOS"
+      },
+      {
+        "codigo": "6104",
+        "descricao": "EDIFICIOS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      }
+    ]
+  },
+  {
+    "ano": "2023",
+    "itens": [
+      {
+        "codigo": "1309",
+        "descricao": "OBRIGACAO PATRONAL - PRECATORIOS"
+      },
+      {
+        "codigo": "1314",
+        "descricao": "OBRIGACAO PATRONAL - ENCARGOS POR PAGAMENTO EM ATRASO"
+      },
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1328",
+        "descricao": "OBRIGACAO PATRONAL - FGTS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "2701",
+        "descricao": "ENCARGOS PELA HONRA DE AVAIS, GARANTIAS, SEGUROS E SIMILARES"
+      },
+      {
+        "codigo": "3002",
+        "descricao": "ARTIGOS PARA ESPORTE"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3015",
+        "descricao": "MATERIAL FOTOGRAFICO, CINEMATOGRAFICO E DE COMUNICACAO"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3023",
+        "descricao": "MATERIAL PARA MANUTENCAO DE VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3024",
+        "descricao": "PECAS E ACESSORIOS P/ EQUIP.  E OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3304",
+        "descricao": "PASSAGENS - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3611",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3622",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3625",
+        "descricao": "CONTRATACAO PARA PRESTACAO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3631",
+        "descricao": "SERVICOS DE TREINAMENTO, CAPACITACAO E APERFEICOAMENTO DE PESSOAL"
+      },
+      {
+        "codigo": "3699",
+        "descricao": "OUTRAS DESPESAS PAGAS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "3701",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3705",
+        "descricao": "DESPESAS COM O PAGAMENTO DE ENCARGOS TRABALHISTAS A MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3904",
+        "descricao": "CONFECCAO EM GERAL"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "INSTALACAO, REPARACAO, ADAPTACAO E CONSERVACAO DE EQUIP E MAT PERMAN"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3947",
+        "descricao": "TAXA DE ADMINISTRACAO DE CREDITO DE FINANCIAMENTOS HABITACIONAIS"
+      },
+      {
+        "codigo": "3948",
+        "descricao": "CURSOS DE FORMACAO, CAPACITACAO E POS-GRADUACAO PARA SERVIDORES"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3951",
+        "descricao": "SERVICOS DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE OBRAS"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3964",
+        "descricao": "SERVICOS DE MAPEAMENTO E GEORREFERENCIAMENTO"
+      },
+      {
+        "codigo": "3969",
+        "descricao": "CONTRATOS DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3971",
+        "descricao": "SERVICOS TECN DE IMPLANTACAO GESTAO E ADM DO SIST DE OBSERV ELETRONICA"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3987",
+        "descricao": "SERVICOS DE GERENCIAMENTO E FORNECIMENTO DE COMBUSTIVEL"
+      },
+      {
+        "codigo": "3991",
+        "descricao": "CONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3993",
+        "descricao": "APOIO A PROJETOS DE INCENTIVO E INOVAÇAO E A PESQUISA CIENTIFICA E TEC"
+      },
+      {
+        "codigo": "3998",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS CONTRATUALMENTE POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4007",
+        "descricao": "AQUISICAO DE SOFTWARE DESENVOLVIDO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4706",
+        "descricao": "CONTRIBUICAO PARA A FORMACAO DO PASEP/PIS"
+      },
+      {
+        "codigo": "4799",
+        "descricao": "OUTROS - OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "5101",
+        "descricao": "ESTUDOS E PROJETOS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5106",
+        "descricao": "ESTUDOS E PROJETOS DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5107",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5113",
+        "descricao": "INSTALACAO PARA INCORPORACAO A BENS IMOVEIS"
+      },
+      {
+        "codigo": "5114",
+        "descricao": "EXECUCAO DE OBRAS POR EMPRESAS CONTROLADAS"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5210",
+        "descricao": "FERRAMENTAS, EQUIP. E INSTRUMENTOS P/ OFICINA, MEDICAO E INSPECAO"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5213",
+        "descricao": "MATERIAL ESPORTIVO E RECREATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5220",
+        "descricao": "EQUIPAMENTOS DE SEGURANCA ELETRONICA"
+      },
+      {
+        "codigo": "5225",
+        "descricao": "APARELHOS E UTENSILIOS DOMESTICOS"
+      },
+      {
+        "codigo": "5230",
+        "descricao": "MÁQUINAS E EQUIPAMENTOS ENERGÉTICOS"
+      },
+      {
+        "codigo": "6102",
+        "descricao": "SALAS E ESCRITORIOS"
+      },
+      {
+        "codigo": "6108",
+        "descricao": "CASAS"
+      },
+      {
+        "codigo": "8303",
+        "descricao": "OUTRAS DESPESAS DECORRENTES DE CONTRATO DE PARCERIA PUBLICO-PRIVADA"
+      },
+      {
+        "codigo": "9108",
+        "descricao": "OUTRAS DECISOES JUDICIAIS - DEPOSITO EM CONTA CORRENTE OU A DISPOSICAO"
+      },
+      {
+        "codigo": "9113",
+        "descricao": "INDENIZACOES DETERMINADAS POR DECISOES JUDICIAIS"
+      },
+      {
+        "codigo": "9201",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - PESSOAL"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9319",
+        "descricao": "IND.DECORRENTES DA UTILZ. DE LEITOS DE INSTITUICOES DE SAUDE PRIVADAS"
+      },
+      {
+        "codigo": "9330",
+        "descricao": "REEMBOLSO DESPESA CONTRATO CONVENIO REGIME DE PARCERIA PODER EXECUTIVO"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9401",
+        "descricao": "INDENIZACOES E RESTITUICOES TRABALHISTAS"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  },
+  {
+    "ano": "2024",
+    "itens": [
+      {
+        "codigo": "1314",
+        "descricao": "OBRIGACAO PATRONAL - ENCARGOS POR PAGAMENTO EM ATRASO"
+      },
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1328",
+        "descricao": "DESPESAS COM OBRIGACAO PATRONAL RELATIVAS AO FGTS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "1801",
+        "descricao": "AUXILIO FINANCEIRO A ESTUDANTES"
+      },
+      {
+        "codigo": "2103",
+        "descricao": "JUROS DA DIVIDA COM OS INSTITUTOS DE PREVIDENCIA"
+      },
+      {
+        "codigo": "3001",
+        "descricao": "ARTIGOS PARA CONFECCAO E VESTUARIO"
+      },
+      {
+        "codigo": "3003",
+        "descricao": "UTENSILIOS PARA COPA, REFEITORIO E COZINHA"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3011",
+        "descricao": "MATERIAL ODONTOLOGICO"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3015",
+        "descricao": "MATERIAL FOTOGRAFICO, CINEMATOGRAFICO E DE COMUNICACAO"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3020",
+        "descricao": "MATERIAL ELETRICO"
+      },
+      {
+        "codigo": "3021",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE BENS DE DOMINIO PUB. OU DE TERCEIROS"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3023",
+        "descricao": "MATERIAL PARA MANUTENCAO DE VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3024",
+        "descricao": "PECAS E ACESSORIOS P/ EQUIP.  E OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "3025",
+        "descricao": "MATERIAL DE SEGURANCA, APETRECHOS OPERACIONAIS E POLICIAIS"
+      },
+      {
+        "codigo": "3026",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3031",
+        "descricao": "LIVROS TECNICOS"
+      },
+      {
+        "codigo": "3033",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA AERONAVES"
+      },
+      {
+        "codigo": "3034",
+        "descricao": "PECAS E ACESSORIOS PARA AERONAVES"
+      },
+      {
+        "codigo": "3099",
+        "descricao": "OUTROS MATERIAIS"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3301",
+        "descricao": "PASSAGENS - PESSOA FISICA"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3304",
+        "descricao": "PASSAGENS - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3601",
+        "descricao": "ESTAGIARIOS"
+      },
+      {
+        "codigo": "3608",
+        "descricao": "MEDICOS"
+      },
+      {
+        "codigo": "3611",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3614",
+        "descricao": "MONITORES, FISCAIS E EXAMINADORES"
+      },
+      {
+        "codigo": "3622",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3625",
+        "descricao": "CONTRATACAO PARA PRESTACAO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3631",
+        "descricao": "SERVICOS DE TREINAMENTO, CAPACITACAO E APERFEICOAMENTO DE PESSOAL"
+      },
+      {
+        "codigo": "3701",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3705",
+        "descricao": "DESPESAS COM O PAGAMENTO DE ENCARGOS TRABALHISTAS A MGS"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3904",
+        "descricao": "CONFECCAO EM GERAL"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3916",
+        "descricao": "LOCACAO DE TV POR ASSINATURA"
+      },
+      {
+        "codigo": "3917",
+        "descricao": "LOCACAO DE VEICULOS"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3924",
+        "descricao": "CURSOS, EXPOSICOES, CONGRESSOS E CONFERENCIAS"
+      },
+      {
+        "codigo": "3925",
+        "descricao": "ENCARGOS JUDICIAIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "LOCACAO DE SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3935",
+        "descricao": "REPARO, MANUTENCAO, E SERVICOS AEROPORTUARIOS PARA AERONAVES"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3939",
+        "descricao": "SERVICOS DE PUBLICACAO E DIVULGACAO"
+      },
+      {
+        "codigo": "3941",
+        "descricao": "ANUIDADES"
+      },
+      {
+        "codigo": "3942",
+        "descricao": "SERVICOS GRAFICOS DE SEGURANCA"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3947",
+        "descricao": "TAXA DE ADMINISTRACAO DE CREDITO DE FINANCIAMENTOS HABITACIONAIS"
+      },
+      {
+        "codigo": "3948",
+        "descricao": "CURSOS DE FORMACAO, CAPACITACAO E POS-GRADUACAO PARA SERVIDORES"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      },
+      {
+        "codigo": "3951",
+        "descricao": "SERVICOS DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE OBRAS"
+      },
+      {
+        "codigo": "3953",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PROMOVIDOS PELO ESTADO"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3956",
+        "descricao": "SERVICOS DE PESQUISAS"
+      },
+      {
+        "codigo": "3958",
+        "descricao": "CONTRATACAO DE PROJETOS EM PESQUISA DE CIENCIA, INOVACAO E TECNOLOGIA"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3960",
+        "descricao": "SERVICOS DE ATENDIMENTO AO CIDADAO"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3962",
+        "descricao": "SERVICOS DE VIGILANCIA OSTENSIVA"
+      },
+      {
+        "codigo": "3964",
+        "descricao": "SERVICOS DE MAPEAMENTO E GEORREFERENCIAMENTO"
+      },
+      {
+        "codigo": "3965",
+        "descricao": "SERVICOS DE PRODUCAO E LOGISTICA DE MEDICAMENTOS"
+      },
+      {
+        "codigo": "3969",
+        "descricao": "CONTRATOS DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3971",
+        "descricao": "SERVICOS TECN DE IMPLANTACAO GESTAO E ADM DO SIST DE OBSERV ELETRONICA"
+      },
+      {
+        "codigo": "3973",
+        "descricao": "SERVICO DE ENGENHARIA PARA OPERACAO DE BENS DE DOMINIO PUBLICO"
+      },
+      {
+        "codigo": "3974",
+        "descricao": "SERVICO DE REALIZACAO DE CONCURSO PUBLICO E PROCESSO SIMPLIFICADO"
+      },
+      {
+        "codigo": "3975",
+        "descricao": "SERVICO DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE SERVICOS"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3987",
+        "descricao": "SERVICOS DE GERENCIAMENTO E FORNECIMENTO DE COMBUSTIVEL"
+      },
+      {
+        "codigo": "3991",
+        "descricao": "CONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3993",
+        "descricao": "APOIO A PROJETOS DE INCENTIVO E INOVAÇAO E A PESQUISA CIENTIFICA E TEC"
+      },
+      {
+        "codigo": "3998",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS CONTRATUALMENTE POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4006",
+        "descricao": "AQUISIÇÃO DE SOFTWARE"
+      },
+      {
+        "codigo": "4007",
+        "descricao": "AQUISICAO DE SOFTWARE DESENVOLVIDO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4707",
+        "descricao": "TAXA DE LIMPEZA PUBLICA E COLETA DE RESIDUOS"
+      },
+      {
+        "codigo": "4799",
+        "descricao": "OUTROS - OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "4905",
+        "descricao": "AUXILIO TRANSPORTE PAGO A ESTAGIARIOS PECUNIA"
+      },
+      {
+        "codigo": "5101",
+        "descricao": "ESTUDOS E PROJETOS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5106",
+        "descricao": "ESTUDOS E PROJETOS DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5107",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5203",
+        "descricao": "ARMAMENTO E EQUIPAMENTO DE USO POLICIAL"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5210",
+        "descricao": "FERRAMENTAS, EQUIP. E INSTRUMENTOS P/ OFICINA, MEDICAO E INSPECAO"
+      },
+      {
+        "codigo": "5211",
+        "descricao": "INSTRUMENTOS DE LABORATORIO, MEDICOS E ODONTOLOGICOS"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5213",
+        "descricao": "MATERIAL ESPORTIVO E RECREATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5216",
+        "descricao": "TRATORES, SIMILARES E IMPLEMENTOS"
+      },
+      {
+        "codigo": "5217",
+        "descricao": "VEICULOS"
+      },
+      {
+        "codigo": "5220",
+        "descricao": "EQUIPAMENTOS DE SEGURANCA ELETRONICA"
+      },
+      {
+        "codigo": "5225",
+        "descricao": "APARELHOS E UTENSILIOS DOMESTICOS"
+      },
+      {
+        "codigo": "5226",
+        "descricao": "EQUIPAMENTOS DE PROTECAO, SEGURANCA E SOCORRO"
+      },
+      {
+        "codigo": "5227",
+        "descricao": "PECAS NAO INCORPORAVEIS A IMOVEIS"
+      },
+      {
+        "codigo": "5230",
+        "descricao": "MÁQUINAS E EQUIPAMENTOS ENERGÉTICOS"
+      },
+      {
+        "codigo": "6101",
+        "descricao": "TERRENOS"
+      },
+      {
+        "codigo": "6108",
+        "descricao": "CASAS"
+      },
+      {
+        "codigo": "7103",
+        "descricao": "PRINCIPAL DA DIVIDA COM OS INSTITUTOS DE PREVIDENCIA"
+      },
+      {
+        "codigo": "8303",
+        "descricao": "OUTRAS DESPESAS DECORRENTES DE CONTRATO DE PARCERIA PUBLICO-PRIVADA"
+      },
+      {
+        "codigo": "8601",
+        "descricao": "COMPENSACAO FINANCEIRA DOS REGIMES DE PREVIDENCIA"
+      },
+      {
+        "codigo": "9108",
+        "descricao": "OUTRAS DECISOES JUDICIAIS - DEPOSITO EM CONTA CORRENTE OU A DISPOSICAO"
+      },
+      {
+        "codigo": "9111",
+        "descricao": "SERVICOS DE SAUDE PRESTADO POR PESSOA JURIDICA - DECISAO JUDICIAL"
+      },
+      {
+        "codigo": "9112",
+        "descricao": "MEDICAMENTOS E MATERIAL MEDICO HOSPITALAR - DECISAO JUDICIAL"
+      },
+      {
+        "codigo": "9113",
+        "descricao": "INDENIZACOES DETERMINADAS POR DECISOES JUDICIAIS"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9301",
+        "descricao": "AJUDA DE CUSTO"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9312",
+        "descricao": "INDENIZACAO POR UTILIZACAO DE BENS DE TERCEIROS"
+      },
+      {
+        "codigo": "9313",
+        "descricao": "REEMBOLSO DE DESPESAS MEDICO-HOSPITALARES"
+      },
+      {
+        "codigo": "9316",
+        "descricao": "INDENIZACOES DETERMINADAS POR LEI ESPECIFICA"
+      },
+      {
+        "codigo": "9319",
+        "descricao": "IND.DECORRENTES DA UTILZ. DE LEITOS DE INSTITUICOES DE SAUDE PRIVADAS"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9401",
+        "descricao": "INDENIZACOES E RESTITUICOES TRABALHISTAS"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  },
+  {
+    "ano": "2025",
+    "itens": [
+      {
+        "codigo": "308",
+        "descricao": "PENSOES DO MILITAR"
+      },
+      {
+        "codigo": "802",
+        "descricao": "AUXILIO-FUNERAL"
+      },
+      {
+        "codigo": "803",
+        "descricao": "AUXILIO-CRECHE OU ASSISTENCIA PRE-ESCOLAR"
+      },
+      {
+        "codigo": "805",
+        "descricao": "AUXILIO-NATALIDADE"
+      },
+      {
+        "codigo": "809",
+        "descricao": "AUXILIO RECLUSAO"
+      },
+      {
+        "codigo": "811",
+        "descricao": "PECULIO E SEGURO COLETIVO"
+      },
+      {
+        "codigo": "1309",
+        "descricao": "OBRIGACAO PATRONAL - PRECATORIOS"
+      },
+      {
+        "codigo": "1310",
+        "descricao": "OBRIGACAO PATRONAL - OUTRAS SENTENCAS JUDICIAIS"
+      },
+      {
+        "codigo": "1314",
+        "descricao": "OBRIGACAO PATRONAL - ENCARGOS POR PAGAMENTO EM ATRASO"
+      },
+      {
+        "codigo": "1317",
+        "descricao": "INSS - DEMAIS DESPESAS"
+      },
+      {
+        "codigo": "1319",
+        "descricao": "OBRIGACAO PATRONAL - PESSOAL MILITAR INATIVO - LC 125/2012"
+      },
+      {
+        "codigo": "1320",
+        "descricao": "OBRIGACAO PATRONAL - PESSOAL MILITAR ATIVO - LC 125/2012"
+      },
+      {
+        "codigo": "1328",
+        "descricao": "DESPESAS COM OBRIGACAO PATRONAL RELATIVAS AO FGTS"
+      },
+      {
+        "codigo": "1401",
+        "descricao": "DIARIAS - CIVIL"
+      },
+      {
+        "codigo": "1501",
+        "descricao": "DIARIAS - MILITAR"
+      },
+      {
+        "codigo": "1502",
+        "descricao": "DIARIAS MILITAR - SCDP"
+      },
+      {
+        "codigo": "1801",
+        "descricao": "AUXILIO FINANCEIRO A ESTUDANTES"
+      },
+      {
+        "codigo": "2001",
+        "descricao": "AUXILIO FINANCEIRO A PESQUISADORES"
+      },
+      {
+        "codigo": "2103",
+        "descricao": "JUROS DA DIVIDA COM OS INSTITUTOS DE PREVIDENCIA"
+      },
+      {
+        "codigo": "3001",
+        "descricao": "ARTIGOS PARA CONFECCAO E VESTUARIO"
+      },
+      {
+        "codigo": "3002",
+        "descricao": "ARTIGOS PARA ESPORTE"
+      },
+      {
+        "codigo": "3003",
+        "descricao": "UTENSILIOS PARA COPA, REFEITORIO E COZINHA"
+      },
+      {
+        "codigo": "3004",
+        "descricao": "MATERIAL GRAFICO E IMPRESSOS"
+      },
+      {
+        "codigo": "3005",
+        "descricao": "MATERIAL PARA ESCRITORIO"
+      },
+      {
+        "codigo": "3006",
+        "descricao": "MATERIAL DE DESENHO"
+      },
+      {
+        "codigo": "3007",
+        "descricao": "MATERIAL DE ENSINO"
+      },
+      {
+        "codigo": "3008",
+        "descricao": "PRODUTOS ALIMENTICIOS"
+      },
+      {
+        "codigo": "3009",
+        "descricao": "FORRAGENS E OUTROS ALIMENTOS PARA ANIMAIS"
+      },
+      {
+        "codigo": "3010",
+        "descricao": "MATERIAL MEDICO E HOSPITALAR"
+      },
+      {
+        "codigo": "3011",
+        "descricao": "MATERIAL ODONTOLOGICO"
+      },
+      {
+        "codigo": "3012",
+        "descricao": "MEDICAMENTOS"
+      },
+      {
+        "codigo": "3013",
+        "descricao": "MATERIAIS DE LABORATORIO E PRODUTOS QUIMICOS EM GERAL"
+      },
+      {
+        "codigo": "3014",
+        "descricao": "MATERIAL RADIOLOGICO"
+      },
+      {
+        "codigo": "3015",
+        "descricao": "MATERIAL FOTOGRAFICO, CINEMATOGRAFICO E DE COMUNICACAO"
+      },
+      {
+        "codigo": "3016",
+        "descricao": "MATERIAL DE INFORMATICA"
+      },
+      {
+        "codigo": "3017",
+        "descricao": "ARTIGOS PARA LIMPEZA E HIGIENE"
+      },
+      {
+        "codigo": "3018",
+        "descricao": "MATERIA-PRIMA E PROD. P/ MANIPULACAO E INDUSTRIAS DE TRANSFORMACAO"
+      },
+      {
+        "codigo": "3019",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE IMOVEIS DE PROPRIEDADE DA ADM. PUBLICA"
+      },
+      {
+        "codigo": "3020",
+        "descricao": "MATERIAL ELETRICO"
+      },
+      {
+        "codigo": "3021",
+        "descricao": "MATERIAL P/ MANUT. E REPAROS DE BENS DE DOMINIO PUB. OU DE TERCEIROS"
+      },
+      {
+        "codigo": "3022",
+        "descricao": "FERRAMENTAS, FERRAGENS E UTENSILIOS"
+      },
+      {
+        "codigo": "3023",
+        "descricao": "MATERIAL PARA MANUTENCAO DE VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3024",
+        "descricao": "PECAS E ACESSORIOS P/ EQUIP.  E OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "3025",
+        "descricao": "MATERIAL DE SEGURANCA, APETRECHOS OPERACIONAIS E POLICIAIS"
+      },
+      {
+        "codigo": "3026",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA VEICULOS AUTOMOTORES"
+      },
+      {
+        "codigo": "3027",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES P/ EQUIP. E OUTROS MAT.  PERMANENTES"
+      },
+      {
+        "codigo": "3029",
+        "descricao": "SEMENTES, MUDAS DE PLANTAS E INSUMOS"
+      },
+      {
+        "codigo": "3030",
+        "descricao": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM"
+      },
+      {
+        "codigo": "3031",
+        "descricao": "LIVROS TECNICOS"
+      },
+      {
+        "codigo": "3032",
+        "descricao": "MATERIAL CIVICO E EDUCATIVO"
+      },
+      {
+        "codigo": "3033",
+        "descricao": "COMBUSTIVEIS E LUBRIFICANTES PARA AERONAVES"
+      },
+      {
+        "codigo": "3034",
+        "descricao": "PECAS E ACESSORIOS PARA AERONAVES"
+      },
+      {
+        "codigo": "3036",
+        "descricao": "MATERIAL BIBLIOGRAFICO PARA BIBLIOTECAS PUBLICAS"
+      },
+      {
+        "codigo": "3040",
+        "descricao": "MATERIAL DE CAMA, MESA E BANHO"
+      },
+      {
+        "codigo": "3041",
+        "descricao": "MATERIAL DE PROTECAO E SEGURANCA"
+      },
+      {
+        "codigo": "3042",
+        "descricao": "MATERIAL PARA FISIOTERAPIA E TERAPIA OCUPACIONAL"
+      },
+      {
+        "codigo": "3099",
+        "descricao": "OUTROS MATERIAIS"
+      },
+      {
+        "codigo": "3101",
+        "descricao": "PREMIOS, DIPLOMAS, CONDECORACOES E MEDALHAS"
+      },
+      {
+        "codigo": "3104",
+        "descricao": "PREMIACOES"
+      },
+      {
+        "codigo": "3105",
+        "descricao": "PREMIACAO - NOTA FISCAL MINEIRA"
+      },
+      {
+        "codigo": "3201",
+        "descricao": "MATERIAL DE DISTRIBUICAO GRATUITA"
+      },
+      {
+        "codigo": "3202",
+        "descricao": "MATERIAL DE ASSISTENCIA HUMANITARIA"
+      },
+      {
+        "codigo": "3301",
+        "descricao": "PASSAGENS - PESSOA FISICA"
+      },
+      {
+        "codigo": "3302",
+        "descricao": "DESPESAS COM TRANSPORTE URBANO, PEDAGIO E ESTACIONAMETO PESSOA FISICA"
+      },
+      {
+        "codigo": "3304",
+        "descricao": "PASSAGENS - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3305",
+        "descricao": "SERVICOS DE TRANSPORTES DE PASSAGEIROS, FRETAMENTO E LOCACAO PES JURID"
+      },
+      {
+        "codigo": "3501",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA FISICA"
+      },
+      {
+        "codigo": "3502",
+        "descricao": "SERVICOS DE CONSULTORIA - PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3601",
+        "descricao": "ESTAGIARIOS"
+      },
+      {
+        "codigo": "3604",
+        "descricao": "DIARIAS A COLABORADORES EVENTUAIS"
+      },
+      {
+        "codigo": "3608",
+        "descricao": "MEDICOS"
+      },
+      {
+        "codigo": "3609",
+        "descricao": "DENTISTAS"
+      },
+      {
+        "codigo": "3610",
+        "descricao": "EVENTUAL DE GABINETE"
+      },
+      {
+        "codigo": "3611",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3614",
+        "descricao": "MONITORES, FISCAIS E EXAMINADORES"
+      },
+      {
+        "codigo": "3616",
+        "descricao": "REPARO E MANUTENCAO DE VEICULOS"
+      },
+      {
+        "codigo": "3617",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3618",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3619",
+        "descricao": "CONFERENCIAS E EXPOSICOES"
+      },
+      {
+        "codigo": "3620",
+        "descricao": "JETONS A CONSELHEIROS"
+      },
+      {
+        "codigo": "3622",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3623",
+        "descricao": "GRATIFICACAO POR ENCARGO DE CURSO OU CONCURSO"
+      },
+      {
+        "codigo": "3624",
+        "descricao": "SERVICOS TECNICOS JUDICIAIS - HONORARIOS JUSTICA GRATUITA"
+      },
+      {
+        "codigo": "3625",
+        "descricao": "CONTRATACAO PARA PRESTACAO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3627",
+        "descricao": "JUIZES LEIGOS"
+      },
+      {
+        "codigo": "3630",
+        "descricao": "SERVICOS MEDICOS PRESTADOS POR CONTRATO"
+      },
+      {
+        "codigo": "3631",
+        "descricao": "SERVICOS DE TREINAMENTO, CAPACITACAO E APERFEICOAMENTO DE PESSOAL"
+      },
+      {
+        "codigo": "3699",
+        "descricao": "OUTRAS DESPESAS PAGAS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "3701",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3702",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3703",
+        "descricao": "LOCACAO DE SERVICOS DE CONSERVACAO E LIMPEZA REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3704",
+        "descricao": "LOCACAO DE SERVICOS DE APOIO ADMINISTRATIVO REALIZADOS PELA MGS"
+      },
+      {
+        "codigo": "3705",
+        "descricao": "DESPESAS COM O PAGAMENTO DE ENCARGOS TRABALHISTAS A MGS"
+      },
+      {
+        "codigo": "3902",
+        "descricao": "VALE-REFEICAO"
+      },
+      {
+        "codigo": "3903",
+        "descricao": "FORNECIMENTO DE ALIMENTACAO"
+      },
+      {
+        "codigo": "3904",
+        "descricao": "CONFECCAO EM GERAL"
+      },
+      {
+        "codigo": "3906",
+        "descricao": "TRANSPORTE E ACONDICIONAMENTO DE MATERIAIS"
+      },
+      {
+        "codigo": "3908",
+        "descricao": "PUBLICACAO E DIVULGACAO"
+      },
+      {
+        "codigo": "3909",
+        "descricao": "PUBLICIDADE"
+      },
+      {
+        "codigo": "3910",
+        "descricao": "PREMIOS DE SEGUROS"
+      },
+      {
+        "codigo": "3911",
+        "descricao": "ASSINATURAS DE JORNAIS, REVISTAS E PERIODICOS"
+      },
+      {
+        "codigo": "3912",
+        "descricao": "TARIFA DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3913",
+        "descricao": "TARIFA DE AGUA E ESGOTO"
+      },
+      {
+        "codigo": "3914",
+        "descricao": "SERVICO DE TELEFONIA"
+      },
+      {
+        "codigo": "3915",
+        "descricao": "SERVICO POSTAL-TELEGRAFICO"
+      },
+      {
+        "codigo": "3916",
+        "descricao": "LOCACAO DE TV POR ASSINATURA"
+      },
+      {
+        "codigo": "3917",
+        "descricao": "LOCACAO DE VEICULOS"
+      },
+      {
+        "codigo": "3918",
+        "descricao": "REPAROS DE VEICULOS"
+      },
+      {
+        "codigo": "3919",
+        "descricao": "LOCACAO DE MAQUINAS E EQUIPAMENTOS"
+      },
+      {
+        "codigo": "3920",
+        "descricao": "LOCACAO DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3921",
+        "descricao": "REPAROS DE EQUIPAMENTOS, INSTALACOES E MATERIAL PERMANENTE"
+      },
+      {
+        "codigo": "3922",
+        "descricao": "REPAROS DE BENS IMOVEIS"
+      },
+      {
+        "codigo": "3923",
+        "descricao": "RECEPCOES, HOSPEDAGENS, HOMENAGENS E FESTIVIDADES"
+      },
+      {
+        "codigo": "3924",
+        "descricao": "CURSOS, EXPOSICOES, CONGRESSOS E CONFERENCIAS"
+      },
+      {
+        "codigo": "3925",
+        "descricao": "ENCARGOS JUDICIAIS"
+      },
+      {
+        "codigo": "3926",
+        "descricao": "ENCARGOS FINANCEIROS"
+      },
+      {
+        "codigo": "3928",
+        "descricao": "SERVICOS DE SAUDE EXECUTADOS COM RECURSOS DO SUS"
+      },
+      {
+        "codigo": "3929",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3930",
+        "descricao": "MULTAS DE TRANSITO"
+      },
+      {
+        "codigo": "3931",
+        "descricao": "SERVICOS GRAFICOS"
+      },
+      {
+        "codigo": "3933",
+        "descricao": "TAXA DE ADMINISTRACAO"
+      },
+      {
+        "codigo": "3934",
+        "descricao": "SEGUROS DE AERONAVES"
+      },
+      {
+        "codigo": "3935",
+        "descricao": "REPARO, MANUTENCAO, E SERVICOS AEROPORTUARIOS PARA AERONAVES"
+      },
+      {
+        "codigo": "3937",
+        "descricao": "TAXA DE CONDOMINIO"
+      },
+      {
+        "codigo": "3939",
+        "descricao": "SERVICOS DE PUBLICACAO E DIVULGACAO"
+      },
+      {
+        "codigo": "3941",
+        "descricao": "ANUIDADES"
+      },
+      {
+        "codigo": "3942",
+        "descricao": "SERVICOS GRAFICOS DE SEGURANCA"
+      },
+      {
+        "codigo": "3943",
+        "descricao": "SERVICO DE ADMINISTRACAO E GERENCIAMENTO DE FROTA DE VEICULOS"
+      },
+      {
+        "codigo": "3944",
+        "descricao": "SERVICOS BANCÁRIOS"
+      },
+      {
+        "codigo": "3946",
+        "descricao": "TERMO DE PARCERIA COM ORGANIZACAO DA SOCIEDADE CIVIL DE INTERESSE PUBL"
+      },
+      {
+        "codigo": "3947",
+        "descricao": "TAXA DE ADMINISTRACAO DE CREDITO DE FINANCIAMENTOS HABITACIONAIS"
+      },
+      {
+        "codigo": "3948",
+        "descricao": "CURSOS DE FORMACAO, CAPACITACAO E POS-GRADUACAO PARA SERVIDORES"
+      },
+      {
+        "codigo": "3949",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PARA O CIDADAO"
+      },
+      {
+        "codigo": "3950",
+        "descricao": "SERVICOS DE AGENCIAMENTO DE VIAGENS"
+      },
+      {
+        "codigo": "3951",
+        "descricao": "SERVICOS DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE OBRAS"
+      },
+      {
+        "codigo": "3952",
+        "descricao": "CONTRATACAO DE ESTAGIARIOS"
+      },
+      {
+        "codigo": "3953",
+        "descricao": "CURSOS DE FORMACAO E CAPACITACAO PROMOVIDOS PELO ESTADO"
+      },
+      {
+        "codigo": "3955",
+        "descricao": "EVENTOS DE COMUNICACAO INSTITUCIONAL"
+      },
+      {
+        "codigo": "3956",
+        "descricao": "SERVICOS DE PESQUISAS"
+      },
+      {
+        "codigo": "3959",
+        "descricao": "SERVICOS SANITARIOS E TRATAMENTO DE RESIDUOS"
+      },
+      {
+        "codigo": "3960",
+        "descricao": "SERVICOS DE ATENDIMENTO AO CIDADAO"
+      },
+      {
+        "codigo": "3961",
+        "descricao": "SERVICOS DE CONSERVACAO E LIMPEZA"
+      },
+      {
+        "codigo": "3962",
+        "descricao": "SERVICOS DE VIGILANCIA OSTENSIVA"
+      },
+      {
+        "codigo": "3963",
+        "descricao": "SERVICOS DE LEVANTAMENTO E CADASTRAMENTO PARA EXECUCAO DE POL PUBLICAS"
+      },
+      {
+        "codigo": "3964",
+        "descricao": "SERVICOS DE MAPEAMENTO E GEORREFERENCIAMENTO"
+      },
+      {
+        "codigo": "3965",
+        "descricao": "SERVICOS DE PRODUCAO E LOGISTICA DE MEDICAMENTOS"
+      },
+      {
+        "codigo": "3966",
+        "descricao": "SERVICOS DE ABASTECIMENTO E DISTRIBUICAO DE AGUA"
+      },
+      {
+        "codigo": "3968",
+        "descricao": "SERVICO DE IMPRENSA"
+      },
+      {
+        "codigo": "3969",
+        "descricao": "CONTRATOS DE ENERGIA ELETRICA"
+      },
+      {
+        "codigo": "3971",
+        "descricao": "SERVICOS TECN DE IMPLANTACAO GESTAO E ADM DO SIST DE OBSERV ELETRONICA"
+      },
+      {
+        "codigo": "3972",
+        "descricao": "CONTRATOS DE ABASTECIMENTO DE AGUA E COLETA E TRATAMENTO DE ESGOTO"
+      },
+      {
+        "codigo": "3973",
+        "descricao": "SERVICO DE ENGENHARIA PARA OPERACAO DE BENS DE DOMINIO PUBLICO"
+      },
+      {
+        "codigo": "3974",
+        "descricao": "SERVICO DE REALIZACAO DE CONCURSO PUBLICO E PROCESSO SIMPLIFICADO"
+      },
+      {
+        "codigo": "3975",
+        "descricao": "SERVICO DE GERENCIAMENTO, SUPERVISAO E FISCALIZACAO DE SERVICOS"
+      },
+      {
+        "codigo": "3976",
+        "descricao": "SERVICO DE REMOCAO E TRANSPORTE DE CADAVERES"
+      },
+      {
+        "codigo": "3978",
+        "descricao": "SERVICO DE APOIO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "3981",
+        "descricao": "SERVICO DE ELABORACAO DE ESTUDOS PREVIOS"
+      },
+      {
+        "codigo": "3982",
+        "descricao": "SERVICOS TECNICOS JUDICIAIS - HONORARIOS JUSTICA GRATUITA"
+      },
+      {
+        "codigo": "3986",
+        "descricao": "DIREITOS AUTORAIS"
+      },
+      {
+        "codigo": "3987",
+        "descricao": "SERVICOS DE GERENCIAMENTO E FORNECIMENTO DE COMBUSTIVEL"
+      },
+      {
+        "codigo": "3991",
+        "descricao": "CONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO POR CREDENCIADOS"
+      },
+      {
+        "codigo": "3993",
+        "descricao": "APOIO A PROJETOS DE INCENTIVO E INOVAÇAO E A PESQUISA CIENTIFICA E TEC"
+      },
+      {
+        "codigo": "3994",
+        "descricao": "CAPACITAÇÃO RELACIONADA AS ATIVIDADES DE AVIAÇÃO"
+      },
+      {
+        "codigo": "3996",
+        "descricao": "TRANSFERENCIA ONEROSA DA POSSE DE IMOVEIS DE PROPRIEDADE DO ESTADO"
+      },
+      {
+        "codigo": "3998",
+        "descricao": "SERVICOS DE SAUDE PRESTADOS CONTRATUALMENTE POR PESSOA JURIDICA"
+      },
+      {
+        "codigo": "3999",
+        "descricao": "OUTROS SERVICOS PESSOA JURIDICA"
+      },
+      {
+        "codigo": "4002",
+        "descricao": "SERVICO DE TECNOLOGIA DA INFORMACAO"
+      },
+      {
+        "codigo": "4003",
+        "descricao": "SERVICO DE INFORMATICA EXECUTADO PELA PRODEMGE"
+      },
+      {
+        "codigo": "4004",
+        "descricao": "SERVICO DE TELECOMUNICACAO"
+      },
+      {
+        "codigo": "4005",
+        "descricao": "REDE IP MULTISSERVICOS"
+      },
+      {
+        "codigo": "4006",
+        "descricao": "AQUISIÇÃO DE SOFTWARE"
+      },
+      {
+        "codigo": "4007",
+        "descricao": "AQUISIÇÃO DE SOFTWARES DESENVOLVIDOS PELA PRODEMGE"
+      },
+      {
+        "codigo": "4008",
+        "descricao": "DESENVOLVIMENTO DE SOFTWARES"
+      },
+      {
+        "codigo": "4009",
+        "descricao": "DESENVOLVIMENTO DE SOFTWARES PELA PRODEMGE"
+      },
+      {
+        "codigo": "4101",
+        "descricao": "CONTRIBUICOES"
+      },
+      {
+        "codigo": "4201",
+        "descricao": "AUXILIOS"
+      },
+      {
+        "codigo": "4301",
+        "descricao": "SUBVENCOES SOCIAIS"
+      },
+      {
+        "codigo": "4501",
+        "descricao": "SUBVENCOES ECONOMICAS"
+      },
+      {
+        "codigo": "4602",
+        "descricao": "AUXILIO ALIMENTACAO BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "4703",
+        "descricao": "IMPOSTO PREDIAL TERRITORIAL URBANO - IPTU"
+      },
+      {
+        "codigo": "4706",
+        "descricao": "CONTRIBUICAO PARA A FORMACAO DO PASEP/PIS"
+      },
+      {
+        "codigo": "4707",
+        "descricao": "TAXA DE LIMPEZA PUBLICA E COLETA DE RESIDUOS"
+      },
+      {
+        "codigo": "4708",
+        "descricao": "TAXA DE ILUMINACAO PUBLICA"
+      },
+      {
+        "codigo": "4709",
+        "descricao": "TAXAS AMBIENTAIS"
+      },
+      {
+        "codigo": "4710",
+        "descricao": "PASEP - ADESAO AO PARCELAMENTO DECORRENTE DE LEI ESPECIFICA"
+      },
+      {
+        "codigo": "4799",
+        "descricao": "OUTROS - OBRIGACOES TRIBUTARIAS E CONTRIBUTIVAS"
+      },
+      {
+        "codigo": "4801",
+        "descricao": "OUTROS AUXILIOS FINANCEIROS A PESSOAS FISICAS"
+      },
+      {
+        "codigo": "4803",
+        "descricao": "AUXILIO PARA PROFISSIONAIS DE PROGRAMAS DE CAPACITACAO E FORMACAO"
+      },
+      {
+        "codigo": "4903",
+        "descricao": "DESPESA DE TRANSPORTE DEVIDA A SERVIDORES DOS PODERES DO ESTADO"
+      },
+      {
+        "codigo": "4904",
+        "descricao": "AUXILIO TRANSPORTE BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "4905",
+        "descricao": "AUXILIO TRANSPORTE PAGO A ESTAGIARIOS PECUNIA"
+      },
+      {
+        "codigo": "4906",
+        "descricao": "AUXILIO TRANSPORTE PAGO A ESTAGIARIO BILHETE OU CARTAO MAGNETICO"
+      },
+      {
+        "codigo": "5101",
+        "descricao": "ESTUDOS E PROJETOS DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5103",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5106",
+        "descricao": "ESTUDOS E PROJETOS DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5107",
+        "descricao": "EXECUCAO DE OBRAS POR CONTRATO DE BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5112",
+        "descricao": "MATERIAL PARA OBRAS - BENS NAO PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "5113",
+        "descricao": "INSTALACAO PARA INCORPORACAO A BENS IMOVEIS"
+      },
+      {
+        "codigo": "5201",
+        "descricao": "AERONAVES E COMPONENTES ESTRUTURAIS"
+      },
+      {
+        "codigo": "5203",
+        "descricao": "ARMAMENTO E EQUIPAMENTO DE USO POLICIAL"
+      },
+      {
+        "codigo": "5204",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS DE USO INDUSTRIAL"
+      },
+      {
+        "codigo": "5206",
+        "descricao": "EQUIPAMENTOS DE COMUNICACAO E TELEFONIA"
+      },
+      {
+        "codigo": "5207",
+        "descricao": "EQUIPAMENTOS DE INFORMATICA"
+      },
+      {
+        "codigo": "5208",
+        "descricao": "EQUIPAMENTOS DE SOM, VIDEO, FOTOGRAFICO E CINEMATOGRAFICO"
+      },
+      {
+        "codigo": "5209",
+        "descricao": "EQUIPAMENTOS HOSPITALARES, ODONTOLOGICOS E DE LABORATORIO"
+      },
+      {
+        "codigo": "5210",
+        "descricao": "FERRAMENTAS, EQUIP. E INSTRUMENTOS P/ OFICINA, MEDICAO E INSPECAO"
+      },
+      {
+        "codigo": "5211",
+        "descricao": "INSTRUMENTOS DE LABORATORIO, MEDICOS E ODONTOLOGICOS"
+      },
+      {
+        "codigo": "5212",
+        "descricao": "MAQUINAS, APARELHOS, UTENSILIOS E EQUIPAMENTOS  USO ADMINISTRATIVO"
+      },
+      {
+        "codigo": "5213",
+        "descricao": "MATERIAL ESPORTIVO E RECREATIVO"
+      },
+      {
+        "codigo": "5214",
+        "descricao": "MOBILIARIO"
+      },
+      {
+        "codigo": "5215",
+        "descricao": "OBJETOS DE ARTE E ANTIGUIDADES"
+      },
+      {
+        "codigo": "5216",
+        "descricao": "TRATORES, SIMILARES E IMPLEMENTOS"
+      },
+      {
+        "codigo": "5217",
+        "descricao": "VEICULOS"
+      },
+      {
+        "codigo": "5218",
+        "descricao": "COLECAO E MATERIAIS BIBLIOGRAFICOS"
+      },
+      {
+        "codigo": "5219",
+        "descricao": "INSTRUMENTOS MUSICAIS E ARTISTICOS"
+      },
+      {
+        "codigo": "5220",
+        "descricao": "EQUIPAMENTOS DE SEGURANCA ELETRONICA"
+      },
+      {
+        "codigo": "5221",
+        "descricao": "MATERIAL DIDATICO"
+      },
+      {
+        "codigo": "5222",
+        "descricao": "ESTRUTURAS E COMPONENTES"
+      },
+      {
+        "codigo": "5225",
+        "descricao": "APARELHOS E UTENSILIOS DOMESTICOS"
+      },
+      {
+        "codigo": "5226",
+        "descricao": "EQUIPAMENTOS DE PROTECAO, SEGURANCA E SOCORRO"
+      },
+      {
+        "codigo": "5227",
+        "descricao": "PECAS NAO INCORPORAVEIS A IMOVEIS"
+      },
+      {
+        "codigo": "5230",
+        "descricao": "MÁQUINAS E EQUIPAMENTOS ENERGÉTICOS"
+      },
+      {
+        "codigo": "5299",
+        "descricao": "OUTROS MATERIAIS PERMANENTES"
+      },
+      {
+        "codigo": "5905",
+        "descricao": "PENSAO DECORRENTE DE SENTENCA JUDICIAL - TERCEIROS"
+      },
+      {
+        "codigo": "6101",
+        "descricao": "TERRENOS"
+      },
+      {
+        "codigo": "6102",
+        "descricao": "SALAS E ESCRITORIOS"
+      },
+      {
+        "codigo": "6107",
+        "descricao": "IMOVEIS NECESSARIOS A REALIZACAO DE OBRAS DE BENS NAO-PATRIMONIAVEIS"
+      },
+      {
+        "codigo": "6502",
+        "descricao": "CONSTITUICAO OU AUMENTO DE CAPITAL DE EMPRESAS-CAPITAL INTEGRALIZADO"
+      },
+      {
+        "codigo": "6603",
+        "descricao": "CONCESSAO DE FINANCIAMENTOS HABITACIONAIS"
+      },
+      {
+        "codigo": "7103",
+        "descricao": "PRINCIPAL DA DIVIDA COM OS INSTITUTOS DE PREVIDENCIA"
+      },
+      {
+        "codigo": "8201",
+        "descricao": "APORTE RECURSOS PARCEIRO PUBLICO EM FAVOR DO PRIVADO DECORRENTE DE PPP"
+      },
+      {
+        "codigo": "8301",
+        "descricao": "PARCELAS DAS CONTRAPRESTACOES REFERENTES A REMUNERACAO DO PARCEIRO"
+      },
+      {
+        "codigo": "8303",
+        "descricao": "OUTRAS DESPESAS DECORRENTES DE CONTRATO DE PARCERIA PUBLICO-PRIVADA"
+      },
+      {
+        "codigo": "8501",
+        "descricao": "CONTRATO DE GESTAO COM ORGANIZACAO SOCIAL - OS"
+      },
+      {
+        "codigo": "8502",
+        "descricao": "CONTRATO DE GESTAO COM SERVICO SOCIAL AUTONOMO - SSA"
+      },
+      {
+        "codigo": "8601",
+        "descricao": "COMPENSACAO FINANCEIRA DOS REGIMES DE PREVIDENCIA"
+      },
+      {
+        "codigo": "9102",
+        "descricao": "PRECATORIOS - PESSOAL"
+      },
+      {
+        "codigo": "9103",
+        "descricao": "REQUISITÓRIO DE PEQUENO VALOR - RPV"
+      },
+      {
+        "codigo": "9107",
+        "descricao": "PRECATORIOS - OUTROS"
+      },
+      {
+        "codigo": "9108",
+        "descricao": "OUTRAS DECISOES JUDICIAIS - DEPOSITO EM CONTA CORRENTE OU A DISPOSICAO"
+      },
+      {
+        "codigo": "9109",
+        "descricao": "SENTENCA ARBITRAL"
+      },
+      {
+        "codigo": "9110",
+        "descricao": "SERVICOS DE SAUDE PRESTADO POR PESSOA FISICA - DECISAO JUDICIAL"
+      },
+      {
+        "codigo": "9111",
+        "descricao": "SERVICOS DE SAUDE PRESTADO POR PESSOA JURIDICA - DECISAO JUDICIAL"
+      },
+      {
+        "codigo": "9112",
+        "descricao": "MEDICAMENTOS E MATERIAL MEDICO HOSPITALAR - DECISAO JUDICIAL"
+      },
+      {
+        "codigo": "9113",
+        "descricao": "INDENIZACOES DETERMINADAS POR DECISOES JUDICIAIS"
+      },
+      {
+        "codigo": "9116",
+        "descricao": "ADVOGADOS DATIVOS - SENTENCAS JUDICIAIS"
+      },
+      {
+        "codigo": "9201",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - PESSOAL"
+      },
+      {
+        "codigo": "9202",
+        "descricao": "DESPESAS DE EXERCICIOS ANTERIORES - OUTRAS DESPESAS"
+      },
+      {
+        "codigo": "9301",
+        "descricao": "AJUDA DE CUSTO"
+      },
+      {
+        "codigo": "9305",
+        "descricao": "DESPESAS DECORRENTES DE CONTRATOS DE CONCESSAO OU PERMISSAO"
+      },
+      {
+        "codigo": "9306",
+        "descricao": "REST DE REC DE CONVENIOS, DE CONTRAPARTIDAS E INSTRUMENTOS CONGENERES"
+      },
+      {
+        "codigo": "9308",
+        "descricao": "DESPESAS DE CARATER INDENIZATORIO RELATIVAS AO MANDATO PARLAMENTAR"
+      },
+      {
+        "codigo": "9310",
+        "descricao": "RESTITUICAO DE RECEITA - EXERCICIO ANTERIOR"
+      },
+      {
+        "codigo": "9313",
+        "descricao": "REEMBOLSO DE DESPESAS MEDICO-HOSPITALARES"
+      },
+      {
+        "codigo": "9316",
+        "descricao": "INDENIZACOES DETERMINADAS POR LEI ESPECIFICA"
+      },
+      {
+        "codigo": "9319",
+        "descricao": "IND.DECORRENTES DA UTILZ. DE LEITOS DE INSTITUICOES DE SAUDE PRIVADAS"
+      },
+      {
+        "codigo": "9327",
+        "descricao": "INDENIZACAO DE TRANSPORTE DEVIDA AO OFICIAL DE JUSTICA"
+      },
+      {
+        "codigo": "9329",
+        "descricao": "RESSARCIMENTO SOBRE A REMUNERACAO DOS PRESOS EM TRABALHO"
+      },
+      {
+        "codigo": "9399",
+        "descricao": "OUTRAS INDENIZACOES E RESTITUICOES"
+      },
+      {
+        "codigo": "9401",
+        "descricao": "INDENIZACOES E RESTITUICOES TRABALHISTAS"
+      },
+      {
+        "codigo": "9601",
+        "descricao": "RESSARCIMENTO DE DESPESAS DE PESSOAL REQUISITADO"
+      }
+    ]
+  }
+]

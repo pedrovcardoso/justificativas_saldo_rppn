@@ -13,7 +13,8 @@
     --surface: var(--white);
     --text-main: var(--neutral-dark);
     --text-muted: var(--neutral-gray);
-    --border-strong: #cbd5e1; /* Slate-300 level for contundente look */
+    --border-strong: #cbd5e1;
+    /* Slate-300 level for contundente look */
 }
 
 /* Base Styles */
@@ -41,7 +42,31 @@ body {
     letter-spacing: normal !important;
 }
 
-/* Scrollbar */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Hide scrollbar utility (for sidebar etc.) */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -53,7 +78,9 @@ body {
 
 /* Animations */
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .spinner {

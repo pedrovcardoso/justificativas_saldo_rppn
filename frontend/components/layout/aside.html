@@ -1,19 +1,19 @@
 <aside id="layoutAside"
-    class="w-64 bg-[#003D5D] text-slate-300 flex flex-col p-2 shadow-2xl z-30 transition-all duration-300 border-r-2 border-[#002d45]">
+    class="w-64 bg-[#003D5D] text-slate-300 flex flex-col p-2 shadow-2xl z-30 border-r-2 border-[#002d45]">
     <!-- Header: Centered Toggle & Larger Favicon -->
-    <div class="flex flex-col gap-2 mb-4 mt-2 px-2 transition-all duration-300">
+    <div class="flex flex-col gap-2 mb-4 mt-2 px-2">
         <div class="flex items-center justify-center gap-3">
             <button onclick="Layout.toggleSidebar()"
-                class="relative group text-slate-400 hover:text-white transition-all outline-none p-1">
+                class="relative group text-slate-400 hover:text-white outline-none p-1">
                 <i id="toggleIcon" class='bx bx-menu-alt-left text-xl'></i>
                 <span
                     class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-75 whitespace-nowrap pointer-events-none z-50 shadow-xl">Alternar
                     Menu</span>
             </button>
             <img id="asideLogo" src="../../assets/images/header_logo_sccg.png" alt="SCCG"
-                class="h-6 w-auto object-contain brightness-0 invert opacity-100 transition-all duration-300">
+                class="h-6 w-auto object-contain brightness-0 invert opacity-100">
         </div>
-        <div id="faviconContainer" class="hidden justify-center transition-all duration-300">
+        <div id="faviconContainer" class="hidden justify-center">
             <img src="../../assets/images/favicon.ico" alt="Favicon" class="w-8 h-8 object-contain">
         </div>
     </div>
@@ -22,26 +22,23 @@
         <ul class="space-y-3">
             <li>
                 <a href="../dashboard/index.html" data-nav="dashboard"
-                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 transition-all group no-uppercase">
-                    <i class='bx bx-grid-alt text-2xl min-w-[24px] mr-3 transition-colors'></i>
-                    <span
-                        class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100 transition-all duration-300">Dashboard</span>
+                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 group no-uppercase">
+                    <i class='bx bx-grid-alt text-2xl min-w-[24px] mr-3'></i>
+                    <span class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100">Dashboard</span>
                 </a>
             </li>
             <li>
                 <a href="../relatorio/index.html" data-nav="relatorio"
-                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 transition-all group no-uppercase">
-                    <i class='bx bx-bar-chart-square text-2xl min-w-[24px] mr-3 transition-colors'></i>
-                    <span
-                        class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100 transition-all duration-300">Relatórios</span>
+                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 group no-uppercase">
+                    <i class='bx bx-bar-chart-square text-2xl min-w-[24px] mr-3'></i>
+                    <span class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100">Relatórios</span>
                 </a>
             </li>
             <li>
                 <a href="../legislacao/index.html" data-nav="legislacao"
-                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 transition-all group no-uppercase">
-                    <i class='bx bx-book-bookmark text-2xl min-w-[24px] mr-3 transition-colors'></i>
-                    <span
-                        class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100 transition-all duration-300">Legislação</span>
+                    class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 group no-uppercase">
+                    <i class='bx bx-book-bookmark text-2xl min-w-[24px] mr-3'></i>
+                    <span class="nav-text font-bold text-[13px] whitespace-nowrap opacity-100">Legislação</span>
                 </a>
             </li>
         </ul>
@@ -49,7 +46,7 @@
 
     <div class="mt-auto pt-6 border-t border-white/5">
         <div
-            class="user-card flex items-center gap-3 p-3 bg-white/5 rounded-2xl border-2 border-white/5 transition-all duration-300 relative group/user">
+            class="user-card flex items-center gap-3 p-3 bg-white/5 rounded-2xl border-2 border-white/5 relative group/user">
             <div id="userAvatar"
                 class="w-10 h-10 min-w-[40px] bg-[#FED73A] rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                 <i class='bx bx-user text-xl text-[#003D5D]'></i>
@@ -57,14 +54,14 @@
             <!-- Tooltip for User Email (Fast CSS, side-positioned for collapsed) -->
             <span id="userTooltip"
                 class="user-side-tooltip absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 transition-opacity duration-75 whitespace-nowrap pointer-events-none z-50 shadow-xl">...</span>
-            <div class="nav-text overflow-hidden opacity-100 transition-all duration-300">
+            <div class="nav-text overflow-hidden opacity-100">
                 <p class="font-extrabold text-white text-[11px] truncate no-uppercase tracking-tight leading-tight"
                     id="sidebarUser">…</p>
                 <p class="text-[9px] text-white/40 font-bold no-uppercase tracking-wide" id="sidebarRole">—</p>
             </div>
             <div class="relative group ml-auto nav-text">
                 <button id="btnLogoutExpanded" onclick="Layout.logout()"
-                    class="w-8 h-8 min-w-[32px] flex items-center justify-center rounded-lg text-slate-400 hover:bg-red-500/10 hover:text-[#D61A21] transition-all border-2 border-transparent hover:border-red-500/20 opacity-100 duration-300">
+                    class="w-8 h-8 min-w-[32px] flex items-center justify-center rounded-lg text-slate-400 hover:bg-red-500/10 hover:text-[#D61A21] border-2 border-transparent hover:border-red-500/20 opacity-100">
                     <i id="logoutIconExpanded" class='bx bx-power-off text-lg'></i>
                     <i id="logoutLoaderExpanded" class='bx bx-loader-alt bx-spin text-lg hidden text-red-500'></i>
                 </button>
@@ -75,7 +72,7 @@
         </div>
 
         <button id="collapsedLogout" onclick="Layout.logout()"
-            class="hidden w-full flex-col items-center justify-center py-4 text-slate-400 hover:text-rose-500 transition-colors gap-1 relative group">
+            class="hidden w-full flex-col items-center justify-center py-4 text-slate-400 hover:text-rose-500 gap-1 relative group">
             <i id="logoutIconCollapsed" class='bx bx-power-off text-2xl'></i>
             <i id="logoutLoaderCollapsed" class='bx bx-loader-alt bx-spin text-2xl hidden text-red-500'></i>
             <span
@@ -85,6 +82,23 @@
     </div>
 
     <style>
+        #layoutAside {
+            color: #cbd5e1 !important;
+            /* slate-300 */
+        }
+
+        /* Transitions - only when ready */
+        aside.animate-transitions,
+        aside.animate-transitions *,
+        aside.animate-transitions .nav-text,
+        aside.animate-transitions img,
+        aside.animate-transitions .user-card,
+        aside.animate-transitions .nav-link {
+            transition-property: width, padding, margin, opacity, transform, font-size !important;
+            transition-duration: 0.3s !important;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
         aside.collapsed {
             width: 80px !important;
             padding-left: 0.75rem !important;

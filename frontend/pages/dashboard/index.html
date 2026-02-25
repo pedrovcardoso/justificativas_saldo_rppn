@@ -18,48 +18,55 @@
         <div class="flex-1 flex flex-col h-screen overflow-hidden">
             <header></header>
 
-            <main class="flex-1 p-8 bg-[#F6F6F6] overflow-y-auto no-scrollbar">
+            <main class="flex-1 p-10 bg-[#F6F6F6] overflow-y-auto">
+                <div class="mb-10">
+                    <h2 class="text-3xl font-black text-[#003D5D] mb-2 no-uppercase">Restos a Pagar</h2>
+                    <p id="uoTitle" class="text-slate-500 font-medium no-uppercase">UO ... — ...</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div
-                        class="card-premium p-8 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
-                        <div class="flex items-center justify-between mb-6">
+                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
                             <p class="text-[11px] font-bold text-slate-400 no-uppercase">Total Geral</p>
                             <div
-                                class="w-12 h-12 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-2xl flex items-center justify-center shadow-sm">
-                                <i class='bx bx-landscape text-2xl'></i>
+                                class="w-10 h-10 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-xl flex items-center justify-center shadow-sm">
+                                <i class='bx bx-landscape text-xl'></i>
                             </div>
                         </div>
-                        <p class="text-4xl font-black text-[#003D5D] tracking-tight" id="cardTotal">—</p>
-                        <p class="text-[11px] text-slate-400 font-medium mt-3 no-uppercase">Registros vinculados à
+                        <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardTotal">—</p>
+                        <p class="text-[10px] text-slate-400 font-medium mt-2 no-uppercase leading-tight">Registros
+                            vinculados à
                             unidade</p>
                     </div>
 
                     <div
-                        class="card-premium p-8 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
-                        <div class="flex items-center justify-between mb-6">
+                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
                             <p class="text-[11px] font-bold text-slate-400 no-uppercase">Pendentes</p>
                             <div
-                                class="w-12 h-12 bg-amber-50 border-2 border-amber-100 text-[#FCAE00] rounded-2xl flex items-center justify-center shadow-sm">
-                                <i class='bx bx-time-five text-2xl'></i>
+                                class="w-10 h-10 bg-amber-50 border-2 border-amber-100 text-[#FCAE00] rounded-xl flex items-center justify-center shadow-sm">
+                                <i class='bx bx-time-five text-xl'></i>
                             </div>
                         </div>
-                        <p class="text-4xl font-black text-[#003D5D] tracking-tight" id="cardPendentes">—</p>
-                        <p class="text-[11px] text-amber-600/70 font-medium mt-3 no-uppercase">Aguardando justificativa
+                        <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardPendentes">—</p>
+                        <p class="text-[10px] text-amber-600/70 font-medium mt-2 no-uppercase leading-tight">Aguardando
+                            justificativa
                         </p>
                     </div>
 
                     <div
-                        class="card-premium p-8 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
-                        <div class="flex items-center justify-between mb-6">
+                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
                             <p class="text-[11px] font-bold text-slate-400 no-uppercase">Analisados</p>
                             <div
-                                class="w-12 h-12 bg-emerald-50 border-2 border-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center shadow-sm">
-                                <i class='bx bx-check-double text-2xl'></i>
+                                class="w-10 h-10 bg-emerald-50 border-2 border-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shadow-sm">
+                                <i class='bx bx-check-double text-xl'></i>
                             </div>
                         </div>
-                        <p class="text-4xl font-black text-[#003D5D] tracking-tight" id="cardFinalizados">—</p>
-                        <p class="text-[11px] text-emerald-600/70 font-medium mt-3 no-uppercase">Decisões registradas
+                        <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardFinalizados">—</p>
+                        <p class="text-[10px] text-emerald-600/70 font-medium mt-2 no-uppercase leading-tight">Decisões
+                            registradas
                         </p>
                     </div>
                 </div>
@@ -73,20 +80,37 @@
                             <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie as justificativas para o
                                 saldo de restos a pagar.</p>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <div class="relative group">
+                        <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                            <div class="relative group w-full sm:w-72">
                                 <input id="searchInput" type="text" placeholder="Filtrar registros…"
                                     oninput="filterTable()"
-                                    class="pl-12 pr-6 py-3.5 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:ring-8 focus:ring-[#003D5D]/5 focus:border-[#003D5D] w-72 transition-all outline-none">
+                                    class="pl-12 pr-6 py-3.5 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:ring-8 focus:ring-[#003D5D]/5 focus:border-[#003D5D] w-full transition-all outline-none">
                                 <i
                                     class='bx bx-search absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl transition-colors group-focus-within:text-[#003D5D]'></i>
                             </div>
-                            <button onclick="handleRefresh()"
-                                class="p-3.5 bg-slate-50 text-slate-500 rounded-2xl hover:bg-[#003D5D] hover:text-white transition-all border-2 border-slate-100 hover:border-[#003D5D] shadow-sm"
-                                title="Atualizar">
-                                <i class='bx bx-refresh text-2xl'></i>
+
+                            <button id="btnColumns"
+                                class="p-3.5 bg-slate-50 text-slate-500 rounded-2xl hover:bg-[#003D5D] hover:text-white transition-all border-2 border-slate-100 hover:border-[#003D5D] shadow-sm flex items-center gap-2 px-5"
+                                title="Configurar Colunas">
+                                <i class='bx bx-columns text-xl'></i>
+                                <span class="text-[11px] font-bold no-uppercase">Colunas</span>
                             </button>
                         </div>
+                    </div>
+
+                    <div class="fixed bottom-8 right-8 z-40 group">
+                        <div
+                            class="absolute bottom-full right-0 mb-4 px-4 py-2 bg-slate-800 text-white text-[10px] font-bold no-uppercase rounded-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap shadow-xl translate-y-2 group-hover:translate-y-0">
+                            Atualizar base de dados
+                            <div class="absolute top-full right-6 -mt-1 border-4 border-transparent border-t-slate-800">
+                            </div>
+                        </div>
+                        <button onclick="handleRefresh()"
+                            class="w-14 h-14 bg-white text-slate-400 rounded-full hover:text-[#003D5D] transition-all flex items-center justify-center shadow-2xl border-2 border-slate-100 hover:scale-110 active:scale-95 group/btn"
+                            title="">
+                            <i
+                                class='bx bx-refresh text-3xl group-hover/btn:rotate-180 transition-transform duration-500'></i>
+                        </button>
                     </div>
 
                     <div id="stateLoading"
@@ -106,7 +130,7 @@
                             Agora</button>
                     </div>
 
-                    <div id="stateTable" class="hidden overflow-auto no-scrollbar max-h-[700px] bg-white">
+                    <div id="stateTable" class="hidden overflow-auto max-h-[700px] bg-white">
                         <table class="min-w-full divide-y-2 divide-slate-100">
                             <thead class="bg-slate-50/80 sticky top-0 z-10 backdrop-blur-sm">
                                 <tr id="tableHead"></tr>
@@ -116,19 +140,37 @@
                     </div>
 
                     <div id="paginationWrap"
-                        class="hidden px-8 py-6 border-t-2 border-slate-100 bg-slate-50/50 flex items-center justify-between">
-                        <p class="text-[11px] font-bold text-slate-400 no-uppercase" id="paginationInfo">—</p>
-                        <div class="flex items-center gap-5">
+                        class="hidden px-8 py-6 border-t-2 border-slate-100 bg-slate-50/50 flex items-center justify-between flex-wrap gap-4">
+                        <div class="flex items-center gap-6">
+                            <p class="text-[11px] font-bold text-slate-400 no-uppercase" id="paginationInfo">—</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-bold text-slate-400 no-uppercase">Exibir:</span>
+                                <select id="rowsPerPage" onchange="handleRowsPerPageChange()"
+                                    class="bg-white border-2 border-slate-200 rounded-xl px-2 py-1 text-xs font-bold text-slate-600 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
                             <button id="btnPrev" onclick="changePage(-1)"
-                                class="w-12 h-12 flex items-center justify-center bg-white border-2 border-slate-200 rounded-2xl text-slate-500 hover:border-[#003D5D] hover:text-[#003D5D] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm">
-                                <i class='bx bx-chevron-left text-3xl'></i>
+                                class="w-10 h-10 flex items-center justify-center bg-white border-2 border-slate-200 rounded-xl text-slate-500 hover:border-[#003D5D] hover:text-[#003D5D] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm">
+                                <i class='bx bx-chevron-left text-2xl'></i>
                             </button>
-                            <span
-                                class="text-xs font-black text-slate-800 tracking-widest uppercase bg-slate-200/50 px-4 py-2 rounded-xl"
-                                id="pageLabel">—</span>
+                            <div
+                                class="flex items-center gap-2 bg-slate-200/50 px-3 py-1.5 rounded-xl border-2 border-transparent focus-within:border-[#003D5D]/20 focus-within:bg-white transition-all">
+                                <span class="text-[10px] font-bold text-slate-400 no-uppercase">Pág.</span>
+                                <input type="number" id="pageInput"
+                                    onkeydown="if(event.key==='Enter') goToPage(this.value)"
+                                    class="w-10 bg-transparent text-center text-xs font-black text-slate-800 outline-none p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                <span class="text-[10px] font-bold text-slate-400 no-uppercase" id="totalPagesLabel">/
+                                    —</span>
+                            </div>
                             <button id="btnNext" onclick="changePage(1)"
-                                class="w-12 h-12 flex items-center justify-center bg-white border-2 border-slate-200 rounded-2xl text-slate-500 hover:border-[#003D5D] hover:text-[#003D5D] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm">
-                                <i class='bx bx-chevron-right text-3xl'></i>
+                                class="w-10 h-10 flex items-center justify-center bg-white border-2 border-slate-200 rounded-xl text-slate-500 hover:border-[#003D5D] hover:text-[#003D5D] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm">
+                                <i class='bx bx-chevron-right text-2xl'></i>
                             </button>
                         </div>
                     </div>
@@ -211,17 +253,35 @@
     <script src="../../components/core/session.js"></script>
     <script src="../../components/core/csv.js"></script>
     <script src="../../components/layout/layout.js"></script>
+    <script src="../../components/ui/custom-table.js"></script>
 
     <script>
         const session = requireSession("../login/index.html");
+        // Moved inside Layout.ready.then to ensure DOM is stable
+        // setupTitle(); 
 
         let allRows = [];
         let filteredRows = [];
         let columns = [];
         let currentRppn = "";
         let currentPage = 1;
-        const itemsPerPage = 50;
+        let itemsPerPage = parseInt(localStorage.getItem("rppn_items_per_page")) || 10;
         const CACHE_KEY = "rppn_data_cache";
+
+        async function setupTitle() {
+            if (!session || !session.uo) return;
+            const uo = String(session.uo);
+            try {
+                const res = await fetch("../../assets/json/unidades.json");
+                const unidades = await res.json();
+                const unidade = unidades.find(u => String(u.unidade_orcamentaria_codigo) === uo);
+                const nome = unidade ? unidade.unidade_orcamentaria_nome : "Unidade não identificada";
+                document.getElementById("uoTitle").textContent = `UO ${uo} — ${nome}`;
+            } catch (e) {
+                console.error("Erro ao carregar unidades:", e);
+                document.getElementById("uoTitle").textContent = `UO ${uo}`;
+            }
+        }
 
         function showState(name) {
             ["stateLoading", "stateError", "stateTable", "stateEmpty"].forEach(id => {
@@ -293,8 +353,13 @@
             tr.innerHTML = "";
             columns.forEach(col => {
                 const th = document.createElement("th");
-                th.className = "px-8 py-5 text-left text-[11px] font-bold text-slate-400 no-uppercase tracking-tight whitespace-nowrap";
-                th.textContent = col;
+                th.className = "px-8 py-5 text-left text-[11px] font-bold text-slate-400 no-uppercase tracking-tight whitespace-nowrap relative group";
+                th.innerHTML = `
+                    <span class="table-span-header">${col}</span>
+                    <button class="table-filter-trigger ml-2 opacity-0 group-hover:opacity-100 transition-opacity" data-key="${col}">
+                        <i class="bx bx-filter filter-icon"></i>
+                    </button>
+                `;
                 tr.appendChild(th);
             });
             const thAcao = document.createElement("th");
@@ -308,6 +373,7 @@
             const rowsToDisplay = filteredRows.slice(start, start + itemsPerPage);
             renderRows(rowsToDisplay);
             updatePaginationUI();
+            afterTableRender();
         }
 
         function renderRows(rows) {
@@ -324,6 +390,8 @@
                 columns.forEach(col => {
                     const td = document.createElement("td");
                     td.className = "px-8 py-6 text-[13px] text-slate-600 whitespace-nowrap font-medium";
+                    td.setAttribute("data-key", col);
+                    td.setAttribute("data-value", row[col] ?? "");
 
                     if (col === statusCol && row[col]) {
                         const val = row[col].toLowerCase();
@@ -361,9 +429,31 @@
             const end = Math.min(currentPage * itemsPerPage, totalItems);
 
             document.getElementById("paginationInfo").textContent = `${start} — ${end} de ${totalItems} registros`;
-            document.getElementById("pageLabel").textContent = `${currentPage} / ${totalPages}`;
+            document.getElementById("pageInput").value = currentPage;
+            document.getElementById("totalPagesLabel").textContent = `/ ${totalPages}`;
             document.getElementById("btnPrev").disabled = currentPage === 1;
             document.getElementById("btnNext").disabled = currentPage >= totalPages;
+
+            // Update rows per page select
+            document.getElementById("rowsPerPage").value = itemsPerPage;
+        }
+
+        function handleRowsPerPageChange() {
+            itemsPerPage = parseInt(document.getElementById("rowsPerPage").value);
+            localStorage.setItem("rppn_items_per_page", itemsPerPage);
+            currentPage = 1;
+            renderCurrentPage();
+        }
+
+        function goToPage(val) {
+            const page = parseInt(val);
+            const totalPages = Math.ceil(filteredRows.length / itemsPerPage) || 1;
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderCurrentPage();
+            } else {
+                document.getElementById("pageInput").value = currentPage;
+            }
         }
 
         function changePage(delta) {
@@ -438,6 +528,7 @@
                     if (modal) {
                         modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
                     }
+                    setupTitle();
                     loadData();
                 });
             } else {
@@ -448,14 +539,40 @@
                             if (modal) {
                                 modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
                             }
+                            setupTitle();
                             loadData();
                         });
                     } else {
+                        setupTitle();
                         loadData();
                     }
                 });
             }
         }
+
+        async function afterTableRender() {
+            // Get all unique values for each column to support global filtering
+            const globalValues = {};
+            columns.forEach(col => {
+                const values = new Set();
+                allRows.forEach(row => {
+                    const val = row[col];
+                    if (val) String(val).split('||').forEach(v => v && values.add(v));
+                });
+                globalValues[col] = [...values];
+            });
+
+            // Give a tiny timeout for DOM to settle
+            setTimeout(() => {
+                initializeTableFilters("stateTable", { globalValues });
+                initializeTableResizing("stateTable");
+                initializeTableReordering("stateTable");
+                initializeColumnVisibility("stateTable", "btnColumns");
+            }, 50);
+        }
+
+        // Add this to loadData or renderCurrentPage
+        // In this case, let's trigger it after renderRows is called in renderCurrentPage
     </script>
 </body>
 
