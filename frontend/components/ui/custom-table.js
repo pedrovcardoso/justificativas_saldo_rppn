@@ -40,7 +40,7 @@
         const sortedValues = [...values].sort((a, b) => a.localeCompare(b, 'pt'));
 
         const menu = document.createElement('div');
-        menu.className = 'table-filter-menu absolute top-full left-0 mt-1 z-30 w-72 bg-white rounded-xl shadow-lg ring-1 ring-slate-200 p-2 flex flex-col max-h-80';
+        menu.className = 'table-filter-menu absolute top-full left-0 mt-2 z-50 w-72 bg-white rounded-2xl shadow-2xl ring-1 ring-slate-200 p-2 flex flex-col max-h-80 animate-in fade-in zoom-in-95 duration-200';
 
         const searchWrapper = document.createElement('div');
         searchWrapper.className = 'relative mb-2';
@@ -52,7 +52,7 @@
         `;
 
         const listContainer = document.createElement('div');
-        listContainer.className = 'flex-1 overflow-y-auto custom-scrollbar';
+        listContainer.className = 'flex-1 overflow-y-auto pr-1';
 
         const currentFilterValues = activeFilters[key] || [];
         let htmlStr = '';
@@ -180,7 +180,7 @@
             if (header.querySelector('.resize-handle')) return;
 
             const resizeHandle = document.createElement('div');
-            resizeHandle.className = 'resize-handle cursor-col-resize absolute top-0 bottom-0 w-[3px] z-10 hover:bg-slate-300';
+            resizeHandle.className = 'resize-handle cursor-col-resize absolute top-0 bottom-0 w-[4px] z-10 transition-colors hover:bg-[#003D5D]/20';
             resizeHandle.style.right = '-2px';
 
             header.appendChild(resizeHandle);
@@ -227,7 +227,7 @@
             const th = spanHeader.closest('th');
             if (th && !th.classList.contains('reorder-init')) {
                 th.classList.add('reorder-init');
-                spanHeader.classList.add('cursor-grab');
+                spanHeader.classList.add('cursor-grab', 'active:cursor-grabbing');
 
                 spanHeader.addEventListener('mousedown', (e) => {
                     if (e.target.closest('.table-filter-trigger') || e.target.closest('.resize-handle')) {
@@ -374,7 +374,7 @@
 
             const headers = Array.from(table.querySelectorAll('thead th')).slice(0, -1);
             const menu = document.createElement('div');
-            menu.className = 'column-visibility-menu absolute mt-2 z-50 w-72 bg-white rounded-xl shadow-lg ring-1 ring-slate-200 p-2 flex flex-col max-h-80 transition-all animate-in fade-in zoom-in-95 duration-200';
+            menu.className = 'column-visibility-menu absolute mt-2 z-50 w-72 bg-white rounded-2xl shadow-2xl ring-1 ring-slate-200 p-2 flex flex-col max-h-80 transition-all animate-in fade-in zoom-in-95 duration-200';
 
             const rect = triggerBtn.getBoundingClientRect();
             menu.style.top = `${rect.bottom + window.scrollY}px`;
@@ -390,7 +390,7 @@
             `;
 
             const listContainer = document.createElement('div');
-            listContainer.className = 'flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-0.5';
+            listContainer.className = 'flex-1 overflow-y-auto pr-1 flex flex-col gap-0.5';
 
             headers.forEach((th, index) => {
                 const labelText = th.querySelector('.table-span-header')?.textContent || th.textContent.trim();

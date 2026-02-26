@@ -20,62 +20,76 @@
 
             <main class="flex-1 p-10 bg-[#F6F6F6] overflow-y-auto">
                 <div class="mb-10">
-                    <h2 class="text-3xl font-black text-[#003D5D] mb-2 no-uppercase">Restos a Pagar</h2>
-                    <p id="uoTitle" class="text-slate-500 font-medium no-uppercase">UO ... — ...</p>
+                    <h2 class="text-3xl font-black text-[#003D5D] mb-2 normal-case [letter-spacing:normal]">Restos a
+                        Pagar</h2>
+                    <p id="uoTitle" class="text-slate-500 font-medium normal-case [letter-spacing:normal]">UO ... — ...
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div
-                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
                         <div class="flex items-center justify-between mb-4">
-                            <p class="text-[11px] font-bold text-slate-400 no-uppercase">Total Geral</p>
+                            <p class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal]">Total
+                                Geral</p>
                             <div
                                 class="w-10 h-10 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-xl flex items-center justify-center shadow-sm">
                                 <i class='bx bx-landscape text-xl'></i>
                             </div>
                         </div>
                         <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardTotal">—</p>
-                        <p class="text-[10px] text-slate-400 font-medium mt-2 no-uppercase leading-tight">Registros
+                        <p
+                            class="text-[10px] text-slate-400 font-medium mt-2 normal-case [letter-spacing:normal] leading-tight">
+                            Registros
                             vinculados à
                             unidade</p>
                     </div>
 
                     <div
-                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
                         <div class="flex items-center justify-between mb-4">
-                            <p class="text-[11px] font-bold text-slate-400 no-uppercase">Pendentes</p>
+                            <p class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal]">
+                                Pendentes</p>
                             <div
                                 class="w-10 h-10 bg-amber-50 border-2 border-amber-100 text-[#FCAE00] rounded-xl flex items-center justify-center shadow-sm">
                                 <i class='bx bx-time-five text-xl'></i>
                             </div>
                         </div>
                         <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardPendentes">—</p>
-                        <p class="text-[10px] text-amber-600/70 font-medium mt-2 no-uppercase leading-tight">Aguardando
+                        <p
+                            class="text-[10px] text-amber-600/70 font-medium mt-2 normal-case [letter-spacing:normal] leading-tight">
+                            Aguardando
                             justificativa
                         </p>
                     </div>
 
                     <div
-                        class="card-premium p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
+                        class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] p-6 transition-transform hover:-translate-y-1 border-2 border-slate-200 shadow-sm">
                         <div class="flex items-center justify-between mb-4">
-                            <p class="text-[11px] font-bold text-slate-400 no-uppercase">Analisados</p>
+                            <p class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal]">
+                                Analisados</p>
                             <div
                                 class="w-10 h-10 bg-emerald-50 border-2 border-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shadow-sm">
                                 <i class='bx bx-check-double text-xl'></i>
                             </div>
                         </div>
                         <p class="text-3xl font-black text-[#003D5D] tracking-tight" id="cardFinalizados">—</p>
-                        <p class="text-[10px] text-emerald-600/70 font-medium mt-2 no-uppercase leading-tight">Decisões
+                        <p
+                            class="text-[10px] text-emerald-600/70 font-medium mt-2 normal-case [letter-spacing:normal] leading-tight">
+                            Decisões
                             registradas
                         </p>
                     </div>
                 </div>
 
-                <div class="card-premium overflow-hidden border-2 border-slate-200 shadow-sm">
+                <div
+                    class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] overflow-hidden border-2 border-slate-200 shadow-sm">
                     <div
                         class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4 bg-white">
                         <div>
-                            <h2 class="text-xl font-black text-[#003D5D] tracking-tight no-uppercase">Registros de RPPN
+                            <h2
+                                class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                Registros de RPPN
                             </h2>
                             <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie as justificativas para o
                                 saldo de restos a pagar.</p>
@@ -94,14 +108,14 @@
                                 class="p-2.5 bg-slate-50 text-slate-500 rounded-2xl hover:bg-[#003D5D] hover:text-white transition-all border-2 border-slate-100 hover:border-[#003D5D] shadow-sm flex items-center gap-2 px-5"
                                 title="Filtros Avançados">
                                 <i class='bx bx-filter text-xl'></i>
-                                <span class="text-[11px] font-bold no-uppercase">Filtros</span>
+                                <span class="text-[11px] font-bold normal-case [letter-spacing:normal]">Filtros</span>
                             </button>
 
                             <button id="btnColumns"
                                 class="p-2.5 bg-slate-50 text-slate-500 rounded-2xl hover:bg-[#003D5D] hover:text-white transition-all border-2 border-slate-100 hover:border-[#003D5D] shadow-sm flex items-center gap-2 px-5"
                                 title="Configurar Colunas">
                                 <i class='bx bx-columns text-xl'></i>
-                                <span class="text-[11px] font-bold no-uppercase">Colunas</span>
+                                <span class="text-[11px] font-bold normal-case [letter-spacing:normal]">Colunas</span>
                             </button>
                         </div>
                     </div>
@@ -208,18 +222,20 @@
 
                     <div id="stateLoading"
                         class="flex flex-col items-center justify-center py-40 text-slate-400 bg-white">
-                        <i class='bx bx-loader-alt text-6xl spinner mb-6 text-[#003D5D]'></i>
-                        <p class="text-sm font-bold text-slate-600 no-uppercase">Sincronizando dados com o sistema…</p>
+                        <i class='bx bx-loader-alt text-6xl animate-spin mb-6 text-[#003D5D]'></i>
+                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">Sincronizando
+                            dados com o sistema…</p>
                     </div>
 
                     <div id="stateError"
                         class="hidden flex flex-col items-center justify-center py-40 text-[#D61A21] text-center bg-white">
                         <i class='bx bx-error-circle text-6xl mb-6'></i>
                         <p id="stateErrorMsg"
-                            class="font-bold text-slate-800 max-w-sm text-sm no-uppercase leading-relaxed">Não foi
+                            class="font-bold text-slate-800 max-w-sm text-sm normal-case [letter-spacing:normal] leading-relaxed">
+                            Não foi
                             possível carregar as informações do servidor.</p>
                         <button onclick="loadData()"
-                            class="mt-8 px-10 py-3.5 bg-[#D61A21] text-white rounded-2xl text-[11px] font-bold no-uppercase tracking-wider hover:bg-red-700 transition-all shadow-lg shadow-red-200">Reconectar
+                            class="mt-8 px-10 py-3.5 bg-[#D61A21] text-white rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal] tracking-wider hover:bg-red-700 transition-all shadow-lg shadow-red-200">Reconectar
                             Agora</button>
                     </div>
 
@@ -235,9 +251,11 @@
                     <div id="paginationWrap"
                         class="hidden px-8 py-6 border-t-2 border-slate-100 bg-slate-50/50 flex items-center justify-between flex-wrap gap-4">
                         <div class="flex items-center gap-6">
-                            <p class="text-[11px] font-bold text-slate-400 no-uppercase" id="paginationInfo">—</p>
+                            <p class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal]"
+                                id="paginationInfo">—</p>
                             <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold text-slate-400 no-uppercase">Exibir:</span>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 normal-case [letter-spacing:normal]">Exibir:</span>
                                 <select id="rowsPerPage" onchange="handleRowsPerPageChange()"
                                     class="bg-white border-2 border-slate-200 rounded-xl px-2 py-1 text-xs font-bold text-slate-600 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
                                     <option value="10">10</option>
@@ -254,11 +272,13 @@
                             </button>
                             <div
                                 class="flex items-center gap-2 bg-slate-200/50 px-3 py-1.5 rounded-xl border-2 border-transparent focus-within:border-[#003D5D]/20 focus-within:bg-white transition-all">
-                                <span class="text-[10px] font-bold text-slate-400 no-uppercase">Pág.</span>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 normal-case [letter-spacing:normal]">Pág.</span>
                                 <input type="number" id="pageInput"
                                     onkeydown="if(event.key==='Enter') goToPage(this.value)"
                                     class="w-10 bg-transparent text-center text-xs font-black text-slate-800 outline-none p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
-                                <span class="text-[10px] font-bold text-slate-400 no-uppercase" id="totalPagesLabel">/
+                                <span class="text-[10px] font-bold text-slate-400 normal-case [letter-spacing:normal]"
+                                    id="totalPagesLabel">/
                                     —</span>
                             </div>
                             <button id="btnNext" onclick="changePage(1)"
@@ -271,21 +291,25 @@
                     <div id="stateEmpty"
                         class="hidden flex flex-col items-center justify-center py-40 text-slate-400 bg-white">
                         <i class='bx bx-ghost text-6xl mb-6'></i>
-                        <p class="text-sm font-bold text-slate-600 no-uppercase">Nenhum registro encontrado para este
+                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">Nenhum registro
+                            encontrado para este
                             filtro.</p>
                     </div>
                 </div>
 
                 <div id="modalJust"
-                    class="fixed inset-0 modal-overlay flex items-center justify-center z-50 hidden p-4">
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4 transition-all">
                     <div
                         class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
                         <div
                             class="px-10 py-8 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
                             <div>
-                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight no-uppercase">Decisão
+                                <h3
+                                    class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                    Decisão
                                     Técnica</h3>
-                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1.5 no-uppercase" id="modalRppnLabel">
+                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1.5 normal-case [letter-spacing:normal]"
+                                    id="modalRppnLabel">
                                 </p>
                             </div>
                             <button onclick="closeModal()"
@@ -293,12 +317,14 @@
                                     class='bx bx-x text-3xl'></i></button>
                         </div>
 
-                        <div class="px-10 py-6 overflow-y-auto custom-scrollbar flex-1">
+                        <div
+                            class="px-10 py-6 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent flex-1">
                             <div id="modalDetails"
                                 class="mb-8 grid grid-cols-2 gap-4 bg-slate-50 p-6 rounded-3xl border-2 border-slate-100">
                             </div>
 
-                            <p class="text-[11px] font-bold text-slate-400 no-uppercase mb-6">Qual o destino desta
+                            <p class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-6">
+                                Qual o destino desta
                                 reserva de saldo?
                             </p>
                             <div class="flex gap-6 mb-10">
@@ -311,7 +337,7 @@
                                         <i class='bx bx-check-circle text-3xl'></i>
                                     </div>
                                     <span
-                                        class="font-bold text-[13px] text-slate-500 no-uppercase group-has-[:checked]:text-emerald-700">Manter
+                                        class="font-bold text-[13px] text-slate-500 normal-case [letter-spacing:normal] group-has-[:checked]:text-emerald-700">Manter
                                         Saldo</span>
                                 </label>
                                 <label
@@ -323,7 +349,7 @@
                                         <i class='bx bx-trash text-3xl'></i>
                                     </div>
                                     <span
-                                        class="font-bold text-[13px] text-slate-500 no-uppercase group-has-[:checked]:text-rose-700">Cancelar
+                                        class="font-bold text-[13px] text-slate-500 normal-case [letter-spacing:normal] group-has-[:checked]:text-rose-700">Cancelar
                                         Saldo</span>
                                 </label>
                             </div>
@@ -331,7 +357,7 @@
                             <div id="justAreaWrap"
                                 class="hidden mb-4 animate-in fade-in slide-in-from-top-4 duration-300">
                                 <label
-                                    class="block text-[11px] font-bold text-slate-400 no-uppercase mb-4">Justificativa
+                                    class="block text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-4">Justificativa
                                     Detalhada
                                     e Indispensável:</label>
                                 <textarea id="justText" rows="5"
@@ -340,15 +366,15 @@
                             </div>
 
                             <div id="modalAlert"
-                                class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold no-uppercase border-2">
+                                class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal] border-2">
                             </div>
                         </div>
 
                         <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
                             <button onclick="closeModal()"
-                                class="flex-1 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 no-uppercase hover:bg-slate-100 transition-all">Cancelar</button>
+                                class="flex-1 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] hover:bg-slate-100 transition-all">Cancelar</button>
                             <button id="btnConfirmar" onclick="handleConfirm()"
-                                class="flex-[2] bg-[#003D5D] py-5 rounded-[1.5rem] text-[11px] font-bold text-white no-uppercase tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                class="flex-[2] bg-[#003D5D] py-5 rounded-[1.5rem] text-[11px] font-bold text-white normal-case [letter-spacing:normal] tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
                                 Registrar Decisão
                             </button>
                         </div>
@@ -366,635 +392,7 @@
     <script src="../../components/ui/custom-table.js"></script>
     <script src="../../components/ui/custom-select.js"></script>
 
-    <script>
-        const session = requireSession("../login/index.html");
-
-        let allRows = [];
-        let filteredRows = [];
-        let columns = [];
-        let currentRppn = "";
-        let currentPage = 1;
-        let itemsPerPage = parseInt(localStorage.getItem("rppn_items_per_page")) || 10;
-        const CACHE_KEY = "rppn_data_cache";
-
-        window.addEventListener('tableFiltersChanged', () => {
-            if (typeof filterTable === 'function') filterTable();
-        });
-        let descriptiveData = {
-            unidades: [],
-            programas: [],
-            elementos: []
-        };
-
-        async function loadDescriptiveData() {
-            try {
-                const [u, p, e] = await Promise.all([
-                    fetch("../../assets/json/unidades.json").then(r => r.json()),
-                    fetch("../../assets/json/programas.json").then(r => r.json()),
-                    fetch("../../assets/json/elemento_item.json").then(r => r.json())
-                ]);
-                descriptiveData.unidades = u;
-                descriptiveData.programas = p;
-                descriptiveData.elementos = e;
-            } catch (err) {
-                console.error("Erro ao carregar dados descritivos:", err);
-            }
-        }
-
-        async function setupTitle() {
-            if (!session || !session.uo) return;
-            const uo = String(session.uo);
-            try {
-                const res = await fetch("../../assets/json/unidades.json");
-                const unidades = await res.json();
-                const unidade = unidades.find(u => String(u.unidade_orcamentaria_codigo) === uo);
-                const nome = unidade ? unidade.unidade_orcamentaria_nome : "Unidade não identificada";
-                document.getElementById("uoTitle").textContent = `UO ${uo} — ${nome}`;
-            } catch (e) {
-                console.error("Erro ao carregar unidades:", e);
-                document.getElementById("uoTitle").textContent = `UO ${uo}`;
-            }
-        }
-
-        function showState(name) {
-            ["stateLoading", "stateError", "stateTable", "stateEmpty"].forEach(id => {
-                const el = document.getElementById(id);
-                el.classList.toggle("hidden", id !== name);
-                if (id === name && id !== "stateTable") el.classList.add("flex");
-                else el.classList.remove("flex");
-            });
-            document.getElementById("paginationWrap").classList.toggle("hidden", name !== "stateTable");
-        }
-
-        async function handleRefresh() {
-            sessionStorage.removeItem(CACHE_KEY);
-            await loadData();
-        }
-
-        async function loadData() {
-            showState("stateLoading");
-
-            if (!descriptiveData.unidades.length) {
-                await loadDescriptiveData();
-            }
-
-            const cached = sessionStorage.getItem(CACHE_KEY);
-            let csvRaw = "";
-
-            if (cached) {
-                csvRaw = cached;
-            } else {
-                const res = await getData(session.user, session.token);
-                if (!res.ok || !res.data?.success) {
-                    document.getElementById("stateErrorMsg").textContent = res.data?.error || "Falha técnica na extração dos dados.";
-                    showState("stateError");
-                    return;
-                }
-                csvRaw = res.data?.data?.csv || "";
-                try {
-                    sessionStorage.setItem(CACHE_KEY, csvRaw);
-                } catch (e) {
-                    console.warn("Dados muito grandes para o cache. Continuando em memória.");
-                }
-            }
-
-            allRows = parseCSV(csvRaw);
-
-            enrichRows(allRows);
-
-            filteredRows = [...allRows];
-            const saldoKey = "Saldo Restos a Pagar Não Processado";
-            filteredRows.sort((a, b) => {
-                const valA = parseFloat(String(a[saldoKey] || "0").replace(",", "."));
-                const valB = parseFloat(String(b[saldoKey] || "0").replace(",", "."));
-                return valB - valA;
-            });
-
-            if (allRows.length > 0) {
-                const available = Object.keys(allRows[0]);
-                const preferred = [
-                    "Unidade Orçamentária - Código",
-                    "Unidade Orçamentária - Nome",
-                    "Unidade Executora - Código",
-                    "Unidade Executora - Nome",
-                    "RPPN - Referência",
-                    "Exercício de Emissão",
-                    "Programa - Código",
-                    "Programa - Descrição",
-                    "Elemento Item - Código",
-                    "Elemento Item - Descrição",
-                    "Saldo Restos a Pagar Não Processado",
-                    "Valor Inscrito Não Processado",
-                    "Valor Pago Não Processado",
-                    "Valor Cancelado Não Processado",
-                    "Status Justificativa"
-                ];
-                columns = preferred.filter(p => available.includes(p));
-                available.forEach(a => { if (!columns.includes(a)) columns.push(a); });
-            } else {
-                columns = [];
-            }
-
-            if (!allRows.length) {
-                showState("stateEmpty");
-                updateCards([]);
-                return;
-            }
-
-            currentPage = 1;
-            buildTableHeader();
-            filterTable();
-            updateCards(allRows);
-            populateFilterOptions();
-            showState("stateTable");
-        }
-
-        function populateFilterOptions() {
-            const ueSet = new Set();
-            const programaSet = new Set();
-            const elementoSet = new Set();
-            const statusSet = new Set();
-
-            allRows.forEach(row => {
-                if (row["Unidade Executora - Nome"]) ueSet.add(row["Unidade Executora - Nome"]);
-                if (row["Programa - Descrição"]) programaSet.add(row["Programa - Descrição"]);
-                if (row["Elemento Item - Descrição"]) elementoSet.add(row["Elemento Item - Descrição"]);
-
-                const statusCol = columns.find(c => /status/i.test(c));
-                if (statusCol && row[statusCol]) statusSet.add(row[statusCol]);
-            });
-
-            const fillSelect = (id, set) => {
-                const select = document.getElementById(id);
-                if (!select) return;
-                select.innerHTML = '';
-                [...set].sort().forEach(val => {
-                    const opt = document.createElement("option");
-                    opt.value = val;
-                    opt.textContent = val;
-                    select.appendChild(opt);
-                });
-            };
-
-            fillSelect("filterUE", ueSet);
-            fillSelect("filterPrograma", programaSet);
-            fillSelect("filterElemento", elementoSet);
-            fillSelect("filterStatus", statusSet);
-
-            if (typeof createCustomSelect !== 'undefined') {
-                ["filterUE", "filterPrograma", "filterElemento", "filterStatus"].forEach(id => {
-                    if (document.getElementById(id)) {
-                        createCustomSelect(id);
-                        onCustomSelectChange(id, () => filterTable());
-                    }
-                });
-            }
-        }
-
-        function clearAllTableFilters() {
-            document.getElementById("searchInput").value = "";
-            document.getElementById("filterSaldoMin").value = "0.01";
-            document.getElementById("filterSaldoMax").value = "";
-
-            if (typeof clearCustomSelect !== 'undefined') {
-                ["filterUE", "filterPrograma", "filterElemento", "filterStatus"].forEach(id => {
-                    if (document.getElementById(id)) clearCustomSelect(id);
-                });
-            }
-
-            window.dispatchEvent(new Event('clearAllFilters'));
-
-            filterTable();
-        }
-
-        function enrichRows(rows) {
-            rows.forEach(row => {
-                const uoCode = String(row["Unidade Orçamentária - Código"] || "");
-                const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo) === uoCode);
-                row["Unidade Orçamentária - Nome"] = uo ? uo.unidade_orcamentaria_nome : "N/A";
-                const ueCode = String(row["Unidade Executora - Código"] || "");
-                if (uo) {
-                    const ue = uo.unidades_executoras.find(u => String(u.codigo) === ueCode);
-                    row["Unidade Executora - Nome"] = ue ? ue.nome : "N/A";
-                } else {
-                    row["Unidade Executora - Nome"] = "N/A";
-                }
-
-                const progCode = String(row["Programa - Código"] || "");
-                let progDesc = "N/A";
-                const ano = row["Exercício de Emissão"] || row["Ano"];
-                const yearEntry = descriptiveData.programas.find(p => String(p.ano) === String(ano));
-                if (yearEntry) {
-                    const p = yearEntry.programas.find(pr => String(pr.codigo) === progCode);
-                    if (p) progDesc = p.descricao;
-                } else {
-                    for (const entry of descriptiveData.programas) {
-                        const p = entry.programas.find(pr => String(pr.codigo) === progCode);
-                        if (p) { progDesc = p.descricao; break; }
-                    }
-                }
-                row["Programa - Descrição"] = progDesc;
-
-                const elemCode = String(row["Elemento Item - Código"] || "");
-                let elemDesc = "N/A";
-                const yearEntryElem = descriptiveData.elementos.find(p => String(p.ano) === String(ano));
-                if (yearEntryElem) {
-                    const e = yearEntryElem.itens.find(i => String(i.codigo) === elemCode);
-                    if (e) elemDesc = e.descricao;
-                } else {
-                    for (const entry of descriptiveData.elementos) {
-                        const e = entry.itens.find(i => String(i.codigo) === elemCode);
-                        if (e) { elemDesc = e.descricao; break; }
-                    }
-                }
-                row["Elemento Item - Descrição"] = elemDesc;
-            });
-        }
-
-        function updateCards(rows) {
-            const total = rows.length;
-            const statusCol = columns.find(c => /status/i.test(c)) || "";
-            const pendentes = statusCol ? rows.filter(r => /pendente/i.test(r[statusCol] || "")).length : 0;
-            const finalizados = statusCol ? rows.filter(r => /mantido|cancelado|aprovado|rejeitado/i.test(r[statusCol] || "")).length : 0;
-
-            document.getElementById("cardTotal").textContent = total;
-            document.getElementById("cardPendentes").textContent = pendentes;
-            document.getElementById("cardFinalizados").textContent = finalizados;
-        }
-
-        function buildTableHeader() {
-            const tr = document.getElementById("tableHead");
-            tr.innerHTML = "";
-            columns.forEach(col => {
-                const th = document.createElement("th");
-                const isHidden = col === "Unidade Orçamentária - Código" || col === "Unidade Orçamentária - Nome";
-                th.className = "px-6 py-3 text-left text-[11px] font-bold text-slate-400 no-uppercase tracking-tight whitespace-nowrap relative group";
-                if (isHidden) th.style.display = "none";
-
-                th.innerHTML = `
-                    <span class="table-span-header cursor-pointer">${col}</span>
-                    <button class="table-filter-trigger ml-2 opacity-0 group-hover:opacity-100 transition-opacity" data-key="${col}">
-                        <i class="bx bx-filter filter-icon"></i>
-                    </button>
-                `;
-                tr.appendChild(th);
-            });
-            const thAcao = document.createElement("th");
-            thAcao.className = "px-6 py-3 text-right text-[11px] font-bold text-slate-400 no-uppercase";
-            thAcao.textContent = "Opções";
-            tr.appendChild(thAcao);
-        }
-
-        function renderCurrentPage() {
-            const start = (currentPage - 1) * itemsPerPage;
-            const rowsToDisplay = filteredRows.slice(start, start + itemsPerPage);
-            renderRows(rowsToDisplay);
-            updatePaginationUI();
-            afterTableRender();
-        }
-
-        function renderRows(rows) {
-            const tbody = document.getElementById("tableBody");
-            tbody.innerHTML = "";
-
-            function getRppnId(row) {
-                return [
-                    row["Unidade Orçamentária - Código"],
-                    row["Unidade Executora - Código"],
-                    row["Ano Origem Restos a Pagar"],
-                    row["Documento Restos a Pagar"],
-                    row["Função - Código"],
-                    row["Subfunção - Código"],
-                    row["Programa - Código"],
-                    row["Projeto_Atividade - Código"],
-                    row["Subprojeto_Subatividade - Código"],
-                    row["Natureza_Item Despesa - Código Form"],
-                    row["Fonte Recurso - Código"],
-                    row["Procedência - Código"]
-                ].map(v => String(v ?? '')).join('.');
-            }
-
-            const statusCol = columns.find(c => /status/i.test(c)) || "";
-            const currencyCols = ["Saldo Restos a Pagar Não Processado", "Valor Inscrito Não Processado", "Valor Pago Não Processado", "Valor Cancelado Não Processado"];
-
-            rows.forEach(row => {
-                const rppnId = getRppnId(row);
-                const tr = document.createElement("tr");
-                tr.className = "hover:bg-slate-50 transition-colors group cursor-pointer";
-                tr.onclick = () => openModal(rppnId, row);
-
-                columns.forEach(col => {
-                    const td = document.createElement("td");
-                    const isHidden = col === "Unidade Orçamentária - Código" || col === "Unidade Orçamentária - Nome";
-                    td.className = "px-6 py-3 text-[13px] text-slate-600 font-medium overflow-hidden";
-                    if (isHidden) td.style.display = "none";
-                    td.setAttribute("data-key", col);
-                    td.setAttribute("data-value", row[col] ?? "");
-
-                    const contentSpan = document.createElement("span");
-                    contentSpan.className = "line-clamp-1 truncate block w-full";
-
-                    if (col === statusCol && row[col]) {
-                        const val = row[col].toLowerCase();
-                        let cls = "bg-slate-100 text-slate-500 border-slate-200";
-                        if (val.includes("pendente")) cls = "status-pendente";
-                        else if (val.includes("mantido") || val.includes("aprovado")) cls = "status-aprovado";
-                        else if (val.includes("cancelado") || val.includes("rejeitado")) cls = "status-rejeitado";
-
-                        contentSpan.innerHTML = `<span class="px-3 py-1.5 rounded-[0.75rem] text-[10px] font-bold uppercase inline-block ${cls}">${row[col]}</span>`;
-                    } else if (currencyCols.includes(col)) {
-                        contentSpan.textContent = formatMoeda(row[col]);
-                        td.className += " font-mono";
-                    } else {
-                        contentSpan.textContent = row[col] ?? "";
-                    }
-                    td.appendChild(contentSpan);
-                    tr.appendChild(td);
-                });
-
-                const tdAcao = document.createElement("td");
-                tdAcao.className = "px-6 py-3 text-right";
-                const isPendente = statusCol ? /pendente/i.test(row[statusCol] || "") : true;
-                if (isPendente) {
-                    const btn = document.createElement("button");
-                    btn.className = "bg-white border-2 border-slate-100 text-[#003D5D] font-bold text-[10px] no-uppercase px-4 py-2 rounded-lg hover:bg-[#003D5D] hover:text-white hover:border-[#003D5D] transition-all opacity-0 group-hover:opacity-100 shadow-sm";
-                    btn.textContent = "Analisar";
-                    btn.onclick = (e) => { e.stopPropagation(); openModal(rppnId, row); };
-                    tdAcao.appendChild(btn);
-                }
-                tr.appendChild(tdAcao);
-                tbody.appendChild(tr);
-            });
-        }
-
-        function updatePaginationUI() {
-            const totalItems = filteredRows.length;
-            const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
-            const start = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
-            const end = Math.min(currentPage * itemsPerPage, totalItems);
-
-            document.getElementById("paginationInfo").textContent = `${start} — ${end} de ${totalItems} registros`;
-            document.getElementById("pageInput").value = currentPage;
-            document.getElementById("totalPagesLabel").textContent = `/ ${totalPages}`;
-            document.getElementById("btnPrev").disabled = currentPage === 1;
-            document.getElementById("btnNext").disabled = currentPage >= totalPages;
-
-            document.getElementById("rowsPerPage").value = itemsPerPage;
-        }
-
-        function handleRowsPerPageChange() {
-            itemsPerPage = parseInt(document.getElementById("rowsPerPage").value);
-            localStorage.setItem("rppn_items_per_page", itemsPerPage);
-            currentPage = 1;
-            renderCurrentPage();
-        }
-
-        function goToPage(val) {
-            const page = parseInt(val);
-            const totalPages = Math.ceil(filteredRows.length / itemsPerPage) || 1;
-            if (page >= 1 && page <= totalPages) {
-                currentPage = page;
-                renderCurrentPage();
-            } else {
-                document.getElementById("pageInput").value = currentPage;
-            }
-        }
-
-        function changePage(delta) {
-            currentPage += delta;
-            renderCurrentPage();
-            document.getElementById("stateTable").scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        function filterTable() {
-            const q = document.getElementById("searchInput").value.toLowerCase();
-
-            const getVals = id => typeof getCustomSelectValues !== 'undefined' ? getCustomSelectValues(id) : [];
-            const ueFilters = getVals("filterUE");
-            const programaFilters = getVals("filterPrograma");
-            const elementoFilters = getVals("filterElemento");
-            const statusFilters = getVals("filterStatus");
-
-            const minSaldo = parseFloat(document.getElementById("filterSaldoMin").value) || 0;
-            const maxSaldo = parseFloat(document.getElementById("filterSaldoMax").value) || Infinity;
-
-            const saldoKey = "Saldo Restos a Pagar Não Processado";
-            const statusCol = columns.find(c => /status/i.test(c)) || "";
-
-            const tableColFilters = typeof window.getActiveTableFilters === 'function' ? window.getActiveTableFilters() : {};
-
-            filteredRows = allRows.filter(row => {
-                const matchesSearch = !q || columns.some(c => String(row[c] ?? "").toLowerCase().includes(q));
-
-                const matchesUE = ueFilters.length === 0 || ueFilters.includes(row["Unidade Executora - Nome"]);
-                const matchesProg = programaFilters.length === 0 || programaFilters.includes(row["Programa - Descrição"]);
-                const matchesElem = elementoFilters.length === 0 || elementoFilters.includes(row["Elemento Item - Descrição"]);
-
-                const statusVal = row[statusCol] || "";
-                const matchesStatus = statusFilters.length === 0 || statusFilters.includes(statusVal);
-
-                const valSaldo = parseFloat(String(row[saldoKey] || "0").replace(",", "."));
-                const matchesSaldo = valSaldo >= minSaldo && valSaldo <= maxSaldo;
-
-                let matchesColFilters = true;
-                for (const colKey in tableColFilters) {
-                    const reqVals = tableColFilters[colKey];
-                    if (reqVals && reqVals.length > 0) {
-                        const cellValue = String(row[colKey] ?? '');
-                        const cellValuesList = cellValue.split('||');
-                        const isMatchFound = cellValuesList.some(val => reqVals.includes(val));
-                        if (!isMatchFound) {
-                            matchesColFilters = false;
-                            break;
-                        }
-                    }
-                }
-
-                return matchesSearch && matchesUE && matchesProg && matchesElem && matchesStatus && matchesSaldo && matchesColFilters;
-            });
-
-            currentPage = 1;
-
-            const hasActiveFilters = q || ueFilters.length > 0 || programaFilters.length > 0 || elementoFilters.length > 0 || statusFilters.length > 0 || document.getElementById("filterSaldoMin").value !== "0.01" || document.getElementById("filterSaldoMax").value !== "";
-
-            const countLabel = document.getElementById("filterResultCount");
-            if (countLabel) {
-                if (hasActiveFilters) {
-                    countLabel.classList.remove("opacity-0");
-                    countLabel.textContent = `${filteredRows.length} ${filteredRows.length === 1 ? 'valor encontrado' : 'valores encontrados'} nessa configuração`;
-                } else {
-                    countLabel.classList.add("opacity-0");
-                }
-            }
-
-            updateCards(filteredRows);
-
-            if (!filteredRows.length) { showState("stateEmpty"); return; }
-            showState("stateTable");
-            renderCurrentPage();
-        }
-
-        function toggleFilterPanel() {
-            const panel = document.getElementById("filterPanel");
-            const btn = document.getElementById("btnFiltersToggle");
-            panel.classList.toggle("hidden");
-            const isOpen = !panel.classList.contains("hidden");
-
-            if (isOpen) {
-                btn.classList.remove("bg-slate-50", "text-slate-500", "border-slate-100");
-                btn.classList.add("bg-[#003D5D]", "text-white", "border-[#003D5D]");
-            } else {
-                btn.classList.add("bg-slate-50", "text-slate-500", "border-slate-100");
-                btn.classList.remove("bg-[#003D5D]", "text-white", "border-[#003D5D]");
-            }
-        }
-
-        function openModal(rppn, row) {
-            currentRppn = rppn;
-            if (!row) {
-                const rppnCol = columns.find(c => /rppn|empenho|id/i.test(c)) || columns[0];
-                row = allRows.find(r => r[rppnCol] === rppn);
-            }
-
-            const labelEl = document.getElementById("modalRppnLabel");
-            if (labelEl) labelEl.textContent = `ID Referência: ${rppn}`;
-
-            const detailsWrap = document.getElementById("modalDetails");
-            if (detailsWrap) detailsWrap.innerHTML = "";
-
-            if (row) {
-                const showDetails = [
-                    { label: "Unidade Orçamentária", value: `${row["Unidade Orçamentária - Nome"]} (${row["Unidade Orçamentária - Código"]})` },
-                    { label: "Unidade Executora", value: `${row["Unidade Executora - Nome"]} (${row["Unidade Executora - Código"]})` },
-                    { label: "Programa", value: `${row["Programa - Descrição"]} (${row["Programa - Código"]})` },
-                    { label: "Elemento Item", value: `${row["Elemento Item - Descrição"]} (${row["Elemento Item - Código"]})` },
-                    { label: "Saldo RPPN", value: formatMoeda(row["Saldo Restos a Pagar Não Processado"]), highlight: true },
-                    { label: "Inscrito", value: formatMoeda(row["Valor Inscrito Não Processado"]) },
-                    { label: "Pago", value: formatMoeda(row["Valor Pago Não Processado"]) },
-                    { label: "Cancelado", value: formatMoeda(row["Valor Cancelado Não Processado"]) }
-                ];
-
-                showDetails.forEach(d => {
-                    const div = document.createElement("div");
-                    div.className = d.highlight ? "col-span-2 mt-2 p-4 bg-[#003D5D]/5 rounded-2xl border-2 border-[#003D5D]/10" : "flex flex-col gap-1";
-                    div.innerHTML = `
-                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-wider">${d.label}</span>
-                        <span class="${d.highlight ? 'text-lg font-black text-[#003D5D]' : 'text-[12px] font-bold text-slate-600'}">${d.value}</span>
-                    `;
-                    detailsWrap.appendChild(div);
-                });
-            }
-
-            document.querySelectorAll("input[name=modalAcao]").forEach(r => r.checked = false);
-            document.getElementById("justAreaWrap").classList.add("hidden");
-            document.getElementById("justText").value = "";
-            document.getElementById("modalAlert").classList.add("hidden");
-            document.getElementById("btnConfirmar").disabled = false;
-            document.getElementById("btnConfirmar").textContent = "Registrar Decisão";
-            document.getElementById("modalJust").classList.remove("hidden");
-        }
-
-        function closeModal() { document.getElementById("modalJust").classList.add("hidden"); }
-
-        function clearAllTableFilters() {
-            document.getElementById("searchInput").value = "";
-            if (typeof clearCustomSelect !== 'undefined') {
-                clearCustomSelect("filterUO");
-                clearCustomSelect("filterUE");
-            }
-            window.dispatchEvent(new CustomEvent("clearAllFilters"));
-            filterTable();
-        }
-
-        window.addEventListener('tableFiltersChanged', () => {
-            const q = document.getElementById("searchInput").value;
-            const clearBtn = document.getElementById("btnClearFilters");
-            clearBtn.classList.remove("hidden");
-        });
-
-        function onAcaoChange() {
-            const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
-            document.getElementById("justAreaWrap").classList.toggle("hidden", acao !== "manter");
-        }
-
-        function showModalAlert(msg, type = "error") {
-            const el = document.getElementById("modalAlert");
-            el.className = `mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold no-uppercase ${type === "error" ? "bg-rose-50 text-rose-700 border-rose-100" : "bg-emerald-50 text-emerald-700 border-emerald-100"}`;
-            el.textContent = msg;
-            el.classList.remove("hidden");
-        }
-
-        async function handleConfirm() {
-            const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
-            if (!acao) { showModalAlert("Selecione uma opção para continuar."); return; }
-
-            const just = document.getElementById("justText").value.trim();
-            if (acao === "manter" && !just) { showModalAlert("Campo obrigatório: justificativa técnica para manutenção."); return; }
-
-            const btn = document.getElementById("btnConfirmar");
-            btn.disabled = true;
-            btn.innerHTML = `<i class='bx bx-loader-alt spinner mr-2'></i> Processando…`;
-
-            const res = await justificar(session.user, session.token, currentRppn, acao, just);
-
-            if (res.ok && res.data?.success) {
-                closeModal();
-                await loadData();
-            } else {
-                btn.disabled = false;
-                btn.textContent = "Registrar Decisão";
-                showModalAlert(res.data?.error || "Erro na comunicação com o servidor.");
-            }
-        }
-
-        if (session) {
-            if (typeof Layout !== 'undefined' && Layout.ready) {
-                Layout.ready.then(() => {
-                    const modal = document.getElementById("modalJust");
-                    if (modal) {
-                        modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
-                    }
-                    setupTitle();
-                    loadData();
-                });
-            } else {
-                window.addEventListener('load', () => {
-                    if (typeof Layout !== 'undefined' && Layout.ready) {
-                        Layout.ready.then(() => {
-                            const modal = document.getElementById("modalJust");
-                            if (modal) {
-                                modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
-                            }
-                            setupTitle();
-                            loadData();
-                        });
-                    } else {
-                        setupTitle();
-                        loadData();
-                    }
-                });
-            }
-        }
-
-        async function afterTableRender() {
-            const globalValues = {};
-            columns.forEach(col => {
-                const values = new Set();
-                allRows.forEach(row => {
-                    const val = row[col];
-                    if (val) String(val).split('||').forEach(v => v && values.add(v));
-                });
-                globalValues[col] = [...values];
-            });
-
-            setTimeout(() => {
-                initializeTableFilters("stateTable", { globalValues });
-                initializeTableResizing("stateTable");
-                initializeTableReordering("stateTable");
-                initializeColumnVisibility("stateTable", "btnColumns");
-            }, 50);
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 :root {
-    /* Color Palette */
     --primary: #003D5D;
     --accent-yellow: #FED73A;
     --accent-orange: #FCAE00;
@@ -9,43 +8,31 @@
     --white: #FFFFFF;
     --error: #D61A21;
 
-    /* Semantics */
     --surface: var(--white);
     --text-main: var(--neutral-dark);
     --text-muted: var(--neutral-gray);
     --border-strong: #cbd5e1;
-    /* Slate-300 level for contundente look */
 }
 
-/* Base Styles */
 body {
     background-color: var(--bg-light);
     color: var(--text-main);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Custom Utilities for "Contundente" look */
-.border-premium {
-    border: 2px solid var(--border-strong);
-}
-
-.card-premium {
-    background: var(--white);
-    border: 2px solid var(--border-strong);
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-}
-
-/* Typography Overrides */
 .no-uppercase {
     text-transform: none !important;
     letter-spacing: normal !important;
 }
 
-/* Custom Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 transparent;
+}
+
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -53,63 +40,21 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 999px;
+    background-color: #94a3b8;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background-color: #64748b;
 }
 
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
+.scrollbar-none::-webkit-scrollbar {
+    display: none !important;
 }
 
-/* Hide scrollbar utility (for sidebar etc.) */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-.no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-/* Animations */
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.spinner {
-    animation: spin 1s linear infinite;
-}
-
-/* Custom Status Styles */
-.status-badge {
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border: 2px solid transparent;
-}
-
-.status-pendente {
-    background: #fffbeb;
-    color: #92400e;
-    border-color: #fde68a;
-}
-
-.status-aprovado {
-    background: #f0fdf4;
-    color: #166534;
-    border-color: #bbf7d0;
-}
-
-.status-rejeitado {
-    background: #fef2f2;
-    color: #991b1b;
-    border-color: #fecaca;
+.scrollbar-none {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
 }

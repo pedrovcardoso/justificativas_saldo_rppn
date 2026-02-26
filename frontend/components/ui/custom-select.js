@@ -196,7 +196,7 @@
         searchWrapper.append(searchInputContainer);
 
         const listWrapper = document.createElement('div');
-        listWrapper.className = 'max-h-[300px] overflow-y-auto custom-scrollbar p-2 flex-1';
+        listWrapper.className = 'max-h-[300px] overflow-y-auto pr-1 p-2 flex-1';
 
         const listElement = document.createElement('ul');
         listElement.className = 'flex flex-col gap-1';

@@ -15,18 +15,21 @@
         <aside></aside>
         <div class="flex-1 flex flex-col h-screen overflow-hidden">
             <header></header>
-            <main class="flex-1 p-8 bg-[#F6F6F6] overflow-y-auto no-scrollbar">
+            <main class="flex-1 p-8 bg-[#F6F6F6] overflow-y-auto">
                 <div class="max-w-4xl mx-auto">
-                    <div class="card-premium p-10 mb-8 bg-white border-2 border-slate-200 shadow-sm">
+                    <div class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] shadow-sm p-10 mb-8">
                         <div class="flex items-center gap-5 mb-8">
                             <div
                                 class="w-14 h-14 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-2xl flex items-center justify-center shadow-sm">
                                 <i class='bx bx-search-alt-2 text-3xl'></i>
                             </div>
                             <div>
-                                <h2 class="text-2xl font-black text-[#003D5D] leading-none no-uppercase tracking-tight">
+                                <h2
+                                    class="text-2xl font-black text-[#003D5D] leading-none normal-case [letter-spacing:normal] tracking-tight">
                                     Consulta Inteligente</h2>
-                                <p class="text-[13px] text-[#FCAE00] font-bold mt-2 no-uppercase">Validação em lote de
+                                <p
+                                    class="text-[13px] text-[#FCAE00] font-bold mt-2 normal-case [letter-spacing:normal]">
+                                    Validação em lote de
                                     RPPNs</p>
                             </div>
                         </div>
@@ -43,38 +46,44 @@
                         </div>
 
                         <button onclick="loadReport()"
-                            class="bg-[#003D5D] text-white text-[11px] font-bold no-uppercase px-10 py-4 rounded-xl flex items-center justify-center gap-3 shadow-xl shadow-[#003D5D]/20 hover:bg-slate-800 transition-all active:scale-95">
+                            class="bg-[#003D5D] text-white text-[11px] font-bold normal-case [letter-spacing:normal] px-10 py-4 rounded-xl flex items-center justify-center gap-3 shadow-xl shadow-[#003D5D]/20 hover:bg-slate-800 transition-all active:scale-95">
                             <i class='bx bx-zap text-lg text-[#FED73A]'></i> Processar Consulta Agora
                         </button>
                     </div>
 
-                    <div class="card-premium overflow-hidden bg-white border-2 border-slate-200 shadow-sm">
+                    <div
+                        class="bg-white border-2 border-[#cbd5e1] rounded-[1.5rem] shadow-sm overflow-hidden border-2 border-slate-200 shadow-sm">
                         <div class="px-8 py-6 border-b-2 border-slate-50 bg-slate-50/30">
-                            <h3 class="text-[11px] font-bold text-slate-400 no-uppercase tracking-wide">Retorno do
+                            <h3
+                                class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] tracking-wide">
+                                Retorno do
                                 Sistema</h3>
                         </div>
 
                         <div id="reportLoading"
                             class="hidden flex-col items-center justify-center py-32 text-slate-400">
-                            <i class='bx bx-loader-alt text-6xl spinner mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 no-uppercase">Aguardando resposta do servidor…</p>
+                            <i class='bx bx-loader-alt text-6xl animate-spin mb-6 text-[#003D5D]'></i>
+                            <p class="font-bold text-slate-600 normal-case [letter-spacing:normal]">Aguardando resposta
+                                do servidor…</p>
                         </div>
 
                         <div id="reportError"
                             class="hidden flex-col items-center justify-center py-32 text-[#D61A21] text-center">
                             <i class='bx bx-error-alt text-6xl mb-6'></i>
-                            <p id="reportErrorMsg" class="font-bold text-slate-800 no-uppercase">Erro na comunicação
+                            <p id="reportErrorMsg" class="font-bold text-slate-800 normal-case [letter-spacing:normal]">
+                                Erro na comunicação
                                 externa.</p>
                         </div>
 
                         <div id="reportContent" class="hidden p-8">
                             <pre id="reportPre"
-                                class="bg-slate-900 text-emerald-400 text-[13px] rounded-[1.5rem] p-10 overflow-auto max-h-96 no-scrollbar font-mono leading-relaxed border-2 border-slate-800 shadow-inner"></pre>
+                                class="bg-slate-900 text-emerald-400 text-[13px] rounded-[1.5rem] p-10 overflow-auto max-h-96 scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden font-mono leading-relaxed border-2 border-slate-800 shadow-inner"></pre>
                         </div>
 
                         <div id="reportEmpty" class="py-32 text-center text-slate-400 px-8">
                             <i class='bx bx-terminal text-6xl mb-6 block text-slate-200'></i>
-                            <p class="text-sm font-bold text-slate-500 no-uppercase">Aguardando entrada de dados para
+                            <p class="text-sm font-bold text-slate-500 normal-case [letter-spacing:normal]">Aguardando
+                                entrada de dados para
                                 análise.</p>
                         </div>
                     </div>
@@ -86,42 +95,7 @@
     <script src="../../components/core/api.js"></script>
     <script src="../../components/core/session.js"></script>
     <script src="../../components/layout/layout.js"></script>
-    <script>
-        const session = requireSession("../login/index.html");
-
-        async function handleLogout() { await doLogout("../login/index.html"); }
-
-        function showReportState(name) {
-            ["reportLoading", "reportError", "reportContent", "reportEmpty"].forEach(id => {
-                const el = document.getElementById(id);
-                el.classList.toggle("hidden", id !== name);
-                if (id === name && (id === "reportLoading" || id === "reportError")) el.classList.add("flex");
-                else el.classList.remove("flex");
-            });
-        }
-
-        async function loadReport() {
-            const raw = document.getElementById("rppnInput").value.trim();
-            const arr_rppn = raw.split(/\r?\n/).map(r => r.trim()).filter(Boolean);
-            if (!arr_rppn.length) { showReportState("reportEmpty"); return; }
-
-            showReportState("reportLoading");
-            const res = await checkStatus(session.user, session.token, arr_rppn);
-
-            if (!res.ok || !res.data?.success) {
-                document.getElementById("reportErrorMsg").textContent = res.data?.error || "Ocorreu um problema ao processar sua solicitação.";
-                showReportState("reportError");
-                return;
-            }
-
-            document.getElementById("reportPre").textContent = JSON.stringify(res.data?.data?.status ?? res.data?.data ?? {}, null, 2);
-            showReportState("reportContent");
-        }
-
-        if (session && typeof Layout !== 'undefined' && Layout.ready) {
-            Layout.ready.then(() => { });
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
