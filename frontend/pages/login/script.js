@@ -30,9 +30,10 @@ function hideAlert() { document.getElementById("alert").classList.add("hidden");
 
 function setLoading(btnId, loading, originalText) {
     const btn = document.getElementById(btnId);
+    if (!btn) return;
     if (loading) {
         btn.disabled = true;
-        btn.innerHTML = `<i class='bx bx-loader-alt spinner text-2xl'></i>`;
+        btn.innerHTML = `<i class='bx bx-loader-alt spinner animate-spin inline-block text-2xl'></i>`;
     } else {
         btn.disabled = false;
         btn.innerHTML = originalText;
@@ -53,7 +54,10 @@ async function handleSendOtp() {
         document.getElementById("otpDesc").textContent = `Enviamos o código para ${user}. Verifique sua caixa de entrada.`;
         document.getElementById("stepEmail").classList.add("hidden");
         document.getElementById("stepOtp").classList.remove("hidden");
-        setTimeout(() => document.querySelector(".otp-field").focus(), 100);
+        setTimeout(() => {
+            const firstOtpField = document.querySelector(".otp-field");
+            if (firstOtpField) firstOtpField.focus();
+        }, 100);
     } else {
         showAlert(res.data?.error || "Erro na solicitação do código");
     }
@@ -128,6 +132,7 @@ document.querySelectorAll(".otp-field").forEach((field, index, all) => {
 
 document.addEventListener("keydown", e => {
     if (e.key !== "Enter") return;
-    if (!document.getElementById("stepOtp").classList.contains("hidden")) handleValidateOtp();
+    const stepOtp = document.getElementById("stepOtp");
+    if (stepOtp && !stepOtp.classList.contains("hidden")) handleValidateOtp();
     else handleSendOtp();
 });

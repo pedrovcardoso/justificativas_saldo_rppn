@@ -8,9 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/globals.css">
+</head>
 
 <body
-    class="flex items-center justify-center px-6 min-h-screen bg-[#001a29] bg-[radial-gradient(circle_at_top_right,_#003D5D,_transparent),_radial-gradient(circle_at_bottom_left,_#002d45,_transparent)]">
+    class="flex items-center justify-center px-6 min-h-screen bg-[#001a29] [background-image:radial-gradient(circle_at_top_right,#003D5D,transparent),radial-gradient(circle_at_bottom_left,#002d45,transparent)]">
 
     <div
         class="bg-white/5 backdrop-blur-[40px] border-2 border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] rounded-[3rem] p-10 pt-4 w-full max-w-md">
@@ -19,81 +20,74 @@
                 <img src="../../assets/images/header_logo_sccg.png" alt="SCCG"
                     class="object-contain brightness-0 invert">
             </div>
-            <h1 class="text-3xl font-black text-white tracking-tight normal-case [letter-spacing:normal]">Gestão de RPPN
-            </h1>
-            <p
-                class="text-[#FED73A] text-[11px] font-bold normal-case [letter-spacing:normal] tracking-widest mt-2 uppercase">
-                Portal de
+            <h1 class="text-3xl font-black text-white tracking-tight no-uppercase">Gestão de RPPN</h1>
+            <p class="text-[#FED73A] text-[11px] font-bold no-uppercase tracking-widest mt-2 uppercase">Portal de
                 Justificativas</p>
         </div>
 
         <div id="stepEmail" class="animate-in fade-in slide-in-from-bottom-6 duration-700">
-            <h2 class="text-white text-xl font-bold mb-3 normal-case [letter-spacing:normal]">Login</h2>
+            <h2 class="text-white text-xl font-bold mb-3 no-uppercase">Login</h2>
             <p class="text-slate-400 text-sm mb-10 leading-relaxed font-medium">Em caso de dúvidas, entre em contato com
                 sccggabinete@fazenda.mg.gov.br.</p>
 
             <div class="mb-8">
-                <label class="block text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] mb-4"
-                    for="inputEmail">E-mail
+                <label class="block text-[11px] font-bold text-slate-500 no-uppercase mb-4" for="inputEmail">E-mail
                     corporativo</label>
                 <div class="relative group">
                     <i
                         class='bx bx-user-circle absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 text-2xl transition-colors group-focus-within:text-[#FED73A]'></i>
                     <input id="inputEmail" type="email" placeholder="usuario@fazenda.mg.gov.br"
-                        class="bg-black/20 border-2 border-white/5 transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)] w-full text-white rounded-[1.5rem] pl-14 pr-6 py-5 text-sm outline-none font-medium"
+                        class="w-full bg-black/20 border-2 border-white/5 text-white rounded-[1.5rem] pl-14 pr-6 py-5 text-sm outline-none font-medium transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5"
                         autocomplete="email">
                 </div>
             </div>
 
             <button id="btnSendOtp" onclick="handleSendOtp()"
-                class="bg-[#FED73A] text-[#003D5D] transition-all duration-300 h-[64px] hover:bg-[#fcae00] hover:-translate-y-0.5 hover:shadow-[0_15px_30px_-10px_rgba(252,174,0,0.3)] w-full text-[11px] font-black normal-case [letter-spacing:normal] py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3">
+                class="w-full bg-[#FED73A] text-[#003D5D] transition-all duration-300 h-16 text-[11px] font-black no-uppercase py-5 rounded-2xl shadow-xl hover:bg-[#fcae00] hover:-translate-y-0.5 hover:shadow-[0_15px_30px_-10px_rgba(252,174,0,0.3)] flex items-center justify-center gap-3 active:scale-95">
                 Solicitar Código de Acesso
             </button>
         </div>
 
         <div id="stepOtp" class="hidden animate-in fade-in slide-in-from-bottom-6 duration-700">
             <button onclick="goBackToEmail()"
-                class="flex items-center text-slate-500 hover:text-[#FED73A] text-[11px] font-bold normal-case [letter-spacing:normal] mb-2 transition-all group">
+                class="flex items-center text-slate-500 hover:text-[#FED73A] text-[11px] font-bold no-uppercase mb-2 transition-all group">
                 <i class='bx bx-left-arrow-alt text-xl mr-2 group-hover:-translate-x-1 transition-transform'></i> Voltar
                 ao e-mail
             </button>
-            <h2 class="text-white text-xl font-bold mb-3 normal-case [letter-spacing:normal]">Segunda Etapa</h2>
+            <h2 class="text-white text-xl font-bold mb-3 no-uppercase">Segunda Etapa</h2>
             <p id="otpDesc" class="text-slate-400 text-sm mb-5 leading-relaxed font-medium"></p>
 
             <div class="mb-8">
-                <label
-                    class="block text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] mb-4">Código
-                    Enviado</label>
+                <label class="block text-[11px] font-bold text-slate-500 no-uppercase mb-4">Código Enviado</label>
                 <div class="flex justify-between gap-2" id="otpContainer">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]"
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white"
                         autocomplete="one-time-code">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]">
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]">
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]">
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]">
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white">
                     <input type="text" maxlength="1" inputmode="numeric"
-                        class="w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all duration-300 ease-in-out focus:bg-black/40 focus:border-[#FED73A] focus:shadow-[0_0_0_8px_rgba(254,215,58,0.05)]">
+                        class="otp-field w-full h-16 bg-black/20 border-2 border-white/5 rounded-xl color-white text-center text-2xl font-black outline-none transition-all focus:bg-black/40 focus:border-[#FED73A] focus:ring-8 focus:ring-[#FED73A]/5 text-white">
                 </div>
             </div>
 
             <button id="btnValidateOtp" onclick="handleValidateOtp()"
-                class="bg-[#FED73A] text-[#003D5D] transition-all duration-300 h-[64px] hover:bg-[#fcae00] hover:-translate-y-0.5 hover:shadow-[0_15px_30px_-10px_rgba(252,174,0,0.3)] w-full text-[11px] font-black normal-case [letter-spacing:normal] py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3">
+                class="w-full bg-[#FED73A] text-[#003D5D] transition-all duration-300 h-16 text-[11px] font-black no-uppercase py-5 rounded-2xl shadow-xl hover:bg-[#fcae00] hover:-translate-y-0.5 hover:shadow-[0_15px_30px_-10px_rgba(252,174,0,0.3)] flex items-center justify-center gap-3 active:scale-95">
                 Entrar no Sistema
             </button>
 
             <button id="btnResend" onclick="handleResend()"
-                class="w-full text-[11px] font-bold text-slate-500 hover:text-[#FED73A] normal-case [letter-spacing:normal] transition-all py-3">
+                class="w-full text-[11px] font-bold text-slate-500 hover:text-[#FED73A] no-uppercase transition-all py-3">
                 Reenviar código
             </button>
         </div>
 
-        <div id="alert"
-            class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal]">
+        <div id="alert" class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold no-uppercase">
         </div>
     </div>
 
