@@ -25,26 +25,84 @@
                             restos a pagar.</p>
                     </div>
 
-                    <div class="mb-10 relative max-w-lg group">
-                        <input id="searchLeg" type="text" placeholder="Pesquisar por título ou descrição…"
-                            oninput="filterLeg()"
-                            class="w-full pl-12 pr-6 py-4 bg-white border-2 border-slate-200 rounded-2xl text-[14px] font-medium text-slate-700 focus:bg-white focus:ring-8 focus:ring-[#003D5D]/5 focus:border-[#003D5D] shadow-sm transition-all outline-none">
-                        <i
-                            class='bx bx-search-alt absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl transition-colors group-focus-within:text-[#003D5D]'></i>
-                    </div>
+                    <div class="mb-12 bg-white rounded-[1.5rem] border-2 border-slate-200 p-8 shadow-sm">
+                        <div class="flex flex-col lg:flex-row gap-6">
+                            <div class="flex-1 relative group">
+                                <input id="searchLeg" type="text"
+                                    placeholder="Pesquisar por título, ementa ou palavras-chave…" oninput="filterLeg()"
+                                    class="w-full pl-12 pr-6 py-4 bg-slate-50 border-2 border-border rounded-[1.2rem] text-[14px] font-bold text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 transition-all outline-none">
+                                <i
+                                    class='bx bx-search-alt absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl transition-colors group-focus-within:text-[#003D5D]'></i>
+                            </div>
+                            <button id="btnFiltersToggle" onclick="toggleAdvanced()"
+                                class="p-2.5 bg-slate-50 text-slate-500 rounded-2xl hover:bg-[#003D5D] hover:text-white transition-all border-2 border-slate-100 hover:border-[#003D5D] shadow-sm flex items-center gap-2 px-5">
+                                <i class='bx bx-filter text-xl'></i>
+                                <span class="text-[11px] font-bold normal-case [letter-spacing:normal]">Filtros</span>
+                                <i id="advIcon" class='bx bx-chevron-down text-xl transition-transform'></i>
+                            </button>
+                        </div>
 
-                    <div id="legGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="col-span-full flex flex-col items-center justify-center py-40 text-slate-400">
-                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 normal-case [letter-spacing:normal]">Carregando
-                                legislação…</p>
+                        <div id="advancedFilters"
+                            class="hidden pt-8 mt-8 border-t-2 border-slate-100 animate-[fadeIn_0.5s_ease-out]">
+                            <div
+                                class="flex items-center justify-between mb-8 pb-4 border-b-2 border-slate-100/60 flex-wrap gap-4">
+                                <div>
+                                    <h3 class="text-[14px] font-black text-[#003D5D] tracking-tight">Painel de filtros
+                                    </h3>
+                                </div>
+                                <button onclick="clearAllFilters()"
+                                    class="text-slate-400 hover:text-slate-600 transition-colors text-[11px] font-semibold flex items-center gap-1.5 focus:outline-none ml-auto">
+                                    <i class='bx bx-x-circle text-[16px]'></i> Limpar filtros
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-slate-400 ml-2">Tipo de norma</label>
+                                    <select id="filterTipo" multiple data-placeholder="Todos os tipos"></select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-slate-400 ml-2">Esfera</label>
+                                    <select id="filterEsfera" multiple data-placeholder="Todas as esferas"></select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-slate-400 ml-2">Status</label>
+                                    <select id="filterStatus" multiple data-placeholder="Todos os status"></select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-slate-400 ml-2">Ano</label>
+                                    <select id="filterAno" multiple data-placeholder="Todos os anos"></select>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 flex justify-end">
+                                <p id="resultCount"
+                                    class="text-[11px] font-bold text-slate-400 tracking-wider transition-opacity">
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <p id="legEmpty" class="hidden text-center text-slate-400 mt-20">
-                        <i class='bx bx-info-circle text-4xl mb-4 block'></i>
-                        Nenhum documento encontrado para sua busca.
-                    </p>
+                    <div id="legGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="col-span-full flex flex-col items-center justify-center py-40 text-slate-400">
+                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                            <p class="font-bold text-slate-600">Carregando legislação…</p>
+                        </div>
+                    </div>
+
+                    <div id="legEmpty"
+                        class="hidden text-center py-32 bg-white rounded-[1.5rem] border-2 border-dashed border-slate-200">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class='bx bx-search text-3xl text-slate-300'></i>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-700 mb-2">Nenhum resultado encontrado</h3>
+                        <p class="text-slate-500 text-sm font-medium">Tente ajustar seus termos de pesquisa ou filtros.
+                        </p>
+                        <button onclick="clearAllFilters()"
+                            class="mt-8 px-8 py-3 bg-[#FED73A] text-[#003D5D] text-[10px] font-black uppercase tracking-wider rounded-xl hover:shadow-lg transition-all">
+                            Resetar Busca
+                        </button>
+                    </div>
                 </div>
             </main>
         </div>
@@ -53,6 +111,7 @@
     <script src="../../components/core/api.js"></script>
     <script src="../../components/core/session.js"></script>
     <script src="../../components/layout/layout.js"></script>
+    <script src="../../components/ui/custom-select.js"></script>
     <script src="./script.js"></script>
 </body>
 

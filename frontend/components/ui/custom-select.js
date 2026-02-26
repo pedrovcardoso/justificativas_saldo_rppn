@@ -62,8 +62,8 @@
             if (placeholderSpan) placeholderSpan.classList.remove('opacity-0', 'invisible');
         } else if (selectedCount === validOptions.length) {
             if (placeholderSpan) placeholderSpan.classList.add('opacity-0', 'invisible');
-            const allSelectedHint = document.createElement('i');
-            allSelectedHint.className = 'text-slate-400 text-[12px] italic font-medium tracking-wide all-selected-hint px-1 py-1 block';
+            const allSelectedHint = document.createElement('div');
+            allSelectedHint.className = 'text-slate-400 text-[12px] italic font-medium tracking-wide all-selected-hint px-1 flex items-center h-full';
             allSelectedHint.textContent = 'Todos os itens selecionados';
             tagsWrapper.appendChild(allSelectedHint);
         } else if (selectedCount > 3) {
@@ -168,14 +168,14 @@
         selectContainer.dataset.selectId = selectId;
 
         const activeSelection = document.createElement('div');
-        activeSelection.className = `selection-area relative w-full rounded-2xl border-2 border-slate-200 bg-white shadow-sm outline-none transition-all duration-300 min-h-[44px] cursor-pointer hover:border-[#003D5D]/50 flex items-center pr-10`;
+        activeSelection.className = `selection-area relative w-full rounded-2xl border-2 border-slate-200 bg-white shadow-sm outline-none transition-all duration-300 min-h-[44px] cursor-pointer hover:border-[#003D5D]/50 flex items-center pr-10 overflow-hidden`;
         activeSelection.tabIndex = 0;
 
         const tagsWrapperContainer = document.createElement('div');
-        tagsWrapperContainer.className = 'flex-1 p-1.5 pl-3 h-full flex flex-col justify-center';
+        tagsWrapperContainer.className = 'flex-1 pl-3 h-full flex items-center';
 
         const tagsWrapper = document.createElement('div');
-        tagsWrapper.className = 'flex flex-wrap items-center gap-1.5 tags-wrapper';
+        tagsWrapper.className = 'flex flex-wrap items-center gap-1.5 tags-wrapper w-full';
         tagsWrapperContainer.appendChild(tagsWrapper);
 
         const dropdownPanel = document.createElement('div');
@@ -211,7 +211,7 @@
         listElement.appendChild(noResultsMessage);
 
         const placeholderSpan = document.createElement('span');
-        placeholderSpan.className = 'absolute left-4 top-3.5 text-slate-400 font-medium text-[13px] transition-opacity duration-200 pointer-events-none placeholder-hint';
+        placeholderSpan.className = 'absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-[13px] transition-opacity duration-200 pointer-events-none placeholder-hint';
         placeholderSpan.textContent = selectElement.dataset.placeholder || '';
 
         const arrow = document.createElement('div');

@@ -1,38 +1,93 @@
 [
     {
-        "icone": "bx-file-text",
+        "tipo": "Lei Complementar",
+        "numero": "101",
+        "ano": "2000",
+        "esfera": "Federal",
         "titulo": "Lei Complementar nº 101/2000",
-        "descricao": "Lei de Responsabilidade Fiscal (LRF): estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal.",
+        "ementa": "Lei de Responsabilidade Fiscal (LRF): estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal.",
+        "status": "Vigente",
+        "tags": [
+            "Finanças Públicas",
+            "Responsabilidade Fiscal",
+            "LRF"
+        ],
         "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm"
     },
     {
-        "icone": "bx-book-content",
+        "tipo": "Lei",
+        "numero": "4.320",
+        "ano": "1964",
+        "esfera": "Federal",
         "titulo": "Lei nº 4.320/1964",
-        "descricao": "Estatui normas gerais de direito financeiro para elaboração e controle dos orçamentos e balanços da União, Estados, Municípios e Distrito Federal.",
+        "ementa": "Estatui normas gerais de direito financeiro para elaboração e controle dos orçamentos e balanços da União, Estados, Municípios e Distrito Federal.",
+        "status": "Vigente",
+        "tags": [
+            "Direito Financeiro",
+            "Orçamento",
+            "Balanços"
+        ],
         "url": "https://www.planalto.gov.br/ccivil_03/leis/l4320.htm"
     },
     {
-        "icone": "bx-notepad",
+        "tipo": "Decreto",
+        "numero": "93.872",
+        "ano": "1986",
+        "esfera": "Federal",
         "titulo": "Decreto nº 93.872/1986",
-        "descricao": "Dispõe sobre a unificação dos recursos de caixa do Tesouro Nacional, atualizando normas de execução orçamentária e financeira.",
+        "ementa": "Dispõe sobre la unificação dos recursos de caixa do Tesouro Nacional, atualizando normas de execução orçamentária e financeira.",
+        "status": "Vigente",
+        "tags": [
+            "Tesouro Nacional",
+            "Execução Orçamentária",
+            "Financeiro"
+        ],
         "url": "https://www.planalto.gov.br/ccivil_03/decreto/d93872.htm"
     },
     {
-        "icone": "bx-spreadsheet",
+        "tipo": "Resolução",
+        "numero": "5.200",
+        "ano": "2023",
+        "esfera": "Estadual",
         "titulo": "Resolução SEF nº 5.200/2023",
-        "descricao": "Dispõe sobre procedimentos para a gestão de restos a pagar no âmbito da Secretaria de Estado de Fazenda de Minas Gerais.",
+        "ementa": "Dispõe sobre procedimentos para a gestão de restos a pagar no âmbito da Secretaria de Estado de Fazenda de Minas Gerais.",
+        "status": "Vigente",
+        "tags": [
+            "Restos a Pagar",
+            "SEF-MG",
+            "Gestão Fiscal"
+        ],
         "url": "#"
     },
     {
-        "icone": "bx-file-blank",
+        "tipo": "Instrução Normativa",
+        "numero": "01",
+        "ano": "1997",
+        "esfera": "Federal",
         "titulo": "Instrução Normativa STN nº 01/1997",
-        "descricao": "Estabelece normas para elaboração e apresentação dos demonstrativos contábeis da União, Estados e Municípios.",
+        "ementa": "Estabelece normas para elaboração e apresentação dos demonstrativos contáveis da União, Estados e Municípios.",
+        "status": "Revogado",
+        "tags": [
+            "Contabilidade",
+            "Demonstrativos",
+            "STN"
+        ],
         "url": "#"
     },
     {
-        "icone": "bx-detail",
+        "tipo": "Portaria Conjunta",
+        "numero": "01",
+        "ano": "2024",
+        "esfera": "Estadual",
         "titulo": "Portaria Conjunta SEF/SEPLAG nº 01/2024",
-        "descricao": "Aprova as orientações para o encerramento do exercício financeiro de 2024 e abertura de 2025 para órgãos do Estado de Minas Gerais.",
+        "ementa": "Aprova as orientações para o encerramento do exercício financeiro de 2024 e abertura de 2025 para órgãos do Estado de Minas Gerais.",
+        "status": "Vigente",
+        "tags": [
+            "Exercício Financeiro",
+            "Encerramento",
+            "SEF",
+            "SEPLAG"
+        ],
         "url": "#"
     }
 ]
