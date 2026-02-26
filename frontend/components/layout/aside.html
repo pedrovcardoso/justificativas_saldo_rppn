@@ -1,6 +1,5 @@
 <aside id="layoutAside"
     class="w-64 bg-[#003D5D] text-slate-300 flex flex-col p-2 shadow-2xl z-30 border-r-2 border-[#002d45]">
-    <!-- Header: Centered Toggle & Larger Favicon -->
     <div class="flex flex-col gap-2 mb-4 mt-2 px-2">
         <div class="flex items-center justify-center gap-3">
             <button onclick="Layout.toggleSidebar()"
@@ -51,7 +50,6 @@
                 class="w-10 h-10 min-w-[40px] bg-[#FED73A] rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                 <i class='bx bx-user text-xl text-[#003D5D]'></i>
             </div>
-            <!-- Tooltip for User Email (Fast CSS, side-positioned for collapsed) -->
             <span id="userTooltip"
                 class="user-side-tooltip absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 transition-opacity duration-75 whitespace-nowrap pointer-events-none z-50 shadow-xl">...</span>
             <div class="nav-text overflow-hidden opacity-100">
@@ -84,10 +82,8 @@
     <style>
         #layoutAside {
             color: #cbd5e1 !important;
-            /* slate-300 */
         }
 
-        /* Transitions - only when ready */
         aside.animate-transitions,
         aside.animate-transitions *,
         aside.animate-transitions .nav-text,
@@ -163,7 +159,6 @@
             display: flex;
         }
 
-        /* Active State Style from Login but stable */
         .nav-link.active-premium {
             background-color: #FED73A !important;
             color: #003D5D !important;

@@ -7,30 +7,23 @@
         if (existingMenu) existingMenu.remove();
     }
 
+    window.getActiveTableFilters = () => activeFilters;
+
     function applyTableFilters(table) {
-        const rows = table.querySelectorAll('tbody tr');
-        rows.forEach(row => {
-            let isVisible = true;
-            for (const key in activeFilters) {
-                const requiredValues = activeFilters[key];
-                if (requiredValues.length === 0) continue;
-                const cell = row.querySelector(`td[data-key="${key}"]`);
-                const cellValue = cell ? cell.dataset.value : '';
-                const cellValues = cellValue.split('||');
-                const matchFound = cellValues.some(val => requiredValues.includes(val));
-                if (!matchFound) {
-                    isVisible = false;
-                    break;
-                }
-            }
-            row.style.display = isVisible ? '' : 'none';
-        });
+        window.dispatchEvent(new CustomEvent('tableFiltersChanged'));
     }
 
-    function openFilterMenu(triggerElement, table, customValues = null) {
+    function openFilterMenu(triggerElement, table) {
         closeOpenFilterMenu();
         const key = triggerElement.dataset.key;
         const headerCell = triggerElement.closest('th');
+
+        let customValues = null;
+        try {
+            if (table.dataset.globalValues) {
+                customValues = JSON.parse(table.dataset.globalValues);
+            }
+        } catch (e) { }
 
         let values;
         if (customValues && customValues[key]) {
@@ -62,14 +55,15 @@
         listContainer.className = 'flex-1 overflow-y-auto custom-scrollbar';
 
         const currentFilterValues = activeFilters[key] || [];
+        let htmlStr = '';
         sortedValues.forEach(value => {
             const isChecked = currentFilterValues.includes(value);
-            listContainer.innerHTML += `
+            htmlStr += `
                 <label class="flex items-center p-2.5 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors overflow-hidden">
                     <input type="checkbox" ${isChecked ? 'checked' : ''} value="${value}" class="peer hidden">
                     
                     <div class="mr-3 flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded border-2 border-slate-300 peer-checked:border-[${CONFIG.primaryColor}] peer-checked:bg-[${CONFIG.primaryColor}] transition duration-150">
-                        <svg class="hidden h-2.5 w-2.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="${isChecked ? '' : 'hidden'} h-2.5 w-2.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                     </div>
@@ -77,6 +71,7 @@
                     <span class="line-clamp-2 text-sm text-left font-semibold">${value}</span>
                 </label>`;
         });
+        listContainer.innerHTML = htmlStr;
 
         const actionsContainer = document.createElement('div');
         actionsContainer.className = 'flex items-center justify-between pt-2 border-t border-slate-200 mt-1';
@@ -114,12 +109,18 @@
 
         checkboxes.forEach(cb => cb.addEventListener('change', updateFilterState));
         menu.querySelector('.clear-filter-btn').addEventListener('click', () => {
-            checkboxes.forEach(cb => { cb.checked = false; cb.dispatchEvent(new Event('change')); });
+            checkboxes.forEach(cb => {
+                cb.checked = false;
+                cb.nextElementSibling.querySelector('svg').classList.add('hidden');
+            });
             updateFilterState();
         });
         menu.querySelector('.select-all-btn').addEventListener('click', () => {
             const isAnyUnchecked = [...checkboxes].some(cb => !cb.checked);
-            checkboxes.forEach(cb => { cb.checked = isAnyUnchecked; cb.dispatchEvent(new Event('change')); });
+            checkboxes.forEach(cb => {
+                cb.checked = isAnyUnchecked;
+                cb.nextElementSibling.querySelector('svg').classList.toggle('hidden', !isAnyUnchecked);
+            });
             updateFilterState();
         });
         searchInput.addEventListener('input', () => {
@@ -135,6 +136,13 @@
         const tableContainer = document.getElementById(tableId);
         const table = tableContainer ? tableContainer.querySelector('table') : null;
         if (!table) return;
+
+        if (config && config.globalValues) {
+            table.dataset.globalValues = JSON.stringify(config.globalValues);
+        }
+        if (table.dataset.filtersInitialized === 'true') return;
+        table.dataset.filtersInitialized = 'true';
+
         table.addEventListener('click', function (e) {
             const trigger = e.target.closest('.table-filter-trigger');
             if (trigger) {
@@ -142,11 +150,19 @@
                 if (trigger.closest('th').querySelector('.table-filter-menu')) {
                     closeOpenFilterMenu();
                 } else {
-                    openFilterMenu(trigger, table, config.globalValues);
+                    openFilterMenu(trigger, table);
                 }
             }
         });
         document.addEventListener('click', closeOpenFilterMenu);
+
+        window.addEventListener('clearAllFilters', () => {
+            activeFilters = {};
+            table.querySelectorAll('.filter-icon').forEach(icon => {
+                icon.className = 'bx bx-filter filter-icon';
+                icon.style.color = '';
+            });
+        });
     };
 
     window.initializeTableResizing = function (tableId) {
@@ -179,7 +195,7 @@
                 const handleMouseMove = (moveEvent) => {
                     const deltaX = moveEvent.pageX - startX;
                     const newWidth = startWidth + deltaX;
-                    const minWidth = 100;
+                    const minWidth = 50;
                     if (newWidth > minWidth) {
                         header.style.width = newWidth + 'px';
                         header.style.minWidth = newWidth + 'px';

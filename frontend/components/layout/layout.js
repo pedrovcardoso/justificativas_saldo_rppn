@@ -28,20 +28,15 @@ const Layout = {
 
             const main = document.getElementById("layoutMain");
             if (originalContent) {
-                // If the original content has the old dashboard layout structure (flex min-h-screen),
-                // we should try to extract just the actual content to avoid nested layouts.
                 const dashboardContent = originalContent.querySelector('main');
                 if (dashboardContent) {
-                    // Pull the children of the internal main directly
                     Array.from(dashboardContent.childNodes).forEach(node => main.appendChild(node));
-                    // Also copy classes from the internal main (like padding p-8)
                     main.className += " " + dashboardContent.className;
                 } else {
                     main.appendChild(originalContent);
                 }
             }
 
-            // Precisely adjust main height = 100vh - exact header height
             const header = wrapper.querySelector("header");
             if (header && main) {
                 const setMainHeight = () => {
@@ -49,16 +44,13 @@ const Layout = {
                     main.style.height = `calc(100vh - ${headerH}px)`;
                     main.style.maxHeight = `calc(100vh - ${headerH}px)`;
                 };
-                // Initial set
                 setMainHeight();
-                // Re-run after a short delay to ensure header is fully rendered with all CSS
                 setTimeout(setMainHeight, 50);
                 window.addEventListener("resize", setMainHeight);
             }
 
             this.applySidebarState();
 
-            // Enable transitions only after initial state is applied to avoid flash/animation on load
             setTimeout(() => {
                 const aside = document.getElementById("layoutAside");
                 if (aside) aside.classList.add("animate-transitions");
@@ -66,7 +58,7 @@ const Layout = {
 
             this.setActiveMenu();
             this.setupUserDisplay();
-            this.refreshSession(); // Run in background after initial render
+            this.refreshSession();
             resolve();
         });
     },
@@ -163,7 +155,7 @@ const Layout = {
             sessionStorage.clear();
             setTimeout(() => {
                 window.location.href = "../login/index.html";
-            }, 500); // Small delay to show spinner
+            }, 500);
         }
     },
 
@@ -177,7 +169,6 @@ const Layout = {
 
             if (uEl) uEl.textContent = session.user;
 
-            // Show UO instead of Role per user request
             if (rEl) {
                 const uoValue = session.uo || "---";
                 rEl.textContent = `UO - ${uoValue}`;
@@ -202,10 +193,9 @@ const Layout = {
                     const { token, role, uo } = res.data.data;
                     if (typeof saveSession === 'function') {
                         saveSession(session.user, token, role, uo);
-                        this.setupUserDisplay(); // Refresh UI with new data
+                        this.setupUserDisplay();
                     }
                 } else if (res.status === 401 || res.status === 404) {
-                    // Token expired or invalid
                     if (typeof clearSession === 'function') clearSession();
                     window.location.href = "../login/index.html";
                 }

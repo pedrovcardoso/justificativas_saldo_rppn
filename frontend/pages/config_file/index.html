@@ -57,7 +57,6 @@
         let grupos = {};
         let primeiraColuna = "";
 
-        // Função utilitária para formatar tamanho de arquivo
         function formatarTamanho(bytes) {
             if (bytes < 1024) return bytes + " B";
             if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + " KB";
@@ -101,7 +100,6 @@
                     headers.forEach((h, idx) => obj[h] = valores[idx] ?? null);
                     dadosJSON.push(obj);
 
-                    // Agrupar incremental
                     const chave = obj[primeiraColuna];
                     if (!grupos[chave]) grupos[chave] = [];
                     grupos[chave].push(obj);
@@ -113,7 +111,6 @@
                 await new Promise(r => setTimeout(r, 0));
             }
 
-            // Linha final
             if (leftover.trim()) {
                 const valores = leftover.split('";"').map(v => v.replace(/^"|"$/g, '').trim());
                 const obj = {};
@@ -131,73 +128,67 @@
             document.getElementById("baixarZipBtn").style.display = "inline-block";
         }
 
-    // Renderizar tabela de resumo por grupo, incluindo all.csv no topo
-    function renderizarTabelaResumo() {
-        const div = document.getElementById("tabela");
-        div.innerHTML = "";
+        function renderizarTabelaResumo() {
+            const div = document.getElementById("tabela");
+            div.innerHTML = "";
 
-        const table = document.createElement("table");
-        table.className = "table-auto border border-gray-700 w-full";
+            const table = document.createElement("table");
+            table.className = "table-auto border border-gray-700 w-full";
 
-        const thead = document.createElement("thead");
-        thead.className = "bg-gray-800";
-        const trHead = document.createElement("tr");
-        ["Arquivo", "Registros", "Tamanho CSV", "Nome do Arquivo"].forEach(h => {
-            const th = document.createElement("th");
-            th.textContent = h;
-            th.className = "border border-gray-700 px-2 py-1";
-            trHead.appendChild(th);
-        });
-        thead.appendChild(trHead);
-        table.appendChild(thead);
+            const thead = document.createElement("thead");
+            thead.className = "bg-gray-800";
+            const trHead = document.createElement("tr");
+            ["Arquivo", "Registros", "Tamanho CSV", "Nome do Arquivo"].forEach(h => {
+                const th = document.createElement("th");
+                th.textContent = h;
+                th.className = "border border-gray-700 px-2 py-1";
+                trHead.appendChild(th);
+            });
+            thead.appendChild(trHead);
+            table.appendChild(thead);
 
-        const tbody = document.createElement("tbody");
+            const tbody = document.createElement("tbody");
 
-        // Linha do all.csv no topo
-        const csvAll = jsonParaCSV(dadosJSON);
-        const tamanhoAllBytes = new Blob([csvAll]).size;
-        const trAll = document.createElement("tr");
-        trAll.innerHTML = `
+            const csvAll = jsonParaCSV(dadosJSON);
+            const tamanhoAllBytes = new Blob([csvAll]).size;
+            const trAll = document.createElement("tr");
+            trAll.innerHTML = `
         <td class="border border-gray-700 px-2 py-1 font-bold">all.csv</td>
         <td class="border border-gray-700 px-2 py-1 font-bold">${dadosJSON.length}</td>
         <td class="border border-gray-700 px-2 py-1 font-bold">${formatarTamanho(tamanhoAllBytes)}</td>
         <td class="border border-gray-700 px-2 py-1 font-bold">all.csv</td>
     `;
-        tbody.appendChild(trAll);
+            tbody.appendChild(trAll);
 
-        // Cada grupo
-        for (const chave in grupos) {
-            const grupo = grupos[chave];
-            const csvGrupo = jsonParaCSV(grupo);
-            const tamanhoBytes = new Blob([csvGrupo]).size;
+            for (const chave in grupos) {
+                const grupo = grupos[chave];
+                const csvGrupo = jsonParaCSV(grupo);
+                const tamanhoBytes = new Blob([csvGrupo]).size;
 
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
             <td class="border border-gray-700 px-2 py-1">${chave}</td>
             <td class="border border-gray-700 px-2 py-1">${grupo.length}</td>
             <td class="border border-gray-700 px-2 py-1">${formatarTamanho(tamanhoBytes)}</td>
             <td class="border border-gray-700 px-2 py-1">grupo_${chave}.csv</td>
         `;
-            tbody.appendChild(tr);
+                tbody.appendChild(tr);
+            }
+
+            table.appendChild(tbody);
+            div.appendChild(table);
         }
 
-        table.appendChild(tbody);
-        div.appendChild(table);
-    }
+        function jsonParaCSV(arr) {
+            if (!arr.length) return "";
+            const headers = Object.keys(arr[0]);
+            const linhas = arr.map(obj => headers.map(h => `"${obj[h]}"`).join(";"));
+            return `"${headers.join('";"')}"\n` + linhas.join("\n");
+        }
 
-    // Função auxiliar para gerar CSV (mesma do botão ZIP)
-    function jsonParaCSV(arr) {
-        if (!arr.length) return "";
-        const headers = Object.keys(arr[0]);
-        const linhas = arr.map(obj => headers.map(h => `"${obj[h]}"`).join(";"));
-        return `"${headers.join('";"')}"\n` + linhas.join("\n");
-    }
-
-        // Baixar ZIP com todos os grupos + all.json
         function baixarZIP() {
             const zip = new JSZip();
 
-            // Função para converter array de objetos em CSV
             const jsonParaCSV = (arr) => {
                 if (!arr.length) return "";
                 const headers = Object.keys(arr[0]);
@@ -205,13 +196,10 @@
                 return `"${headers.join('";"')}"\n` + linhas.join("\n");
             };
 
-            // Cada grupo
             for (const chave in grupos) {
                 const csvGrupo = jsonParaCSV(grupos[chave]);
                 zip.file(`grupo_${chave}.csv`, csvGrupo);
             }
-
-            // All
             const csvAll = jsonParaCSV(dadosJSON);
             zip.file("all.csv", csvAll);
 
@@ -227,7 +215,6 @@
                 });
         }
     </script>
-
 </body>
 
 </html>

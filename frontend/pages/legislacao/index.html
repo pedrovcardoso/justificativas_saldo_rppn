@@ -77,7 +77,7 @@
 
         async function init() {
             try {
-                const res = await fetch("../../assets/legislacao.json");
+                const res = await fetch("../../assets/json/legislacao.json");
                 allLegislacoes = await res.json();
                 renderLeg(allLegislacoes);
             } catch (e) {

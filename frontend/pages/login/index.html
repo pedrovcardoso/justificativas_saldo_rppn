@@ -11,7 +11,6 @@
     <style>
         body {
             background-color: #001a29;
-            /* Darker variant of #003D5D */
             background-image: radial-gradient(circle at top right, #003D5D, transparent),
                 radial-gradient(circle at bottom left, #002d45, transparent);
             min-height: 100vh;
@@ -41,7 +40,6 @@
             color: #003D5D;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             height: 64px;
-            /* Fixed height to prevent jumping */
         }
 
         .btn-auth:hover {
@@ -203,7 +201,6 @@
                 document.getElementById("otpDesc").textContent = `Enviamos o código para ${user}. Verifique sua caixa de entrada.`;
                 document.getElementById("stepEmail").classList.add("hidden");
                 document.getElementById("stepOtp").classList.remove("hidden");
-                // Focus first OTP field
                 setTimeout(() => document.querySelector(".otp-field").focus(), 100);
             } else {
                 showAlert(res.data?.error || "Erro na solicitação do código");
@@ -246,7 +243,6 @@
             document.getElementById("stepEmail").classList.remove("hidden");
         }
 
-        // OTP inputs logic
         document.querySelectorAll(".otp-field").forEach((field, index, all) => {
             field.addEventListener("input", (e) => {
                 const val = e.target.value;
@@ -254,7 +250,6 @@
                     all[index + 1].focus();
                 }
 
-                // Check if all filled
                 const fullValue = Array.from(all).map(i => i.value).join("");
                 if (fullValue.length === 6) {
                     handleValidateOtp();
