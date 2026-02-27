@@ -430,6 +430,122 @@
                     </div>
                 </div>
 
+                <div id="modalBatch"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4 transition-all">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                        <div
+                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                            <div>
+                                <h3
+                                    class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                    Justificativa em Massa</h3>
+                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1 normal-case [letter-spacing:normal]"
+                                    id="batchSelectedLabel">
+                                </p>
+                            </div>
+                            <button onclick="closeBatchModal()"
+                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all"><i
+                                    class='bx bx-x text-3xl'></i></button>
+                        </div>
+
+                        <div
+                            class="px-10 py-6 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent flex-1">
+                            <div class="mb-6">
+                                <p
+                                    class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-4 uppercase tracking-wider">
+                                    Qual o destino para os registros selecionados?
+                                </p>
+                                <div class="flex gap-4 mb-8">
+                                    <label
+                                        class="flex-1 flex items-center gap-3 border-2 border-slate-100 rounded-2xl p-4 cursor-pointer hover:bg-emerald-50 transition-all has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50 group">
+                                        <input type="radio" name="batchAcao" value="manter" class="hidden"
+                                            onchange="onBatchAcaoChange()">
+                                        <div
+                                            class="w-10 h-10 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-emerald-600 group-has-[:checked]:bg-emerald-500 group-has-[:checked]:text-white group-has-[:checked]:border-emerald-500 transition-all">
+                                            <i class='bx bx-check-circle text-xl'></i>
+                                        </div>
+                                        <span
+                                            class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-emerald-700">Manter
+                                            Saldo</span>
+                                    </label>
+                                    <label
+                                        class="flex-1 flex items-center gap-3 border-2 border-slate-100 rounded-2xl p-4 cursor-pointer hover:bg-rose-50 transition-all has-[:checked]:border-[#D61A21] has-[:checked]:bg-rose-50 group">
+                                        <input type="radio" name="batchAcao" value="cancelar" class="hidden"
+                                            onchange="onBatchAcaoChange()">
+                                        <div
+                                            class="w-10 h-10 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-[#D61A21] group-has-[:checked]:bg-[#D61A21] group-has-[:checked]:text-white group-has-[:checked]:border-[#D61A21] transition-all">
+                                            <i class='bx bx-trash text-xl'></i>
+                                        </div>
+                                        <span
+                                            class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-rose-700">Cancelar
+                                            Saldo</span>
+                                    </label>
+                                </div>
+
+                                <div id="batchJustAreaWrap" class="hidden">
+                                    <label
+                                        class="block text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-4 uppercase tracking-wider">Justificativa
+                                        Técnica:</label>
+                                    <textarea id="batchJustText" rows="4"
+                                        class="w-full bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] p-5 text-sm font-medium text-slate-700 resize-none focus:bg-white focus:ring-8 focus:ring-[#003D5D]/5 focus:border-[#003D5D] outline-none transition-all"
+                                        placeholder="Descreva o motivo técnico para todos os registros selecionados..."></textarea>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4
+                                    class="text-[11px] font-black text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                    <i class='bx bx-list-ul text-lg'></i>
+                                    RPPNs Selecionados
+                                </h4>
+                                <div id="batchSelectionList"
+                                    class="space-y-2 max-h-48 overflow-y-auto pr-2 scrollbar-thin">
+                                    <!-- List items will be injected here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                            <button onclick="closeBatchModal()"
+                                class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] hover:bg-slate-100 transition-all">Cancelar</button>
+                            <button id="btnBatchConfirm" onclick="handleBatchConfirm()"
+                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white normal-case [letter-spacing:normal] tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                Confirmar Registro em Massa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modalBatchResult"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] hidden p-4 transition-all">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                        <div
+                            class="px-10 py-6 border-b-2 border-slate-50 flex items-center justify-between bg-emerald-50/30 shrink-0">
+                            <h3 class="text-xl font-black text-[#003D5D] tracking-tight">Resultado do Processamento</h3>
+                            <button onclick="closeBatchResultModal()"
+                                class="text-slate-400 hover:text-slate-600 transition-colors"><i
+                                    class='bx bx-x text-3xl'></i></button>
+                        </div>
+                        <div class="px-10 py-8 overflow-y-auto scrollbar-thin flex-1">
+                            <div id="batchResultSummary"
+                                class="mb-8 flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-100">
+                                <!-- Summary will be injected here -->
+                            </div>
+                            <div id="batchResultList" class="space-y-3">
+                                <!-- List of results will be injected here -->
+                            </div>
+                        </div>
+                        <div class="px-10 py-8 border-t-2 border-slate-50 bg-slate-50/30 shrink-0">
+                            <button onclick="handleReloadAfterSuccess()"
+                                class="w-full bg-[#003D5D] py-5 rounded-[1.5rem] text-[11px] font-bold text-white uppercase tracking-widest hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all">
+                                Concluir e Atualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="modalSuccess"
                     class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] hidden p-4 transition-all">
                     <div

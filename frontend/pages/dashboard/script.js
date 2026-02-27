@@ -12,6 +12,7 @@ const CACHE_KEY = "rppn_data_cache";
 const PANEL_SELECT_IDS = ["filterUE", "filterPrograma", "filterElemento", "filterDecisao", "filterAvaliacao", "filterStatusProcesso"];
 let tableApiData = []; // Store API data for the current page
 let statusHistory = []; // Store all status history
+let selectedRppns = new Set(); // Track selected RPPNs for batch action
 
 let descriptiveData = {
     unidades: [],
@@ -430,6 +431,25 @@ function updateCards(rows) {
 function buildTableHeader() {
     const tr = document.getElementById("tableHead");
     tr.innerHTML = "";
+
+    // Checkbox Column
+    const thCheck = document.createElement("th");
+    thCheck.className = "px-4 py-3 text-left w-12 sticky left-0 z-20 bg-slate-50/80 backdrop-blur-sm border-r-2 border-slate-100";
+    thCheck.innerHTML = `
+        <div class="flex items-center justify-center relative">
+            <input type="checkbox" id="selectAllRppn" onchange="toggleSelectAll(this.checked)"
+                class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
+            <div id="batchActionBtnContainer" class="hidden absolute left-full ml-4 whitespace-nowrap">
+                <button onclick="openBatchModal()" 
+                    class="bg-slate-50 border border-slate-200 text-slate-600 text-[10px] font-bold uppercase px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-800 transition-all flex items-center gap-1.5 shadow-sm">
+                    <i class='bx bx-layer-plus text-sm'></i>
+                    Registrar justificativa em massa
+                </button>
+            </div>
+        </div>
+    `;
+    tr.appendChild(thCheck);
+
     columns.forEach(col => {
         const th = document.createElement("th");
         const isHidden = col === "Unidade Orçamentária - Código" || col === "Unidade Orçamentária - Nome";
@@ -519,8 +539,21 @@ function renderRows(rows) {
     rows.forEach(row => {
         const rppnId = getRppnId(row);
         const tr = document.createElement("tr");
-        tr.className = "hover:bg-slate-50 transition-colors group cursor-pointer";
-        tr.onclick = () => openModal(rppnId, row);
+        tr.className = `hover:bg-slate-50 transition-colors group cursor-pointer ${selectedRppns.has(rppnId) ? 'bg-blue-50/50' : ''}`;
+        tr.onclick = (e) => {
+            if (e.target.closest('input[type="checkbox"]')) return;
+            openModal(rppnId, row);
+        };
+
+        // Checkbox Cell
+        const tdCheck = document.createElement("td");
+        tdCheck.className = "px-4 py-3 text-center sticky left-0 z-10 bg-white group-hover:bg-slate-50 border-r-2 border-slate-100 transition-colors";
+        tdCheck.innerHTML = `
+            <input type="checkbox" value="${rppnId}" onchange="toggleRppnSelection('${rppnId}', this.checked)"
+                ${selectedRppns.has(rppnId) ? 'checked' : ''}
+                class="row-checkbox w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
+        `;
+        tr.appendChild(tdCheck);
 
         columns.forEach(col => {
             const td = document.createElement("td");
@@ -881,11 +914,9 @@ async function handleConfirm() {
     btn.disabled = true;
     btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
 
-    // Disable all inputs/buttons during loading
     inputs.forEach(el => el.disabled = true);
 
     const res = await justificar(session.user, session.token, currentRppn, acao, just);
-
     const result = Array.isArray(res.data) ? res.data[0] : res.data;
     const isSuccess = res.ok && result?.success;
 
@@ -895,17 +926,150 @@ async function handleConfirm() {
     } else {
         btn.disabled = false;
         btn.textContent = "Registrar Decisão";
-        inputs.forEach(el => {
-            if (el.id !== "btnConfirmar") el.disabled = false;
-        });
-
+        inputs.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
         const errorMsg = result?.error || res.data?.error || "Erro na comunicação com o servidor.";
         showModalAlert(errorMsg);
-
-        // Scroll to error message
-        const modalAlert = document.getElementById("modalAlert");
-        modalAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById("modalAlert").scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+}
+
+function toggleRppnSelection(rppn, isSelected) {
+    if (isSelected) selectedRppns.add(rppn);
+    else selectedRppns.delete(rppn);
+    updateBatchUI();
+}
+
+function toggleSelectAll(isSelected) {
+    if (isSelected) {
+        tableFilteredData.forEach(row => {
+            selectedRppns.add(getRppnId(row));
+        });
+    } else {
+        selectedRppns.clear();
+    }
+    renderCurrentPage();
+    updateBatchUI();
+}
+
+function updateBatchUI() {
+    const btnContainer = document.getElementById("batchActionBtnContainer");
+    if (!btnContainer) return;
+
+    if (selectedRppns.size > 0) {
+        btnContainer.classList.remove("hidden");
+    } else {
+        btnContainer.classList.add("hidden");
+        const selectAll = document.getElementById("selectAllRppn");
+        if (selectAll) selectAll.checked = false;
+    }
+}
+
+function openBatchModal() {
+    if (selectedRppns.size === 0) return;
+
+    const label = document.getElementById("batchSelectedLabel");
+    label.textContent = `${selectedRppns.size} ${selectedRppns.size === 1 ? 'registro selecionado' : 'registros selecionados'}`;
+
+    const list = document.getElementById("batchSelectionList");
+    list.innerHTML = Array.from(selectedRppns).map(rppn => `
+        <div class="flex items-center justify-between p-3 bg-slate-50 border-2 border-slate-100 rounded-xl">
+            <span class="text-[11px] font-bold text-slate-700 truncate mr-4">${rppn}</span>
+            <button onclick="toggleRppnSelection('${rppn}', false); openBatchModal();" class="text-rose-400 hover:text-rose-600 transition-colors">
+                <i class='bx bx-trash text-lg'></i>
+            </button>
+        </div>
+    `).join('');
+
+    document.getElementById("batchJustText").value = "";
+    document.getElementById("batchJustAreaWrap").classList.add("hidden");
+    document.querySelectorAll("input[name=batchAcao]").forEach(r => r.checked = false);
+    document.getElementById("modalBatch").classList.remove("hidden");
+}
+
+function onBatchAcaoChange() {
+    const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
+    document.getElementById("batchJustAreaWrap").classList.toggle("hidden", acao !== "manter");
+}
+
+function closeBatchModal() {
+    document.getElementById("modalBatch").classList.add("hidden");
+}
+
+async function handleBatchConfirm() {
+    const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
+    const just = document.getElementById("batchJustText").value.trim();
+
+    if (!acao) {
+        alert("Por favor, selecione uma ação (Manter ou Cancelar).");
+        return;
+    }
+    if (acao === "manter" && !just) {
+        alert("Por favor, informe a justificativa para manter o saldo.");
+        return;
+    }
+
+    const btn = document.getElementById("btnBatchConfirm");
+    btn.disabled = true;
+    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+
+    const dados = Array.from(selectedRppns).map(rppn => ({ rppn }));
+
+    try {
+        const res = await justificarLote(session.user, session.token, acao, just, dados);
+        if (res.ok && Array.isArray(res.data)) {
+            showBatchResults(res.data);
+        } else {
+            console.error("Resposta da API inválida:", res);
+            alert(res.data?.error || "Ocorreu um erro ao processar a solicitação.");
+        }
+    } catch (err) {
+        console.error("Erro no processamento em lote:", err);
+        alert("Ocorreu um erro ao processar a solicitação.");
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Confirmar Registro em Massa";
+    }
+}
+
+function showBatchResults(results) {
+    closeBatchModal();
+    const modal = document.getElementById("modalBatchResult");
+    const summary = document.getElementById("batchResultSummary");
+    const list = document.getElementById("batchResultList");
+
+    const successCount = results.filter(r => r.success).length;
+    const errorCount = results.length - successCount;
+
+    summary.innerHTML = `
+        <div class="flex-1 flex flex-col items-center border-r-2 border-slate-100 pr-6">
+            <span class="text-3xl font-black text-emerald-500">${successCount}</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sucessos</span>
+        </div>
+        <div class="flex-1 flex flex-col items-center">
+            <span class="text-3xl font-black ${errorCount > 0 ? 'text-rose-500' : 'text-slate-300'}">${errorCount}</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Falhas</span>
+        </div>
+    `;
+
+    list.innerHTML = results.map(res => `
+        <div class="flex items-center gap-4 p-4 ${res.success ? 'bg-emerald-50/50' : 'bg-rose-50/50'} rounded-2xl border-2 ${res.success ? 'border-emerald-100' : 'border-rose-100'}">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center ${res.success ? 'bg-emerald-500 text-white' : 'bg-rose-500 text-white'}">
+                <i class='bx ${res.success ? 'bx-check' : 'bx-x'} text-xl'></i>
+            </div>
+            <div class="flex-1">
+                <p class="text-[11px] font-black text-slate-700">${res.data?.rppn || 'N/A'}</p>
+                <p class="text-[10px] font-medium ${res.success ? 'text-emerald-700' : 'text-rose-700'}">${res.message || res.error || (res.success ? 'Sucesso' : 'Erro desconhecido')}</p>
+            </div>
+        </div>
+    `).join('');
+
+    modal.classList.remove("hidden");
+    selectedRppns.clear();
+    updateBatchUI();
+}
+
+function closeBatchResultModal() {
+    document.getElementById("modalBatchResult").classList.add("hidden");
 }
 
 function handleReloadAfterSuccess() {

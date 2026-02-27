@@ -48,6 +48,13 @@ async function justificar(user, token, rppn, acao, justificativa) {
     });
 }
 
+async function justificarLote(user, token, acao, justificativa, dados) {
+    return apiCall(API_URLS.saveJustificativa, {
+        endpoint: "justificar",
+        user, token, acao, justificativa, dados
+    });
+}
+
 async function avaliarStatus(user, token, rppn, id, status, motivo_rejeição = "") {
     return apiCall(API_URLS.saveJustificativa, {
         endpoint: "avaliar_status",
@@ -66,5 +73,5 @@ async function checkStatus(user, token) {
 }
 
 if (typeof module !== "undefined") {
-    module.exports = { sendOtp, validateOtp, validateSession, logout, justificar, avaliarStatus, getData, checkStatus };
+    module.exports = { sendOtp, validateOtp, validateSession, logout, justificar, justificarLote, avaliarStatus, getData, checkStatus };
 }

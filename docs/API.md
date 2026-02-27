@@ -142,6 +142,10 @@ Este fluxo permite registrar e avaliar justificativas.
             "type": "string",
             "description": "Texto da justificativa."
         },
+        "acao": {
+            "type": "string",
+            "description": "Ação a ser tomada (ex: 'manter', 'cancelar')."
+        },
         "status": {
             "type": "string",
             "description": "Status da justificativa (ex: 'Aceito', 'Rejeitado')."
@@ -175,9 +179,29 @@ Este fluxo permite registrar e avaliar justificativas.
 
 Salva uma nova justificativa ou atualiza uma existente (em lote).
 
-*   **Parâmetros Necessários no Corpo da Requisição:** `user`, `token`, `endpoint`, `acao`, `justificativa`, `dados` (lista de `rppn`)
+*   **Parâmetros Necessários no Corpo da Requisição:** `user`, `token`, `endpoint`, `acao`, `justificativa`, `dados` (lista de objetos com `rppn`)
+
+**Exemplo de Requisição:**
+```json
+{
+	"user":"pedro.cardoso@fazenda.mg.gov.br",
+	"token":"05a6bf58-f500-4a9d-9bb5-54efb8716cca",
+	"endpoint":"justificar",
+	"acao":"manter",
+	"justificativa":"contrato em aberto",
+	"dados":[
+		{
+			"rppn": "1261.1260160.2014.870.12.361.15.4585.1.3.3.90.93.09.10.1"
+		},
+		{
+			"rppn": "1261.1260160.2014.870.12.361.15.4585.1.3.3.90.93.08.70.1"
+		}
+	]
+}
+```
+
 *   **Respostas (Array):**
-    *   `200 OK`: `[{ "success": true, "statusCode": "200", "message": "Dados salvos com sucesso.", "data": { "id": "..." } }]`
+    *   `200 OK`: `[{ "success": true, "statusCode": "200", "message": "Dados salvos com sucesso.", "data": { "id": "...", "rppn": "..." } }]`
     *   `409 Conflict`: `[{ "success": false, "statusCode": "409", "error": "Outra justificativa em aberto.", "data": { "rppn": "..." } }]`
 
 ##### `avaliar_status`
