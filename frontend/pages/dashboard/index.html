@@ -134,70 +134,84 @@
                             </button>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
-                            <div class="space-y-6">
-                                <div class="space-y-3">
-                                    <label
-                                        class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                        Unidade Executora - Nome
-                                    </label>
-                                    <select id="filterUE" multiple data-placeholder="Todos" class="hidden"></select>
-                                </div>
-                            </div>
-
-                            <div class="space-y-6">
-                                <div class="space-y-3">
-                                    <label
-                                        class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                        Programa - Descrição
-                                    </label>
-                                    <select id="filterPrograma" multiple data-placeholder="Todos"
-                                        class="hidden"></select>
-                                </div>
-                                <div class="space-y-3">
-                                    <label
-                                        class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                        Elemento Item - Descrição
-                                    </label>
-                                    <select id="filterElemento" multiple data-placeholder="Todos"
-                                        class="hidden"></select>
-                                </div>
-                            </div>
-
-                            <div class="space-y-6">
-                                <div class="space-y-3">
-                                    <label
-                                        class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                        Status Justificativa
-                                    </label>
-                                    <select id="filterStatus" multiple data-placeholder="Todos" class="hidden"></select>
-                                </div>
-                            </div>
-
-                            <div class="space-y-6">
-                                <div class="space-y-3">
-                                    <label
-                                        class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                        Saldo RPPN
-                                    </label>
-                                    <div class="relative group mt-1">
-                                        <div
-                                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                            <span class="text-slate-400 font-semibold text-[13px]">Mín</span>
-                                        </div>
-                                        <input type="number" id="filterSaldoMin" step="0.01" value="0.01"
-                                            oninput="filterTable()" placeholder="0.00"
-                                            class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
+                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                            <!-- Main Filters (Left 3 Columns) -->
+                            <div class="lg:col-span-3 space-y-8">
+                                <!-- Row 1: UE, Programa, Elemento -->
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Unidade Executora - Nome
+                                        </label>
+                                        <select id="filterUE" multiple data-placeholder="Todos" class="hidden"></select>
                                     </div>
-                                    <div class="relative group mt-2">
-                                        <div
-                                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                            <span class="text-slate-400 font-semibold text-[13px]">Máx</span>
-                                        </div>
-                                        <input type="number" id="filterSaldoMax" step="0.01" oninput="filterTable()"
-                                            placeholder="Infinito"
-                                            class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Programa - Descrição
+                                        </label>
+                                        <select id="filterPrograma" multiple data-placeholder="Todos"
+                                            class="hidden"></select>
                                     </div>
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Elemento Item - Descrição
+                                        </label>
+                                        <select id="filterElemento" multiple data-placeholder="Todos"
+                                            class="hidden"></select>
+                                    </div>
+                                </div>
+                                <!-- Row 2: Status, Decisão, Avaliação -->
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Status do Processo
+                                        </label>
+                                        <select id="filterStatusProcesso" multiple data-placeholder="Todos"
+                                            class="hidden"></select>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Decisão
+                                        </label>
+                                        <select id="filterDecisao" multiple data-placeholder="Todos"
+                                            class="hidden"></select>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <label
+                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                            Avaliação
+                                        </label>
+                                        <select id="filterAvaliacao" multiple data-placeholder="Todos"
+                                            class="hidden"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar Filters (Right 1 Column) -->
+                            <div class="space-y-4 border-l-2 border-slate-100 pl-8">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Saldo RPPN
+                                </label>
+                                <div class="relative group mt-1">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 font-semibold text-[13px]">Mín</span>
+                                    </div>
+                                    <input type="number" id="filterSaldoMin" step="0.01" value="0.01"
+                                        oninput="filterTable()" placeholder="0.00"
+                                        class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
+                                </div>
+                                <div class="relative group mt-2">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 font-semibold text-[13px]">Máx</span>
+                                    </div>
+                                    <input type="number" id="filterSaldoMax" step="0.01" oninput="filterTable()"
+                                        placeholder="Infinito"
+                                        class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
                                 </div>
                             </div>
                         </div>
@@ -263,7 +277,6 @@
                                     <option value="10">10</option>
                                     <option value="25">25</option>
                                     <option value="50">50</option>
-                                    <option value="100">100</option>
                                 </select>
                             </div>
                         </div>

@@ -7,8 +7,10 @@ let columns = [];
 let currentRppn = "";
 let currentPage = 1;
 let itemsPerPage = parseInt(localStorage.getItem("rppn_items_per_page")) || 10;
+if (![10, 25, 50].includes(itemsPerPage)) itemsPerPage = 10;
 const CACHE_KEY = "rppn_data_cache";
-const PANEL_SELECT_IDS = ["filterUE", "filterPrograma", "filterElemento", "filterStatus"];
+const PANEL_SELECT_IDS = ["filterUE", "filterPrograma", "filterElemento", "filterDecisao", "filterAvaliacao", "filterStatusProcesso"];
+let tableApiData = []; // Store API data for the current page
 
 let descriptiveData = {
     unidades: [],
@@ -95,7 +97,9 @@ async function loadData() {
     if (rawData.length > 0) {
         const available = Object.keys(rawData[0]);
         const preferred = [
-            "Unidade Orçamentária - Código",
+            "Decisão",
+            "Avaliação",
+            "Status",
             "Unidade Orçamentária - Nome",
             "Unidade Executora - Código",
             "Unidade Executora - Nome",
@@ -111,7 +115,7 @@ async function loadData() {
             "Valor Cancelado Não Processado",
             "Status Justificativa"
         ];
-        columns = preferred.filter(p => available.includes(p));
+        columns = preferred.filter(p => available.includes(p) || ["Decisão", "Avaliação", "Status"].includes(p));
         available.forEach(a => { if (!columns.includes(a)) columns.push(a); });
     } else {
         columns = [];
@@ -133,15 +137,19 @@ function populateFilterOptions() {
     const ueSet = new Set();
     const programaSet = new Set();
     const elementoSet = new Set();
-    const statusSet = new Set();
+    const decisaoSet = new Set();
+    const avaliacaoSet = new Set();
+    const statusProcessoSet = new Set();
 
     rawData.forEach(row => {
         if (row["Unidade Executora - Nome"]) ueSet.add(row["Unidade Executora - Nome"]);
         if (row["Programa - Descrição"]) programaSet.add(row["Programa - Descrição"]);
         if (row["Elemento Item - Descrição"]) elementoSet.add(row["Elemento Item - Descrição"]);
 
-        const statusCol = columns.find(c => /status/i.test(c));
-        if (statusCol && row[statusCol]) statusSet.add(row[statusCol]);
+        const statusInfo = getRowStatusInfo(row);
+        if (statusInfo.decisao) decisaoSet.add(statusInfo.decisao);
+        if (statusInfo.avaliacao) avaliacaoSet.add(statusInfo.avaliacao);
+        if (statusInfo.status) statusProcessoSet.add(statusInfo.status);
     });
 
     const fillSelect = (id, set) => {
@@ -164,7 +172,11 @@ function populateFilterOptions() {
     fillSelect("filterUE", ueSet);
     fillSelect("filterPrograma", programaSet);
     fillSelect("filterElemento", elementoSet);
-    fillSelect("filterStatus", statusSet);
+
+    // Virtual Columns - Hardcoded options
+    fillSelect("filterDecisao", new Set(["Manter", "Cancelar", "(em branco)"]));
+    fillSelect("filterAvaliacao", new Set(["Pendente", "Aceito", "Rejeitado", "(em branco)"]));
+    fillSelect("filterStatusProcesso", new Set(["Pendente", "Em análise", "Concluído", "Retorno"]));
 
     if (typeof onCustomSelectChange !== 'undefined') {
         PANEL_SELECT_IDS.forEach(id => {
@@ -198,25 +210,38 @@ function applyPanelFilters() {
     const ueFilters = getVals("filterUE");
     const programaFilters = getVals("filterPrograma");
     const elementoFilters = getVals("filterElemento");
-    const statusFilters = getVals("filterStatus");
+    const decisaoFilters = getVals("filterDecisao");
+    const avaliacaoFilters = getVals("filterAvaliacao");
+    const statusProcessoFilters = getVals("filterStatusProcesso");
 
     const minSaldo = parseFloat(document.getElementById("filterSaldoMin")?.value) || 0;
     const maxSaldo = parseFloat(document.getElementById("filterSaldoMax")?.value) || Infinity;
 
     const saldoKey = "Saldo Restos a Pagar Não Processado";
-    const statusCol = columns.find(c => /status/i.test(c)) || "";
 
     panelFilteredData = rawData.filter(row => {
         const matchesSearch = !q || columns.some(c => String(row[c] ?? "").toLowerCase().includes(q));
         const matchesUE = ueFilters.length === 0 || ueFilters.includes(row["Unidade Executora - Nome"]);
         const matchesProg = programaFilters.length === 0 || programaFilters.includes(row["Programa - Descrição"]);
         const matchesElem = elementoFilters.length === 0 || elementoFilters.includes(row["Elemento Item - Descrição"]);
-        const statusVal = row[statusCol] || "";
-        const matchesStatus = statusFilters.length === 0 || statusFilters.includes(statusVal);
+
+        const statusInfo = getRowStatusInfo(row);
+
+        const checkFilter = (filterArr, val) => {
+            if (filterArr.length === 0) return true;
+            if (filterArr.includes(val)) return true;
+            if (filterArr.includes("(em branco)") && (val === "" || val == null)) return true;
+            return false;
+        };
+
+        const matchesDecisao = checkFilter(decisaoFilters, statusInfo.decisao);
+        const matchesAvaliacao = checkFilter(avaliacaoFilters, statusInfo.avaliacao);
+        const matchesStatusProcesso = checkFilter(statusProcessoFilters, statusInfo.status);
+
         const valSaldo = parseMoeda(row[saldoKey]) || 0;
         const matchesSaldo = valSaldo >= minSaldo && valSaldo <= maxSaldo;
 
-        return matchesSearch && matchesUE && matchesProg && matchesElem && matchesStatus && matchesSaldo;
+        return matchesSearch && matchesUE && matchesProg && matchesElem && matchesSaldo && matchesDecisao && matchesAvaliacao && matchesStatusProcesso;
     });
 
     const saldoKeySort = "Saldo Restos a Pagar Não Processado";
@@ -270,7 +295,9 @@ function updateFilterCountLabel() {
         getVals("filterUE").length > 0 ||
         getVals("filterPrograma").length > 0 ||
         getVals("filterElemento").length > 0 ||
-        getVals("filterStatus").length > 0 ||
+        getVals("filterDecisao").length > 0 ||
+        getVals("filterAvaliacao").length > 0 ||
+        getVals("filterStatusProcesso").length > 0 ||
         (document.getElementById("filterSaldoMin")?.value || "") !== "0.01" ||
         (document.getElementById("filterSaldoMax")?.value || "") !== "";
 
@@ -360,18 +387,25 @@ function enrichRows(rows) {
         }
         row["Elemento Item - Descrição"] = elemDesc;
 
+        // Materialize virtual columns for filtering
+        row["Decisão"] = "";
+        row["Avaliação"] = "";
+        row["Status"] = "Pendente";
     });
 }
-
 function updateCards(rows) {
     const total = rows.length;
-    const statusCol = columns.find(c => /status/i.test(c)) || "";
-    const pendentes = statusCol ? rows.filter(r => /pendente/i.test(r[statusCol] || "")).length : 0;
-    const finalizados = statusCol ? rows.filter(r => /mantido|cancelado|aprovado|rejeitado/i.test(r[statusCol] || "")).length : 0;
+    const counts = { total, pendentes: 0, finalizados: 0 };
 
-    document.getElementById("cardTotal").textContent = total;
-    document.getElementById("cardPendentes").textContent = pendentes;
-    document.getElementById("cardFinalizados").textContent = finalizados;
+    rows.forEach(r => {
+        const info = getRowStatusInfo(r);
+        if (info.status === "Pendente" || info.status === "Em análise") counts.pendentes++;
+        else if (info.status === "Concluído") counts.finalizados++;
+    });
+
+    document.getElementById("cardTotal").textContent = counts.total;
+    document.getElementById("cardPendentes").textContent = counts.pendentes;
+    document.getElementById("cardFinalizados").textContent = counts.finalizados;
 }
 
 function buildTableHeader() {
@@ -407,34 +441,92 @@ function buildTableHeader() {
     tr.appendChild(thAcao);
 }
 
-function renderCurrentPage() {
+async function renderCurrentPage() {
     const start = (currentPage - 1) * itemsPerPage;
     const rowsToDisplay = tableFilteredData.slice(start, start + itemsPerPage);
+
+    // Clear previous page data to trigger skeletons
+    tableApiData = [];
+
     renderRows(rowsToDisplay);
     updatePaginationUI();
     afterTableRender();
+
+    const rppnsToFetch = rowsToDisplay.map(r => getRppnId(r));
+
+    if (rppnsToFetch.length > 0) {
+        try {
+            const res = await checkStatus(session.user, session.token, rppnsToFetch);
+            if (res.ok && res.data?.success) {
+                const statusList = res.data.data.status || [];
+                const latestMap = {};
+                statusList.forEach(s => {
+                    if (!latestMap[s.rppn] || new Date(s.data_criacao) > new Date(latestMap[s.rppn].data_criacao)) {
+                        latestMap[s.rppn] = s;
+                    }
+                });
+                tableApiData = Object.values(latestMap);
+
+                // Update materialized columns in ALL rows (for global filtering)
+                rowsToDisplay.forEach(row => {
+                    const info = getRowStatusInfo(row);
+                    row["Decisão"] = info.decisao;
+                    row["Avaliação"] = info.avaliacao;
+                    row["Status"] = info.status;
+                });
+
+                renderRows(rowsToDisplay);
+            }
+        } catch (e) {
+            console.error("Erro ao buscar status:", e);
+        }
+    }
+}
+
+function getRppnId(row) {
+    return [
+        row["Unidade Orçamentária - Código"],
+        row["Unidade Executora - Código"],
+        row["Ano Origem Restos a Pagar"],
+        row["Documento Restos a Pagar"],
+        row["Função - Código"],
+        row["Subfunção - Código"],
+        row["Programa - Código"],
+        row["Projeto_Atividade - Código"],
+        row["Subprojeto_Subatividade - Código"],
+        row["Natureza_Item Despesa - Código Form"],
+        row["Fonte Recurso - Código"],
+        row["Procedência - Código"]
+    ].map(v => String(v ?? '')).join('.');
+}
+
+function getRowStatusInfo(row) {
+    const rppnId = getRppnId(row);
+    const apiData = tableApiData.find(d => d.rppn === rppnId);
+
+    // If no API data yet for the current page batch
+    const isLoading = tableApiData.length === 0;
+
+    const decisao = apiData?.acao ? (apiData.acao.charAt(0).toUpperCase() + apiData.acao.slice(1).toLowerCase()) : "";
+    let avaliacao = apiData?.status ? (apiData.status.charAt(0).toUpperCase() + apiData.status.slice(1).toLowerCase()) : "";
+
+    if (decisao && !avaliacao) avaliacao = "Pendente";
+
+    let status = "Pendente";
+    if (decisao) {
+        if (!apiData?.status) status = "Pendente";
+        else if (apiData?.status?.toLowerCase() === "pendente") status = "Em análise";
+        else if (apiData?.status?.toLowerCase() === "aceito") status = "Concluído";
+        else if (apiData?.status?.toLowerCase() === "rejeitado") status = "Retorno";
+    }
+
+    return { decisao, avaliacao, status, isLoading };
 }
 
 function renderRows(rows) {
     const tbody = document.getElementById("tableBody");
     tbody.innerHTML = "";
 
-    function getRppnId(row) {
-        return [
-            row["Unidade Orçamentária - Código"],
-            row["Unidade Executora - Código"],
-            row["Ano Origem Restos a Pagar"],
-            row["Documento Restos a Pagar"],
-            row["Função - Código"],
-            row["Subfunção - Código"],
-            row["Programa - Código"],
-            row["Projeto_Atividade - Código"],
-            row["Subprojeto_Subatividade - Código"],
-            row["Natureza_Item Despesa - Código Form"],
-            row["Fonte Recurso - Código"],
-            row["Procedência - Código"]
-        ].map(v => String(v ?? '')).join('.');
-    }
 
     const statusCol = columns.find(c => /status/i.test(c)) || "";
     const currencyCols = ["Saldo Restos a Pagar Não Processado", "Valor Inscrito Não Processado", "Valor Pago Não Processado", "Valor Cancelado Não Processado"];
@@ -456,7 +548,33 @@ function renderRows(rows) {
             const contentSpan = document.createElement("span");
             contentSpan.className = "line-clamp-1 truncate block w-full";
 
-            if (col === statusCol && row[col]) {
+            const statusInfo = getRowStatusInfo(row);
+
+            if (col === "Decisão" || col === "Avaliação" || col === "Status") {
+                const sInfo = getRowStatusInfo(row);
+                if (sInfo.isLoading) {
+                    contentSpan.innerHTML = `<div class="skeleton-loading mx-auto"></div>`;
+                } else {
+                    let key = col.toLowerCase();
+                    if (key === "decisão") key = "decisao";
+                    if (key === "avaliação") key = "avaliacao";
+
+                    const val = sInfo[key] || "";
+                    let colorKey = "slate";
+                    const lowerVal = val.toLowerCase();
+                    if (lowerVal === "pendente") colorKey = "amber";
+                    else if (lowerVal === "em análise") colorKey = "orange";
+                    else if (lowerVal === "concluído" || lowerVal === "aceito") colorKey = "emerald";
+                    else if (lowerVal === "retorno" || lowerVal === "rejeitado") colorKey = "rose";
+
+                    contentSpan.innerHTML = val ? `
+                        <span class="px-3 py-1.5 rounded-[0.75rem] text-[10px] font-bold uppercase inline-block border-2 badge-color-${colorKey}">
+                            ${val}
+                        </span>
+                    ` : "—";
+                }
+                td.classList.add("text-center");
+            } else if (col === statusCol && row[col]) {
                 const val = row[col].toLowerCase();
                 let cls = "bg-slate-100 text-slate-500 border-slate-200";
                 if (val.includes("pendente")) cls = "bg-amber-50 text-amber-800 border-amber-200";

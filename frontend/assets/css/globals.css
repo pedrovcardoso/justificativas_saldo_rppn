@@ -72,3 +72,58 @@ body {
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
 }
+
+/* Status Badge Colors (Hybrid Approach: Tailwind handles structure) */
+.badge-color-amber {
+    background-color: #fffbeb !important;
+    color: #92400e !important;
+    border-color: #fde68a !important;
+}
+
+.badge-color-emerald {
+    background-color: #ecfdf5 !important;
+    color: #065f46 !important;
+    border-color: #a7f3d0 !important;
+}
+
+.badge-color-rose {
+    background-color: #fff1f2 !important;
+    color: #9f1239 !important;
+    border-color: #fecdd3 !important;
+}
+
+.badge-color-orange {
+    background-color: #fff7ed !important;
+    color: #9a3412 !important;
+    border-color: #fed7aa !important;
+}
+
+.badge-color-slate {
+    background-color: #f8fafc !important;
+    color: #475569 !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Skeleton Loading */
+.skeleton-loading {
+    height: 1.5rem;
+    width: 6rem;
+    background-color: #cbd5e1 !important;
+    /* slate-300 */
+    border-radius: 0.5rem;
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

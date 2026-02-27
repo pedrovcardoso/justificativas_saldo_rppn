@@ -205,23 +205,19 @@ Este fluxo é responsável por obter dados no banco.
     "type": "object",
     "properties": {
         "user": {
-            "type": "string",
-            "description": "Email do usuário."
+            "type": "string"
         },
         "token": {
-            "type": "string",
-            "description": "Token de autenticação da sessão."
+            "type": "string"
         },
         "endpoint": {
-            "type": "string",
-            "description": "O endpoint específico a ser acionado dentro do fluxo."
+            "type": "string"
         },
         "arr_rppn": {
             "type": "array",
             "items": {
                 "type": "string"
-            },
-            "description": "Array de identificadores de restos a pagar."
+            }
         }
     },
     "required": [
@@ -248,4 +244,4 @@ Verifica o status de uma lista de restos a pagar.
 
 *   **Parâmetros Necessários no Corpo da Requisição:** `user`, `token`, `endpoint`, `arr_rppn`
 *   **Respostas:**
-    *   `200 OK`: `{ "success": true, "message": "Dados validados com sucesso.", "data": { "status": ..., "role": "...", "uo": "..." } }`
+    *   `200 OK`: `{ "success": true, "message": "Dados validados com sucesso.", "data": { "status": [{ "id_justificativa": "...", "rppn": "...", "user_justificativa": "...", "user_avaliador": "...", "acao": "...", "justificativa": "...", "status": "...", "motivo_rejeicao": "...", "data_criacao": "yyyy-mm-ddThh:mm:ssZ", "data_avaliacao": "yyyy-mm-ddThh:mm:ssZ" }], "role": "...", "uo": "..." } }`
