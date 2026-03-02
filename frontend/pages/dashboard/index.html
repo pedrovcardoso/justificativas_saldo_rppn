@@ -236,6 +236,23 @@
                         </button>
                     </div>
 
+                    <div id="batchActionContainer"
+                        class="hidden px-8 py-3 bg-slate-50 border-b-2 border-slate-100 items-center justify-between animate-in fade-in slide-in-from-top-1 duration-200">
+                        <div class="flex items-center gap-3">
+                            <div class="px-2.5 py-1 bg-slate-200 text-slate-600 rounded-lg text-[10px] font-black">
+                                <span id="batchSelectCount">0</span>
+                            </div>
+                            <p class="text-[12px] font-bold text-slate-500 uppercase tracking-tight">
+                                Registros selecionados para ação em massa
+                            </p>
+                        </div>
+                        <button onclick="openBatchModal()"
+                            class="px-5 py-2 bg-white border-2 border-slate-200 text-[#003D5D] text-[10px] font-black uppercase rounded-xl hover:bg-[#003D5D] hover:text-white hover:border-[#003D5D] transition-all flex items-center gap-2 shadow-sm active:scale-95">
+                            <i class='bx bx-layer-plus text-lg'></i>
+                            Registrar em massa
+                        </button>
+                    </div>
+
                     <div id="stateLoading"
                         class="flex flex-col items-center justify-center py-40 text-slate-400 bg-white">
                         <i class='bx bx-loader-alt text-6xl animate-spin mb-6 text-[#003D5D]'></i>

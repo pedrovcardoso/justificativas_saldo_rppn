@@ -436,16 +436,9 @@ function buildTableHeader() {
     const thCheck = document.createElement("th");
     thCheck.className = "px-4 py-3 text-left w-12 sticky left-0 z-20 bg-slate-50/80 backdrop-blur-sm border-r-2 border-slate-100";
     thCheck.innerHTML = `
-        <div class="flex items-center justify-center relative">
+        <div class="flex items-center justify-center">
             <input type="checkbox" id="selectAllRppn" onchange="toggleSelectAll(this.checked)"
                 class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
-            <div id="batchActionBtnContainer" class="hidden absolute left-full ml-4 whitespace-nowrap">
-                <button onclick="openBatchModal()" 
-                    class="bg-slate-50 border border-slate-200 text-slate-600 text-[10px] font-bold uppercase px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-800 transition-all flex items-center gap-1.5 shadow-sm">
-                    <i class='bx bx-layer-plus text-sm'></i>
-                    Registrar justificativa em massa
-                </button>
-            </div>
         </div>
     `;
     tr.appendChild(thCheck);
@@ -952,13 +945,17 @@ function toggleSelectAll(isSelected) {
 }
 
 function updateBatchUI() {
-    const btnContainer = document.getElementById("batchActionBtnContainer");
-    if (!btnContainer) return;
+    const container = document.getElementById("batchActionContainer");
+    const countLabel = document.getElementById("batchSelectCount");
+    if (!container) return;
 
     if (selectedRppns.size > 0) {
-        btnContainer.classList.remove("hidden");
+        container.classList.remove("hidden");
+        container.classList.add("flex");
+        if (countLabel) countLabel.textContent = selectedRppns.size;
     } else {
-        btnContainer.classList.add("hidden");
+        container.classList.add("hidden");
+        container.classList.remove("flex");
         const selectAll = document.getElementById("selectAllRppn");
         if (selectAll) selectAll.checked = false;
     }
