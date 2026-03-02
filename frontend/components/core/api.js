@@ -72,6 +72,16 @@ async function checkStatus(user, token) {
     return apiCall(API_URLS.getData, { endpoint: "check_status", user, token });
 }
 
+const ADMIN_NOT_IMPLEMENTED = () => Promise.resolve({ ok: false, status: 501, data: { success: false, error: "API não implementada. Aguardando backend." } });
+
+async function getUsers(user, token) { return ADMIN_NOT_IMPLEMENTED(); }
+async function createUser(user, token, payload) { return ADMIN_NOT_IMPLEMENTED(); }
+async function updateUser(user, token, payload) { return ADMIN_NOT_IMPLEMENTED(); }
+async function getNotifications(user, token) { return ADMIN_NOT_IMPLEMENTED(); }
+async function createNotification(user, token, payload) { return ADMIN_NOT_IMPLEMENTED(); }
+async function updateNotification(user, token, payload) { return ADMIN_NOT_IMPLEMENTED(); }
+async function deleteNotification(user, token, id) { return ADMIN_NOT_IMPLEMENTED(); }
+
 if (typeof module !== "undefined") {
-    module.exports = { sendOtp, validateOtp, validateSession, logout, justificar, justificarLote, avaliarStatus, getData, checkStatus };
+    module.exports = { sendOtp, validateOtp, validateSession, logout, justificar, justificarLote, avaliarStatus, getData, checkStatus, getUsers, createUser, updateUser, getNotifications, createNotification, updateNotification, deleteNotification };
 }

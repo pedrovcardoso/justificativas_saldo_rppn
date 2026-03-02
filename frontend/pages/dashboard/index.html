@@ -421,6 +421,46 @@
                                 </div>
                             </div>
 
+                            <div id="adminControls" class="hidden animate-in fade-in slide-in-from-top-4 duration-300">
+                                <p
+                                    class="text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-6">
+                                    Avaliação da decisão registrada:
+                                </p>
+                                <div class="flex gap-6 mb-8">
+                                    <label
+                                        class="flex-1 flex flex-col items-center gap-4 border-2 border-border rounded-3xl p-6 cursor-pointer hover:bg-emerald-50 hover:border-emerald-200 transition-all has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50 group shadow-sm text-center">
+                                        <input type="radio" name="adminAcao" value="aceito"
+                                            onchange="onAdminAcaoChange()" class="hidden">
+                                        <div
+                                            class="w-14 h-14 bg-white border-2 border-slate-200 rounded-2xl shadow-sm flex items-center justify-center text-emerald-600 group-has-[:checked]:bg-emerald-500 group-has-[:checked]:text-white group-has-[:checked]:border-emerald-500 transition-all">
+                                            <i class='bx bx-check-shield text-3xl'></i>
+                                        </div>
+                                        <span
+                                            class="font-bold text-[13px] text-slate-500 normal-case [letter-spacing:normal] group-has-[:checked]:text-emerald-700">Aprovar</span>
+                                    </label>
+                                    <label
+                                        class="flex-1 flex flex-col items-center gap-4 border-2 border-border rounded-3xl p-6 cursor-pointer hover:bg-rose-50 hover:border-rose-200 transition-all has-[:checked]:border-[#D61A21] has-[:checked]:bg-rose-50 group shadow-sm text-center">
+                                        <input type="radio" name="adminAcao" value="rejeitado"
+                                            onchange="onAdminAcaoChange()" class="hidden">
+                                        <div
+                                            class="w-14 h-14 bg-white border-2 border-slate-200 rounded-2xl shadow-sm flex items-center justify-center text-[#D61A21] group-has-[:checked]:bg-[#D61A21] group-has-[:checked]:text-white group-has-[:checked]:border-[#D61A21] transition-all">
+                                            <i class='bx bx-shield-x text-3xl'></i>
+                                        </div>
+                                        <span
+                                            class="font-bold text-[13px] text-slate-500 normal-case [letter-spacing:normal] group-has-[:checked]:text-rose-700">Rejeitar</span>
+                                    </label>
+                                </div>
+                                <div id="adminRejectReasonWrap"
+                                    class="hidden mb-4 animate-in fade-in slide-in-from-top-4 duration-300">
+                                    <label
+                                        class="block text-[11px] font-bold text-slate-400 normal-case [letter-spacing:normal] mb-4 uppercase tracking-wider">Motivo
+                                        da Rejeição:</label>
+                                    <textarea id="adminRejectReason" rows="4"
+                                        class="w-full bg-rose-50 border-2 border-rose-100 rounded-[2rem] p-6 text-sm font-medium text-slate-700 resize-none focus:bg-white focus:ring-8 focus:ring-rose-500/5 focus:border-rose-400 outline-none transition-all"
+                                        placeholder="Descreva o motivo da rejeição para retorno ao usuário..."></textarea>
+                                </div>
+                            </div>
+
                             <div id="modalAlert"
                                 class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal] border-2">
                             </div>
@@ -438,7 +478,7 @@
                         <div id="modalFooter"
                             class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
                             <button onclick="closeModal()"
-                                class="flex-1 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] hover:bg-slate-100 transition-all">Cancelar</button>
+                                class="flex-1 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 normal-case [letter-spacing:normal] hover:bg-slate-100 transition-all">Fechar</button>
                             <button id="btnConfirmar" onclick="handleConfirm()"
                                 class="flex-[2] bg-[#003D5D] py-5 rounded-[1.5rem] text-[11px] font-bold text-white normal-case [letter-spacing:normal] tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
                                 Registrar Decisão

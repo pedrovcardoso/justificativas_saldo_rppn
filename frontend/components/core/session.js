@@ -28,10 +28,25 @@ function clearSession() {
     Object.values(SESSION_KEYS).forEach(k => sessionStorage.removeItem(k));
 }
 
+function isAdmin() {
+    const session = getSession();
+    return session?.role?.toLowerCase() === "admin";
+}
+
 function requireSession(loginPath = "../../pages/login/index.html") {
     const session = getSession();
     if (!session) {
         window.location.href = loginPath;
+        return null;
+    }
+    return session;
+}
+
+function requireAdmin(redirectPath = "../dashboard/index.html") {
+    const session = requireSession();
+    if (!session) return null;
+    if (!isAdmin()) {
+        window.location.href = redirectPath;
         return null;
     }
     return session;

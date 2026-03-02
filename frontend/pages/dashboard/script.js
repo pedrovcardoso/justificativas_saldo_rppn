@@ -805,22 +805,47 @@ function openModal(rppn, row) {
             historySection.classList.add("hidden");
         }
 
-        // Logic for Pending or Accepted Decisions (Read-Only)
         const statusInfo = getRowStatusInfo(row);
-        const statusLower = statusInfo.avaliacao.toLowerCase();
-
         const btnConfirmar = document.getElementById("btnConfirmar");
         const modalFooter = document.getElementById("modalFooter");
         const pendingView = document.getElementById("pendingView");
         const decisionControls = document.getElementById("decisionControls");
+        const adminControls = document.getElementById("adminControls");
         const modalAlert = document.getElementById("modalAlert");
 
-        if ((statusLower === "pendente" || statusLower === "aceito") && statusInfo.fullData) {
-            // SHOW READ-ONLY VIEW
-            if (modalFooter) modalFooter.classList.add("hidden");
-            decisionControls.classList.add("hidden");
-            modalAlert.classList.add("hidden");
+        const hasDecision = !!statusInfo.decisao;
+        const adminMode = isAdmin() && hasDecision;
 
+        adminControls.classList.add("hidden");
+        decisionControls.classList.add("hidden");
+        pendingView.classList.add("hidden");
+        if (modalFooter) modalFooter.classList.remove("hidden");
+        if (modalAlert) modalAlert.classList.add("hidden");
+
+        if (adminMode) {
+            adminControls.classList.remove("hidden");
+            document.querySelectorAll("input[name=adminAcao]").forEach(r => r.checked = false);
+            document.getElementById("adminRejectReasonWrap").classList.add("hidden");
+            const reason = document.getElementById("adminRejectReason");
+            if (reason) reason.value = "";
+            btnConfirmar.textContent = "Salvar Avaliação";
+            btnConfirmar.disabled = false;
+            btnConfirmar.onclick = handleAdminConfirm;
+
+            if (statusInfo.fullData?.justificativa) {
+                pendingView.classList.remove("hidden");
+                document.getElementById("pendingJustText").textContent = statusInfo.fullData.justificativa;
+                const acaoLower = (statusInfo.fullData.acao || "").toLowerCase();
+                const badgeAcao = document.getElementById("pendingBadgeAcao");
+                const badgeStatus = document.getElementById("pendingBadgeStatus");
+                badgeAcao.textContent = statusInfo.fullData.acao;
+                badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
+                badgeStatus.textContent = "Em Análise";
+                badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
+                pendingView.firstElementChild.className = "bg-amber-50 border-2 border-amber-100 rounded-[2rem] p-8 relative overflow-hidden";
+            }
+        } else if (statusInfo.fullData && (statusInfo.avaliacao.toLowerCase() === "pendente" || statusInfo.avaliacao.toLowerCase() === "aceito")) {
+            if (modalFooter) modalFooter.classList.add("hidden");
             pendingView.classList.remove("hidden");
             document.getElementById("pendingJustText").textContent = statusInfo.fullData.justificativa || "Sem justificativa detalhada.";
 
@@ -832,41 +857,24 @@ function openModal(rppn, row) {
             badgeAcao.textContent = statusInfo.fullData.acao;
             badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
 
+            const statusLower = statusInfo.avaliacao.toLowerCase();
             if (statusLower === "aceito") {
                 badgeStatus.textContent = "Aceito";
                 badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-emerald";
                 pendingView.firstElementChild.className = "bg-emerald-50 border-2 border-emerald-100 rounded-[2rem] p-8 relative overflow-hidden";
-
-                // Refine label and icon for stronger green
-                const labelSent = pendingView.querySelector('p.text-amber-600\\/60');
-                if (labelSent) {
-                    labelSent.className = "text-[11px] font-black text-emerald-700 uppercase tracking-wider mb-2";
-                }
-
-                if (iconWrap) {
-                    iconWrap.className = 'bx bx-check-double text-6xl text-emerald-600';
-                }
+                if (iconWrap) iconWrap.className = 'bx bx-check-double text-6xl text-emerald-600';
             } else {
                 badgeStatus.textContent = "Em Análise";
                 badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
                 pendingView.firstElementChild.className = "bg-amber-50 border-2 border-amber-100 rounded-[2rem] p-8 relative overflow-hidden";
-
-                // Standard label for pending
-                const labelSent = pendingView.querySelector('p.text-emerald-700');
-                if (labelSent) {
-                    labelSent.className = "text-[11px] font-black text-amber-600/60 uppercase tracking-wider mb-2";
-                }
-
-                if (iconWrap) {
-                    iconWrap.className = 'bx bx-time-five text-6xl text-amber-600';
-                }
+                if (iconWrap) iconWrap.className = 'bx bx-time-five text-6xl text-amber-600';
             }
         } else {
-            // SHOW REGISTRATION CONTROLS
             if (modalFooter) modalFooter.classList.remove("hidden");
-            btnConfirmar.classList.remove("hidden", "opacity-50", "cursor-not-allowed");
             decisionControls.classList.remove("hidden");
-            pendingView.classList.add("hidden");
+            btnConfirmar.textContent = "Registrar Decisão";
+            btnConfirmar.disabled = false;
+            btnConfirmar.onclick = handleConfirm;
         }
     }
 
@@ -875,7 +883,6 @@ function openModal(rppn, row) {
     document.getElementById("justText").value = "";
     document.getElementById("modalAlert").classList.add("hidden");
     document.getElementById("btnConfirmar").disabled = false;
-    document.getElementById("btnConfirmar").textContent = "Registrar Decisão";
     document.getElementById("modalJust").classList.remove("hidden");
 }
 
@@ -884,6 +891,45 @@ function closeModal() { document.getElementById("modalJust").classList.add("hidd
 function onAcaoChange() {
     const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
     document.getElementById("justAreaWrap").classList.toggle("hidden", acao !== "manter");
+}
+
+function onAdminAcaoChange() {
+    const acao = document.querySelector("input[name=adminAcao]:checked")?.value;
+    document.getElementById("adminRejectReasonWrap").classList.toggle("hidden", acao !== "rejeitado");
+}
+
+async function handleAdminConfirm() {
+    const avaliacao = document.querySelector("input[name=adminAcao]:checked")?.value;
+    if (!avaliacao) { showModalAlert("Selecione uma avaliação para continuar."); return; }
+
+    const motivo = avaliacao === "rejeitado" ? document.getElementById("adminRejectReason").value.trim() : "";
+    if (avaliacao === "rejeitado" && !motivo) { showModalAlert("Campo obrigatório: motivo da rejeição."); return; }
+
+    const statusEntry = statusHistory.find(s => s.rppn === currentRppn && (s.status?.toLowerCase() === "pendente" || !s.status));
+    const entryId = statusEntry?.id || statusHistory.filter(s => s.rppn === currentRppn).sort((a, b) => new Date(b.data_criacao) - new Date(a.data_criacao))[0]?.id;
+
+    const btn = document.getElementById("btnConfirmar");
+    const modalJust = document.getElementById("modalJust");
+    const inputs = modalJust.querySelectorAll("input, textarea, button");
+
+    btn.disabled = true;
+    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+    inputs.forEach(el => el.disabled = true);
+
+    const res = await avaliarStatus(session.user, session.token, currentRppn, entryId, avaliacao, motivo);
+    const result = Array.isArray(res.data) ? res.data[0] : res.data;
+    const isSuccess = res.ok && result?.success;
+
+    if (isSuccess) {
+        document.getElementById("modalJust").classList.add("hidden");
+        document.getElementById("modalSuccess").classList.remove("hidden");
+    } else {
+        btn.disabled = false;
+        btn.textContent = "Salvar Avaliação";
+        inputs.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
+        const errorMsg = result?.error || res.data?.error || "Erro na comunicação com o servidor.";
+        showModalAlert(errorMsg);
+    }
 }
 
 function showModalAlert(msg, type = "error") {

@@ -170,8 +170,8 @@ const Layout = {
             if (uEl) uEl.textContent = session.user;
 
             if (rEl) {
-                const uoValue = session.uo || "---";
-                rEl.textContent = `UO - ${uoValue}`;
+                const adminRole = session.role?.toLowerCase() === "admin";
+                rEl.textContent = adminRole ? "Administrador" : `UO - ${session.uo || "---"}`;
             }
 
             if (tEl) tEl.textContent = session.user;
@@ -179,6 +179,10 @@ const Layout = {
             if (aEl) {
                 aEl.innerHTML = `<i class='bx bx-user text-2xl text-[#003D5D]'></i>`;
             }
+
+            const adminOnly = document.querySelectorAll("[data-admin-only]");
+            const isAdmin = session.role?.toLowerCase() === "admin";
+            adminOnly.forEach(el => el.classList.toggle("hidden", !isAdmin));
         }
     },
 
