@@ -22,7 +22,8 @@
                 <div class="mb-10">
                     <h2 class="text-3xl font-black text-[#003D5D] mb-2 normal-case [letter-spacing:normal]">Restos a
                         Pagar</h2>
-                    <p id="uoTitle" class="text-slate-500 font-medium normal-case [letter-spacing:normal]">UO ... — ...
+                    <p id="uoTitle" class="text-slate-500 font-medium normal-case [letter-spacing:normal]">
+                        Registre aqui as justificativas para manutenção ou cancelamento.
                     </p>
                 </div>
 
@@ -91,8 +92,6 @@
                                 class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
                                 Registros de RPPN
                             </h2>
-                            <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie as justificativas para o
-                                saldo de restos a pagar.</p>
                         </div>
                         <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                             <div class="relative group w-full sm:w-72">
@@ -134,91 +133,80 @@
                             </button>
                         </div>
 
-                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                            <!-- Main Filters (Left 3 Columns) -->
-                            <div class="lg:col-span-3 space-y-8">
-                                <!-- Row 1: UE, Programa, Elemento -->
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Unidade Executora - Nome
-                                        </label>
-                                        <select id="filterUE" multiple data-placeholder="Todos" class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Programa - Descrição
-                                        </label>
-                                        <select id="filterPrograma" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Elemento Item - Descrição
-                                        </label>
-                                        <select id="filterElemento" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-                                </div>
-                                <!-- Row 2: Status, Decisão, Avaliação -->
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Status do Processo
-                                        </label>
-                                        <select id="filterStatusProcesso" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Decisão
-                                        </label>
-                                        <select id="filterDecisao" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
-                                            Avaliação
-                                        </label>
-                                        <select id="filterAvaliacao" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
+                            <div id="filterUOWrap" class="space-y-3 hidden transition-all">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Unidade Orçamentária
+                                </label>
+                                <select id="filterUO" multiple data-placeholder="Todas" class="hidden"></select>
                             </div>
-
-                            <!-- Sidebar Filters (Right 1 Column) -->
-                            <div class="space-y-4 border-l-2 border-slate-100 pl-8">
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Unidade Executora
+                                </label>
+                                <select id="filterUE" multiple data-placeholder="Todos" class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Programa
+                                </label>
+                                <select id="filterPrograma" multiple data-placeholder="Todos" class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Elemento Item
+                                </label>
+                                <select id="filterElemento" multiple data-placeholder="Todos" class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Status do Processo
+                                </label>
+                                <select id="filterStatusProcesso" multiple data-placeholder="Todos"
+                                    class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Decisão
+                                </label>
+                                <select id="filterDecisao" multiple data-placeholder="Todos" class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
+                                    Avaliação
+                                </label>
+                                <select id="filterAvaliacao" multiple data-placeholder="Todos" class="hidden"></select>
+                            </div>
+                            <div class="space-y-3">
                                 <label class="text-[12px] font-semibold text-slate-500 flex items-center gap-2 ml-1">
                                     Saldo RPPN
                                 </label>
-                                <div class="relative group mt-1">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <span class="text-slate-400 font-semibold text-[13px]">Mín</span>
+                                <div class="flex items-center gap-2">
+                                    <div class="relative flex-1">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-[10px] font-bold text-slate-400 uppercase">Min</span>
+                                        </div>
+                                        <input type="number" id="filterSaldoMin" step="0.01" value="0.01"
+                                            oninput="filterTable()" placeholder="0.00"
+                                            class="w-full pl-10 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[12px] font-bold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-4 focus:ring-[#003D5D]/5 transition-all text-right">
                                     </div>
-                                    <input type="number" id="filterSaldoMin" step="0.01" value="0.01"
-                                        oninput="filterTable()" placeholder="0.00"
-                                        class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
-                                </div>
-                                <div class="relative group mt-2">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <span class="text-slate-400 font-semibold text-[13px]">Máx</span>
+                                    <div class="relative flex-1">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-[10px] font-bold text-slate-400 uppercase">Max</span>
+                                        </div>
+                                        <input type="number" id="filterSaldoMax" step="0.01" oninput="filterTable()"
+                                            placeholder="Infin."
+                                            class="w-full pl-10 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[12px] font-bold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-4 focus:ring-[#003D5D]/5 transition-all text-right">
                                     </div>
-                                    <input type="number" id="filterSaldoMax" step="0.01" oninput="filterTable()"
-                                        placeholder="Infinito"
-                                        class="w-full pl-12 pr-3 py-3 bg-white border-2 border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 outline-none focus:border-[#003D5D] focus:ring-2 focus:ring-[#003D5D]/5 transition-all placeholder-slate-300 text-right">
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-4 flex justify-end">
-                            <p class="text-[11px] font-bold text-slate-400 uppercase opacity-0 transition-opacity"
-                                id="filterResultCount">0 valores encontrados nessa configuração de filtros</p>
-                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <p class="text-[11px] font-bold text-slate-400 uppercase opacity-0 transition-opacity"
+                            id="filterResultCount">0 valores encontrados nessa configuração de filtros</p>
                     </div>
 
                     <div class="fixed bottom-8 right-8 z-40 group">
@@ -256,7 +244,8 @@
                     <div id="stateLoading"
                         class="flex flex-col items-center justify-center py-40 text-slate-400 bg-white">
                         <i class='bx bx-loader-alt text-6xl animate-spin mb-6 text-[#003D5D]'></i>
-                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">Sincronizando
+                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">
+                            Sincronizando
                             dados com o sistema…</p>
                     </div>
 
@@ -323,7 +312,8 @@
                     <div id="stateEmpty"
                         class="hidden flex flex-col items-center justify-center py-40 text-slate-400 bg-white">
                         <i class='bx bx-ghost text-6xl mb-6'></i>
-                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">Nenhum registro
+                        <p class="text-sm font-bold text-slate-600 normal-case [letter-spacing:normal]">Nenhum
+                            registro
                             encontrado para este
                             filtro.</p>
                     </div>
@@ -461,9 +451,6 @@
                                 </div>
                             </div>
 
-                            <div id="modalAlert"
-                                class="hidden mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal] border-2">
-                            </div>
 
                             <div id="historySection" class="mt-6 hidden pb-4">
                                 <h4
@@ -580,7 +567,8 @@
                         class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
                         <div
                             class="px-10 py-6 border-b-2 border-slate-50 flex items-center justify-between bg-emerald-50/30 shrink-0">
-                            <h3 class="text-xl font-black text-[#003D5D] tracking-tight">Resultado do Processamento</h3>
+                            <h3 class="text-xl font-black text-[#003D5D] tracking-tight">Resultado do Processamento
+                            </h3>
                             <button onclick="closeBatchResultModal()"
                                 class="text-slate-400 hover:text-slate-600 transition-colors"><i
                                     class='bx bx-x text-3xl'></i></button>
@@ -626,6 +614,7 @@
         </div>
     </div>
 
+    <script src="../../components/ui/toast.js"></script>
     <script src="../../components/core/api.js"></script>
     <script src="../../components/core/session.js"></script>
     <script src="../../components/core/csv.js"></script>

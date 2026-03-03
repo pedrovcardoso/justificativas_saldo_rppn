@@ -20,14 +20,18 @@ export async function POST(request) {
         for (const item of dados) {
             const { rppn, id } = item;
 
-            await db.query(
+            const [progress] = await db.query(
                 `UPDATE justificativas
-         SET status = ?, motivo_rejeicao = ?, user_avaliador = ?, data_avaliacao = NOW()
-         WHERE id = ? AND rppn = ?`,
+          SET status = ?, motivo_rejeicao = ?, user_avaliador = ?, data_avaliacao = NOW()
+          WHERE id = ? AND rppn = ?`,
                 [status, motivo_rejeicao || null, auth.user, id, rppn]
             );
 
-            results.push({ success: true, statusCode: '200', message: 'Dados salvos com sucesso.' });
+            if (progress.affectedRows === 0) {
+                results.push({ success: false, statusCode: '404', error: `Registro ${id} não encontrado para o RPPN informado.` });
+            } else {
+                results.push({ success: true, statusCode: '200', message: 'Dados salvos com sucesso.' });
+            }
         }
 
         return ok(results, 'Avaliação concluída.');

@@ -9,7 +9,7 @@ export async function POST(request) {
 
         const { acao, justificativa, dados } = auth.body;
 
-        if (!acao || !justificativa || !Array.isArray(dados) || dados.length === 0) {
+        if (!acao || justificativa === undefined || justificativa === null || !Array.isArray(dados) || dados.length === 0) {
             return badRequest('Campos "acao", "justificativa" e "dados" são obrigatórios.');
         }
 

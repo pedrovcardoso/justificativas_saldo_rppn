@@ -9,9 +9,11 @@ let currentPage = 1;
 let itemsPerPage = parseInt(localStorage.getItem("rppn_items_per_page")) || 10;
 if (![10, 25, 50].includes(itemsPerPage)) itemsPerPage = 10;
 const CACHE_KEY = "rppn_data_cache";
-const PANEL_SELECT_IDS = ["filterUE", "filterPrograma", "filterElemento", "filterDecisao", "filterAvaliacao", "filterStatusProcesso"];
+const PANEL_SELECT_IDS = ["filterUO", "filterUE", "filterPrograma", "filterElemento", "filterDecisao", "filterAvaliacao", "filterStatusProcesso"];
+
 let tableApiData = []; // Store API data for the current page
 let statusHistory = []; // Store all status history
+let isStatusLoading = true;
 let selectedRppns = new Set(); // Track selected RPPNs for batch action
 
 let descriptiveData = {
@@ -36,18 +38,7 @@ async function loadDescriptiveData() {
 }
 
 async function setupTitle() {
-    if (!session || !session.uo) return;
-    const uo = String(session.uo);
-    try {
-        const res = await fetch("../../assets/json/unidades.json");
-        const unidades = await res.json();
-        const unidade = unidades.find(u => String(u.unidade_orcamentaria_codigo) === uo);
-        const nome = unidade ? unidade.unidade_orcamentaria_nome : "Unidade não identificada";
-        document.getElementById("uoTitle").textContent = `UO ${uo} — ${nome}`;
-    } catch (e) {
-        console.error("Erro ao carregar unidades:", e);
-        document.getElementById("uoTitle").textContent = `UO ${uo}`;
-    }
+    // Subtitle is now generic and static in HTML as per user request.
 }
 
 function showState(name) {
@@ -74,10 +65,10 @@ async function loadData() {
     }
 
     const cached = sessionStorage.getItem(CACHE_KEY);
-    let csvRaw = "";
+    let rowsData = [];
 
     if (cached) {
-        csvRaw = cached;
+        rowsData = JSON.parse(cached);
     } else {
         const res = await getData(session.user, session.token);
         if (!res.ok || !res.data?.success) {
@@ -85,15 +76,23 @@ async function loadData() {
             showState("stateError");
             return;
         }
-        csvRaw = res.data?.data?.csv || "";
+        rowsData = res.data?.data?.rows || [];
         try {
-            sessionStorage.setItem(CACHE_KEY, csvRaw);
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify(rowsData));
         } catch (e) {
             console.warn("Dados muito grandes para o cache. Continuando em memória.");
         }
     }
 
-    rawData = parseCSV(csvRaw);
+    rawData = rowsData;
+
+    isStatusLoading = true;
+
+    // Admin-only UI adjustments (isAdmin is from session.js)
+    if (isAdmin()) {
+        const wrap = document.getElementById("filterUOWrap");
+        if (wrap) wrap.classList.remove("hidden");
+    }
 
     // Fetch all statuses once
     try {
@@ -110,6 +109,8 @@ async function loadData() {
         }
     } catch (e) {
         console.error("Erro ao carregar status iniciais:", e);
+    } finally {
+        isStatusLoading = false;
     }
 
     enrichRows(rawData);
@@ -154,6 +155,7 @@ async function loadData() {
 }
 
 function populateFilterOptions() {
+    const uoSet = new Set();
     const ueSet = new Set();
     const programaSet = new Set();
     const elementoSet = new Set();
@@ -162,6 +164,10 @@ function populateFilterOptions() {
     const statusProcessoSet = new Set();
 
     rawData.forEach(row => {
+        if (row["uo_codigo"] || row["Unidade Orçamentária - Nome"]) {
+            const label = row["Unidade Orçamentária - Nome"] || row["uo_codigo"];
+            uoSet.add(label);
+        }
         if (row["Unidade Executora - Nome"]) ueSet.add(row["Unidade Executora - Nome"]);
         if (row["Programa - Descrição"]) programaSet.add(row["Programa - Descrição"]);
         if (row["Elemento Item - Descrição"]) elementoSet.add(row["Elemento Item - Descrição"]);
@@ -189,11 +195,11 @@ function populateFilterOptions() {
         }
     };
 
+    fillSelect("filterUO", uoSet);
     fillSelect("filterUE", ueSet);
     fillSelect("filterPrograma", programaSet);
     fillSelect("filterElemento", elementoSet);
 
-    // Virtual Columns - Hardcoded options
     fillSelect("filterDecisao", new Set(["Manter", "Cancelar", "(em branco)"]));
     fillSelect("filterAvaliacao", new Set(["Pendente", "Aceito", "Rejeitado", "(em branco)"]));
     fillSelect("filterStatusProcesso", new Set(["Pendente", "Em análise", "Concluído", "Retorno"]));
@@ -227,6 +233,7 @@ function applyPanelFilters() {
     const q = (document.getElementById("searchInput")?.value || "").toLowerCase();
 
     const getVals = id => typeof getCustomSelectValues !== 'undefined' ? getCustomSelectValues(id) : [];
+    const uoFilters = getVals("filterUO");
     const ueFilters = getVals("filterUE");
     const programaFilters = getVals("filterPrograma");
     const elementoFilters = getVals("filterElemento");
@@ -241,6 +248,7 @@ function applyPanelFilters() {
 
     panelFilteredData = rawData.filter(row => {
         const matchesSearch = !q || columns.some(c => String(row[c] ?? "").toLowerCase().includes(q));
+        const matchesUO = uoFilters.length === 0 || uoFilters.includes(row["Unidade Orçamentária - Nome"]);
         const matchesUE = ueFilters.length === 0 || ueFilters.includes(row["Unidade Executora - Nome"]);
         const matchesProg = programaFilters.length === 0 || programaFilters.includes(row["Programa - Descrição"]);
         const matchesElem = elementoFilters.length === 0 || elementoFilters.includes(row["Elemento Item - Descrição"]);
@@ -261,7 +269,7 @@ function applyPanelFilters() {
         const valSaldo = parseMoeda(row[saldoKey]) || 0;
         const matchesSaldo = valSaldo >= minSaldo && valSaldo <= maxSaldo;
 
-        return matchesSearch && matchesUE && matchesProg && matchesElem && matchesSaldo && matchesDecisao && matchesAvaliacao && matchesStatusProcesso;
+        return matchesSearch && matchesUO && matchesUE && matchesProg && matchesElem && matchesSaldo && matchesDecisao && matchesAvaliacao && matchesStatusProcesso;
     });
 
     const saldoKeySort = "Saldo Restos a Pagar Não Processado";
@@ -298,7 +306,6 @@ function applyTableColumnFilters() {
         return true;
     });
 
-
     window._tableFilteredData = tableFilteredData;
 
     const sort = typeof window.getActiveTableSort === 'function' ? window.getActiveTableSort() : null;
@@ -312,6 +319,7 @@ function updateFilterCountLabel() {
     const getVals = id => typeof getCustomSelectValues !== 'undefined' ? getCustomSelectValues(id) : [];
     const hasActiveFilters =
         q ||
+        getVals("filterUO").length > 0 ||
         getVals("filterUE").length > 0 ||
         getVals("filterPrograma").length > 0 ||
         getVals("filterElemento").length > 0 ||
@@ -364,10 +372,23 @@ function clearAllFilters() {
 
 function enrichRows(rows) {
     rows.forEach(row => {
-        const uoCode = String(row["Unidade Orçamentária - Código"] || "");
+        // Map backend names to frontend display names
+        if (row.uo_codigo && !row["Unidade Orçamentária - Código"]) row["Unidade Orçamentária - Código"] = row.uo_codigo;
+        if (row.ue_codigo && !row["Unidade Executora - Código"]) row["Unidade Executora - Código"] = row.ue_codigo;
+        if (row.ano_origem && !row["Ano Origem Restos a Pagar"]) row["Ano Origem Restos a Pagar"] = row.ano_origem;
+        if (row.documento && !row["Documento Restos a Pagar"]) row["Documento Restos a Pagar"] = row.documento;
+        if (row.natureza_item && !row["Natureza_Item Despesa - Código Form"]) row["Natureza_Item Despesa - Código Form"] = row.natureza_item;
+        if (row.elemento_item && !row["Elemento Item Despesa - Código"]) row["Elemento Item Despesa - Código"] = row.elemento_item;
+        if (row.saldo_rppn && !row["Saldo Restos a Pagar Não Processado"]) row["Saldo Restos a Pagar Não Processado"] = row.saldo_rppn;
+        if (row.valor_inscrito && !row["Valor Inscrito Não Processado"]) row["Valor Inscrito Não Processado"] = row.valor_inscrito;
+        if (row.valor_pago && !row["Valor Pago Não Processado"]) row["Valor Pago Não Processado"] = row.valor_pago;
+        if (row.valor_cancelado && !row["Valor Cancelado Não Processado"]) row["Valor Cancelado Não Processado"] = row.valor_cancelado;
+
+        const uoCode = String(row["uo_codigo"] || "");
         const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo) === uoCode);
         row["Unidade Orçamentária - Nome"] = uo ? uo.unidade_orcamentaria_nome : "N/A";
-        const ueCode = String(row["Unidade Executora - Código"] || "");
+
+        const ueCode = String(row["ue_codigo"] || "");
         if (uo) {
             const ue = uo.unidades_executoras.find(u => String(u.codigo) === ueCode);
             row["Unidade Executora - Nome"] = ue ? ue.nome : "N/A";
@@ -375,9 +396,9 @@ function enrichRows(rows) {
             row["Unidade Executora - Nome"] = "N/A";
         }
 
-        const progCode = String(row["Programa - Código"] || "");
+        const progCode = String(row["programa"] || "");
         let progDesc = "N/A";
-        const ano = row["Ano Origem Restos a Pagar"];
+        const ano = row["ano_origem"];
         const yearEntry = descriptiveData.programas.find(p => String(p.ano) === String(ano));
         if (yearEntry) {
             const p = yearEntry.programas.find(pr => String(pr.codigo) === progCode);
@@ -390,11 +411,9 @@ function enrichRows(rows) {
         }
         row["Programa - Descrição"] = progDesc;
 
-        const elemCode = String(row["Elemento Item Despesa - Código"] || "");
+        const elemCode = String(row["elemento_item"] || "");
         let elemDesc = "N/A";
-
-        const anoRef = row["Ano Origem Restos a Pagar"];
-
+        const anoRef = row["ano_origem"];
         const yearEntryElem = descriptiveData.elementos.find(p => String(p.ano) === String(anoRef));
         if (yearEntryElem) {
             const e = yearEntryElem.itens.find(i => String(i.codigo) === elemCode);
@@ -430,10 +449,11 @@ function updateCards(rows) {
 
 function buildTableHeader() {
     const tr = document.getElementById("tableHead");
+    if (!tr) return;
     tr.innerHTML = "";
 
-    // Checkbox Column
     const thCheck = document.createElement("th");
+    thCheck.dataset.noColvis = "true";
     thCheck.className = "px-4 py-3 text-left w-12 sticky left-0 z-20 bg-slate-50/80 backdrop-blur-sm border-r-2 border-slate-100";
     thCheck.innerHTML = `
         <div class="flex items-center justify-center">
@@ -483,28 +503,13 @@ async function renderCurrentPage() {
 }
 
 function getRppnId(row) {
-    return [
-        row["Unidade Orçamentária - Código"],
-        row["Unidade Executora - Código"],
-        row["Ano Origem Restos a Pagar"],
-        row["Documento Restos a Pagar"],
-        row["Função - Código"],
-        row["Subfunção - Código"],
-        row["Programa - Código"],
-        row["Projeto_Atividade - Código"],
-        row["Subprojeto_Subatividade - Código"],
-        row["Natureza_Item Despesa - Código Form"],
-        row["Fonte Recurso - Código"],
-        row["Procedência - Código"]
-    ].map(v => String(v ?? '')).join('.');
+    return row.rppn;
 }
 
 function getRowStatusInfo(row) {
     const rppnId = getRppnId(row);
     const apiData = tableApiData.find(d => d.rppn === rppnId);
-
-    // If no API data yet for the current page batch
-    const isLoading = tableApiData.length === 0;
+    const isLoading = isStatusLoading;
 
     const decisao = apiData?.acao ? (apiData.acao.charAt(0).toUpperCase() + apiData.acao.slice(1).toLowerCase()) : "";
     let avaliacao = apiData?.status ? (apiData.status.charAt(0).toUpperCase() + apiData.status.slice(1).toLowerCase()) : "";
@@ -523,8 +528,8 @@ function getRowStatusInfo(row) {
 
 function renderRows(rows) {
     const tbody = document.getElementById("tableBody");
+    if (!tbody) return;
     tbody.innerHTML = "";
-
 
     const statusCol = columns.find(c => /status/i.test(c)) || "";
     const currencyCols = ["Saldo Restos a Pagar Não Processado", "Valor Inscrito Não Processado", "Valor Pago Não Processado", "Valor Cancelado Não Processado"];
@@ -538,7 +543,6 @@ function renderRows(rows) {
             openModal(rppnId, row);
         };
 
-        // Checkbox Cell
         const tdCheck = document.createElement("td");
         tdCheck.className = "px-4 py-3 text-center sticky left-0 z-10 bg-white group-hover:bg-slate-50 border-r-2 border-slate-100 transition-colors";
         tdCheck.innerHTML = `
@@ -626,13 +630,23 @@ function updatePaginationUI() {
     const start = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
     const end = Math.min(currentPage * itemsPerPage, totalItems);
 
-    document.getElementById("paginationInfo").textContent = `${start} — ${end} de ${totalItems} registros`;
-    document.getElementById("pageInput").value = currentPage;
-    document.getElementById("totalPagesLabel").textContent = `/ ${totalPages}`;
-    document.getElementById("btnPrev").disabled = currentPage === 1;
-    document.getElementById("btnNext").disabled = currentPage >= totalPages;
+    const info = document.getElementById("paginationInfo");
+    if (info) info.textContent = `${start} — ${end} de ${totalItems} registros`;
 
-    document.getElementById("rowsPerPage").value = itemsPerPage;
+    const input = document.getElementById("pageInput");
+    if (input) input.value = currentPage;
+
+    const label = document.getElementById("totalPagesLabel");
+    if (label) label.textContent = `/ ${totalPages}`;
+
+    const prev = document.getElementById("btnPrev");
+    if (prev) prev.disabled = currentPage === 1;
+
+    const next = document.getElementById("btnNext");
+    if (next) next.disabled = currentPage >= totalPages;
+
+    const rowSelect = document.getElementById("rowsPerPage");
+    if (rowSelect) rowSelect.value = itemsPerPage;
 }
 
 function handleRowsPerPageChange() {
@@ -656,12 +670,14 @@ function goToPage(val) {
 function changePage(delta) {
     currentPage += delta;
     renderCurrentPage();
-    document.getElementById("stateTable").scrollTo({ top: 0, behavior: "smooth" });
+    const tableState = document.getElementById("stateTable");
+    if (tableState) tableState.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function toggleFilterPanel() {
     const panel = document.getElementById("filterPanel");
     const btn = document.getElementById("btnFiltersToggle");
+    if (!panel || !btn) return;
     panel.classList.toggle("hidden");
     const isOpen = !panel.classList.contains("hidden");
 
@@ -677,8 +693,7 @@ function toggleFilterPanel() {
 function openModal(rppn, row) {
     currentRppn = rppn;
     if (!row) {
-        const rppnCol = columns.find(c => /rppn|empenho|id/i.test(c)) || columns[0];
-        row = rawData.find(r => r[rppnCol] === rppn);
+        row = rawData.find(r => r.rppn === rppn);
     }
 
     const labelEl = document.getElementById("modalRppnLabel");
@@ -689,10 +704,10 @@ function openModal(rppn, row) {
 
     if (row) {
         const showDetails = [
-            { label: "Unidade Orçamentária", value: `${row["Unidade Orçamentária - Nome"]} (${row["Unidade Orçamentária - Código"]})` },
-            { label: "Unidade Executora", value: `${row["Unidade Executora - Nome"]} (${row["Unidade Executora - Código"]})` },
-            { label: "Programa", value: `${row["Programa - Descrição"]} (${row["Programa - Código"]})` },
-            { label: "Elemento Item", value: `${row["Elemento Item - Descrição"]} (${row["Elemento Item - Código"]})` },
+            { label: "Unidade Orçamentária", value: `${row["Unidade Orçamentária - Nome"]} (${row["uo_codigo"]})` },
+            { label: "Unidade Executora", value: `${row["Unidade Executora - Nome"]} (${row["ue_codigo"]})` },
+            { label: "Programa", value: `${row["Programa - Descrição"]} (${row["programa"]})` },
+            { label: "Elemento Item", value: `${row["Elemento Item - Descrição"]} (${row["elemento_item"]})` },
             { label: "Saldo RPPN", value: formatMoeda(row["Saldo Restos a Pagar Não Processado"]), highlight: true },
             {
                 label: "Valores",
@@ -728,18 +743,17 @@ function openModal(rppn, row) {
                     <span class="text-[12px] font-bold text-slate-600">${d.value}</span>
                 `;
             }
-            detailsWrap.appendChild(div);
+            if (detailsWrap) detailsWrap.appendChild(div);
         });
 
-        // History section logic
         const historySection = document.getElementById("historySection");
         const historyList = document.getElementById("historyList");
         const historyData = statusHistory
             .filter(s => s.rppn === rppn)
             .sort((a, b) => new Date(b.data_criacao) - new Date(a.data_criacao));
 
-        if (historyData.length > 0) {
-            historySection.classList.remove("hidden");
+        if (historyData.length > 0 && historyList) {
+            historySection?.classList.remove("hidden");
             historyList.innerHTML = historyData.map(h => {
                 const dataCriacao = new Date(h.data_criacao).toLocaleString('pt-BR');
                 const dataAvaliacao = h.data_avaliacao ? new Date(h.data_avaliacao).toLocaleString('pt-BR') : null;
@@ -753,7 +767,6 @@ function openModal(rppn, row) {
                 return `
                 <div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-slate-100 before:rounded-full">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
-                        <!-- Decision Block -->
                         <div class="bg-white p-5 rounded-[1.5rem] border-2 border-slate-200 shadow-sm relative">
                             <div class="absolute -left-[29px] top-6 w-3 h-3 rounded-full bg-white border-2 border-[#003D5D]"></div>
                             <div class="flex items-center justify-between mb-3">
@@ -772,7 +785,6 @@ function openModal(rppn, row) {
                             </div>
                         </div>
 
-                        <!-- Evaluation Block -->
                         <div class="bg-white p-5 rounded-[1.5rem] border-2 border-slate-200 shadow-sm flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between mb-3">
@@ -802,7 +814,7 @@ function openModal(rppn, row) {
                 `;
             }).join('');
         } else {
-            historySection.classList.add("hidden");
+            historySection?.classList.add("hidden");
         }
 
         const statusInfo = getRowStatusInfo(row);
@@ -814,88 +826,115 @@ function openModal(rppn, row) {
         const modalAlert = document.getElementById("modalAlert");
 
         const hasDecision = !!statusInfo.decisao;
-        const adminMode = isAdmin() && hasDecision;
+        const isPending = statusInfo.avaliacao?.toLowerCase() === 'pendente';
+        const adminMode = isAdmin() && hasDecision && isPending;
 
-        adminControls.classList.add("hidden");
-        decisionControls.classList.add("hidden");
-        pendingView.classList.add("hidden");
+        adminControls?.classList.add("hidden");
+        decisionControls?.classList.add("hidden");
+        pendingView?.classList.add("hidden");
+
+        // Default visibility
         if (modalFooter) modalFooter.classList.remove("hidden");
         if (modalAlert) modalAlert.classList.add("hidden");
 
-        if (adminMode) {
-            adminControls.classList.remove("hidden");
+        if (isAdmin() && (!hasDecision || !isPending)) {
+            // Caso Admin abra uma linha sem decisão OU com status já avaliado (Concluído/Retorno): 
+            // só detalhes, sem botões de ação.
+            if (modalFooter) modalFooter.classList.add("hidden");
+        } else if (adminMode) {
+            adminControls?.classList.remove("hidden");
             document.querySelectorAll("input[name=adminAcao]").forEach(r => r.checked = false);
-            document.getElementById("adminRejectReasonWrap").classList.add("hidden");
+            document.getElementById("adminRejectReasonWrap")?.classList.add("hidden");
             const reason = document.getElementById("adminRejectReason");
             if (reason) reason.value = "";
-            btnConfirmar.textContent = "Salvar Avaliação";
-            btnConfirmar.disabled = false;
-            btnConfirmar.onclick = handleAdminConfirm;
+            if (btnConfirmar) {
+                btnConfirmar.textContent = "Salvar Avaliação";
+                btnConfirmar.disabled = false;
+                btnConfirmar.onclick = handleAdminConfirm;
+            }
 
-            if (statusInfo.fullData?.justificativa) {
+            if (statusInfo.fullData?.justificativa && pendingView) {
                 pendingView.classList.remove("hidden");
-                document.getElementById("pendingJustText").textContent = statusInfo.fullData.justificativa;
+                const pText = document.getElementById("pendingJustText");
+                if (pText) pText.textContent = statusInfo.fullData.justificativa;
                 const acaoLower = (statusInfo.fullData.acao || "").toLowerCase();
                 const badgeAcao = document.getElementById("pendingBadgeAcao");
                 const badgeStatus = document.getElementById("pendingBadgeStatus");
-                badgeAcao.textContent = statusInfo.fullData.acao;
-                badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
-                badgeStatus.textContent = "Em Análise";
-                badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
+                if (badgeAcao) {
+                    badgeAcao.textContent = statusInfo.fullData.acao;
+                    badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
+                }
+                if (badgeStatus) {
+                    badgeStatus.textContent = "Em Análise";
+                    badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
+                }
                 pendingView.firstElementChild.className = "bg-amber-50 border-2 border-amber-100 rounded-[2rem] p-8 relative overflow-hidden";
             }
         } else if (statusInfo.fullData && (statusInfo.avaliacao.toLowerCase() === "pendente" || statusInfo.avaliacao.toLowerCase() === "aceito")) {
             if (modalFooter) modalFooter.classList.add("hidden");
-            pendingView.classList.remove("hidden");
-            document.getElementById("pendingJustText").textContent = statusInfo.fullData.justificativa || "Sem justificativa detalhada.";
+            if (pendingView) {
+                pendingView.classList.remove("hidden");
+                const pText = document.getElementById("pendingJustText");
+                if (pText) pText.textContent = statusInfo.fullData.justificativa || "Sem justificativa detalhada.";
 
-            const badgeAcao = document.getElementById("pendingBadgeAcao");
-            const badgeStatus = document.getElementById("pendingBadgeStatus");
-            const iconWrap = pendingView.querySelector('.bx');
-            const acaoLower = (statusInfo.fullData.acao || "").toLowerCase();
+                const badgeAcao = document.getElementById("pendingBadgeAcao");
+                const badgeStatus = document.getElementById("pendingBadgeStatus");
+                const iconWrap = pendingView.querySelector('.bx');
+                const acaoLower = (statusInfo.fullData.acao || "").toLowerCase();
 
-            badgeAcao.textContent = statusInfo.fullData.acao;
-            badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
+                if (badgeAcao) {
+                    badgeAcao.textContent = statusInfo.fullData.acao;
+                    badgeAcao.className = `px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-${acaoLower === 'manter' ? 'sky' : 'rose'}`;
+                }
 
-            const statusLower = statusInfo.avaliacao.toLowerCase();
-            if (statusLower === "aceito") {
-                badgeStatus.textContent = "Aceito";
-                badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-emerald";
-                pendingView.firstElementChild.className = "bg-emerald-50 border-2 border-emerald-100 rounded-[2rem] p-8 relative overflow-hidden";
-                if (iconWrap) iconWrap.className = 'bx bx-check-double text-6xl text-emerald-600';
-            } else {
-                badgeStatus.textContent = "Em Análise";
-                badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
-                pendingView.firstElementChild.className = "bg-amber-50 border-2 border-amber-100 rounded-[2rem] p-8 relative overflow-hidden";
-                if (iconWrap) iconWrap.className = 'bx bx-time-five text-6xl text-amber-600';
+                const statusLower = statusInfo.avaliacao.toLowerCase();
+                if (statusLower === "aceito") {
+                    if (badgeStatus) {
+                        badgeStatus.textContent = "Aceito";
+                        badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 badge-color-emerald";
+                    }
+                    pendingView.firstElementChild.className = "bg-emerald-50 border-2 border-emerald-100 rounded-[2rem] p-8 relative overflow-hidden";
+                    if (iconWrap) iconWrap.className = 'bx bx-check-double text-6xl text-emerald-600';
+                } else {
+                    if (badgeStatus) {
+                        badgeStatus.textContent = "Em Análise";
+                        badgeStatus.className = "px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 bg-amber-100 text-amber-700 border-amber-200";
+                    }
+                    pendingView.firstElementChild.className = "bg-amber-50 border-2 border-amber-100 rounded-[2rem] p-8 relative overflow-hidden";
+                    if (iconWrap) iconWrap.className = 'bx bx-time-five text-6xl text-amber-600';
+                }
             }
         } else {
             if (modalFooter) modalFooter.classList.remove("hidden");
-            decisionControls.classList.remove("hidden");
-            btnConfirmar.textContent = "Registrar Decisão";
-            btnConfirmar.disabled = false;
-            btnConfirmar.onclick = handleConfirm;
+            decisionControls?.classList.remove("hidden");
+            if (btnConfirmar) {
+                btnConfirmar.textContent = "Registrar Decisão";
+                btnConfirmar.disabled = false;
+                btnConfirmar.onclick = handleConfirm;
+            }
         }
     }
 
     document.querySelectorAll("input[name=modalAcao]").forEach(r => r.checked = false);
-    document.getElementById("justAreaWrap").classList.add("hidden");
-    document.getElementById("justText").value = "";
-    document.getElementById("modalAlert").classList.add("hidden");
-    document.getElementById("btnConfirmar").disabled = false;
-    document.getElementById("modalJust").classList.remove("hidden");
+    document.getElementById("justAreaWrap")?.classList.add("hidden");
+    const jtext = document.getElementById("justText");
+    if (jtext) jtext.value = "";
+    document.getElementById("modalAlert")?.classList.add("hidden");
+    const mainBtn = document.getElementById("btnConfirmar");
+    if (mainBtn) mainBtn.disabled = false;
+    document.getElementById("modalJust")?.classList.remove("hidden");
 }
 
-function closeModal() { document.getElementById("modalJust").classList.add("hidden"); }
+function closeModal() { document.getElementById("modalJust")?.classList.add("hidden"); }
 
 function onAcaoChange() {
     const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
-    document.getElementById("justAreaWrap").classList.toggle("hidden", acao !== "manter");
+    document.getElementById("justAreaWrap")?.classList.toggle("hidden", acao !== "manter");
 }
 
 function onAdminAcaoChange() {
     const acao = document.querySelector("input[name=adminAcao]:checked")?.value;
-    document.getElementById("adminRejectReasonWrap").classList.toggle("hidden", acao !== "rejeitado");
+    document.getElementById("adminRejectReasonWrap")?.classList.toggle("hidden", acao !== "rejeitado");
 }
 
 async function handleAdminConfirm() {
@@ -910,65 +949,73 @@ async function handleAdminConfirm() {
 
     const btn = document.getElementById("btnConfirmar");
     const modalJust = document.getElementById("modalJust");
-    const inputs = modalJust.querySelectorAll("input, textarea, button");
+    const inputs = modalJust?.querySelectorAll("input, textarea, button");
 
-    btn.disabled = true;
-    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
-    inputs.forEach(el => el.disabled = true);
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+    }
+    inputs?.forEach(el => el.disabled = true);
 
     const res = await avaliarStatus(session.user, session.token, currentRppn, entryId, avaliacao, motivo);
     const result = Array.isArray(res.data) ? res.data[0] : res.data;
     const isSuccess = res.ok && result?.success;
 
     if (isSuccess) {
-        document.getElementById("modalJust").classList.add("hidden");
-        document.getElementById("modalSuccess").classList.remove("hidden");
+        document.getElementById("modalJust")?.classList.add("hidden");
+        document.getElementById("modalSuccess")?.classList.remove("hidden");
     } else {
-        btn.disabled = false;
-        btn.textContent = "Salvar Avaliação";
-        inputs.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = "Salvar Avaliação";
+        }
+        inputs?.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
         const errorMsg = result?.error || res.data?.error || "Erro na comunicação com o servidor.";
         showModalAlert(errorMsg);
     }
 }
 
 function showModalAlert(msg, type = "error") {
-    const el = document.getElementById("modalAlert");
-    el.className = `mt-6 px-6 py-4 rounded-2xl text-[11px] font-bold normal-case [letter-spacing:normal] ${type === "error" ? "bg-rose-50 text-rose-700 border-rose-100" : "bg-emerald-50 text-emerald-700 border-emerald-100"}`;
-    el.textContent = msg;
-    el.classList.remove("hidden");
+    if (window.showToast) {
+        window.showToast(msg, type);
+    } else {
+        alert(msg);
+    }
 }
 
 async function handleConfirm() {
     const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
     if (!acao) { showModalAlert("Selecione uma opção para continuar."); return; }
 
-    const just = document.getElementById("justText").value.trim();
+    const just = document.getElementById("justText")?.value.trim();
     if (acao === "manter" && !just) { showModalAlert("Campo obrigatório: justificativa técnica para manutenção."); return; }
 
     const btn = document.getElementById("btnConfirmar");
     const modalJust = document.getElementById("modalJust");
-    const inputs = modalJust.querySelectorAll("input, textarea, button");
+    const inputs = modalJust?.querySelectorAll("input, textarea, button");
 
-    btn.disabled = true;
-    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
-
-    inputs.forEach(el => el.disabled = true);
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+    }
+    inputs?.forEach(el => el.disabled = true);
 
     const res = await justificar(session.user, session.token, currentRppn, acao, just);
     const result = Array.isArray(res.data) ? res.data[0] : res.data;
     const isSuccess = res.ok && result?.success;
 
     if (isSuccess) {
-        document.getElementById("modalJust").classList.add("hidden");
-        document.getElementById("modalSuccess").classList.remove("hidden");
+        document.getElementById("modalJust")?.classList.add("hidden");
+        document.getElementById("modalSuccess")?.classList.remove("hidden");
     } else {
-        btn.disabled = false;
-        btn.textContent = "Registrar Decisão";
-        inputs.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = "Registrar Decisão";
+        }
+        inputs?.forEach(el => { if (el.id !== "btnConfirmar") el.disabled = false; });
         const errorMsg = result?.error || res.data?.error || "Erro na comunicação com o servidor.";
         showModalAlert(errorMsg);
-        document.getElementById("modalAlert").scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById("modalAlert")?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
@@ -1011,36 +1058,39 @@ function openBatchModal() {
     if (selectedRppns.size === 0) return;
 
     const label = document.getElementById("batchSelectedLabel");
-    label.textContent = `${selectedRppns.size} ${selectedRppns.size === 1 ? 'registro selecionado' : 'registros selecionados'}`;
+    if (label) label.textContent = `${selectedRppns.size} ${selectedRppns.size === 1 ? 'registro selecionado' : 'registros selecionados'}`;
 
     const list = document.getElementById("batchSelectionList");
-    list.innerHTML = Array.from(selectedRppns).map(rppn => `
-        <div class="flex items-center justify-between p-3 bg-slate-50 border-2 border-slate-100 rounded-xl">
-            <span class="text-[11px] font-bold text-slate-700 truncate mr-4">${rppn}</span>
-            <button onclick="toggleRppnSelection('${rppn}', false); openBatchModal();" class="text-rose-400 hover:text-rose-600 transition-colors">
-                <i class='bx bx-trash text-lg'></i>
-            </button>
-        </div>
-    `).join('');
+    if (list) {
+        list.innerHTML = Array.from(selectedRppns).map(rppn => `
+            <div class="flex items-center justify-between p-3 bg-slate-50 border-2 border-slate-100 rounded-xl">
+                <span class="text-[11px] font-bold text-slate-700 truncate mr-4">${rppn}</span>
+                <button onclick="toggleRppnSelection('${rppn}', false); openBatchModal();" class="text-rose-400 hover:text-rose-600 transition-colors">
+                    <i class='bx bx-trash text-lg'></i>
+                </button>
+            </div>
+        `).join('');
+    }
 
-    document.getElementById("batchJustText").value = "";
-    document.getElementById("batchJustAreaWrap").classList.add("hidden");
+    const bText = document.getElementById("batchJustText");
+    if (bText) bText.value = "";
+    document.getElementById("batchJustAreaWrap")?.classList.add("hidden");
     document.querySelectorAll("input[name=batchAcao]").forEach(r => r.checked = false);
-    document.getElementById("modalBatch").classList.remove("hidden");
+    document.getElementById("modalBatch")?.classList.remove("hidden");
 }
 
 function onBatchAcaoChange() {
     const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
-    document.getElementById("batchJustAreaWrap").classList.toggle("hidden", acao !== "manter");
+    document.getElementById("batchJustAreaWrap")?.classList.toggle("hidden", acao !== "manter");
 }
 
 function closeBatchModal() {
-    document.getElementById("modalBatch").classList.add("hidden");
+    document.getElementById("modalBatch")?.classList.add("hidden");
 }
 
 async function handleBatchConfirm() {
     const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
-    const just = document.getElementById("batchJustText").value.trim();
+    const just = document.getElementById("batchJustText")?.value.trim();
 
     if (!acao) {
         alert("Por favor, selecione uma ação (Manter ou Cancelar).");
@@ -1052,8 +1102,10 @@ async function handleBatchConfirm() {
     }
 
     const btn = document.getElementById("btnBatchConfirm");
-    btn.disabled = true;
-    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Processando…`;
+    }
 
     const dados = Array.from(selectedRppns).map(rppn => ({ rppn }));
 
@@ -1069,8 +1121,10 @@ async function handleBatchConfirm() {
         console.error("Erro no processamento em lote:", err);
         alert("Ocorreu um erro ao processar a solicitação.");
     } finally {
-        btn.disabled = false;
-        btn.textContent = "Confirmar Registro em Massa";
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = "Confirmar Registro em Massa";
+        }
     }
 }
 
@@ -1083,36 +1137,40 @@ function showBatchResults(results) {
     const successCount = results.filter(r => r.success).length;
     const errorCount = results.length - successCount;
 
-    summary.innerHTML = `
-        <div class="flex-1 flex flex-col items-center border-r-2 border-slate-100 pr-6">
-            <span class="text-3xl font-black text-emerald-500">${successCount}</span>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sucessos</span>
-        </div>
-        <div class="flex-1 flex flex-col items-center">
-            <span class="text-3xl font-black ${errorCount > 0 ? 'text-rose-500' : 'text-slate-300'}">${errorCount}</span>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Falhas</span>
-        </div>
-    `;
-
-    list.innerHTML = results.map(res => `
-        <div class="flex items-center gap-4 p-4 ${res.success ? 'bg-emerald-50/50' : 'bg-rose-50/50'} rounded-2xl border-2 ${res.success ? 'border-emerald-100' : 'border-rose-100'}">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center ${res.success ? 'bg-emerald-500 text-white' : 'bg-rose-500 text-white'}">
-                <i class='bx ${res.success ? 'bx-check' : 'bx-x'} text-xl'></i>
+    if (summary) {
+        summary.innerHTML = `
+            <div class="flex-1 flex flex-col items-center border-r-2 border-slate-100 pr-6">
+                <span class="text-3xl font-black text-emerald-500">${successCount}</span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sucessos</span>
             </div>
-            <div class="flex-1">
-                <p class="text-[11px] font-black text-slate-700">${res.data?.rppn || 'N/A'}</p>
-                <p class="text-[10px] font-medium ${res.success ? 'text-emerald-700' : 'text-rose-700'}">${res.message || res.error || (res.success ? 'Sucesso' : 'Erro desconhecido')}</p>
+            <div class="flex-1 flex flex-col items-center">
+                <span class="text-3xl font-black ${errorCount > 0 ? 'text-rose-500' : 'text-slate-300'}">${errorCount}</span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Falhas</span>
             </div>
-        </div>
-    `).join('');
+        `;
+    }
 
-    modal.classList.remove("hidden");
+    if (list) {
+        list.innerHTML = results.map(res => `
+            <div class="flex items-center gap-4 p-4 ${res.success ? 'bg-emerald-50/50' : 'bg-rose-50/50'} rounded-2xl border-2 ${res.success ? 'border-emerald-100' : 'border-rose-100'}">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center ${res.success ? 'bg-emerald-500 text-white' : 'bg-rose-500 text-white'}">
+                    <i class='bx ${res.success ? 'bx-check' : 'bx-x'} text-xl'></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-[11px] font-black text-slate-700">${res.data?.rppn || 'N/A'}</p>
+                    <p class="text-[10px] font-medium ${res.success ? 'text-emerald-700' : 'text-rose-700'}">${res.message || res.error || (res.success ? 'Sucesso' : 'Erro desconhecido')}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    modal?.classList.remove("hidden");
     selectedRppns.clear();
     updateBatchUI();
 }
 
 function closeBatchResultModal() {
-    document.getElementById("modalBatchResult").classList.add("hidden");
+    document.getElementById("modalBatchResult")?.classList.add("hidden");
 }
 
 function handleReloadAfterSuccess() {
@@ -1126,7 +1184,6 @@ if (session) {
             if (modal) {
                 modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
             }
-            setupTitle();
             loadData();
         });
     } else {
@@ -1137,11 +1194,9 @@ if (session) {
                     if (modal) {
                         modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
                     }
-                    setupTitle();
                     loadData();
                 });
             } else {
-                setupTitle();
                 loadData();
             }
         });
@@ -1159,4 +1214,3 @@ function afterTableRender() {
 
 function filterTable() { reloadUI(); }
 function clearAllTableFilters() { clearAllFilters(); }
-

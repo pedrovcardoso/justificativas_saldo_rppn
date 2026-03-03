@@ -689,6 +689,7 @@
                 } else {
                     const headers = Array.from(table.querySelectorAll('thead th')).slice(0, -1);
                     headers.forEach((th, index) => {
+                        if (th.dataset.noColvis === "true") return;
                         const name = th.querySelector('.table-span-header')?.textContent || th.textContent.trim();
                         const isVisible = th.style.display !== 'none';
 
