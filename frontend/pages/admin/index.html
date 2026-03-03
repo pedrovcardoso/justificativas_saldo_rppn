@@ -228,243 +228,279 @@
                     </div>
                 </div>
 
+                <!-- MODAL: Usuário -->
+                <div id="modalUser"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                        <div
+                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                            <div>
+                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                    id="userModalTitle">Novo Usuário</h3>
+                                <p
+                                    class="text-[11px] font-bold text-[#FCAE00] mt-1 normal-case [letter-spacing:normal]">
+                                    Preencha os dados de acesso</p>
+                            </div>
+                            <button onclick="closeUserModal()"
+                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                <i class='bx bx-x text-3xl'></i>
+                            </button>
+                        </div>
+                        <div class="px-10 py-8 overflow-y-auto flex-1">
+                            <div class="space-y-6">
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Username
+                                        / E-mail</label>
+                                    <input id="userFieldUsername" type="text" placeholder="usuario@sefmg.mg.gov.br"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Role</label>
+                                    <div class="flex gap-4">
+                                        <label
+                                            class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
+                                            <input type="radio" name="userRole" value="user" class="hidden" checked>
+                                            <div
+                                                class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
+                                                <i class='bx bx-user text-base'></i>
+                                            </div>
+                                            <span
+                                                class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Usuário</span>
+                                        </label>
+                                        <label
+                                            class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
+                                            <input type="radio" name="userRole" value="admin" class="hidden">
+                                            <div
+                                                class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
+                                                <i class='bx bx-shield-quarter text-base'></i>
+                                            </div>
+                                            <span
+                                                class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Admin</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Unidade
+                                        Orçamentária (UO)</label>
+                                    <input id="userFieldUO" type="text" placeholder="Ex: 1401"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                    <p class="text-[10px] text-slate-400 mt-2 ml-1">Deixe em branco para admins sem UO
+                                        vinculada.</p>
+                                </div>
+                                <div id="userModalAlert"
+                                    class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                            </div>
+                        </div>
+                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                            <button onclick="closeUserModal()"
+                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                            <button id="btnSaveUser" onclick="handleSaveUser()"
+                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                Salvar Usuário
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL: Legislação -->
+                <div id="modalLeg"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
+                        <div
+                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                            <div>
+                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                    id="legModalTitle">Nova Legislação</h3>
+                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Preencha os dados do normativo</p>
+                            </div>
+                            <button onclick="closeLegModal()"
+                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                <i class='bx bx-x text-3xl'></i>
+                            </button>
+                        </div>
+                        <div class="px-10 py-8 overflow-y-auto flex-1">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="md:col-span-2">
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
+                                    <input id="legFieldTitulo" type="text"
+                                        placeholder="Ex: Lei Complementar nº 101/2000"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
+                                    <input id="legFieldTipo" type="text" placeholder="Ex: Lei Complementar, Decreto…"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Número</label>
+                                    <input id="legFieldNumero" type="text" placeholder="Ex: 101"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ano</label>
+                                    <input id="legFieldAno" type="text" placeholder="Ex: 2000"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Esfera</label>
+                                    <select id="legFieldEsfera"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                        <option value="Federal">Federal</option>
+                                        <option value="Estadual">Estadual</option>
+                                        <option value="Municipal">Municipal</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Status</label>
+                                    <select id="legFieldStatus"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                        <option value="Vigente">Vigente</option>
+                                        <option value="Revogado">Revogado</option>
+                                        <option value="Suspenso">Suspenso</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ementa</label>
+                                    <textarea id="legFieldEmenta" rows="3"
+                                        class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
+                                        placeholder="Descrição resumida do normativo…"></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">URL</label>
+                                    <input id="legFieldUrl" type="url" placeholder="https://…"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tags
+                                        <span class="normal-case font-medium">(separadas por vírgula)</span></label>
+                                    <input id="legFieldTags" type="text"
+                                        placeholder="Ex: Finanças Públicas, LRF, Orçamento"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                            </div>
+                            <div id="legModalAlert"
+                                class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                        </div>
+                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                            <button onclick="closeLegModal()"
+                                class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                            <button id="btnSaveLeg" onclick="handleSaveLeg()"
+                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL: Notificação -->
+                <div id="modalNotif"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                        <div
+                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                            <div>
+                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                    id="notifModalTitle">Nova Notificação</h3>
+                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure a mensagem para os
+                                    usuários</p>
+                            </div>
+                            <button onclick="closeNotifModal()"
+                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                <i class='bx bx-x text-3xl'></i>
+                            </button>
+                        </div>
+                        <div class="px-10 py-8 overflow-y-auto flex-1">
+                            <div class="space-y-6">
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
+                                    <input id="notifFieldTitulo" type="text" placeholder="Ex: Prazo de envio encerrado"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Mensagem</label>
+                                    <textarea id="notifFieldMensagem" rows="4"
+                                        class="w-full bg-slate-50 border-2 border-border rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
+                                        placeholder="Texto completo da notificação…"></textarea>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
+                                    <select id="notifFieldTipo"
+                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                        <option value="info">Informação</option>
+                                        <option value="aviso">Aviso</option>
+                                        <option value="urgente">Urgente</option>
+                                    </select>
+                                </div>
+                                <label
+                                    class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-border rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
+                                    <input id="notifFieldAtivo" type="checkbox" checked
+                                        class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
+                                    <span class="font-bold text-[13px] text-slate-600">Notificação ativa (visível para
+                                        usuários)</span>
+                                </label>
+                                <div id="notifModalAlert"
+                                    class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                            </div>
+                        </div>
+                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                            <button onclick="closeNotifModal()"
+                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                            <button id="btnSaveNotif" onclick="handleSaveNotif()"
+                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                Salvar Notificação
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL: Confirmação -->
+                <div id="modalConfirm"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] hidden p-4">
+                    <div
+                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-sm overflow-hidden border-2 border-[#D61A21]/10 flex flex-col p-10 text-center">
+                        <div
+                            class="w-16 h-16 bg-rose-50 border-2 border-rose-100 text-[#D61A21] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class='bx bx-trash text-3xl'></i>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-800 mb-2" id="confirmModalTitle">Confirmar exclusão
+                        </h3>
+                        <p class="text-slate-500 font-medium text-[13px] mb-8" id="confirmModalMsg">Esta ação não pode
+                            ser desfeita.</p>
+                        <div class="flex gap-3">
+                            <button onclick="closeConfirmModal()"
+                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                            <button id="btnConfirmAction"
+                                class="flex-[2] bg-[#D61A21] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-red-700 shadow-xl shadow-red-200 transition-all">
+                                Excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>
-
-    <!-- MODAL: Usuário -->
-    <div id="modalUser"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-        <div
-            class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
-            <div class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                <div>
-                    <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                        id="userModalTitle">Novo Usuário</h3>
-                    <p class="text-[11px] font-bold text-[#FCAE00] mt-1 normal-case [letter-spacing:normal]">Preencha os
-                        dados de acesso</p>
-                </div>
-                <button onclick="closeUserModal()"
-                    class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                    <i class='bx bx-x text-3xl'></i>
-                </button>
-            </div>
-            <div class="px-10 py-8 overflow-y-auto flex-1">
-                <div class="space-y-6">
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Username /
-                            E-mail</label>
-                        <input id="userFieldUsername" type="text" placeholder="usuario@sefmg.mg.gov.br"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Role</label>
-                        <div class="flex gap-4">
-                            <label
-                                class="flex-1 flex items-center gap-3 border-2 border-slate-100 rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
-                                <input type="radio" name="userRole" value="user" class="hidden" checked>
-                                <div
-                                    class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
-                                    <i class='bx bx-user text-base'></i>
-                                </div>
-                                <span
-                                    class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Usuário</span>
-                            </label>
-                            <label
-                                class="flex-1 flex items-center gap-3 border-2 border-slate-100 rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
-                                <input type="radio" name="userRole" value="admin" class="hidden">
-                                <div
-                                    class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
-                                    <i class='bx bx-shield-quarter text-base'></i>
-                                </div>
-                                <span
-                                    class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Admin</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Unidade
-                            Orçamentária (UO)</label>
-                        <input id="userFieldUO" type="text" placeholder="Ex: 1401"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                        <p class="text-[10px] text-slate-400 mt-2 ml-1">Deixe em branco para admins sem UO vinculada.
-                        </p>
-                    </div>
-                    <div id="userModalAlert" class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                </div>
-            </div>
-            <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                <button onclick="closeUserModal()"
-                    class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                <button id="btnSaveUser" onclick="handleSaveUser()"
-                    class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                    Salvar Usuário
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Legislação -->
-    <div id="modalLeg"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-        <div
-            class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
-            <div class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                <div>
-                    <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                        id="legModalTitle">Nova Legislação</h3>
-                    <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Preencha os dados do normativo</p>
-                </div>
-                <button onclick="closeLegModal()"
-                    class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                    <i class='bx bx-x text-3xl'></i>
-                </button>
-            </div>
-            <div class="px-10 py-8 overflow-y-auto flex-1">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="md:col-span-2">
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
-                        <input id="legFieldTitulo" type="text" placeholder="Ex: Lei Complementar nº 101/2000"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
-                        <input id="legFieldTipo" type="text" placeholder="Ex: Lei Complementar, Decreto…"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Número</label>
-                        <input id="legFieldNumero" type="text" placeholder="Ex: 101"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ano</label>
-                        <input id="legFieldAno" type="text" placeholder="Ex: 2000"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Esfera</label>
-                        <select id="legFieldEsfera"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                            <option value="Federal">Federal</option>
-                            <option value="Estadual">Estadual</option>
-                            <option value="Municipal">Municipal</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Status</label>
-                        <select id="legFieldStatus"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                            <option value="Vigente">Vigente</option>
-                            <option value="Revogado">Revogado</option>
-                            <option value="Suspenso">Suspenso</option>
-                        </select>
-                    </div>
-                    <div class="md:col-span-2">
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ementa</label>
-                        <textarea id="legFieldEmenta" rows="3"
-                            class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
-                            placeholder="Descrição resumida do normativo…"></textarea>
-                    </div>
-                    <div class="md:col-span-2">
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">URL</label>
-                        <input id="legFieldUrl" type="url" placeholder="https://…"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tags
-                            <span class="normal-case font-medium">(separadas por vírgula)</span></label>
-                        <input id="legFieldTags" type="text" placeholder="Ex: Finanças Públicas, LRF, Orçamento"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                </div>
-                <div id="legModalAlert" class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-            </div>
-            <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                <button onclick="closeLegModal()"
-                    class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                <button id="btnSaveLeg" onclick="handleSaveLeg()"
-                    class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                    Salvar
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Notificação -->
-    <div id="modalNotif"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-        <div
-            class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
-            <div class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                <div>
-                    <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                        id="notifModalTitle">Nova Notificação</h3>
-                    <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure a mensagem para os usuários</p>
-                </div>
-                <button onclick="closeNotifModal()"
-                    class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                    <i class='bx bx-x text-3xl'></i>
-                </button>
-            </div>
-            <div class="px-10 py-8 overflow-y-auto flex-1">
-                <div class="space-y-6">
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
-                        <input id="notifFieldTitulo" type="text" placeholder="Ex: Prazo de envio encerrado"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Mensagem</label>
-                        <textarea id="notifFieldMensagem" rows="4"
-                            class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
-                            placeholder="Texto completo da notificação…"></textarea>
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
-                        <select id="notifFieldTipo"
-                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                            <option value="info">Informação</option>
-                            <option value="aviso">Aviso</option>
-                            <option value="urgente">Urgente</option>
-                        </select>
-                    </div>
-                    <label
-                        class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
-                        <input id="notifFieldAtivo" type="checkbox" checked
-                            class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
-                        <span class="font-bold text-[13px] text-slate-600">Notificação ativa (visível para
-                            usuários)</span>
-                    </label>
-                    <div id="notifModalAlert" class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                </div>
-            </div>
-            <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                <button onclick="closeNotifModal()"
-                    class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                <button id="btnSaveNotif" onclick="handleSaveNotif()"
-                    class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                    Salvar Notificação
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script src="../../components/core/api.js"></script>
     <script src="../../components/core/session.js"></script>
+    <script src="../../components/ui/admin-select.js"></script>
     <script src="../../components/layout/layout.js"></script>
     <script src="./script.js"></script>
 </body>

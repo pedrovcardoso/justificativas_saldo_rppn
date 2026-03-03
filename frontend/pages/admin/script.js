@@ -178,7 +178,7 @@ function renderLegTable() {
                 <span class="px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 ${statusColor}">${item.status}</span>
             </td>
             <td class="px-6 py-4 text-right">
-                <div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="flex items-center justify-end gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
                     <button onclick="openLegModal(${i})"
                         class="text-[10px] font-black text-slate-400 hover:text-[#003D5D] transition-colors px-4 py-2 rounded-xl border-2 border-transparent hover:border-slate-200 hover:bg-white">
                         <i class='bx bx-edit-alt mr-1'></i>Editar
@@ -240,10 +240,22 @@ function handleSaveLeg() {
     showToast("Legislação salva localmente. Lembre-se de atualizar o arquivo JSON no servidor.");
 }
 
+function openConfirmModal(msg, onConfirm) {
+    document.getElementById("confirmModalMsg").textContent = msg;
+    const btn = document.getElementById("btnConfirmAction");
+    btn.onclick = () => { closeConfirmModal(); onConfirm(); };
+    document.getElementById("modalConfirm").classList.remove("hidden");
+}
+
+function closeConfirmModal() {
+    document.getElementById("modalConfirm").classList.add("hidden");
+}
+
 function deleteLeg(index) {
-    if (!confirm("Confirmar exclusão deste normativo?")) return;
-    legData.splice(index, 1);
-    renderLegTable();
+    openConfirmModal("Confirmar exclusão deste normativo? Esta ação não pode ser desfeita.", () => {
+        legData.splice(index, 1);
+        renderLegTable();
+    });
 }
 
 function openNotifModal(notif = null) {
