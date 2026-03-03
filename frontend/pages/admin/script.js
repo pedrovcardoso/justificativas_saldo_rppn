@@ -312,6 +312,53 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 4000);
 }
 
+function handleFileSelect(event) {
+    const file = event.target.files[0];
+    const display = document.getElementById("fileNameDisplay");
+    const btn = document.getElementById("btnImportCSV");
+
+    if (file) {
+        display.textContent = file.name;
+        display.classList.remove("text-slate-400");
+        display.classList.add("text-[#003D5D]");
+        btn.disabled = false;
+    } else {
+        display.textContent = "Selecionar arquivo CSV";
+        display.classList.add("text-slate-400");
+        display.classList.remove("text-[#003D5D]");
+        btn.disabled = true;
+    }
+}
+
+async function handleImportCSV() {
+    const fileInput = document.getElementById("csvFileInput");
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const btn = document.getElementById("btnImportCSV");
+    const alert = document.getElementById("importStatusAlert");
+
+    btn.disabled = true;
+    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin text-lg'></i> Importando…`;
+    alert.classList.add("hidden");
+
+    const res = await importCSV(session.user, session.token, file);
+
+    btn.disabled = false;
+    btn.innerHTML = `<i class='bx bx-check-double text-lg'></i> Iniciar Importação`;
+
+    if (res.ok && res.data?.success) {
+        showModalAlert("importStatusAlert", `Sucesso! ${res.data.data.count} registros importados.`, "info");
+        fileInput.value = "";
+        document.getElementById("fileNameDisplay").textContent = "Selecionar arquivo CSV";
+        document.getElementById("fileNameDisplay").classList.add("text-slate-400");
+        btn.disabled = true;
+        loadStats(); // Atualiza os cards
+    } else {
+        showModalAlert("importStatusAlert", res.data?.error || "Erro ao importar arquivo.");
+    }
+}
+
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
 } else {
