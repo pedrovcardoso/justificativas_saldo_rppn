@@ -456,9 +456,12 @@
             if (targetTh) {
                 const rect = targetTh.getBoundingClientRect();
                 const markerX = insertBefore ? rect.left : rect.right;
+                const container = table.closest('.overflow-auto, .overflow-hidden') || table.parentElement;
+                const containerRect = container.getBoundingClientRect();
+
                 dropMarker.style.top = `${rect.top + window.scrollY}px`;
                 dropMarker.style.left = `${markerX + window.scrollX - 0.5}px`;
-                dropMarker.style.height = `${table.offsetHeight}px`;
+                dropMarker.style.height = `${Math.min(table.offsetHeight, container.offsetHeight)}px`;
                 dropMarker.classList.remove('hidden');
             } else {
                 dropMarker.classList.add('hidden');
@@ -542,10 +545,11 @@
             if (parent) parent.style.position = 'relative';
 
             const menu = document.createElement('div');
-            // Common styles, width changes based on mode
-            menu.className = `column-visibility-menu absolute mt-2 z-50 ${isEnhanced ? 'w-[550px]' : 'w-[280px]'} bg-white rounded-2xl shadow-2xl ring-1 ring-slate-200 p-6 flex flex-col max-h-[400px] transition-all animate-in fade-in zoom-in-95 duration-200`;
-            menu.style.top = '100%';
-            menu.style.right = '0';
+            menu.className = `column-visibility-menu fixed mt-2 z-[10000] ${isEnhanced ? 'w-[550px]' : 'w-[280px]'} bg-white rounded-2xl shadow-2xl ring-1 ring-slate-200 p-6 flex flex-col max-h-[400px] transition-all animate-in fade-in zoom-in-95 duration-200`;
+
+            const btnRect = triggerBtn.getBoundingClientRect();
+            menu.style.top = (btnRect.bottom + 8) + 'px';
+            menu.style.right = (window.innerWidth - btnRect.right) + 'px';
 
             const searchWrapper = document.createElement('div');
             searchWrapper.className = 'relative mb-6';
@@ -840,12 +844,24 @@
                 input.type = 'text';
                 input.value = currentText;
                 input.className = 'w-full bg-white border border-primary text-[#003D5D] px-1 py-0.5 rounded outline-none text-[11px] font-bold';
+                input.style.width = '150px';
+                input.style.minWidth = '0';
 
                 const originalDisplay = span.style.display;
+                const parent = span.parentElement;
+                const originalGap = parent.style.gap;
+
                 span.style.display = 'none';
-                span.parentElement.insertBefore(input, span);
+                parent.style.gap = '0';
+                parent.insertBefore(input, span);
                 input.focus();
                 input.select();
+
+                const cleanupInput = () => {
+                    input.remove();
+                    span.style.display = originalDisplay;
+                    parent.style.gap = originalGap;
+                };
 
                 const save = () => {
                     const newText = input.value.trim();
@@ -862,16 +878,12 @@
                             }
                         }
                     }
-                    input.remove();
-                    span.style.display = originalDisplay;
+                    cleanupInput();
                 };
 
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') save();
-                    if (e.key === 'Escape') {
-                        input.remove();
-                        span.style.display = originalDisplay;
-                    }
+                    if (e.key === 'Escape') cleanupInput();
                 });
                 input.addEventListener('blur', save);
                 input.addEventListener('click', e => e.stopPropagation());

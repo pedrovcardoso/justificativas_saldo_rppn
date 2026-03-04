@@ -7,20 +7,26 @@ let columns = [];
 let currentPage = 1;
 let itemsPerPage = 25;
 
-const PANEL_SELECT_IDS = ["filterUE", "filterPrograma", "filterElemento", "filterStatus"];
+const PANEL_SELECT_IDS = [
+    "filterUO", "filterUE", "filterAno", "filterPrograma", "filterElemento",
+    "filterFuncao", "filterSubfuncao", "filterProcedencia", "filterProjetoAtividade", "filterStatus"
+];
+const CHECKBOX_GROUPS = ["Decisao", "Status"];
 
 let COLUMN_CONFIG = [];
 
 const INITIAL_COLUMNS = [
-    { key: "Unidade Orçamentária - Código", label: "UNIDADE ORÇAMENTÁRIA", visible: true },
-    { key: "Unidade Executora - Código", label: "UNIDADE EXECUTORA", visible: true },
-    { key: "Ano Origem Restos a Pagar", label: "ANO ORIGEM EMPENHO", visible: true },
-    { key: "Documento Restos a Pagar", label: "NÚMERO EMPENHO", visible: true },
-    { key: "Função - Código", label: "FUNÇÃO", visible: true },
-    { key: "Subfunção - Código", label: "SUBFUNÇÃO", visible: true },
-    { key: "Natureza_Item Despesa - Código Form", label: "NATUREZA ITEM", visible: true },
-    { key: "Procedência - Código", label: "PROCEDENCIA", visible: true },
-    { key: "Projeto_Atividade - Código", label: "PROJETO ATIVIDADE", visible: true }
+    { key: "uo_codigo", label: "UNIDADE ORÇAMENTÁRIA", visible: true },
+    { key: "ue_codigo", label: "UNIDADE EXECUTORA", visible: true },
+    { key: "ano_origem", label: "ANO ORIGEM EMPENHO", visible: true },
+    { key: "documento", label: "NÚMERO EMPENHO", visible: true },
+    { key: "funcao", label: "FUNÇÃO", visible: true },
+    { key: "subfuncao", label: "SUBFUNÇÃO", visible: true },
+    { key: "natureza_item", label: "NATUREZA ITEM", visible: true },
+    { key: "procedencia", label: "PROCEDENCIA", visible: true },
+    { key: "projeto_atividade", label: "PROJETO ATIVIDADE", visible: true },
+    { key: "saldo_rppn", label: "SALDO RPPN", visible: true },
+    { key: "status_documento", label: "STATUS", visible: true }
 ];
 
 let descriptiveData = {
@@ -61,6 +67,26 @@ async function init() {
     }
 
     PANEL_SELECT_IDS.forEach(id => renderSkeletonSelect(id));
+    initSidebarResizer();
+
+    // Fechar dropdowns ao escrolar os filtros
+    const sideScroll = document.getElementById("sidebarScrollContainer");
+    if (sideScroll) {
+        sideScroll.addEventListener("scroll", () => {
+            document.querySelectorAll('.custom-select-container.is-open').forEach(container => {
+                const selectId = container.dataset.selectId;
+                const toggleBtn = container.querySelector('.selection-area');
+                if (toggleBtn) toggleBtn.click(); // Simula o fechamento
+            });
+        });
+    }
+
+    // Filtros de Saldo
+    ['filterSaldoMin', 'filterSaldoMax'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', () => applyFilters());
+    });
+
     showState("stateLoading");
     await loadDescriptiveData();
 
@@ -70,9 +96,9 @@ async function init() {
         return;
     }
 
-    const csvRaw = res.data?.data?.csv || "";
-    rawData = parseCSV(csvRaw);
-    enrichRows(rawData);
+    rawData = res.data?.data?.rows || [];
+    const statusData = await fetchStatusUpdates();
+    enrichRows(rawData, statusData);
 
     if (rawData.length > 0) {
         const allKeys = Object.keys(rawData[0]);
@@ -97,17 +123,58 @@ async function init() {
     }
 
     populateFilterOptions();
+    renderCheckboxFilters();
     applyFilters();
 }
 
-function enrichRows(rows) {
-    rows.forEach(row => {
-        const uoCode = String(row["Unidade Orçamentária - Código"] || "");
-        const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo) === uoCode);
-        const ueCode = String(row["Unidade Executora - Código"] || "");
-        row["Unidade Executora - Nome"] = (uo && uo.unidades_executoras.find(u => String(u.codigo) === ueCode))?.nome || "N/A";
+async function fetchStatusUpdates() {
+    try {
+        const res = await checkStatus(session.user, session.token);
+        const data = res.ok && res.data?.success ? res.data.data : [];
+        const finalData = Array.isArray(data) ? data : (data?.rows || []);
+        return Array.isArray(finalData) ? finalData : [];
+    } catch (e) {
+        console.error("Erro ao buscar status:", e);
+        return [];
+    }
+}
 
-        const progCode = String(row["Programa - Código"] || "");
+function enrichRows(rows, statusData = []) {
+    const sData = Array.isArray(statusData) ? statusData : [];
+    rows.forEach(row => {
+        // Find status in external updates using documento as key (same as backend)
+        const doc = String(row.documento || row["Documento Restos a Pagar"] || "");
+        const update = sData.find(s => String(s.documento) === doc);
+
+        row["Decisao"] = update ? (update.decisao || "Pendente") : "Pendente";
+        row["Status Justificativa"] = update ? (update.status || "Pendente") : "Pendente";
+        row["status_documento"] = row["Status Justificativa"];
+
+        // Ensure all initial column keys exist for filtering and table rendering
+        if (row.uo_codigo && !row["Unidade Orçamentária - Código"]) row["Unidade Orçamentária - Código"] = row.uo_codigo;
+        if (row.ue_codigo && !row["Unidade Executora - Código"]) row["Unidade Executora - Código"] = row.ue_codigo;
+        if (row.ano_origem && !row["Ano Origem Restos a Pagar"]) row["Ano Origem Restos a Pagar"] = row.ano_origem;
+        if (row.documento && !row["Documento Restos a Pagar"]) row["Documento Restos a Pagar"] = row.documento;
+        if (row.natureza_item && !row["Natureza_Item Despesa - Código Form"]) row["Natureza_Item Despesa - Código Form"] = row.natureza_item;
+        if (row.elemento_item && !row["Elemento Item Despesa - Código"]) row["Elemento Item Despesa - Código"] = row.elemento_item;
+        if (row.saldo_rppn && !row["Saldo Restos a Pagar Não Processado"]) row["Saldo Restos a Pagar Não Processado"] = row.saldo_rppn;
+        if (row.programa && !row["Programa - Código"]) row["Programa - Código"] = row.programa;
+
+        const uoCode = String(row.uo_codigo || row["Unidade Orçamentária - Código"] || "").trim();
+        const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo).trim() === uoCode);
+        const ueCode = String(row.ue_codigo || row["Unidade Executora - Código"] || "").trim();
+
+        // Concatenated Fields
+        row["UO_Concatenada"] = `${uoCode} - ${uo?.unidade_orcamentaria_nome || 'N/A'}`;
+        const ue = uo?.unidades_executoras?.find(u => String(u.codigo).trim() === ueCode);
+        row["UE_Concatenada"] = `${ueCode} - ${ue?.nome || 'N/A'}`;
+
+        // Atualizar valores da linha para exibição na tabela
+        row.uo_codigo = row["UO_Concatenada"];
+        row.ue_codigo = row["UE_Concatenada"];
+        row["Unidade Executora - Nome"] = ue?.nome || "N/A";
+
+        const progCode = String(row.programa || row["Programa - Código"] || "");
         let progDesc = "N/A";
         for (const entry of descriptiveData.programas) {
             const p = entry.programas.find(pr => String(pr.codigo) === progCode);
@@ -115,7 +182,7 @@ function enrichRows(rows) {
         }
         row["Programa - Descrição"] = progDesc;
 
-        const elemCode = String(row["Elemento Item Despesa - Código"] || "");
+        const elemCode = String(row.elemento_item || row["Elemento Item Despesa - Código"] || "");
         let elemDesc = "N/A";
         for (const entry of descriptiveData.elementos) {
             const e = entry.itens.find(i => String(i.codigo) === elemCode);
@@ -126,38 +193,101 @@ function enrichRows(rows) {
 }
 
 function populateFilterOptions() {
-    const sets = { filterUE: new Set(), filterPrograma: new Set(), filterElemento: new Set(), filterStatus: new Set() };
+    const sets = {};
+    PANEL_SELECT_IDS.forEach(id => sets[id] = new Set());
+
     rawData.forEach(row => {
-        if (row["Unidade Executora - Nome"]) sets.filterUE.add(row["Unidade Executora - Nome"]);
+        if (row["UO_Concatenada"]) sets.filterUO.add(row["UO_Concatenada"]);
+        if (row["UE_Concatenada"]) sets.filterUE.add(row["UE_Concatenada"]);
+        if (row.ano_origem) sets.filterAno.add(row.ano_origem);
         if (row["Programa - Descrição"]) sets.filterPrograma.add(row["Programa - Descrição"]);
         if (row["Elemento Item - Descrição"]) sets.filterElemento.add(row["Elemento Item - Descrição"]);
+        if (row.funcao) sets.filterFuncao.add(row.funcao);
+        if (row.subfuncao) sets.filterSubfuncao.add(row.subfuncao);
+        if (row.procedencia) sets.filterProcedencia.add(row.procedencia);
+        if (row.projeto_atividade) sets.filterProjetoAtividade.add(row.projeto_atividade);
         if (row["Status Justificativa"]) sets.filterStatus.add(row["Status Justificativa"]);
     });
 
+    const moreContent = document.getElementById("moreFiltersContent");
+    const labels = {
+        filterPrograma: "Programa",
+        filterElemento: "Elemento Item",
+        filterFuncao: "Função",
+        filterSubfuncao: "Subfunção",
+        filterProcedencia: "Procedência",
+        filterProjetoAtividade: "Projeto Atividade",
+        filterStatus: "Status (Original)"
+    };
+
     Object.keys(sets).forEach(id => {
+        let el = document.getElementById(id);
+        if (!el && moreContent && labels[id]) {
+            const div = document.createElement("div");
+            div.className = "space-y-2";
+            div.innerHTML = `
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">${labels[id]}</label>
+                <select id="${id}" multiple data-placeholder="Todos" class="hidden"></select>
+            `;
+            moreContent.appendChild(div);
+            renderSkeletonSelect(id);
+        }
+
         setCustomSelectOptions(id, [...sets[id]].sort());
         onCustomSelectChange(id, () => applyFilters());
     });
+
+    // Mostrar inputs de saldo e esconder skeleton
+    const saldoSkel = document.getElementById('saldoSkeleton');
+    const saldoInps = document.getElementById('saldoInputs');
+    if (saldoSkel) saldoSkel.classList.add('hidden');
+    if (saldoInps) saldoInps.classList.remove('hidden');
 }
 
 function applyFilters() {
-    const q = document.getElementById("searchInput").value.toLowerCase();
-    const ue = getCustomSelectValues("filterUE");
-    const pr = getCustomSelectValues("filterPrograma");
-    const el = getCustomSelectValues("filterElemento");
-    const st = getCustomSelectValues("filterStatus");
+    const f = {
+        uo: getCustomSelectValues("filterUO"),
+        ue: getCustomSelectValues("filterUE"),
+        an: getCustomSelectValues("filterAno"),
+        pr: getCustomSelectValues("filterPrograma"),
+        el: getCustomSelectValues("filterElemento"),
+        fn: getCustomSelectValues("filterFuncao"),
+        sf: getCustomSelectValues("filterSubfuncao"),
+        pc: getCustomSelectValues("filterProcedencia"),
+        pa: getCustomSelectValues("filterProjetoAtividade"),
+        st: getCustomSelectValues("filterStatus"),
+        dec: getCheckboxValues("Decisao"),
+        sta: getCheckboxValues("Status"),
+        sMin: parseMoeda(document.getElementById('filterSaldoMin')?.value),
+        sMax: parseMoeda(document.getElementById('filterSaldoMax')?.value)
+    };
 
     panelFilteredData = rawData.filter(row => {
-        const matchesSearch = !q || columns.some(c => String(row[c] || "").toLowerCase().includes(q));
-        const matchesUE = !ue.length || ue.includes(row["Unidade Executora - Nome"]);
-        const matchesPR = !pr.length || pr.includes(row["Programa - Descrição"]);
-        const matchesEL = !el.length || el.includes(row["Elemento Item - Descrição"]);
-        const matchesST = !st.length || st.includes(row["Status Justificativa"]);
-        return matchesSearch && matchesUE && matchesPR && matchesEL && matchesST;
+        const matchesUO = !f.uo.length || f.uo.includes(row["UO_Concatenada"]);
+        const matchesUE = !f.ue.length || f.ue.includes(row["UE_Concatenada"]);
+        const matchesAN = !f.an.length || f.an.includes(String(row.ano_origem));
+        const matchesPR = !f.pr.length || f.pr.includes(row["Programa - Descrição"]);
+        const matchesEL = !f.el.length || f.el.includes(row["Elemento Item - Descrição"]);
+        const matchesFN = !f.fn.length || f.fn.includes(String(row.funcao));
+        const matchesSF = !f.sf.length || f.sf.includes(String(row.subfuncao));
+        const matchesPC = !f.pc.length || f.pc.includes(String(row.procedencia));
+        const matchesPA = !f.pa.length || f.pa.includes(String(row.projeto_atividade));
+        const matchesST = !f.st.length || f.st.includes(row["Status Justificativa"]);
+
+        const matchesCbDecisao = !f.dec.length || f.dec.includes(row["Decisao"]);
+        const matchesCbStatus = !f.sta.length || f.sta.includes(row["Status Justificativa"]);
+
+        const saldo = parseMoeda(row.saldo_rppn);
+        const matchesSMin = isNaN(f.sMin) || saldo >= f.sMin;
+        const matchesSMax = isNaN(f.sMax) || saldo <= f.sMax;
+
+        return matchesUO && matchesUE && matchesAN && matchesPR && matchesEL &&
+            matchesFN && matchesSF && matchesPC && matchesPA && matchesST &&
+            matchesCbDecisao && matchesCbStatus && matchesSMin && matchesSMax;
     });
 
     applyTableColumnFilters();
-    updateFilterCount(q || ue.length || pr.length || el.length || st.length);
+    updateFilterCount(Object.values(f).some(v => Array.isArray(v) ? v.length > 0 : !isNaN(v)));
 }
 
 function applyTableColumnFilters() {
@@ -304,17 +434,18 @@ function handleRowsPerPageChange() {
 
 function updateFilterCount(active) {
     const el = document.getElementById("filterResultCount");
-    if (active) {
-        el.textContent = `${tableFilteredData.length} resultados encontrados`;
-        el.classList.remove("opacity-0");
-    } else {
-        el.classList.add("opacity-0");
+    if (el) {
+        el.textContent = tableFilteredData.length;
     }
 }
 
 function clearAllTableFilters() {
-    document.getElementById("searchInput").value = "";
     PANEL_SELECT_IDS.forEach(id => clearCustomSelect(id));
+    clearCheckboxes();
+    const sMin = document.getElementById('filterSaldoMin');
+    const sMax = document.getElementById('filterSaldoMax');
+    if (sMin) sMin.value = "";
+    if (sMax) sMax.value = "";
     window.dispatchEvent(new Event('clearAllFilters'));
     applyFilters();
 }
@@ -369,6 +500,82 @@ function exportExcel() {
 }
 
 function filterTable() { applyFilters(); }
+
+function toggleMoreFilters() {
+    const content = document.getElementById("moreFiltersContent");
+    const icon = document.getElementById("iconMoreFilters");
+    const isHidden = content.classList.contains("hidden");
+
+    content.classList.toggle("hidden");
+    icon.classList.toggle("bx-chevron-down", !isHidden);
+    icon.classList.toggle("bx-chevron-up", isHidden);
+}
+
+function initSidebarResizer() {
+    const resizer = document.getElementById("sidebarResizer");
+    const sidebar = document.getElementById("sidebarFilters");
+    let isResizing = false;
+
+    resizer.addEventListener("mousedown", (e) => {
+        isResizing = true;
+        document.body.style.cursor = "col-resize";
+        document.body.classList.add("select-none");
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!isResizing) return;
+        const offset = e.clientX - sidebar.getBoundingClientRect().left;
+        const newWidth = Math.max(200, Math.min(600, offset));
+        sidebar.style.width = `${newWidth}px`;
+    });
+
+    document.addEventListener("mouseup", () => {
+        if (!isResizing) return;
+        isResizing = false;
+        document.body.style.cursor = "default";
+        document.body.classList.remove("select-none");
+    });
+}
+
+function renderCheckboxFilters() {
+    const groups = {
+        Decisao: new Set(),
+        Status: new Set()
+    };
+
+    rawData.forEach(row => {
+        if (row["Decisao"]) groups.Decisao.add(row["Decisao"]);
+        if (row["Status Justificativa"]) groups.Status.add(row["Status Justificativa"]);
+    });
+
+    Object.keys(groups).forEach(group => {
+        const container = document.getElementById(`checkbox${group}`);
+        if (!container) return;
+
+        container.innerHTML = [...groups[group]].sort().map(val => `
+            <label class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors group">
+                <input type="checkbox" value="${val}" onchange="applyFilters()"
+                    class="w-5 h-5 rounded-lg border-2 border-slate-200 text-[#003D5D] focus:ring-[#003D5D]/20 transition-all cursor-pointer">
+                <span class="text-[12px] font-medium text-slate-600 group-hover:text-[#003D5D] transition-colors">${val}</span>
+            </label>
+        `).join("");
+    });
+}
+
+function getCheckboxValues(group) {
+    const container = document.getElementById(`checkbox${group}`);
+    if (!container) return [];
+    return Array.from(container.querySelectorAll('input:checked')).map(cb => cb.value);
+}
+
+function clearCheckboxes() {
+    ["Decisao", "Status"].forEach(group => {
+        const container = document.getElementById(`checkbox${group}`);
+        if (container) {
+            container.querySelectorAll('input').forEach(cb => cb.checked = false);
+        }
+    });
+}
 
 if (session) {
     Layout.ready.then(() => init());

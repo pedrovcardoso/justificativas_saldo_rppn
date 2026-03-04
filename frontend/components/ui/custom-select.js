@@ -146,6 +146,23 @@
                 arrow.querySelector('.bx').classList.add('rotate-180');
             }
             selectionArea.classList.add('border-[#003D5D]', 'ring-4', 'ring-[#003D5D]/10');
+
+            // Dynamic Positioning - Flyout to the right
+            const rect = selectionArea.getBoundingClientRect();
+            let top = rect.top;
+            const dropdownHeight = 400;
+            const dropdownWidth = 320;
+
+            if (top + dropdownHeight > window.innerHeight) {
+                top = window.innerHeight - dropdownHeight - 16;
+            }
+            if (top < 16) top = 16;
+
+            dropdownPanel.style.top = top + 'px';
+            dropdownPanel.style.left = (rect.right + 12) + 'px';
+            dropdownPanel.style.width = dropdownWidth + 'px';
+            dropdownPanel.style.transformOrigin = 'left center';
+
             if (searchInput) {
                 searchInput.value = '';
                 searchInput.dispatchEvent(new Event('input', { bubbles: true }));
@@ -162,7 +179,7 @@
         if (parent.querySelector(`.skeleton-select[data-select-id="${selectId}"]`)) return;
 
         const skeleton = document.createElement('div');
-        skeleton.className = 'skeleton-select relative w-full h-[44px] rounded-2xl bg-slate-100 animate-pulse border-2 border-slate-100';
+        skeleton.className = 'skeleton-select relative w-full h-[40px] rounded-xl bg-slate-100 animate-pulse border-2 border-slate-100';
         skeleton.dataset.selectId = selectId;
 
         const inner = document.createElement('div');
@@ -202,7 +219,7 @@
         tagsWrapperContainer.appendChild(tagsWrapper);
 
         const dropdownPanel = document.createElement('div');
-        dropdownPanel.className = 'dropdown-panel absolute z-50 top-full left-0 right-0 mt-0 bg-white/95 backdrop-blur-xl border-2 border-slate-100 rounded-3xl shadow-2xl shadow-[#003D5D]/10 origin-top-left transform scale-75 opacity-0 invisible transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col overflow-hidden w-auto min-w-[300px] max-w-[450px]';
+        dropdownPanel.className = 'dropdown-panel fixed z-[10001] bg-white/95 backdrop-blur-xl border-2 border-slate-100 rounded-3xl shadow-2xl shadow-[#003D5D]/10 origin-top-left transform scale-75 opacity-0 invisible transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col overflow-hidden w-auto min-w-[300px] max-w-[450px]';
 
         const searchWrapper = document.createElement('div');
         searchWrapper.className = 'p-3 border-b border-slate-100 z-10 relative shrink-0 bg-slate-50/50';
