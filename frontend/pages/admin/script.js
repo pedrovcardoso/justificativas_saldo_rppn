@@ -44,7 +44,8 @@ function switchTab(tab) {
             "estatisticas": loadStats,
             "usuarios": loadUsers,
             "legislacao": loadLegislacao,
-            "notificacoes": loadNotifications
+            "notificacoes": loadNotifications,
+            "tipos_justificativa": loadTiposJustificativa
         };
         if (loaders[tab]) loaders[tab]();
     }
@@ -485,6 +486,282 @@ function showModalAlert(id, msg, type = "error") {
     el.className = `mt-4 px-5 py-4 rounded-2xl text-[11px] font-bold border-2 ${type === "error" ? "bg-rose-50 text-rose-700 border-rose-100" : "bg-amber-50 text-amber-700 border-amber-100"}`;
     el.textContent = msg;
     el.classList.remove("hidden");
+}
+
+let tiposData = [];
+let editingTipoId = null;
+let camposBuilder = [];
+
+async function loadTiposJustificativa() {
+    const loading = document.getElementById("tiposStateLoading");
+    const table = document.getElementById("tiposTable");
+    const empty = document.getElementById("tiposEmpty");
+
+    if (loading) loading.classList.remove("hidden");
+    if (table) table.classList.add("hidden");
+    if (empty) empty.classList.add("hidden");
+
+    try {
+        const res = await getTiposJustificativa(session.user, session.token);
+        tiposData = (res.ok && res.data?.data) ? res.data.data : [];
+    } catch (e) {
+        tiposData = [];
+    } finally {
+        if (loading) loading.classList.add("hidden");
+        renderTiposTable();
+    }
+}
+
+function renderTiposTable() {
+    const tbody = document.getElementById("tiposTableBody");
+    const table = document.getElementById("tiposTable");
+    const empty = document.getElementById("tiposEmpty");
+
+    if (!tiposData.length) {
+        if (table) table.classList.add("hidden");
+        if (empty) empty.classList.remove("hidden");
+        return;
+    }
+
+    if (table) table.classList.remove("hidden");
+    if (empty) empty.classList.add("hidden");
+
+    tbody.innerHTML = tiposData.map((t, i) => {
+        const statusCls = t.ativo ? "badge-color-emerald" : "badge-color-slate";
+        return `
+        <tr class="hover:bg-slate-50 transition-colors group">
+            <td class="px-6 py-4 text-[13px] font-bold text-slate-700">${t.nome}</td>
+            <td class="px-6 py-4 text-[12px] text-slate-500 font-medium">${t.campos.length} campo${t.campos.length !== 1 ? 's' : ''}</td>
+            <td class="px-6 py-4">
+                <span class="px-3 py-1.5 rounded-xl text-[10px] font-black uppercase border-2 ${statusCls}">${t.ativo ? 'Ativo' : 'Inativo'}</span>
+            </td>
+            <td class="px-6 py-4 text-right">
+                <div class="flex items-center justify-end gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                    <button onclick="openTipoModal(${i})"
+                        class="text-[10px] font-black text-slate-400 hover:text-[#003D5D] transition-colors px-4 py-2 rounded-xl border-2 border-transparent hover:border-slate-200 hover:bg-white">
+                        <i class='bx bx-edit-alt mr-1'></i>Editar
+                    </button>
+                    <button onclick="deleteTipo(${t.id})"
+                        class="text-[10px] font-black text-slate-400 hover:text-[#D61A21] transition-colors px-4 py-2 rounded-xl border-2 border-transparent hover:border-rose-100 hover:bg-rose-50">
+                        <i class='bx bx-trash mr-1'></i>Excluir
+                    </button>
+                </div>
+            </td>
+        </tr>`;
+    }).join("");
+}
+
+function openTipoModal(index = null) {
+    editingTipoId = null;
+    camposBuilder = [];
+    const item = index !== null ? tiposData[index] : null;
+    document.getElementById("tipoModalTitle").textContent = item ? "Editar Tipo" : "Novo Tipo de Justificativa";
+    document.getElementById("tipoFieldNome").value = item?.nome || "";
+    document.getElementById("tipoFieldAtivo").checked = item ? item.ativo : true;
+    document.getElementById("tipoModalAlert").classList.add("hidden");
+
+    if (item) {
+        editingTipoId = item.id;
+        camposBuilder = JSON.parse(JSON.stringify(item.campos));
+    }
+
+    renderCamposList();
+    document.getElementById("modalTipo").classList.remove("hidden");
+}
+
+function closeTipoModal() {
+    document.getElementById("modalTipo").classList.add("hidden");
+}
+
+function addCampoRow() {
+    camposBuilder.push({ id: `campo_${Date.now()}`, label: "", tipo: "texto", obrigatorio: false });
+    renderCamposList();
+}
+
+function removeCampoRow(index) {
+    camposBuilder.splice(index, 1);
+    renderCamposList();
+}
+
+function onCampoTipoChange(index) {
+    const tipoEl = document.getElementById(`campo_tipo_${index}`);
+    camposBuilder[index].tipo = tipoEl.value;
+    camposBuilder[index] = { id: camposBuilder[index].id, label: camposBuilder[index].label, tipo: camposBuilder[index].tipo, obrigatorio: camposBuilder[index].obrigatorio };
+    renderCamposList();
+}
+
+function renderCamposList() {
+    const list = document.getElementById("camposList");
+    const emptyMsg = document.getElementById("camposEmptyMsg");
+
+    if (!camposBuilder.length) {
+        list.innerHTML = "";
+        emptyMsg.classList.remove("hidden");
+        return;
+    }
+
+    emptyMsg.classList.add("hidden");
+    const inputCls = "w-full px-3 py-2 bg-slate-50 border-2 border-slate-100 rounded-xl text-[12px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all";
+
+    list.innerHTML = camposBuilder.map((c, i) => {
+        const validacoesCls = "grid grid-cols-2 gap-2 mt-3";
+
+        let validacoesHtml = "";
+
+        if (c.tipo === "texto") {
+            validacoesHtml = `
+            <div class="${validacoesCls}">
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Regex (opcional)</label>
+                    <input type="text" placeholder="Ex: ^\\d{7}$" value="${c.regex || ""}" oninput="camposBuilder[${i}].regex = this.value"
+                        class="${inputCls}"></div>
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Máx. caracteres</label>
+                    <input type="number" placeholder="Ex: 200" value="${c.maxChars || ""}" oninput="camposBuilder[${i}].maxChars = this.value ? +this.value : undefined"
+                        class="${inputCls}"></div>
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Mín. caracteres</label>
+                    <input type="number" placeholder="Ex: 3" value="${c.minChars || ""}" oninput="camposBuilder[${i}].minChars = this.value ? +this.value : undefined"
+                        class="${inputCls}"></div>
+            </div>`;
+        } else if (c.tipo === "numero") {
+            validacoesHtml = `
+            <div class="${validacoesCls}">
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Mínimo</label>
+                    <input type="number" placeholder="Ex: 1" value="${c.min ?? ""}" oninput="camposBuilder[${i}].min = this.value !== '' ? +this.value : undefined"
+                        class="${inputCls}"></div>
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Máximo</label>
+                    <input type="number" placeholder="Ex: 9999" value="${c.max ?? ""}" oninput="camposBuilder[${i}].max = this.value !== '' ? +this.value : undefined"
+                        class="${inputCls}"></div>
+            </div>`;
+        } else if (c.tipo === "data") {
+            validacoesHtml = `
+            <div class="${validacoesCls}">
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Data mínima</label>
+                    <input type="date" value="${c.minData || ""}" oninput="camposBuilder[${i}].minData = this.value || undefined"
+                        class="${inputCls}"></div>
+                <div><label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Data máxima</label>
+                    <input type="date" value="${c.maxData || ""}" oninput="camposBuilder[${i}].maxData = this.value || undefined"
+                        class="${inputCls}"></div>
+            </div>`;
+        } else if (c.tipo === "select") {
+            const opcoesVal = (c.opcoes || []).join(", ");
+            validacoesHtml = `
+            <div class="mt-3">
+                <label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Opções (separadas por vírgula)</label>
+                <input type="text" placeholder="Ex: Opção A, Opção B, Opção C" value="${opcoesVal}"
+                    oninput="camposBuilder[${i}].opcoes = this.value.split(',').map(s => s.trim()).filter(Boolean)"
+                    class="${inputCls} w-full">
+            </div>`;
+        }
+
+        return `
+        <div class="bg-slate-50/80 border-2 border-slate-100 rounded-2xl p-4">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="flex-1 grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Label do campo</label>
+                        <input type="text" id="campo_label_${i}" placeholder="Ex: Empresa Contratada" value="${c.label || ""}"
+                            oninput="camposBuilder[${i}].label = this.value"
+                            class="${inputCls}">
+                    </div>
+                    <div>
+                        <label class="block text-[9px] font-black text-slate-400 uppercase tracking-wider mb-1">Tipo</label>
+                        <select id="campo_tipo_${i}" onchange="onCampoTipoChange(${i})"
+                            class="${inputCls} cursor-pointer">
+                            <option value="texto" ${c.tipo === 'texto' ? 'selected' : ''}>Texto</option>
+                            <option value="numero" ${c.tipo === 'numero' ? 'selected' : ''}>Número</option>
+                            <option value="data" ${c.tipo === 'data' ? 'selected' : ''}>Data</option>
+                            <option value="select" ${c.tipo === 'select' ? 'selected' : ''}>Seleção</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="removeCampoRow(${i})" class="shrink-0 mt-4 w-8 h-8 flex items-center justify-center bg-rose-50 text-rose-400 hover:bg-rose-100 rounded-xl transition-all">
+                    <i class='bx bx-trash'></i>
+                </button>
+            </div>
+            <label class="flex items-center gap-2 mt-2 cursor-pointer">
+                <input type="checkbox" ${c.obrigatorio ? 'checked' : ''} onchange="camposBuilder[${i}].obrigatorio = this.checked"
+                    class="w-3.5 h-3.5 rounded border-2 border-slate-300 text-[#003D5D] cursor-pointer">
+                <span class="text-[10px] font-bold text-slate-500">Campo obrigatório</span>
+            </label>
+            ${validacoesHtml}
+        </div>`;
+    }).join("");
+}
+
+async function handleSaveTipo() {
+    const nome = document.getElementById("tipoFieldNome").value.trim();
+    if (!nome) { showModalAlert("tipoModalAlert", "Nome é obrigatório."); return; }
+    if (!camposBuilder.length) { showModalAlert("tipoModalAlert", "Adicione pelo menos um campo."); return; }
+
+    const invalidCampo = camposBuilder.find(c => !c.label.trim());
+    if (invalidCampo) { showModalAlert("tipoModalAlert", "Todos os campos devem ter um label."); return; }
+
+    const payload = {
+        id: editingTipoId || undefined,
+        nome,
+        campos: camposBuilder.map(c => {
+            const base = { id: c.id, label: c.label.trim(), tipo: c.tipo, obrigatorio: !!c.obrigatorio };
+            if (c.tipo === "texto") {
+                if (c.regex) base.regex = c.regex;
+                if (c.minChars) base.minChars = c.minChars;
+                if (c.maxChars) base.maxChars = c.maxChars;
+            } else if (c.tipo === "numero") {
+                if (c.min !== undefined) base.min = c.min;
+                if (c.max !== undefined) base.max = c.max;
+            } else if (c.tipo === "data") {
+                if (c.minData) base.minData = c.minData;
+                if (c.maxData) base.maxData = c.maxData;
+            } else if (c.tipo === "select") {
+                base.opcoes = c.opcoes || [];
+            }
+            return base;
+        }),
+        ativo: document.getElementById("tipoFieldAtivo").checked
+    };
+
+    const btn = document.getElementById("btnSaveTipo");
+    btn.disabled = true;
+    btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Salvando…`;
+
+    try {
+        const res = await saveTipoJustificativa(session.user, session.token, payload);
+        if (res.ok && res.data?.success !== false) {
+            closeTipoModal();
+            loadedTabs.delete("tipos_justificativa");
+            loadTiposJustificativa();
+            showToast("Tipo salvo com sucesso!", "success");
+        } else {
+            showModalAlert("tipoModalAlert", res.data?.error || "Erro ao salvar tipo.");
+        }
+    } catch (e) {
+        showModalAlert("tipoModalAlert", "Erro de conexão com o servidor.");
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Salvar Tipo";
+    }
+}
+
+function deleteTipo(id) {
+    openConfirmModal("Confirmar exclusão deste tipo de justificativa?", async () => {
+        const btn = document.getElementById("btnConfirmAction");
+        btn.disabled = true;
+        btn.innerHTML = `<i class='bx bx-loader-alt animate-spin mr-2'></i> Excluindo…`;
+        try {
+            const res = await deleteTipoJustificativa(session.user, session.token, id);
+            if (res.ok && res.data?.success !== false) {
+                showToast("Tipo excluído com sucesso.", "success");
+                loadedTabs.delete("tipos_justificativa");
+                loadTiposJustificativa();
+                closeConfirmModal();
+            } else {
+                showToast("Erro ao excluir tipo: " + (res.data?.error || ""), "error");
+            }
+        } catch (e) {
+            showToast("Erro de conexão ao excluir.", "error");
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = "Excluir";
+        }
+    });
 }
 
 

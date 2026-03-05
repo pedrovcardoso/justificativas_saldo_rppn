@@ -77,3 +77,10 @@ CREATE TABLE IF NOT EXISTS notificacoes_lidas (
   UNIQUE INDEX idx_user_notif (user, notificacao_id),
   FOREIGN KEY (notificacao_id) REFERENCES notificacoes(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS tipos_justificativa (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  campos JSON NOT NULL,
+  ativo BOOLEAN NOT NULL DEFAULT TRUE
+);

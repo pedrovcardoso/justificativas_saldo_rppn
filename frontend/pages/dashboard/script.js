@@ -15,10 +15,11 @@ if (![10, 25, 50].includes(itemsPerPage)) itemsPerPage = 10;
 const CACHE_KEY = "rppn_data_cache";
 const PANEL_SELECT_IDS = ["filterUO", "filterUE", "filterPrograma", "filterElemento", "filterDecisao", "filterAvaliacao", "filterStatusProcesso"];
 
-let tableApiData = []; // Store API data for the current page
-let statusHistory = []; // Store all status history
+let tableApiData = [];
+let statusHistory = [];
 let isStatusLoading = true;
-let selectedRppns = new Set(); // Track selected RPPNs for batch action
+let selectedRppns = new Set();
+let tiposJustificativa = [];
 
 let descriptiveData = {
     unidades: [],
@@ -66,6 +67,15 @@ async function loadData() {
 
     if (!descriptiveData.unidades.length) {
         await loadDescriptiveData();
+    }
+
+    if (!tiposJustificativa.length) {
+        try {
+            const res = await getTiposJustificativa(session.user, session.token);
+            tiposJustificativa = (res.ok && res.data?.data) ? res.data.data.filter(t => t.ativo) : [];
+        } catch (e) {
+            tiposJustificativa = [];
+        }
     }
 
     const cached = sessionStorage.getItem(CACHE_KEY);
@@ -1001,6 +1011,24 @@ function toggleFilterPanel() {
     }
 }
 
+function renderJustificativaHtml(rawJust) {
+    if (!rawJust) return '<em class="text-slate-400">Sem justificativa.</em>';
+    try {
+        const parsed = JSON.parse(rawJust);
+        if (parsed && parsed.tipo_nome && parsed.campos) {
+            const tipo = tiposJustificativa.find(t => t.id === parsed.tipo_id);
+            const camposConfig = tipo?.campos || [];
+            const rows = Object.entries(parsed.campos).map(([id, val]) => {
+                const cfg = camposConfig.find(c => c.id === id);
+                const label = cfg?.label || id;
+                return `<div class="flex gap-2"><span class="font-black text-slate-500 shrink-0">${label}:</span><span class="text-slate-700">${val || '—'}</span></div>`;
+            }).join('');
+            return `<div class="space-y-1.5"><p class="text-[10px] font-black text-[#003D5D] uppercase tracking-wider mb-2">${parsed.tipo_nome}</p>${rows}</div>`;
+        }
+    } catch (e) { }
+    return `<span>${rawJust}</span>`;
+}
+
 function openModal(rppn, row) {
     currentRppn = rppn;
     if (!row) {
@@ -1092,7 +1120,7 @@ function openModal(rppn, row) {
                             </div>
                             <div class="bg-slate-50 p-3 rounded-xl border-border">
                                 <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Justificativa:</p>
-                                <p class="text-[11px] font-medium text-slate-600 leading-relaxed italic line-clamp-2">"${h.justificativa || 'Sem justificativa.'}"</p>
+                                <div class="text-[11px] font-medium text-slate-600 leading-relaxed">${renderJustificativaHtml(h.justificativa)}</div>
                             </div>
                         </div>
 
@@ -1167,7 +1195,7 @@ function openModal(rppn, row) {
             if (statusInfo.fullData?.justificativa && pendingView) {
                 pendingView.classList.remove("hidden");
                 const pText = document.getElementById("pendingJustText");
-                if (pText) pText.textContent = statusInfo.fullData.justificativa;
+                if (pText) pText.innerHTML = renderJustificativaHtml(statusInfo.fullData.justificativa);
                 const acaoLower = (statusInfo.fullData.acao || "").toLowerCase();
                 const badgeAcao = document.getElementById("pendingBadgeAcao");
                 const badgeStatus = document.getElementById("pendingBadgeStatus");
@@ -1186,7 +1214,7 @@ function openModal(rppn, row) {
             if (pendingView) {
                 pendingView.classList.remove("hidden");
                 const pText = document.getElementById("pendingJustText");
-                if (pText) pText.textContent = statusInfo.fullData.justificativa || "Sem justificativa detalhada.";
+                if (pText) pText.innerHTML = renderJustificativaHtml(statusInfo.fullData.justificativa);
 
                 const badgeAcao = document.getElementById("pendingBadgeAcao");
                 const badgeStatus = document.getElementById("pendingBadgeStatus");
@@ -1240,7 +1268,132 @@ function closeModal() { document.getElementById("modalJust")?.classList.add("hid
 
 function onAcaoChange() {
     const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
-    document.getElementById("justAreaWrap")?.classList.toggle("hidden", acao !== "manter");
+    const justAreaWrap = document.getElementById("justAreaWrap");
+    if (!justAreaWrap) return;
+    justAreaWrap.classList.toggle("hidden", acao !== "manter");
+    if (acao === "manter") renderTipoSelect();
+}
+
+function renderTipoSelect() {
+    const wrap = document.getElementById("justAreaWrap");
+    if (!wrap) return;
+
+    if (!tiposJustificativa.length) {
+        wrap.innerHTML = `
+            <div class="mt-4 p-4 bg-amber-50 border-2 border-amber-100 rounded-2xl text-[12px] text-amber-700 font-bold">
+                Nenhum tipo de justificativa configurado. Contate o administrador.
+            </div>`;
+        return;
+    }
+
+    wrap.innerHTML = `
+        <div class="mt-4 space-y-4">
+            <div>
+                <label class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo de Justificativa</label>
+                <select id="justTipoSelect" onchange="onTipoJustificativaChange()"
+                    class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                    <option value="">Selecione o tipo de justificativa...</option>
+                    ${tiposJustificativa.map(t => `<option value="${t.id}">${t.nome}</option>`).join('')}
+                </select>
+            </div>
+            <div id="justDynamicForm"></div>
+        </div>`;
+}
+
+function onTipoJustificativaChange() {
+    const selectEl = document.getElementById("justTipoSelect");
+    const tipoId = parseInt(selectEl?.value);
+    const tipo = tiposJustificativa.find(t => t.id === tipoId);
+    renderDynamicForm("justDynamicForm", tipo?.campos || []);
+}
+
+function renderDynamicForm(containerId, campos) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    if (!campos.length) { container.innerHTML = ""; return; }
+
+    const inputCls = "w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all";
+
+    container.innerHTML = `<div class="space-y-4">${campos.map(c => {
+        const req = c.obrigatorio ? '<span class="text-rose-500 ml-0.5">*</span>' : '';
+        let input = "";
+
+        if (c.tipo === "texto") {
+            input = `<input type="text" id="dynfield_${c.id}" placeholder="${c.label}"
+                class="${inputCls}"
+                ${c.maxChars ? `maxlength="${c.maxChars}"` : ''}
+                data-campo='${JSON.stringify(c)}'>`;
+        } else if (c.tipo === "numero") {
+            input = `<input type="number" id="dynfield_${c.id}" placeholder="${c.label}"
+                class="${inputCls}"
+                ${c.min !== undefined ? `min="${c.min}"` : ''}
+                ${c.max !== undefined ? `max="${c.max}"` : ''}
+                data-campo='${JSON.stringify(c)}'>`;
+        } else if (c.tipo === "data") {
+            input = `<input type="date" id="dynfield_${c.id}"
+                class="${inputCls}"
+                ${c.minData ? `min="${c.minData}"` : ''}
+                ${c.maxData ? `max="${c.maxData}"` : ''}
+                data-campo='${JSON.stringify(c)}'>`;
+        } else if (c.tipo === "select") {
+            const opts = (c.opcoes || []).map(o => `<option value="${o}">${o}</option>`).join('');
+            input = `<select id="dynfield_${c.id}" class="${inputCls} cursor-pointer" data-campo='${JSON.stringify(c)}'>
+                <option value="">Selecione...</option>
+                ${opts}
+            </select>`;
+        }
+
+        return `<div>
+            <label class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">${c.label}${req}</label>
+            ${input}
+        </div>`;
+    }).join('')}</div>`;
+}
+
+function collectDynamicFormValues(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return {};
+    const values = {};
+    container.querySelectorAll("[id^='dynfield_']").forEach(el => {
+        const campoId = el.id.replace("dynfield_", "");
+        values[campoId] = el.value;
+    });
+    return values;
+}
+
+function validateDynamicForm(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return null;
+    const errors = [];
+
+    container.querySelectorAll("[id^='dynfield_']").forEach(el => {
+        let campo;
+        try { campo = JSON.parse(el.getAttribute("data-campo")); } catch (e) { return; }
+        const val = el.value.trim();
+
+        if (campo.obrigatorio && !val) {
+            errors.push(`"${campo.label}" é obrigatório.`);
+            return;
+        }
+        if (!val) return;
+
+        if (campo.tipo === "texto") {
+            if (campo.minChars && val.length < campo.minChars) errors.push(`"${campo.label}" deve ter ao menos ${campo.minChars} caracteres.`);
+            if (campo.maxChars && val.length > campo.maxChars) errors.push(`"${campo.label}" deve ter no máximo ${campo.maxChars} caracteres.`);
+            if (campo.regex) {
+                try { if (!new RegExp(campo.regex).test(val)) errors.push(`"${campo.label}" não corresponde ao formato esperado.`); } catch (e) { }
+            }
+        } else if (campo.tipo === "numero") {
+            const num = parseFloat(val);
+            if (campo.min !== undefined && num < campo.min) errors.push(`"${campo.label}" deve ser ao mínimo ${campo.min}.`);
+            if (campo.max !== undefined && num > campo.max) errors.push(`"${campo.label}" deve ser ao máximo ${campo.max}.`);
+        } else if (campo.tipo === "data") {
+            if (campo.minData && val < campo.minData) errors.push(`"${campo.label}" deve ser após ${campo.minData}.`);
+            if (campo.maxData && val > campo.maxData) errors.push(`"${campo.label}" deve ser antes de ${campo.maxData}.`);
+        }
+    });
+
+    return errors.length ? errors.join(" ") : null;
 }
 
 function onAdminAcaoChange() {
@@ -1298,12 +1451,22 @@ async function handleConfirm() {
     const acao = document.querySelector("input[name=modalAcao]:checked")?.value;
     if (!acao) { showModalAlert("Selecione uma opção para continuar."); return; }
 
-    const just = document.getElementById("justText")?.value.trim();
-    if (acao === "manter" && !just) { showModalAlert("Campo obrigatório: justificativa técnica para manutenção."); return; }
+    let just = "";
+    if (acao === "manter") {
+        const tipoId = parseInt(document.getElementById("justTipoSelect")?.value);
+        const tipo = tiposJustificativa.find(t => t.id === tipoId);
+        if (!tipo) { showModalAlert("Selecione o tipo de justificativa."); return; }
+
+        const validationError = validateDynamicForm("justDynamicForm");
+        if (validationError) { showModalAlert(validationError); return; }
+
+        const valores = collectDynamicFormValues("justDynamicForm");
+        just = JSON.stringify({ tipo_id: tipo.id, tipo_nome: tipo.nome, campos: valores });
+    }
 
     const btn = document.getElementById("btnConfirmar");
     const modalJust = document.getElementById("modalJust");
-    const inputs = modalJust?.querySelectorAll("input, textarea, button");
+    const inputs = modalJust?.querySelectorAll("input, textarea, button, select");
 
     if (btn) {
         btn.disabled = true;
@@ -1383,33 +1546,65 @@ function openBatchModal() {
         `).join('');
     }
 
-    const bText = document.getElementById("batchJustText");
-    if (bText) bText.value = "";
-    document.getElementById("batchJustAreaWrap")?.classList.add("hidden");
+    const batchJustWrap = document.getElementById("batchJustAreaWrap");
+    if (batchJustWrap) batchJustWrap.innerHTML = "";
+    batchJustWrap?.classList.add("hidden");
     document.querySelectorAll("input[name=batchAcao]").forEach(r => r.checked = false);
     document.getElementById("modalBatch")?.classList.remove("hidden");
 }
 
 function onBatchAcaoChange() {
     const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
-    document.getElementById("batchJustAreaWrap")?.classList.toggle("hidden", acao !== "manter");
+    const wrap = document.getElementById("batchJustAreaWrap");
+    if (!wrap) return;
+    wrap.classList.toggle("hidden", acao !== "manter");
+    if (acao === "manter") {
+        if (!tiposJustificativa.length) {
+            wrap.innerHTML = `<div class="p-4 bg-amber-50 border-2 border-amber-100 rounded-2xl text-[12px] text-amber-700 font-bold">Nenhum tipo de justificativa configurado. Contate o administrador.</div>`;
+            return;
+        }
+        wrap.innerHTML = `
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo de Justificativa</label>
+                    <select id="batchTipoSelect" onchange="onBatchTipoChange()"
+                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                        <option value="">Selecione o tipo de justificativa...</option>
+                        ${tiposJustificativa.map(t => `<option value="${t.id}">${t.nome}</option>`).join('')}
+                    </select>
+                </div>
+                <div id="batchDynamicForm"></div>
+            </div>`;
+    }
 }
 
 function closeBatchModal() {
     document.getElementById("modalBatch")?.classList.add("hidden");
 }
 
+function onBatchTipoChange() {
+    const selectEl = document.getElementById("batchTipoSelect");
+    const tipoId = parseInt(selectEl?.value);
+    const tipo = tiposJustificativa.find(t => t.id === tipoId);
+    renderDynamicForm("batchDynamicForm", tipo?.campos || []);
+}
+
+
 async function handleBatchConfirm() {
     const acao = document.querySelector("input[name=batchAcao]:checked")?.value;
-    const just = document.getElementById("batchJustText")?.value.trim();
+    if (!acao) { showModalAlert("Por favor, selecione uma ação (Manter ou Cancelar)."); return; }
 
-    if (!acao) {
-        alert("Por favor, selecione uma ação (Manter ou Cancelar).");
-        return;
-    }
-    if (acao === "manter" && !just) {
-        alert("Por favor, informe a justificativa para manter o saldo.");
-        return;
+    let just = "";
+    if (acao === "manter") {
+        const tipoId = parseInt(document.getElementById("batchTipoSelect")?.value);
+        const tipo = tiposJustificativa.find(t => t.id === tipoId);
+        if (!tipo) { showModalAlert("Selecione o tipo de justificativa."); return; }
+
+        const validationError = validateDynamicForm("batchDynamicForm");
+        if (validationError) { showModalAlert(validationError); return; }
+
+        const valores = collectDynamicFormValues("batchDynamicForm");
+        just = JSON.stringify({ tipo_id: tipo.id, tipo_nome: tipo.nome, campos: valores });
     }
 
     const btn = document.getElementById("btnBatchConfirm");
@@ -1425,12 +1620,10 @@ async function handleBatchConfirm() {
         if (res.ok && Array.isArray(res.data)) {
             showBatchResults(res.data);
         } else {
-            console.error("Resposta da API inválida:", res);
-            alert(res.data?.error || "Ocorreu um erro ao processar a solicitação.");
+            showModalAlert(res.data?.error || "Ocorreu um erro ao processar a solicitãção.");
         }
     } catch (err) {
-        console.error("Erro no processamento em lote:", err);
-        alert("Ocorreu um erro ao processar a solicitação.");
+        showModalAlert("Ocorreu um erro ao processar a solicitação.");
     } finally {
         if (btn) {
             btn.disabled = false;

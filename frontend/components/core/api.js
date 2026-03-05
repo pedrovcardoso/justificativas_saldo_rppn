@@ -10,6 +10,7 @@ const API_URLS = {
     adminNotif: `${API_BASE}/admin/notifications`,
     adminLeg: `${API_BASE}/admin/legislacao`,
     adminImport: `${API_BASE}/admin/import_csv`,
+    adminTiposJustificativa: `${API_BASE}/admin/tipos_justificativa`,
     userNotif: `${API_BASE}/user/notifications`,
     userNotifRead: `${API_BASE}/user/notifications/mark-read`,
 };
@@ -139,6 +140,18 @@ async function markAllNotificationsAsRead(user) {
     return apiCall(API_URLS.userNotifRead, { user });
 }
 
+async function getTiposJustificativa(user, token) {
+    return apiCall(`${API_URLS.adminTiposJustificativa}?user=${encodeURIComponent(user)}&token=${encodeURIComponent(token)}`, null, "GET");
+}
+
+async function saveTipoJustificativa(user, token, payload) {
+    return apiCall(API_URLS.adminTiposJustificativa, { ...payload, user, token });
+}
+
+async function deleteTipoJustificativa(user, token, id) {
+    return apiCall(`${API_URLS.adminTiposJustificativa}/${id}?user=${encodeURIComponent(user)}&token=${encodeURIComponent(token)}`, null, "DELETE");
+}
+
 if (typeof module !== "undefined") {
     module.exports = {
         sendOtp, validateOtp, validateSession, logout,
@@ -147,6 +160,7 @@ if (typeof module !== "undefined") {
         getUsers, createUser, updateUser,
         getNotifications, createNotification, updateNotification, deleteNotification,
         getLegislacao, saveLegislacao, importCSV,
-        getUserNotifications, markAllNotificationsAsRead
+        getUserNotifications, markAllNotificationsAsRead,
+        getTiposJustificativa, saveTipoJustificativa, deleteTipoJustificativa
     };
 }
