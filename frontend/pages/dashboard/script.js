@@ -1,5 +1,9 @@
 const session = requireSession("../login/index.html");
 
+if (typeof ChartDataLabels !== 'undefined') {
+    Chart.register(ChartDataLabels);
+}
+
 let rawData = [];
 let panelFilteredData = [];
 let tableFilteredData = [];
@@ -433,18 +437,333 @@ function enrichRows(rows) {
     });
 }
 function updateCards(rows) {
-    const total = rows.length;
-    const counts = { total, pendentes: 0, finalizados: 0 };
+    const counts = { total: rows.length, pendentes: 0, analise: 0, concluidas: 0, totalValue: 0 };
 
     rows.forEach(r => {
         const info = getRowStatusInfo(r);
-        if (info.status === "Pendente" || info.status === "Em análise") counts.pendentes++;
-        else if (info.status === "Concluído") counts.finalizados++;
+        const val = parseMoeda(r["Saldo Restos a Pagar Não Processado"]) || 0;
+        counts.totalValue += val;
+
+        if (info.status === "Pendente") counts.pendentes++;
+        else if (info.status === "Em análise" || info.status === "Retorno") counts.analise++;
+        else if (info.status === "Concluído") counts.concluidas++;
     });
 
-    document.getElementById("cardTotal").textContent = counts.total;
-    document.getElementById("cardPendentes").textContent = counts.pendentes;
-    document.getElementById("cardFinalizados").textContent = counts.finalizados;
+    document.getElementById("cardTotalCount").textContent = counts.total;
+    document.getElementById("cardTotalValue").textContent = formatMoeda(counts.totalValue);
+    document.getElementById("cardPendentesCount").textContent = counts.pendentes;
+    document.getElementById("cardAnaliseCount").textContent = counts.analise;
+    document.getElementById("cardConcluidasCount").textContent = counts.concluidas;
+
+    // Remove skeleton state
+    document.querySelectorAll(".skeleton-block").forEach(el => {
+        el.classList.remove("skeleton-block", "min-h-[32px]", "min-h-[28px]", "min-h-[36px]", "min-w-[60px]", "min-w-[120px]", "min-w-[50px]");
+    });
+
+    const chartsSection = document.getElementById("chartsSection");
+    if (chartsSection) {
+        chartsSection.classList.remove("loading-active");
+        chartsSection.classList.add("loading-done");
+    }
+
+    renderCharts(rows);
+}
+
+let charts = {
+    unidades: null,
+    status: null,
+    exercicios: null
+};
+
+let ueChartData = {
+    all: [],
+    isExpanded: false
+};
+
+function toggleChartsSection() {
+    const section = document.getElementById("chartsSection");
+    const icon = document.getElementById("toggleChartsIcon");
+    const text = document.getElementById("toggleChartsText");
+    const btn = event.currentTarget;
+
+    const isHidden = section.classList.contains("hidden");
+
+    if (isHidden) {
+        section.classList.remove("hidden");
+        btn.classList.add("active");
+        text.textContent = "Ocultar detalhes";
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+        section.classList.add("hidden");
+        btn.classList.remove("active");
+        text.textContent = "Mais detalhes";
+    }
+}
+
+function expandUEChart() {
+    const modal = document.getElementById("modalUE");
+    modal.classList.remove("hidden");
+    document.getElementById("ueSearchContainer").classList.remove("hidden");
+    document.getElementById("ueSearchInput").value = "";
+    toggleUEView('chart');
+    renderUEModalContent(ueChartData.all);
+}
+
+function filterUEModal() {
+    const q = document.getElementById("ueSearchInput").value.toLowerCase();
+    const filtered = ueChartData.all.filter(([name]) => name.toLowerCase().includes(q));
+    renderUEModalContent(filtered);
+}
+
+function renderUEModalContent(data) {
+    // Auto-calculate height: ~40px per bar, min 600px
+    const dynamicHeight = Math.max(600, data.length * 40);
+    const container = document.getElementById("ueChartView");
+    container.style.height = dynamicHeight + "px";
+
+    updateChart("chartUnidadesFull", "unidadesFull", {
+        type: 'bar',
+        data: {
+            labels: data.map(x => x[0]),
+            datasets: [{
+                label: 'Saldo Total',
+                data: data.map(x => x[1]),
+                backgroundColor: '#003D5D',
+                borderRadius: 4,
+                barThickness: 25
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: { padding: { right: 120 } },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => ` Saldo: R$ ${context.raw.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'right',
+                    color: '#003D5D',
+                    font: { weight: 'black', size: 10 },
+                    formatter: (v) => "R$ " + v.toLocaleString('pt-BR', { minimumFractionDigits: 2 })
+                }
+            },
+            scales: {
+                x: { display: false },
+                y: { ticks: { font: { size: 11, weight: 'bold' }, color: '#64748b' } }
+            }
+        }
+    });
+
+    const tbody = document.getElementById("ueTableBody");
+    tbody.innerHTML = data.map(([name, value]) => `
+        <tr class="hover:bg-slate-50 transition-colors">
+            <td class="px-8 py-4 text-sm font-bold text-slate-600 border-r border-slate-100">${name}</td>
+            <td class="px-8 py-4 text-sm font-black text-[#003D5D] text-right font-mono">${formatMoeda(value)}</td>
+        </tr>
+    `).join('');
+}
+
+function toggleUEView(view) {
+    const isChart = view === 'chart';
+    document.getElementById("ueChartView").classList.toggle("hidden", !isChart);
+    document.getElementById("ueTableView").classList.toggle("hidden", isChart);
+
+    const btnChart = document.getElementById("btnUEViewChart");
+    const btnTable = document.getElementById("btnUEViewTable");
+
+    if (isChart) {
+        btnChart.className = "px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all bg-[#003D5D] text-white shadow-md";
+        btnTable.className = "px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all text-slate-400 hover:text-slate-600";
+    } else {
+        btnTable.className = "px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all bg-[#003D5D] text-white shadow-md";
+        btnChart.className = "px-5 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all text-slate-400 hover:text-slate-600";
+    }
+}
+
+function closeUEModal() {
+    document.getElementById("modalUE").classList.add("hidden");
+}
+
+function scrollToCharts() {
+    toggleChartsSection();
+}
+
+function renderCharts(rows) {
+    if (!rows.length) return;
+
+    // 1. Saldo por UE (Top 10 logic)
+    const ueData = {};
+    rows.forEach(r => {
+        const ue = r["Unidade Executora - Nome"] || "N/A";
+        ueData[ue] = (ueData[ue] || 0) + (parseMoeda(r["Saldo Restos a Pagar Não Processado"]) || 0);
+    });
+
+    ueChartData.all = Object.entries(ueData).sort((a, b) => b[1] - a[1]);
+    renderUEChart();
+
+    // 2. Status Justificativas (with Percentage)
+    const statusData = { "Pendentes": 0, "Em Análise": 0, "Concluídas": 0 };
+    rows.forEach(r => {
+        const info = getRowStatusInfo(r);
+        if (info.status === "Pendente") statusData["Pendentes"]++;
+        else if (info.status === "Em análise" || info.status === "Retorno") statusData["Em Análise"]++;
+        else if (info.status === "Concluído") statusData["Concluídas"]++;
+    });
+
+    const totalStatus = Object.values(statusData).reduce((a, b) => a + b, 0);
+
+    updateChart("chartStatus", "status", {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(statusData),
+            datasets: [{
+                data: Object.values(statusData),
+                backgroundColor: ['#FBBF24', '#60A5FA', '#34D399'],
+                borderWidth: 0,
+                hoverOffset: 10
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '65%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 15,
+                        font: { size: 9, weight: 'bold' },
+                        generateLabels: (chart) => {
+                            const data = chart.data;
+                            return data.labels.map((label, i) => {
+                                const val = data.datasets[0].data[i];
+                                const pct = totalStatus > 0 ? ((val / totalStatus) * 100).toFixed(1) : 0;
+                                return {
+                                    text: `${label}: ${val} (${pct}%)`,
+                                    fillStyle: data.datasets[0].backgroundColor[i],
+                                    strokeStyle: data.datasets[0].backgroundColor[i],
+                                    lineWidth: 0,
+                                    hidden: false,
+                                    index: i
+                                };
+                            });
+                        }
+                    }
+                },
+                datalabels: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const val = context.raw;
+                            const pct = totalStatus > 0 ? ((val / totalStatus) * 100).toFixed(1) : 0;
+                            return ` ${context.label}: ${val} (${pct}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // 3. Saldos por Exercício (Conditional)
+    const yearData = {};
+    rows.forEach(r => {
+        const year = r["Exercício de Emissão"] || r["ano_origem"] || "N/A";
+        yearData[year] = (yearData[year] || 0) + (parseMoeda(r["Saldo Restos a Pagar Não Processado"]) || 0);
+    });
+
+    const sortedYears = Object.keys(yearData).sort();
+    const wrapExercicio = document.getElementById("chartExerciciosWrap");
+
+    if (sortedYears.length <= 1) {
+        wrapExercicio?.classList.add("hidden");
+    } else {
+        wrapExercicio?.classList.remove("hidden");
+        updateChart("chartExercicios", "exercicios", {
+            type: 'line',
+            data: {
+                labels: sortedYears,
+                datasets: [{
+                    label: 'Saldo',
+                    data: sortedYears.map(y => yearData[y]),
+                    borderColor: '#10B981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#10B981'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    datalabels: { display: false }
+                },
+                scales: {
+                    y: { ticks: { font: { size: 9 }, callback: v => "R$ " + v.toLocaleString('pt-BR') } },
+                    x: { ticks: { font: { size: 9 } } }
+                }
+            }
+        });
+    }
+}
+
+function renderUEChart() {
+    const dataToShow = ueChartData.isExpanded ? ueChartData.all : ueChartData.all.slice(0, 10);
+    const btnExpand = document.getElementById("btnExpandUE");
+
+    if (ueChartData.all.length > 10 && !ueChartData.isExpanded) {
+        btnExpand?.classList.remove("hidden");
+    } else {
+        btnExpand?.classList.add("hidden");
+    }
+
+    updateChart("chartUnidades", "unidades", {
+        type: 'bar',
+        data: {
+            labels: dataToShow.map(x => x[0].length > 15 ? x[0].substring(0, 15) + "..." : x[0]),
+            datasets: [{
+                label: 'Saldo Total',
+                data: dataToShow.map(x => x[1]),
+                backgroundColor: '#003D5D',
+                borderRadius: 6
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => ` Saldo: R$ ${context.raw.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
+                    }
+                },
+                datalabels: { display: false }
+            },
+            scales: {
+                x: { ticks: { font: { size: 9 }, callback: v => "R$ " + (v / 1000).toFixed(0) + "k" } },
+                y: { ticks: { font: { size: 9 } } }
+            }
+        }
+    });
+}
+
+function updateChart(id, chartKey, config) {
+    const ctx = document.getElementById(id);
+    if (!ctx) return;
+    if (charts[chartKey]) charts[chartKey].destroy();
+    charts[chartKey] = new Chart(ctx, config);
 }
 
 function buildTableHeader() {
@@ -1190,9 +1509,13 @@ if (session) {
         window.addEventListener('load', () => {
             if (typeof Layout !== 'undefined' && Layout.ready) {
                 Layout.ready.then(() => {
-                    const modal = document.getElementById("modalJust");
-                    if (modal) {
-                        modal.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
+                    const modalJust = document.getElementById("modalJust");
+                    if (modalJust) {
+                        modalJust.addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
+                    }
+                    const modalUE = document.getElementById("modalUE");
+                    if (modalUE) {
+                        modalUE.addEventListener("click", e => { if (e.target === e.currentTarget) closeUEModal(); });
                     }
                     loadData();
                 });
