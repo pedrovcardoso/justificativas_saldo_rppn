@@ -1,8 +1,3 @@
-/**
- * Componente de Toast Independente e Discreto
- * Auto-gerencia estilos, container e ciclo de vida.
- */
-
 (function () {
     const styles = `
         #toastContainer {

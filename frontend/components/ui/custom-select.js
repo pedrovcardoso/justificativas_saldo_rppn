@@ -87,7 +87,6 @@
 
         const validOptions = Array.from(originalSelect.options).filter(o => o.value !== "" && !o.textContent.toLowerCase().includes("todas") && !o.textContent.toLowerCase().includes("todos"));
 
-        // Detectar se todas as opções são numéricas
         const isNumeric = validOptions.every(o => !isNaN(typeof parseMoeda === 'function' ? parseMoeda(o.textContent) : parseFloat(o.textContent)));
 
         const sortedOptions = [...validOptions].sort((a, b) => {
@@ -147,7 +146,6 @@
             }
             selectionArea.classList.add('border-[#003D5D]', 'ring-4', 'ring-[#003D5D]/10');
 
-            // Dynamic Positioning - Flyout to the right
             const rect = selectionArea.getBoundingClientRect();
             let top = rect.top;
             const dropdownHeight = 400;
@@ -196,7 +194,6 @@
 
         const parent = selectElement.parentElement;
 
-        // Remove skeleton or old container
         const skeleton = parent.querySelector(`.skeleton-select[data-select-id="${selectId}"]`);
         if (skeleton) skeleton.remove();
 

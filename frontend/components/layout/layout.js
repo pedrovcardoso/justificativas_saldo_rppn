@@ -274,9 +274,7 @@ const Layout = {
             }
         });
 
-        // Initial check for the dot
         updateNotifications();
-        // Periodical check (every 5 minutes)
         setInterval(updateNotifications, 5 * 60 * 1000);
     },
 

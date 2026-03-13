@@ -42,10 +42,6 @@ async function loadDescriptiveData() {
     }
 }
 
-async function setupTitle() {
-    // Subtitle is now generic and static in HTML as per user request.
-}
-
 function showState(name) {
     ["stateLoading", "stateError", "stateTable", "stateEmpty"].forEach(id => {
         const el = document.getElementById(id);
@@ -103,13 +99,11 @@ async function loadData() {
 
     isStatusLoading = true;
 
-    // Admin-only UI adjustments (isAdmin is from session.js)
     if (isAdmin()) {
         const wrap = document.getElementById("filterUOWrap");
         if (wrap) wrap.classList.remove("hidden");
     }
 
-    // Fetch all statuses once
     try {
         const statusRes = await checkStatus(session.user, session.token);
         if (statusRes.ok && statusRes.data?.success) {
@@ -388,8 +382,6 @@ function clearAllFilters() {
 
 function enrichRows(rows) {
     rows.forEach(row => {
-        // Map backend names to frontend display names - handeled by ColumnMapper
-
         const uoCode = String(row["uo_codigo"] || "");
         const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo) === uoCode);
         row["Unidade Orçamentária - Nome"] = uo ? uo.unidade_orcamentaria_nome : "N/A";
@@ -457,7 +449,6 @@ function updateCards(rows) {
     document.getElementById("cardAnaliseCount").textContent = counts.analise;
     document.getElementById("cardConcluidasCount").textContent = counts.concluidas;
 
-    // Remove skeleton state
     document.querySelectorAll(".skeleton-block").forEach(el => {
         el.classList.remove("skeleton-block", "min-h-[32px]", "min-h-[28px]", "min-h-[36px]", "min-w-[60px]", "min-w-[120px]", "min-w-[50px]");
     });
@@ -518,7 +509,6 @@ function filterUEModal() {
 }
 
 function renderUEModalContent(data) {
-    // Auto-calculate height: ~40px per bar, min 600px
     const dynamicHeight = Math.max(600, data.length * 40);
     const container = document.getElementById("ueChartView");
     container.style.height = dynamicHeight + "px";
@@ -600,7 +590,6 @@ function scrollToCharts() {
 function renderCharts(rows) {
     if (!rows.length) return;
 
-    // 1. Saldo por UE (Top 10 logic)
     const ueData = {};
     rows.forEach(r => {
         const ue = r["Unidade Executora - Nome"] || "N/A";
@@ -610,7 +599,6 @@ function renderCharts(rows) {
     ueChartData.all = Object.entries(ueData).sort((a, b) => b[1] - a[1]);
     renderUEChart();
 
-    // 2. Status Justificativas (with Percentage)
     const statusData = { "Pendentes": 0, "Em Análise": 0, "Concluídas": 0 };
     rows.forEach(r => {
         const info = getRowStatusInfo(r);
@@ -674,7 +662,6 @@ function renderCharts(rows) {
         }
     });
 
-    // 3. Saldos por Exercício (Conditional)
     const yearData = {};
     rows.forEach(r => {
         const year = r["Ano Origem Restos a Pagar"] || r["ano_origem"] || "N/A";
@@ -1172,13 +1159,10 @@ function openModal(rppn, row) {
         decisionControls?.classList.add("hidden");
         pendingView?.classList.add("hidden");
 
-        // Default visibility
         if (modalFooter) modalFooter.classList.remove("hidden");
         if (modalAlert) modalAlert.classList.add("hidden");
 
         if (isAdmin() && (!hasDecision || !isPending)) {
-            // Caso Admin abra uma linha sem decisão OU com status já avaliado (Concluído/Retorno): 
-            // só detalhes, sem botões de ação.
             if (modalFooter) modalFooter.classList.add("hidden");
         } else if (adminMode) {
             adminControls?.classList.remove("hidden");

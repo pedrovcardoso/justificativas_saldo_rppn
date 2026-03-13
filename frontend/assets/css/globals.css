@@ -73,7 +73,6 @@ body {
     scrollbar-width: none !important;
 }
 
-/* Status Badge Colors (Hybrid Approach: Tailwind handles structure) */
 .badge-color-amber {
     background-color: #fffbeb !important;
     color: #92400e !important;
@@ -110,12 +109,10 @@ body {
     border-color: #bae6fd !important;
 }
 
-/* Skeleton Loading */
 .skeleton-loading {
     height: 1.5rem;
     width: 6rem;
     background-color: #cbd5e1 !important;
-    /* slate-300 */
     border-radius: 0.5rem;
     animation: skeleton-pulse 1.5s infinite ease-in-out;
 }

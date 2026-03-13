@@ -72,16 +72,8 @@ function highlight(text, query) {
 
     let result = text;
 
-    // We want to match normalized but keep original. 
-    // This is tricky with regex replace. A simple way is to use a regex that matches the chars.
-    // However, since we want highlight even if one result, let's just use a case-insensitive match on the original for now, 
-    // or a more complex approach if required.
-
     parts.forEach(p => {
         const re = new RegExp(`(${p})`, "gi");
-        // Note: Simple highlight lacks accent-insensitive matching on the TARGET text.
-        // For true accent-insensitive highlight, we'd need a much more complex function.
-        // User asked for regex to substitute accents in search, which I've done in normalize.
         result = result.replace(re, `<mark class="bg-[#FED73A]/80 text-[#003D5D] px-0.5 rounded-sm font-bold">$1</mark>`);
     });
     return result;

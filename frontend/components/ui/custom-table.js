@@ -3,7 +3,6 @@
     const CONFIG = { primaryColor: '#003D5D' };
 
     function closeOpenFilterMenu(e) {
-        // Ignore scroll events originating from within the filter menu
         if (e && e.type === 'scroll' && e.target.closest && e.target.closest('.table-filter-menu')) {
             return;
         }
@@ -525,7 +524,6 @@
         const isEnhanced = Array.isArray(initialConfig) && initialConfig.length > 0;
 
         function closeMenu(e) {
-            // Ignore scroll events originating from within the menu
             if (e && e.type === 'scroll' && e.target.closest && e.target.closest('.column-visibility-menu')) {
                 return;
             }
@@ -613,7 +611,6 @@
                             </td>
                         `;
 
-                        // Drag & Drop for Enhanced Mode
                         tr.addEventListener('dragstart', (e) => {
                             e.dataTransfer.setData('text/plain', index);
                             tr.classList.add('opacity-40');
@@ -630,7 +627,6 @@
                             const rect = tr.getBoundingClientRect();
                             const midY = rect.top + rect.height / 2;
 
-                            // Clear all row cells first
                             tbody.querySelectorAll('td').forEach(td => {
                                 td.style.borderTop = '';
                                 td.style.borderBottom = '';
@@ -660,11 +656,8 @@
                             const midY = rect.top + rect.height / 2;
                             let toIndex = index;
 
-                            // Adjust toIndex based on drop position (above or below)
                             if (e.clientY > midY && fromIndex < toIndex) {
-                                // Already handled by splice logic usually, but let's be precise
                             } else if (e.clientY < midY && fromIndex > toIndex) {
-                                // Above
                             }
 
                             if (fromIndex !== toIndex) {
@@ -713,7 +706,6 @@
                             </label>
                         `;
 
-                        // Drag & Drop for Standard Mode
                         label.addEventListener('dragstart', (e) => {
                             e.dataTransfer.setData('text/plain', index);
                             label.classList.add('opacity-40');
@@ -742,7 +734,6 @@
                             const fromIdx = parseInt(e.dataTransfer.getData('text/plain'));
                             const toIdx = index;
                             if (fromIdx !== toIdx) {
-                                // Reorder headers and cells in DOM
                                 const rows = table.querySelectorAll('tr');
                                 rows.forEach(row => {
                                     const cells = Array.from(row.children);
@@ -868,7 +859,6 @@
                     if (newText) {
                         span.textContent = newText;
 
-                        // Sync with COLUMN_CONFIG in script.js if it exists
                         const originalKey = span.closest('th').querySelector('.table-filter-trigger')?.dataset.key;
                         if (originalKey && typeof COLUMN_CONFIG !== 'undefined') {
                             const conf = COLUMN_CONFIG.find(c => c.key === originalKey);

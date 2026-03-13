@@ -63,7 +63,6 @@ function showState(name) {
 }
 
 async function init() {
-    // Sync itemsPerPage with the selector value
     const rowsSelect = document.getElementById("rowsPerPage");
     if (rowsSelect) {
         rowsSelect.value = itemsPerPage;
@@ -72,19 +71,16 @@ async function init() {
     PANEL_SELECT_IDS.forEach(id => renderSkeletonSelect(id));
     initSidebarResizer();
 
-    // Fechar dropdowns ao escrolar os filtros
     const sideScroll = document.getElementById("sidebarScrollContainer");
     if (sideScroll) {
         sideScroll.addEventListener("scroll", () => {
             document.querySelectorAll('.custom-select-container.is-open').forEach(container => {
                 const selectId = container.dataset.selectId;
                 const toggleBtn = container.querySelector('.selection-area');
-                if (toggleBtn) toggleBtn.click(); // Simula o fechamento
+                if (toggleBtn) toggleBtn.click();
             });
         });
     }
-
-    // Filtros de Saldo
     ['filterSaldoMin', 'filterSaldoMax'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('input', () => applyFilters());
@@ -107,10 +103,8 @@ async function init() {
     if (rawData.length > 0) {
         const allKeys = Object.keys(rawData[0]);
 
-        // Versão profunda das colunas iniciais definidas no topo
         COLUMN_CONFIG = INITIAL_COLUMNS.map(conf => ({ ...conf }));
 
-        // Adiciona automaticamente qualquer outra coluna que venha da API (mas deixa oculta por padrão)
         allKeys.forEach(key => {
             if (!COLUMN_CONFIG.some(c => c.key === key)) {
                 COLUMN_CONFIG.push({
@@ -146,7 +140,6 @@ async function fetchStatusUpdates() {
 function enrichRows(rows, statusData = []) {
     const sData = Array.isArray(statusData) ? statusData : [];
     rows.forEach(row => {
-        // Find status in external updates using documento as key (same as backend)
         const doc = String(row.documento || row["Documento Restos a Pagar"] || "");
         const update = sData.find(s => String(s.documento) === doc);
 
@@ -154,18 +147,13 @@ function enrichRows(rows, statusData = []) {
         row["Status Justificativa"] = update ? (update.status || "Pendente") : "Pendente";
         row["status_documento"] = row["Status Justificativa"];
 
-        // Ensure all initial column keys exist for filtering and table rendering - Handeled by ColumnMapper
-
         const uoCode = String(row.uo_codigo || row["Unidade Orçamentária - Código"] || "").trim();
         const uo = descriptiveData.unidades.find(u => String(u.unidade_orcamentaria_codigo).trim() === uoCode);
         const ueCode = String(row.ue_codigo || row["Unidade Executora - Código"] || "").trim();
 
-        // Concatenated Fields
         row["UO_Concatenada"] = `${uoCode} - ${uo?.unidade_orcamentaria_nome || 'N/A'}`;
         const ue = uo?.unidades_executoras?.find(u => String(u.codigo).trim() === ueCode);
         row["UE_Concatenada"] = `${ueCode} - ${ue?.nome || 'N/A'}`;
-
-        // Atualizar valores da linha para exibição na tabela
         row.uo_codigo = row["UO_Concatenada"];
         row.ue_codigo = row["UE_Concatenada"];
         row["Unidade Executora - Nome"] = ue?.nome || "N/A";
@@ -233,7 +221,6 @@ function populateFilterOptions() {
         onCustomSelectChange(id, () => applyFilters());
     });
 
-    // Mostrar inputs de saldo e esconder skeleton
     const saldoSkel = document.getElementById('saldoSkeleton');
     const saldoInps = document.getElementById('saldoInputs');
     if (saldoSkel) saldoSkel.classList.add('hidden');
@@ -330,8 +317,6 @@ window.addEventListener('columnConfigChanged', (e) => {
     if (e.detail && e.detail.config) {
         COLUMN_CONFIG = e.detail.config;
         columns = COLUMN_CONFIG.filter(c => c.visible).map(c => c.key);
-
-        // Reset header to force redraw with new names and visibility
         document.getElementById("tableHead").innerHTML = "";
         renderTable();
     }
@@ -349,7 +334,6 @@ function renderTable() {
             const th = document.createElement("th");
             th.className = "px-4 py-3 text-left text-[11px] font-bold text-slate-400 normal-case tracking-tight relative group min-w-0";
 
-            // Match Dashboard widths
             th.style.width = "180px";
             th.style.minWidth = "50px";
             th.style.maxWidth = "400px";

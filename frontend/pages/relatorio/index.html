@@ -18,7 +18,6 @@
         <div class="flex-1 flex flex-col h-screen overflow-hidden">
             <header></header>
             <main class="flex-1 p-8 bg-[#F6F6F6] overflow-hidden flex flex-col">
-                <!-- Page Header -->
                 <div class="mb-8 shrink-0">
                     <h2 class="text-3xl font-black text-[#003D5D] mb-1 normal-case tracking-tight">Relatórios
                         Consolidados</h2>
@@ -26,9 +25,7 @@
                     </p>
                 </div>
 
-                <!-- Main Content Area with Sidebar and Table -->
                 <div class="flex-1 flex gap-6 min-h-0 overflow-hidden">
-                    <!-- Filters Sidebar -->
                     <aside id="sidebarFilters"
                         class="w-72 bg-white border-2 border-slate-200 rounded-[1.5rem] shadow-sm flex flex-col overflow-hidden shrink-0 transition-[width]">
                         <div class="p-5 border-b-2 border-slate-100 flex items-center justify-between bg-slate-50/30">
@@ -43,12 +40,10 @@
                         </div>
 
                         <div class="flex-1 overflow-y-auto p-5 space-y-6 custom-scrollbar" id="sidebarScrollContainer">
-                            <!-- Checkbox Filters -->
                             <div class="space-y-3">
                                 <label
                                     class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Decisão</label>
                                 <div id="checkboxDecisao" class="space-y-1 min-h-[40px]">
-                                    <!-- Skeleton Placeholder -->
                                     <div class="animate-pulse space-y-2">
                                         <div class="h-8 bg-slate-100 rounded-xl w-full"></div>
                                         <div class="h-8 bg-slate-100 rounded-xl w-3/4"></div>
@@ -60,7 +55,6 @@
                                 <label
                                     class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Status</label>
                                 <div id="checkboxStatus" class="space-y-1 min-h-[40px]">
-                                    <!-- Skeleton Placeholder -->
                                     <div class="animate-pulse space-y-2">
                                         <div class="h-8 bg-slate-100 rounded-xl w-full"></div>
                                         <div class="h-8 bg-slate-100 rounded-xl w-4/5"></div>
@@ -68,7 +62,6 @@
                                 </div>
                             </div>
 
-                            <!-- Core Selects -->
                             <div class="space-y-2">
                                 <label
                                     class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">UO</label>
@@ -81,7 +74,6 @@
                                 <select id="filterUE" multiple data-placeholder="Todas" class="hidden"></select>
                             </div>
 
-                            <!-- Saldo RPPN Range -->
                             <div class="space-y-3" id="filterSaldoContainer">
                                 <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Saldo
                                     Restos a Pagar Não Processado</label>
@@ -103,7 +95,6 @@
                                 <select id="filterAno" multiple data-placeholder="Todos" class="hidden"></select>
                             </div>
 
-                            <!-- More Filters (Dynamic) -->
                             <div class="pt-4 border-t-2 border-slate-50">
                                 <button onclick="toggleMoreFilters()"
                                     class="w-full flex items-center justify-between group">
@@ -113,7 +104,6 @@
                                         class='bx bx-chevron-down text-slate-400 group-hover:text-[#003D5D] transition-all'></i>
                                 </button>
                                 <div id="moreFiltersContent" class="hidden mt-4 space-y-4">
-                                    <!-- Dynamic Selects here -->
                                     <div class="space-y-2">
                                         <label
                                             class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Programa</label>
@@ -172,17 +162,14 @@
                         </div>
                     </aside>
 
-                    <!-- Sidebar Resizer -->
                     <div id="sidebarResizer"
                         class="group flex items-center justify-center w-2 -mx-4 cursor-col-resize z-20 transition-colors">
                         <div class="w-1 h-12 bg-slate-200 rounded-full group-hover:bg-[#003D5D]/30 transition-colors">
                         </div>
                     </div>
 
-                    <!-- Table Container -->
                     <div
                         class="flex-1 bg-white border-2 border-slate-200 rounded-[1.5rem] shadow-sm flex flex-col overflow-hidden relative">
-                        <!-- Table Actions -->
                         <div
                             class="px-6 py-4 border-b-2 border-slate-100 flex items-center justify-between bg-slate-50/10">
                             <div class="flex items-center gap-3">
@@ -265,17 +252,13 @@
         </div>
     </div>
 
-    <!-- External Libraries -->
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
 
-    <!-- Core Scripts -->
     <script src="../../components/core/api.js"></script>
     <script src="../../components/core/session.js"></script>
     <script src="../../components/core/csv.js"></script>
     <script src="../../components/layout/layout.js"></script>
-
-    <!-- UI Helper Scripts -->
     <script src="../../components/ui/custom-table.js"></script>
     <script src="../../components/ui/custom-select.js"></script>
 

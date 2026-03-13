@@ -21,13 +21,11 @@ function switchTab(tab) {
         const isActive = btn.dataset.tab === tab;
         const indicator = btn.querySelector(".active-indicator");
 
-        // Reset
         btn.classList.remove("text-[#003D5D]");
         btn.classList.add("text-slate-400");
         if (indicator) indicator.classList.remove("scale-x-100");
         if (indicator) indicator.classList.add("scale-x-0");
 
-        // Active
         if (isActive) {
             btn.classList.remove("text-slate-400");
             btn.classList.add("text-[#003D5D]");
@@ -44,7 +42,6 @@ function switchTab(tab) {
         targetContent.classList.add("animate-in", "fade-in", "slide-in-from-bottom-2", "duration-500");
     }
 
-    // Lazy Load logic
     if (!loadedTabs.has(tab)) {
         loadedTabs.add(tab);
         const loaders = {
@@ -156,7 +153,6 @@ async function loadStats() {
     const sidebar = document.getElementById("statsFiltersSidebar");
     if (sidebar) sidebar.classList.add("hidden");
 
-    // Add listeners for Saldo inputs
     ['statFilterSaldoMin', 'statFilterSaldoMax'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('input', () => applyStatsFilters());
@@ -183,7 +179,6 @@ async function loadStats() {
 
     let raw = res.data?.data?.rows || [];
 
-    // Fallback if ColumnMapper exists
     if (typeof ColumnMapper !== "undefined") {
         raw = await ColumnMapper.mapRows(raw);
     }
@@ -255,7 +250,6 @@ function toggleStatsMoreFilters() {
 function enrichStatsRows(rows, statusData = []) {
     const sData = Array.isArray(statusData) ? statusData : [];
 
-    // Create latest status map
     const latestMap = {};
     sData.forEach(s => {
         const doc = String(s.documento || s.rppn || "");
@@ -334,7 +328,6 @@ function populateStatsFilterOptions() {
         if (row["Status Justificativa"]) sets.statFilterStatus.add(row["Status Justificativa"]);
         if (row["Decisao"]) sets.statFilterDecisao.add(row["Decisao"]);
 
-        // Additional columns
         if (row.documento) sets.statFilterDocumento.add(String(row.documento));
         if (row.subprojeto) sets.statFilterSubprojeto.add(String(row.subprojeto));
         if (row.natureza_item) sets.statFilterNaturezaItem.add(String(row.natureza_item));
@@ -405,7 +398,6 @@ function applyStatsFilters() {
         const matchesSMin = isNaN(f.sMin) || row.saldoNum >= f.sMin;
         const matchesSMax = isNaN(f.sMax) || row.saldoNum <= f.sMax;
 
-        // Additional columns matches
         const matchesDoc = !f.doc.length || f.doc.includes(String(row.documento));
         const matchesSpr = !f.spr.length || f.spr.includes(String(row.subprojeto));
         const matchesNat = !f.nat.length || f.nat.includes(String(row.natureza_item));
@@ -493,7 +485,6 @@ function renderStatsCards() {
     const concluidosPct = total > 0 ? Math.round((concluidos / total) * 100) : 0;
     const ticketMedio = total > 0 ? (volume / total) : 0;
 
-    // População dos Cards
     const safeSetText = (id, val) => {
         const el = document.getElementById(id);
         if (el) el.textContent = val;
@@ -649,7 +640,7 @@ function renderParetoChart() {
         annotations.points.push({
             x: labels[thresholdIdx],
             y: paretoAccumulated[thresholdIdx],
-            yAxisIndex: 1, // Fix: Use the second axis (percentage)
+            yAxisIndex: 1,
             marker: {
                 size: 8,
                 fillColor: '#D61A21',
@@ -739,7 +730,6 @@ function renderBubbleChart() {
         .filter(item => item[1].count > 0 && item[1].saldo > 0)
         .map(item => {
             const idadeMedia = item[1].sumIdades / item[1].count;
-            // X: Idade Media, Y: Saldo, Z (Size): Quantidade
             return {
                 name: item[0],
                 data: [[idadeMedia, item[1].saldo, item[1].count]]
@@ -1402,7 +1392,7 @@ async function handleImportCSV() {
         document.getElementById("fileNameDisplay").textContent = "Selecionar arquivo CSV";
         document.getElementById("fileNameDisplay").classList.add("text-slate-400");
         btn.disabled = true;
-        loadStats(); // Atualiza os cards
+        loadStats();
     } else {
         showModalAlert("importStatusAlert", res.data?.error || "Erro ao importar arquivo.");
     }

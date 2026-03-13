@@ -21,1110 +21,1157 @@
             <main class="flex-1 bg-[#F6F6F6] overflow-y-auto custom-scrollbar">
                 <div class="p-8 lg:p-12 max-w-[1600px] mx-auto">
 
-                <div class="mb-8">
-                    <h2 class="text-3xl font-black text-[#003D5D] mb-1 tracking-tight">Administração</h2>
-                    <p class="text-slate-500 font-medium text-sm">Gerencie o sistema e consulte estatísticas avançadas.</p>
-                </div>
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-black text-[#003D5D] mb-1 tracking-tight">Administração</h2>
+                        <p class="text-slate-500 font-medium text-sm">Gerencie o sistema e consulte estatísticas
+                            avançadas.</p>
+                    </div>
 
-                <!-- Modern Horizontal Top Navigation -->
-                <nav class="flex items-center gap-8 mb-10 border-b-2 border-slate-200/60 overflow-x-auto overflow-y-hidden no-scrollbar">
-                    <button data-tab="estatisticas" onclick="switchTab('estatisticas')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 active-tab whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-bar-chart-alt-2 text-xl'></i>
-                            <span>Estatísticas</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                    <button data-tab="usuarios" onclick="switchTab('usuarios')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-group text-xl'></i>
-                            <span>Usuários</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                    <button data-tab="legislacao" onclick="switchTab('legislacao')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-book-open text-xl'></i>
-                            <span>Legislação</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                    <button data-tab="notificacoes" onclick="switchTab('notificacoes')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-bell text-xl'></i>
-                            <span>Notificações</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                    <button data-tab="tipos_justificativa" onclick="switchTab('tipos_justificativa')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-list-check text-xl'></i>
-                            <span>Justificativas</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                    <button data-tab="dados" onclick="switchTab('dados')"
-                        class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
-                        <div class="flex items-center gap-2">
-                            <i class='bx bx-data text-xl'></i>
-                            <span>Base de Dados</span>
-                        </div>
-                        <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator"></div>
-                    </button>
-                </nav>
-
-                <!-- Page Content Region -->
-                <div class="space-y-8 animate-in fade-in duration-700">
-
-                <!-- ======== TAB: USUÁRIOS ======== -->
-                <div id="tab-usuarios" class="tab-content">
-                    <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
-                        <div
-                            class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
-                            <div>
-                                <h3
-                                    class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
-                                    Usuários do sistema</h3>
-                                <p class="text-[13px] text-slate-500 mt-1 font-medium">Cadastre e gerencie os acessos ao
-                                    sistema.</p>
+                    <nav
+                        class="flex items-center gap-8 mb-10 border-b-2 border-slate-200/60 overflow-x-auto overflow-y-hidden no-scrollbar">
+                        <button data-tab="estatisticas" onclick="switchTab('estatisticas')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 active-tab whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-bar-chart-alt-2 text-xl'></i>
+                                <span>Estatísticas</span>
                             </div>
-                            <button onclick="openUserModal()"
-                                class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
-                                <i class='bx bx-user-plus text-lg'></i>
-                                Novo Usuário
-                            </button>
-                        </div>
-
-                        <div id="usersStateLoading"
-                            class="flex flex-col items-center justify-center py-32 text-slate-400">
-                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">Carregando
-                                usuários…</p>
-                        </div>
-
-                        <div id="usersStateNotImpl"
-                            class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
                             <div
-                                class="w-16 h-16 bg-amber-50 border-2 border-amber-100 rounded-2xl flex items-center justify-center mb-6">
-                                <i class='bx bx-plug text-3xl text-slate-700'></i>
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
                             </div>
-                            <h4 class="text-lg font-black text-slate-700 mb-2">API não implementada</h4>
-                            <p class="text-[13px] font-medium text-slate-500 max-w-sm">O endpoint de listagem de
-                                usuários ainda não está disponível no backend. Os formulários de cadastro já estão
-                                concluídos no frontend.</p>
-                            <button onclick="openUserModal()"
-                                class="mt-8 px-8 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-xl hover:bg-slate-800 transition-all flex items-center gap-2 shadow-lg shadow-[#003D5D]/20">
-                                <i class='bx bx-user-plus text-lg'></i>
-                                Visualizar formulário
-                            </button>
-                        </div>
-
-                        <div id="usersTable" class="hidden overflow-x-auto">
-                            <table class="min-w-full divide-y-2 divide-slate-100">
-                                <thead class="bg-slate-50/80">
-                                    <tr>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Usuário</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Role</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            UO</th>
-                                        <th
-                                            class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
-                                            Opções</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="usersTableBody" class="divide-y-2 divide-slate-50"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ======== TAB: ESTATÍSTICAS ======== -->
-                <div id="tab-estatisticas" class="tab-content relative flex flex-col min-h-0 hidden">
-                    <div id="statsStateLoading" class="flex flex-col items-center justify-center py-32 text-slate-400">
-                        <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                        <p class="font-bold text-slate-600 text-sm">Carregando estatísticas…</p>
-                    </div>
-
-                    <!-- Header de Ações -->
-                    <div id="statsHeaderActions" class="hidden flex justify-end mb-6">
-                        <button id="btnOpenStatsFilters" onclick="toggleStatsFilters()"
-                            class="px-6 py-2.5 bg-white border-2 border-slate-200 text-[#003D5D] text-[11px] font-black uppercase tracking-wider rounded-xl shadow-sm hover:border-[#003D5D]/40 transition-all flex items-center gap-2">
-                            <i class='bx bx-filter-alt text-lg'></i>
-                            <span>Filtros</span>
                         </button>
-                    </div>
-
-                    <div id="statsContent" class="hidden flex-1 flex flex-col gap-6 min-h-0">
-                        <!-- Horizontal Top Filters Panel -->
-                        <aside id="statsFiltersSidebar"
-                            class="bg-white border-2 border-slate-200 rounded-[1.5rem] shadow-sm flex flex-col shrink-0 transition-all duration-300 hidden overflow-hidden">
+                        <button data-tab="usuarios" onclick="switchTab('usuarios')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-group text-xl'></i>
+                                <span>Usuários</span>
+                            </div>
                             <div
-                                class="p-4 border-b-2 border-slate-100 flex items-center justify-between bg-slate-50/30">
-                                <h3
-                                    class="text-[12px] font-black text-[#003D5D] uppercase tracking-wider flex items-center gap-2">
-                                    <i class='bx bx-filter-alt text-slate-400'></i> Filtros Avançados
-                                </h3>
-                                <div class="flex items-center gap-4">
-                                    <button onclick="clearStatsFilters()"
-                                        class="text-[10px] font-bold text-rose-500 hover:text-rose-600 uppercase transition-colors">
-                                        Limpar
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
+                            </div>
+                        </button>
+                        <button data-tab="legislacao" onclick="switchTab('legislacao')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-book-open text-xl'></i>
+                                <span>Legislação</span>
+                            </div>
+                            <div
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
+                            </div>
+                        </button>
+                        <button data-tab="notificacoes" onclick="switchTab('notificacoes')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-bell text-xl'></i>
+                                <span>Notificações</span>
+                            </div>
+                            <div
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
+                            </div>
+                        </button>
+                        <button data-tab="tipos_justificativa" onclick="switchTab('tipos_justificativa')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-list-check text-xl'></i>
+                                <span>Justificativas</span>
+                            </div>
+                            <div
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
+                            </div>
+                        </button>
+                        <button data-tab="dados" onclick="switchTab('dados')"
+                            class="tab-btn group relative pb-4 text-[13px] font-bold transition-all duration-300 text-slate-400 hover:text-slate-600 whitespace-nowrap">
+                            <div class="flex items-center gap-2">
+                                <i class='bx bx-data text-xl'></i>
+                                <span>Base de Dados</span>
+                            </div>
+                            <div
+                                class="absolute bottom-[-2px] left-0 w-full h-1 bg-[#003D5D] rounded-full scale-x-0 transition-transform duration-300 active-indicator">
+                            </div>
+                        </button>
+                    </nav>
+
+                    <div class="space-y-8 animate-in fade-in duration-700">
+
+                        <div id="tab-usuarios" class="tab-content">
+                            <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
+                                <div
+                                    class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                                    <div>
+                                        <h3
+                                            class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                            Usuários do sistema</h3>
+                                        <p class="text-[13px] text-slate-500 mt-1 font-medium">Cadastre e gerencie os
+                                            acessos ao
+                                            sistema.</p>
+                                    </div>
+                                    <button onclick="openUserModal()"
+                                        class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
+                                        <i class='bx bx-user-plus text-lg'></i>
+                                        Novo Usuário
                                     </button>
-                                    <button onclick="toggleStatsFilters()"
-                                        class="text-slate-400 hover:text-[#003D5D] transition-colors p-1 bg-slate-100 rounded-lg">
-                                        <i class='bx bx-x text-lg'></i>
+                                </div>
+
+                                <div id="usersStateLoading"
+                                    class="flex flex-col items-center justify-center py-32 text-slate-400">
+                                    <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                                    <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">
+                                        Carregando
+                                        usuários…</p>
+                                </div>
+
+                                <div id="usersStateNotImpl"
+                                    class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
+                                    <div
+                                        class="w-16 h-16 bg-amber-50 border-2 border-amber-100 rounded-2xl flex items-center justify-center mb-6">
+                                        <i class='bx bx-plug text-3xl text-slate-700'></i>
+                                    </div>
+                                    <h4 class="text-lg font-black text-slate-700 mb-2">API não implementada</h4>
+                                    <p class="text-[13px] font-medium text-slate-500 max-w-sm">O endpoint de listagem de
+                                        usuários ainda não está disponível no backend. Os formulários de cadastro já
+                                        estão
+                                        concluídos no frontend.</p>
+                                    <button onclick="openUserModal()"
+                                        class="mt-8 px-8 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-xl hover:bg-slate-800 transition-all flex items-center gap-2 shadow-lg shadow-[#003D5D]/20">
+                                        <i class='bx bx-user-plus text-lg'></i>
+                                        Visualizar formulário
                                     </button>
                                 </div>
-                            </div>
 
-                            <div class="p-6">
-                                <!-- Main Filters Grid -->
-                                <div
-                                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
-                                    <!-- Decisions & Status (Checkboxes in small grids) -->
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Decisão</label>
-                                        <div id="statCheckboxDecisao" class="grid grid-cols-2 gap-1 text-[11px]"></div>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Status</label>
-                                        <div id="statCheckboxStatus" class="grid grid-cols-2 gap-1 text-[11px]"></div>
-                                    </div>
-
-                                    <!-- Core Selects and Saldo -->
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">UO</label>
-                                        <select id="statFilterUO" multiple data-placeholder="Todas"
-                                            class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">UE</label>
-                                        <select id="statFilterUE" multiple data-placeholder="Todas"
-                                            class="hidden"></select>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Ano
-                                            Origem</label>
-                                        <select id="statFilterAno" multiple data-placeholder="Todos"
-                                            class="hidden"></select>
-                                    </div>
-
-                                    <div class="space-y-3">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Saldo
-                                            RPPN (Faixa)</label>
-                                        <div class="flex gap-2">
-                                            <input type="number" id="statFilterSaldoMin" placeholder="Mín"
-                                                class="w-1/2 p-2 bg-slate-50 border-2 border-slate-100 rounded-xl text-[12px] font-bold focus:border-[#003D5D] outline-none transition-all">
-                                            <input type="number" id="statFilterSaldoMax" placeholder="Máx"
-                                                class="w-1/2 p-2 bg-slate-50 border-2 border-slate-100 rounded-xl text-[12px] font-bold focus:border-[#003D5D] outline-none transition-all">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- More Filters (Collapsible) -->
-                                <div class="mt-8 pt-6 border-t-2 border-slate-50">
-                                    <button onclick="toggleStatsMoreFilters()" class="flex items-center gap-3 group">
-                                        <span
-                                            class="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-[#003D5D] transition-colors">Mais
-                                            Filtros</span>
-                                        <i id="statIconMoreFilters"
-                                            class='bx bx-chevron-down text-slate-400 group-hover:text-[#003D5D] transition-all'></i>
-                                    </button>
-
-                                    <div id="statMoreFiltersContent" class="hidden mt-6">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Programa</label>
-                                                <select id="statFilterPrograma" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Elemento
-                                                    Item</label>
-                                                <select id="statFilterElemento" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Função</label>
-                                                <select id="statFilterFuncao" multiple data-placeholder="Todas"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Subfunção</label>
-                                                <select id="statFilterSubfuncao" multiple data-placeholder="Todas"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Procedência</label>
-                                                <select id="statFilterProcedencia" multiple data-placeholder="Todas"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Projeto
-                                                    Atividade</label>
-                                                <select id="statFilterProjetoAtividade" multiple
-                                                    data-placeholder="Todos" class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Documento</label>
-                                                <select id="statFilterDocumento" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Subprojeto</label>
-                                                <select id="statFilterSubprojeto" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Natureza
-                                                    Item</label>
-                                                <select id="statFilterNaturezaItem" multiple data-placeholder="Todas"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Categoria
-                                                    Econômica</label>
-                                                <select id="statFilterCategoriaEconomica" multiple
-                                                    data-placeholder="Todas" class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Grupo
-                                                    Despesa</label>
-                                                <select id="statFilterGrupoDespesa" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Modalidade
-                                                    Aplicação</label>
-                                                <select id="statFilterModalidadeAplicacao" multiple
-                                                    data-placeholder="Todas" class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Elemento
-                                                    Despesa</label>
-                                                <select id="statFilterElementoDespesa" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Item
-                                                    Despesa</label>
-                                                <select id="statFilterItemDespesa" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Fonte
-                                                    Recurso</label>
-                                                <select id="statFilterFonteRecurso" multiple data-placeholder="Todas"
-                                                    class="hidden"></select>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Status
-                                                    (Original)</label>
-                                                <select id="statFilterStatus" multiple data-placeholder="Todos"
-                                                    class="hidden"></select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div id="usersTable" class="hidden overflow-x-auto">
+                                    <table class="min-w-full divide-y-2 divide-slate-100">
+                                        <thead class="bg-slate-50/80">
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Usuário</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Role</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    UO</th>
+                                                <th
+                                                    class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
+                                                    Opções</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="usersTableBody" class="divide-y-2 divide-slate-50"></tbody>
+                                    </table>
                                 </div>
                             </div>
-                        </aside>
+                        </div>
 
-                        <!-- Dados e Gráficos -->
-                        <div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-6 w-full pr-2">
-
-                            <!-- PRIMEIRA LINHA: Visão Geral e Operacional -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
-                                <!-- Card: Visão Geral -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-[#003D5D]/20">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <div
-                                            class="w-11 h-11 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-2xl flex items-center justify-center shadow-sm">
-                                            <i class='bx bx-data text-xl'></i>
-                                        </div>
-                                        <span
-                                            class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Visão
-                                            Geral</span>
-                                    </div>
-                                    <div class="flex flex-col gap-1">
-                                        <div class="flex items-baseline gap-2">
-                                            <span id="statCardTotal"
-                                                class="text-3xl font-black text-[#003D5D] tracking-tight truncate">—</span>
-                                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
-                                                Regs.</p>
-                                        </div>
-                                        <div class="pt-2 border-t border-slate-50 mt-2">
-                                            <span id="statCardVolume"
-                                                class="text-xl font-black text-slate-700 tracking-tight truncate block">R$
-                                                0,00</span>
-                                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
-                                                Saldo Acumulado</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Card: Situação Atual (Status das Justificativas) -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-emerald-500/20 md:col-span-1 lg:col-span-2">
-                                    <div class="flex items-center justify-between mb-6">
-                                        <div
-                                            class="w-11 h-11 bg-emerald-50 border-2 border-emerald-100 text-emerald-500 rounded-2xl flex items-center justify-center shadow-sm">
-                                            <i class='bx bx-check-double text-xl'></i>
-                                        </div>
-                                        <span
-                                            class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Situação
-                                            Atual</span>
-                                    </div>
-                                    <div class="flex items-center justify-between px-2 gap-4">
-                                        <div class="flex-1 flex flex-col items-center text-center">
-                                            <span id="statCardPendentes"
-                                                class="text-3xl font-black text-[#003D5D] tracking-tight mb-2">—</span>
-                                            <p
-                                                class="text-[8px] font-black text-amber-600 uppercase tracking-widest leading-tight">
-                                                Pendentes de<br>Justificativa</p>
-                                        </div>
-                                        <div class="w-px h-12 bg-slate-100"></div>
-                                        <div class="flex-1 flex flex-col items-center text-center">
-                                            <div class="flex items-baseline gap-2">
-                                                <span id="statCardAnalise"
-                                                    class="text-3xl font-black text-slate-700 tracking-tight mb-2">—</span>
-                                                <span id="statCardAnalisePct"
-                                                    class="text-[12px] font-black text-slate-700/60 font-mono">0%</span>
-                                            </div>
-                                            <p
-                                                class="text-[8px] font-black text-blue-600 uppercase tracking-widest leading-tight">
-                                                Em análise<br>pela SCCG</p>
-                                        </div>
-                                        <div class="w-px h-12 bg-slate-100"></div>
-                                        <div class="flex-1 flex flex-col items-center text-center">
-                                            <div class="flex items-baseline gap-2">
-                                                <span id="statCardConcluidos"
-                                                    class="text-3xl font-black text-slate-700 tracking-tight">—</span>
-                                                <span id="statCardConcluidosPct"
-                                                    class="text-[12px] font-black text-slate-700/60 font-mono">0%</span>
-                                            </div>
-                                            <p
-                                                class="text-[8px] font-black text-slate-700 uppercase tracking-widest leading-tight">
-                                                Justificativas<br>Concluídas</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Card: Idade & Fluxo -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-amber-500/20">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <div
-                                            class="w-11 h-11 bg-amber-50 border-2 border-amber-100 text-amber-500 rounded-2xl flex items-center justify-center shadow-sm">
-                                            <i class='bx bx-time text-xl'></i>
-                                        </div>
-                                        <span
-                                            class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Métricas
-                                            de Fluxo</span>
-                                    </div>
-                                    <div class="flex flex-col gap-1">
-                                        <div class="flex items-baseline gap-2">
-                                            <span id="statCardIdade"
-                                                class="text-3xl font-black text-slate-700 tracking-tight truncate">—</span>
-                                            <p class="text-[9px] font-bold text-slate-700 uppercase tracking-wider">Anos
-                                                de Idade Média</p>
-                                        </div>
-                                        <div class="pt-2 border-t border-slate-50 mt-2">
-                                            <span id="statCardValorMedio"
-                                                class="text-xl font-black text-slate-700 tracking-tight block truncate">—</span>
-                                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
-                                                Ticket Médio p/ Registro</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div id="tab-estatisticas" class="tab-content relative flex flex-col min-h-0 hidden">
+                            <div id="statsStateLoading"
+                                class="flex flex-col items-center justify-center py-32 text-slate-400">
+                                <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                                <p class="font-bold text-slate-600 text-sm">Carregando estatísticas…</p>
                             </div>
 
-                            <!-- SEGUNDA LINHA: Detalhamento de Valores (4 Cards) -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
-                                <!-- Card: Inscrito -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-slate-400/20">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Valor
-                                            Inscrito</p>
-                                        <i class='bx bx-archive-in text-slate-300 text-xl'></i>
-                                    </div>
-                                    <p id="statCardInscrito"
-                                        class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
-                                </div>
-                                <!-- Card: Pago -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-emerald-400/20">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Valor
-                                            Pago</p>
-                                        <i class='bx bx-check-circle text-emerald-300 text-xl'></i>
-                                    </div>
-                                    <p id="statCardPago"
-                                        class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
-                                </div>
-                                <!-- Card: Cancelado -->
-                                <div
-                                    class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-rose-400/20">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Valor
-                                            Cancelado</p>
-                                        <i class='bx bx-x-circle text-rose-300 text-xl'></i>
-                                    </div>
-                                    <p id="statCardCancelado"
-                                        class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
-                                </div>
-                                <!-- Card: Saldo Remanescente (Repetindo Volume) -->
-                                <div
-                                    class="bg-slate-50 border-2 border-indigo-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-indigo-400/20">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                                            Saldo Remanescente</p>
-                                        <i class='bx bx-wallet text-indigo-300 text-xl'></i>
-                                    </div>
-                                    <p id="statCardVolumeRep"
-                                        class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
-                                </div>
-                            </div>
-
-                            <!-- Gráficos Principais (Foco em Análise de Concentração e Risco) -->
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 shrink-0">
-                                <!-- Pareto (Concentração) -->
-                                <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <h3 class="text-[16px] font-black text-[#003D5D] flex items-center gap-3"><i
-                                                class='bx bx-line-chart text-2xl'></i> Curva de Pareto (80/20)</h3>
-                                        <select id="statParetoColumnSelector" onchange="renderStatsCharts()"
-                                            class="text-[10px] font-black uppercase text-[#003D5D] bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-2 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
-                                            <option value="UO_Concatenada" selected>UO</option>
-                                            <option value="UE_Concatenada">UE</option>
-                                            <option value="Programa - Descrição">Programa</option>
-                                            <option value="Elemento Item - Descrição">Elemento Item</option>
-                                            <option value="natureza_item">Natureza Item</option>
-                                            <option value="fonte_recurso">Fonte Recurso</option>
-                                            <option value="procedencia">Procedência</option>
-                                            <option value="Decisao">Decisão</option>
-                                            <option value="Status Justificativa">Status</option>
-                                        </select>
-                                    </div>
-                                    <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Análise de Concentração
-                                        Financeira: O ponto marcado identifica o limiar de 80% do volume acumulado.</p>
-                                    <div id="chartParetoDynamic" class="w-full h-80"></div>
-                                </div>
-
-                                <!-- Dispersão (Bolhas / Risco) -->
-                                <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <h3 class="text-[16px] font-black text-[#003D5D] flex items-center gap-3"><i
-                                                class='bx bx-scatter-chart text-2xl'></i> Dispersão de Risco</h3>
-                                        <select id="statBubbleColumnSelector" onchange="renderStatsCharts()"
-                                            class="text-[10px] font-black uppercase text-[#003D5D] bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-2 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
-                                            <option value="Programa - Descrição" selected>Programa</option>
-                                            <option value="UO_Concatenada">UO</option>
-                                            <option value="UE_Concatenada">UE</option>
-                                            <option value="Elemento Item - Descrição">Elemento Item</option>
-                                            <option value="natureza_item">Natureza Item</option>
-                                            <option value="fonte_recurso">Fonte Recurso</option>
-                                            <option value="procedencia">Procedência</option>
-                                        </select>
-                                    </div>
-                                    <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Eixo X: Idade Média | Eixo
-                                        Y: Saldo Financeiro | Bolha: Quantidade de Registros</p>
-                                    <div id="chartRiscoBubble" class="w-full h-80"></div>
-                                </div>
-
-                                <!-- Aging RPPN -->
-                                <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
-                                    <h3 class="text-[16px] font-black text-[#003D5D] mb-1 flex items-center gap-3"><i
-                                            class='bx bx-layer text-2xl'></i> Envelhecimento dos RPPNs (Aging)</h3>
-                                    <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Volume monetário
-                                        classificado pela idade da despesa original</p>
-                                    <div id="chartAgingVolume" class="w-full h-80"></div>
-                                </div>
-
-                                <!-- Evolução Ano de Origem -->
-                                <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
-                                    <h3 class="text-[16px] font-black text-[#003D5D] mb-4 flex items-center gap-3"><i
-                                            class='bx bx-bar-chart-alt-2 text-2xl'></i> Evolução Saldo por Ano de Origem
-                                    </h3>
-                                    <div id="chartAnoLine" class="w-full h-80"></div>
-                                </div>
-                            </div>
-
-                            <div class="h-6 shrink-0 border-transparent border"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ======== TAB: CMS LEGISLAÇÃO ======== -->
-                <div id="tab-legislacao" class="tab-content hidden">
-                    <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
-                        <div
-                            class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
-                            <div>
-                                <h3
-                                    class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
-                                    Base Legal</h3>
-                                <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie os registros da página
-                                    de legislação.</p>
-                            </div>
-                            <button onclick="openLegModal()"
-                                class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
-                                <i class='bx bx-plus text-lg'></i>
-                                Nova Legislação
-                            </button>
-                        </div>
-                        <div id="legStateLoading"
-                            class="flex flex-col items-center justify-center py-32 text-slate-400">
-                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">Carregando
-                                legislação…</p>
-                        </div>
-                        <div id="legTable" class="hidden overflow-x-auto">
-                            <table class="min-w-full divide-y-2 divide-slate-100">
-                                <thead class="bg-slate-50/80">
-                                    <tr>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Título</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Tipo</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Esfera</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Status</th>
-                                        <th
-                                            class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
-                                            Opções</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="legTableBody" class="divide-y-2 divide-slate-50"></tbody>
-                            </table>
-                        </div>
-                        <div id="legEmpty"
-                            class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
-                            <div
-                                class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
-                                <i class='bx bx-search text-3xl text-slate-300'></i>
-                            </div>
-                            <h4 class="text-lg font-black text-slate-700 mb-2">Nenhum registro encontrado</h4>
-                            <p class="text-[13px] font-medium text-slate-500">A base legal está vazia ou não pôde ser
-                                carregada.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ======== TAB: NOTIFICAÇÕES ======== -->
-                <div id="tab-notificacoes" class="tab-content hidden">
-                    <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
-                        <div
-                            class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
-                            <div>
-                                <h3
-                                    class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
-                                    Notificações do sistema</h3>
-                                <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie avisos e comunicados
-                                    exibidos aos usuários.</p>
-                            </div>
-                            <button onclick="openNotifModal()"
-                                class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
-                                <i class='bx bx-bell-plus text-lg'></i>
-                                Nova Notificação
-                            </button>
-                        </div>
-
-                        <div id="notifStateLoading"
-                            class="flex flex-col items-center justify-center py-32 text-slate-400">
-                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">Carregando
-                                notificações…</p>
-                        </div>
-
-                        <div id="notifTable" class="hidden overflow-x-auto">
-                            <table class="min-w-full divide-y-2 divide-slate-100">
-                                <thead class="bg-slate-50/80">
-                                    <tr>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Notificação</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Tipo</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Status</th>
-                                        <th
-                                            class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
-                                            Opções</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="notifTableBody" class="divide-y-2 divide-slate-50"></tbody>
-                            </table>
-                        </div>
-
-                        <div id="notifEmpty"
-                            class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
-                            <div
-                                class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
-                                <i class='bx bx-search text-3xl text-slate-300'></i>
-                            </div>
-                            <h4 class="text-lg font-black text-slate-700 mb-2">Nenhuma notificação encontrada</h4>
-                            <p class="text-[13px] font-medium text-slate-500">Nenhum comunicado cadastrado até o
-                                momento.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ======== TAB: TIPOS DE JUSTIFICATIVA ======== -->
-                <div id="tab-tipos_justificativa" class="tab-content hidden">
-                    <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
-                        <div
-                            class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
-                            <div>
-                                <h3
-                                    class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
-                                    Tipos de Justificativa</h3>
-                                <p class="text-[13px] text-slate-500 mt-1 font-medium">Configure os formulários de
-                                    justificativa disponíveis para os usuários.</p>
-                            </div>
-                            <button onclick="openTipoModal()"
-                                class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
-                                <i class='bx bx-plus text-lg'></i>
-                                Novo Tipo
-                            </button>
-                        </div>
-                        <div id="tiposStateLoading"
-                            class="flex flex-col items-center justify-center py-32 text-slate-400">
-                            <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
-                            <p class="font-bold text-slate-600 text-sm">Carregando tipos…</p>
-                        </div>
-                        <div id="tiposTable" class="hidden overflow-x-auto">
-                            <table class="min-w-full divide-y-2 divide-slate-100">
-                                <thead class="bg-slate-50/80">
-                                    <tr>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Nome</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Campos</th>
-                                        <th class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
-                                            Status</th>
-                                        <th
-                                            class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
-                                            Opções</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tiposTableBody" class="divide-y-2 divide-slate-50"></tbody>
-                            </table>
-                        </div>
-                        <div id="tiposEmpty"
-                            class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
-                            <div
-                                class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
-                                <i class='bx bx-list-ul text-3xl text-slate-300'></i>
-                            </div>
-                            <h4 class="text-lg font-black text-slate-700 mb-2">Nenhum tipo cadastrado</h4>
-                            <p class="text-[13px] font-medium text-slate-500">Clique em "Novo Tipo" para começar.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ======== TAB: BASE DE DADOS ======== -->
-                <div id="tab-dados" class="tab-content hidden">
-                    <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
-                        <div class="px-8 py-10 text-center">
-                            <div
-                                class="w-20 h-20 bg-[#003D5D]/5 text-[#003D5D] rounded-[2rem] flex items-center justify-center mx-auto mb-6">
-                                <i class='bx bx-cloud-upload text-4xl'></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-[#003D5D] mb-2 normal-case">Importação de Dados (CSV)
-                            </h3>
-                            <p class="text-slate-500 font-medium text-[13px] max-w-md mx-auto mb-10">
-                                Selecione o arquivo CSV contendo os restos a pagar.
-                                <br><strong class="text-[#D61A21]">Aviso:</strong> A importação irá apagar todos os
-                                dados atuais da tabela de restos a pagar antes de inserir os novos.
-                            </p>
-
-                            <div class="max-w-md mx-auto">
-                                <label
-                                    class="group relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-slate-200 rounded-[2rem] cursor-pointer hover:bg-slate-50 hover:border-[#003D5D]/30 transition-all">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <i
-                                            class='bx bx-file text-3xl text-slate-400 group-hover:text-[#003D5D] mb-3 transition-colors'></i>
-                                        <p class="text-[11px] font-black text-slate-400 group-hover:text-slate-600 uppercase tracking-wider mb-1"
-                                            id="fileNameDisplay">Selecionar arquivo CSV</p>
-                                        <p class="text-[10px] text-slate-400 font-medium">Delimitado por ponto e vírgula
-                                            (;)</p>
-                                    </div>
-                                    <input id="csvFileInput" type="file" accept=".csv" class="hidden"
-                                        onchange="handleFileSelect(event)" />
-                                </label>
-
-                                <button id="btnImportCSV" onclick="handleImportCSV()" disabled
-                                    class="w-full mt-6 bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none">
-                                    <i class='bx bx-check-double text-lg'></i>
-                                    Iniciar Importação
+                            <div id="statsHeaderActions" class="hidden flex justify-end mb-6">
+                                <button id="btnOpenStatsFilters" onclick="toggleStatsFilters()"
+                                    class="px-6 py-2.5 bg-white border-2 border-slate-200 text-[#003D5D] text-[11px] font-black uppercase tracking-wider rounded-xl shadow-sm hover:border-[#003D5D]/40 transition-all flex items-center gap-2">
+                                    <i class='bx bx-filter-alt text-lg'></i>
+                                    <span>Filtros</span>
                                 </button>
-
-                                <div id="importStatusAlert"
-                                    class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- MODAL: Usuário -->
-                <div id="modalUser"
-                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
-                        <div
-                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                            <div>
-                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                                    id="userModalTitle">Novo Usuário</h3>
-                                <p
-                                    class="text-[11px] font-bold text-[#FCAE00] mt-1 normal-case [letter-spacing:normal]">
-                                    Preencha os dados de acesso</p>
-                            </div>
-                            <button onclick="closeUserModal()"
-                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                                <i class='bx bx-x text-3xl'></i>
-                            </button>
-                        </div>
-                        <div class="px-10 py-8 overflow-y-auto flex-1">
-                            <div class="space-y-6">
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Username
-                                        / E-mail</label>
-                                    <input id="userFieldUsername" type="text" placeholder="usuario@sefmg.mg.gov.br"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Role</label>
-                                    <div class="flex gap-4">
-                                        <label
-                                            class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
-                                            <input type="radio" name="userRole" value="user" class="hidden" checked>
-                                            <div
-                                                class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
-                                                <i class='bx bx-user text-base'></i>
-                                            </div>
-                                            <span
-                                                class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Usuário</span>
-                                        </label>
-                                        <label
-                                            class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
-                                            <input type="radio" name="userRole" value="admin" class="hidden">
-                                            <div
-                                                class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
-                                                <i class='bx bx-shield-quarter text-base'></i>
-                                            </div>
-                                            <span
-                                                class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Admin</span>
-                                        </label>
+                            <div id="statsContent" class="hidden flex-1 flex flex-col gap-6 min-h-0">
+                                <aside id="statsFiltersSidebar"
+                                    class="bg-white border-2 border-slate-200 rounded-[1.5rem] shadow-sm flex flex-col shrink-0 transition-all duration-300 hidden overflow-hidden">
+                                    <div
+                                        class="p-4 border-b-2 border-slate-100 flex items-center justify-between bg-slate-50/30">
+                                        <h3
+                                            class="text-[12px] font-black text-[#003D5D] uppercase tracking-wider flex items-center gap-2">
+                                            <i class='bx bx-filter-alt text-slate-400'></i> Filtros Avançados
+                                        </h3>
+                                        <div class="flex items-center gap-4">
+                                            <button onclick="clearStatsFilters()"
+                                                class="text-[10px] font-bold text-rose-500 hover:text-rose-600 uppercase transition-colors">
+                                                Limpar
+                                            </button>
+                                            <button onclick="toggleStatsFilters()"
+                                                class="text-slate-400 hover:text-[#003D5D] transition-colors p-1 bg-slate-100 rounded-lg">
+                                                <i class='bx bx-x text-lg'></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Unidade
-                                        Orçamentária (UO)</label>
-                                    <input id="userFieldUO" type="text" placeholder="Ex: 1401"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                    <p class="text-[10px] text-slate-400 mt-2 ml-1">Deixe em branco para admins sem UO
-                                        vinculada.</p>
-                                </div>
-                                <div id="userModalAlert"
-                                    class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                            </div>
-                        </div>
-                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                            <button onclick="closeUserModal()"
-                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                            <button id="btnSaveUser" onclick="handleSaveUser()"
-                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                                Salvar Usuário
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- MODAL: Legislação -->
-                <div id="modalLeg"
-                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
-                        <div
-                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                            <div>
-                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                                    id="legModalTitle">Nova Legislação</h3>
-                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Preencha os dados do normativo</p>
-                            </div>
-                            <button onclick="closeLegModal()"
-                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                                <i class='bx bx-x text-3xl'></i>
-                            </button>
-                        </div>
-                        <div class="px-10 py-8 overflow-y-auto flex-1">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="md:col-span-2">
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
-                                    <input id="legFieldTitulo" type="text"
-                                        placeholder="Ex: Lei Complementar nº 101/2000"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
-                                    <input id="legFieldTipo" type="text" placeholder="Ex: Lei Complementar, Decreto…"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Número</label>
-                                    <input id="legFieldNumero" type="text" placeholder="Ex: 101"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ano</label>
-                                    <input id="legFieldAno" type="text" placeholder="Ex: 2000"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Esfera</label>
-                                    <select id="legFieldEsfera"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                                        <option value="Federal">Federal</option>
-                                        <option value="Estadual">Estadual</option>
-                                        <option value="Municipal">Municipal</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Status</label>
-                                    <select id="legFieldStatus"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                                        <option value="Vigente">Vigente</option>
-                                        <option value="Revogado">Revogado</option>
-                                        <option value="Suspenso">Suspenso</option>
-                                    </select>
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ementa</label>
-                                    <textarea id="legFieldEmenta" rows="3"
-                                        class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
-                                        placeholder="Descrição resumida do normativo…"></textarea>
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">URL</label>
-                                    <input id="legFieldUrl" type="url" placeholder="https://…"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tags
-                                        <span class="normal-case font-medium">(separadas por vírgula)</span></label>
-                                    <input id="legFieldTags" type="text"
-                                        placeholder="Ex: Finanças Públicas, LRF, Orçamento"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                            </div>
-                            <div id="legModalAlert"
-                                class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                        </div>
-                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                            <button onclick="closeLegModal()"
-                                class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                            <button id="btnSaveLeg" onclick="handleSaveLeg()"
-                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                                Salvar
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                                    <div class="p-6">
+                                        <div
+                                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
+                                            <div class="space-y-3">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Decisão</label>
+                                                <div id="statCheckboxDecisao"
+                                                    class="grid grid-cols-2 gap-1 text-[11px]"></div>
+                                            </div>
+                                            <div class="space-y-3">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Status</label>
+                                                <div id="statCheckboxStatus" class="grid grid-cols-2 gap-1 text-[11px]">
+                                                </div>
+                                            </div>
 
-                <!-- MODAL: Notificação -->
-                <div id="modalNotif"
-                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
-                        <div
-                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                            <div>
-                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                                    id="notifModalTitle">Nova Notificação</h3>
-                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure a mensagem para os
-                                    usuários</p>
-                            </div>
-                            <button onclick="closeNotifModal()"
-                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                                <i class='bx bx-x text-3xl'></i>
-                            </button>
-                        </div>
-                        <div class="px-10 py-8 overflow-y-auto flex-1">
-                            <div class="space-y-6">
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
-                                    <input id="notifFieldTitulo" type="text" placeholder="Ex: Prazo de envio encerrado"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Mensagem</label>
-                                    <textarea id="notifFieldMensagem" rows="4"
-                                        class="w-full bg-slate-50 border-2 border-border rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
-                                        placeholder="Texto completo da notificação…"></textarea>
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
-                                    <select id="notifFieldTipo"
-                                        class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
-                                        <option value="info">Informação</option>
-                                        <option value="aviso">Aviso</option>
-                                        <option value="urgente">Urgente</option>
-                                    </select>
-                                </div>
-                                <label
-                                    class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-border rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
-                                    <input id="notifFieldAtivo" type="checkbox" checked
-                                        class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
-                                    <span class="font-bold text-[13px] text-slate-600">Notificação ativa (visível para
-                                        usuários)</span>
-                                </label>
-                                <div id="notifModalAlert"
-                                    class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                            </div>
-                        </div>
-                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                            <button onclick="closeNotifModal()"
-                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                            <button id="btnSaveNotif" onclick="handleSaveNotif()"
-                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                                Salvar Notificação
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                                            <div class="space-y-2">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">UO</label>
+                                                <select id="statFilterUO" multiple data-placeholder="Todas"
+                                                    class="hidden"></select>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">UE</label>
+                                                <select id="statFilterUE" multiple data-placeholder="Todas"
+                                                    class="hidden"></select>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Ano
+                                                    Origem</label>
+                                                <select id="statFilterAno" multiple data-placeholder="Todos"
+                                                    class="hidden"></select>
+                                            </div>
 
-                <!-- MODAL: Tipo de Justificativa -->
-                <div id="modalTipo"
-                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
-                        <div
-                            class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
-                            <div>
-                                <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
-                                    id="tipoModalTitle">Novo Tipo de Justificativa</h3>
-                                <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure o formulário de
-                                    preenchimento</p>
+                                            <div class="space-y-3">
+                                                <label
+                                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Saldo
+                                                    RPPN (Faixa)</label>
+                                                <div class="flex gap-2">
+                                                    <input type="number" id="statFilterSaldoMin" placeholder="Mín"
+                                                        class="w-1/2 p-2 bg-slate-50 border-2 border-slate-100 rounded-xl text-[12px] font-bold focus:border-[#003D5D] outline-none transition-all">
+                                                    <input type="number" id="statFilterSaldoMax" placeholder="Máx"
+                                                        class="w-1/2 p-2 bg-slate-50 border-2 border-slate-100 rounded-xl text-[12px] font-bold focus:border-[#003D5D] outline-none transition-all">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-8 pt-6 border-t-2 border-slate-50">
+                                            <button onclick="toggleStatsMoreFilters()"
+                                                class="flex items-center gap-3 group">
+                                                <span
+                                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-[#003D5D] transition-colors">Mais
+                                                    Filtros</span>
+                                                <i id="statIconMoreFilters"
+                                                    class='bx bx-chevron-down text-slate-400 group-hover:text-[#003D5D] transition-all'></i>
+                                            </button>
+
+                                            <div id="statMoreFiltersContent" class="hidden mt-6">
+                                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Programa</label>
+                                                        <select id="statFilterPrograma" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Elemento
+                                                            Item</label>
+                                                        <select id="statFilterElemento" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Função</label>
+                                                        <select id="statFilterFuncao" multiple data-placeholder="Todas"
+                                                            class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Subfunção</label>
+                                                        <select id="statFilterSubfuncao" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Procedência</label>
+                                                        <select id="statFilterProcedencia" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Projeto
+                                                            Atividade</label>
+                                                        <select id="statFilterProjetoAtividade" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Documento</label>
+                                                        <select id="statFilterDocumento" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Subprojeto</label>
+                                                        <select id="statFilterSubprojeto" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Natureza
+                                                            Item</label>
+                                                        <select id="statFilterNaturezaItem" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Categoria
+                                                            Econômica</label>
+                                                        <select id="statFilterCategoriaEconomica" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Grupo
+                                                            Despesa</label>
+                                                        <select id="statFilterGrupoDespesa" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Modalidade
+                                                            Aplicação</label>
+                                                        <select id="statFilterModalidadeAplicacao" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Elemento
+                                                            Despesa</label>
+                                                        <select id="statFilterElementoDespesa" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Item
+                                                            Despesa</label>
+                                                        <select id="statFilterItemDespesa" multiple
+                                                            data-placeholder="Todos" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Fonte
+                                                            Recurso</label>
+                                                        <select id="statFilterFonteRecurso" multiple
+                                                            data-placeholder="Todas" class="hidden"></select>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Status
+                                                            (Original)</label>
+                                                        <select id="statFilterStatus" multiple data-placeholder="Todos"
+                                                            class="hidden"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+
+                                <div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-6 w-full pr-2">
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-[#003D5D]/20">
+                                            <div class="flex items-center justify-between mb-4">
+                                                <div
+                                                    class="w-11 h-11 bg-slate-50 border-2 border-slate-100 text-[#003D5D] rounded-2xl flex items-center justify-center shadow-sm">
+                                                    <i class='bx bx-data text-xl'></i>
+                                                </div>
+                                                <span
+                                                    class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Visão
+                                                    Geral</span>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <div class="flex items-baseline gap-2">
+                                                    <span id="statCardTotal"
+                                                        class="text-3xl font-black text-[#003D5D] tracking-tight truncate">—</span>
+                                                    <p
+                                                        class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                                        Regs.</p>
+                                                </div>
+                                                <div class="pt-2 border-t border-slate-50 mt-2">
+                                                    <span id="statCardVolume"
+                                                        class="text-xl font-black text-slate-700 tracking-tight truncate block">R$
+                                                        0,00</span>
+                                                    <p
+                                                        class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                                        Saldo Acumulado</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-emerald-500/20 md:col-span-1 lg:col-span-2">
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div
+                                                    class="w-11 h-11 bg-emerald-50 border-2 border-emerald-100 text-emerald-500 rounded-2xl flex items-center justify-center shadow-sm">
+                                                    <i class='bx bx-check-double text-xl'></i>
+                                                </div>
+                                                <span
+                                                    class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Situação
+                                                    Atual</span>
+                                            </div>
+                                            <div class="flex items-center justify-between px-2 gap-4">
+                                                <div class="flex-1 flex flex-col items-center text-center">
+                                                    <span id="statCardPendentes"
+                                                        class="text-3xl font-black text-[#003D5D] tracking-tight mb-2">—</span>
+                                                    <p
+                                                        class="text-[8px] font-black text-amber-600 uppercase tracking-widest leading-tight">
+                                                        Pendentes de<br>Justificativa</p>
+                                                </div>
+                                                <div class="w-px h-12 bg-slate-100"></div>
+                                                <div class="flex-1 flex flex-col items-center text-center">
+                                                    <div class="flex items-baseline gap-2">
+                                                        <span id="statCardAnalise"
+                                                            class="text-3xl font-black text-slate-700 tracking-tight mb-2">—</span>
+                                                        <span id="statCardAnalisePct"
+                                                            class="text-[12px] font-black text-slate-700/60 font-mono">0%</span>
+                                                    </div>
+                                                    <p
+                                                        class="text-[8px] font-black text-blue-600 uppercase tracking-widest leading-tight">
+                                                        Em análise<br>pela SCCG</p>
+                                                </div>
+                                                <div class="w-px h-12 bg-slate-100"></div>
+                                                <div class="flex-1 flex flex-col items-center text-center">
+                                                    <div class="flex items-baseline gap-2">
+                                                        <span id="statCardConcluidos"
+                                                            class="text-3xl font-black text-slate-700 tracking-tight">—</span>
+                                                        <span id="statCardConcluidosPct"
+                                                            class="text-[12px] font-black text-slate-700/60 font-mono">0%</span>
+                                                    </div>
+                                                    <p
+                                                        class="text-[8px] font-black text-slate-700 uppercase tracking-widest leading-tight">
+                                                        Justificativas<br>Concluídas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-7 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-amber-500/20">
+                                            <div class="flex items-center justify-between mb-4">
+                                                <div
+                                                    class="w-11 h-11 bg-amber-50 border-2 border-amber-100 text-amber-500 rounded-2xl flex items-center justify-center shadow-sm">
+                                                    <i class='bx bx-time text-xl'></i>
+                                                </div>
+                                                <span
+                                                    class="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded-full border border-slate-100">Métricas
+                                                    de Fluxo</span>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <div class="flex items-baseline gap-2">
+                                                    <span id="statCardIdade"
+                                                        class="text-3xl font-black text-slate-700 tracking-tight truncate">—</span>
+                                                    <p
+                                                        class="text-[9px] font-bold text-slate-700 uppercase tracking-wider">
+                                                        Anos
+                                                        de Idade Média</p>
+                                                </div>
+                                                <div class="pt-2 border-t border-slate-50 mt-2">
+                                                    <span id="statCardValorMedio"
+                                                        class="text-xl font-black text-slate-700 tracking-tight block truncate">—</span>
+                                                    <p
+                                                        class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                                        Ticket Médio p/ Registro</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-slate-400/20">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <p
+                                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                                    Valor
+                                                    Inscrito</p>
+                                                <i class='bx bx-archive-in text-slate-300 text-xl'></i>
+                                            </div>
+                                            <p id="statCardInscrito"
+                                                class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
+                                        </div>
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-emerald-400/20">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <p
+                                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                                    Valor
+                                                    Pago</p>
+                                                <i class='bx bx-check-circle text-emerald-300 text-xl'></i>
+                                            </div>
+                                            <p id="statCardPago"
+                                                class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
+                                        </div>
+                                        <div
+                                            class="bg-white border-2 border-slate-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-rose-400/20">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <p
+                                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                                    Valor
+                                                    Cancelado</p>
+                                                <i class='bx bx-x-circle text-rose-300 text-xl'></i>
+                                            </div>
+                                            <p id="statCardCancelado"
+                                                class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
+                                        </div>
+                                        <div
+                                            class="bg-slate-50 border-2 border-indigo-100 rounded-[2rem] p-6 shadow-sm border-b-4 border-b-indigo-400/20">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <p
+                                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                                    Saldo Remanescente</p>
+                                                <i class='bx bx-wallet text-indigo-300 text-xl'></i>
+                                            </div>
+                                            <p id="statCardVolumeRep"
+                                                class="text-2xl font-black text-slate-700 tracking-tight truncate">—</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 shrink-0">
+                                        <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
+                                            <div class="flex items-center justify-between mb-4">
+                                                <h3
+                                                    class="text-[16px] font-black text-[#003D5D] flex items-center gap-3">
+                                                    <i class='bx bx-line-chart text-2xl'></i> Curva de Pareto (80/20)
+                                                </h3>
+                                                <select id="statParetoColumnSelector" onchange="renderStatsCharts()"
+                                                    class="text-[10px] font-black uppercase text-[#003D5D] bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-2 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
+                                                    <option value="UO_Concatenada" selected>UO</option>
+                                                    <option value="UE_Concatenada">UE</option>
+                                                    <option value="Programa - Descrição">Programa</option>
+                                                    <option value="Elemento Item - Descrição">Elemento Item</option>
+                                                    <option value="natureza_item">Natureza Item</option>
+                                                    <option value="fonte_recurso">Fonte Recurso</option>
+                                                    <option value="procedencia">Procedência</option>
+                                                    <option value="Decisao">Decisão</option>
+                                                    <option value="Status Justificativa">Status</option>
+                                                </select>
+                                            </div>
+                                            <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Análise de
+                                                Concentração
+                                                Financeira: O ponto marcado identifica o limiar de 80% do volume
+                                                acumulado.</p>
+                                            <div id="chartParetoDynamic" class="w-full h-80"></div>
+                                        </div>
+
+                                        <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
+                                            <div class="flex items-center justify-between mb-4">
+                                                <h3
+                                                    class="text-[16px] font-black text-[#003D5D] flex items-center gap-3">
+                                                    <i class='bx bx-scatter-chart text-2xl'></i> Dispersão de Risco</h3>
+                                                <select id="statBubbleColumnSelector" onchange="renderStatsCharts()"
+                                                    class="text-[10px] font-black uppercase text-[#003D5D] bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-2 outline-none focus:border-[#003D5D] transition-all cursor-pointer">
+                                                    <option value="Programa - Descrição" selected>Programa</option>
+                                                    <option value="UO_Concatenada">UO</option>
+                                                    <option value="UE_Concatenada">UE</option>
+                                                    <option value="Elemento Item - Descrição">Elemento Item</option>
+                                                    <option value="natureza_item">Natureza Item</option>
+                                                    <option value="fonte_recurso">Fonte Recurso</option>
+                                                    <option value="procedencia">Procedência</option>
+                                                </select>
+                                            </div>
+                                            <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Eixo X: Idade
+                                                Média | Eixo
+                                                Y: Saldo Financeiro | Bolha: Quantidade de Registros</p>
+                                            <div id="chartRiscoBubble" class="w-full h-80"></div>
+                                        </div>
+
+                                        <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
+                                            <h3
+                                                class="text-[16px] font-black text-[#003D5D] mb-1 flex items-center gap-3">
+                                                <i class='bx bx-layer text-2xl'></i> Envelhecimento dos RPPNs (Aging)
+                                            </h3>
+                                            <p class="text-[11px] font-bold text-slate-400 mx-9 mb-4">Volume monetário
+                                                classificado pela idade da despesa original</p>
+                                            <div id="chartAgingVolume" class="w-full h-80"></div>
+                                        </div>
+
+                                        <div class="bg-white border-2 border-slate-100 rounded-[2.5rem] p-8 shadow-sm">
+                                            <h3
+                                                class="text-[16px] font-black text-[#003D5D] mb-4 flex items-center gap-3">
+                                                <i class='bx bx-bar-chart-alt-2 text-2xl'></i> Evolução Saldo por Ano de
+                                                Origem
+                                            </h3>
+                                            <div id="chartAnoLine" class="w-full h-80"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="h-6 shrink-0 border-transparent border"></div>
+                                </div>
                             </div>
-                            <button onclick="closeTipoModal()"
-                                class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
-                                <i class='bx bx-x text-3xl'></i>
-                            </button>
                         </div>
-                        <div class="px-10 py-8 overflow-y-auto flex-1 space-y-8">
-                            <div>
-                                <label
-                                    class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Nome
-                                    do Tipo</label>
-                                <input id="tipoFieldNome" type="text" placeholder="Ex: Aguardando nada consta"
-                                    class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
-                            </div>
 
-                            <label
-                                class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
-                                <input id="tipoFieldAtivo" type="checkbox" checked
-                                    class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
-                                <span class="font-bold text-[13px] text-slate-600">Tipo ativo (visível para
-                                    usuários)</span>
-                            </label>
-
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <p class="text-[11px] font-black text-slate-400 uppercase tracking-wider">Campos do
-                                        Formulário</p>
-                                    <button onclick="addCampoRow()"
-                                        class="px-4 py-2 bg-[#003D5D]/5 text-[#003D5D] text-[10px] font-black rounded-xl hover:bg-[#003D5D]/10 transition-all flex items-center gap-1.5">
-                                        <i class='bx bx-plus'></i> Adicionar Campo
+                        <div id="tab-legislacao" class="tab-content hidden">
+                            <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
+                                <div
+                                    class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                                    <div>
+                                        <h3
+                                            class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                            Base Legal</h3>
+                                        <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie os registros da
+                                            página
+                                            de legislação.</p>
+                                    </div>
+                                    <button onclick="openLegModal()"
+                                        class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
+                                        <i class='bx bx-plus text-lg'></i>
+                                        Nova Legislação
                                     </button>
                                 </div>
-                                <div id="camposList" class="space-y-3"></div>
-                                <p id="camposEmptyMsg" class="text-center text-[12px] text-slate-400 py-6 font-medium">
-                                    Nenhum campo adicionado ainda.</p>
+                                <div id="legStateLoading"
+                                    class="flex flex-col items-center justify-center py-32 text-slate-400">
+                                    <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                                    <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">
+                                        Carregando
+                                        legislação…</p>
+                                </div>
+                                <div id="legTable" class="hidden overflow-x-auto">
+                                    <table class="min-w-full divide-y-2 divide-slate-100">
+                                        <thead class="bg-slate-50/80">
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Título</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Tipo</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Esfera</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Status</th>
+                                                <th
+                                                    class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
+                                                    Opções</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="legTableBody" class="divide-y-2 divide-slate-50"></tbody>
+                                    </table>
+                                </div>
+                                <div id="legEmpty"
+                                    class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
+                                    <div
+                                        class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
+                                        <i class='bx bx-search text-3xl text-slate-300'></i>
+                                    </div>
+                                    <h4 class="text-lg font-black text-slate-700 mb-2">Nenhum registro encontrado</h4>
+                                    <p class="text-[13px] font-medium text-slate-500">A base legal está vazia ou não
+                                        pôde ser
+                                        carregada.</p>
+                                </div>
                             </div>
+                        </div>
 
-                            <div id="tipoModalAlert"
-                                class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
-                        </div>
-                        <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
-                            <button onclick="closeTipoModal()"
-                                class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                            <button id="btnSaveTipo" onclick="handleSaveTipo()"
-                                class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
-                                Salvar Tipo
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                        <div id="tab-notificacoes" class="tab-content hidden">
+                            <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
+                                <div
+                                    class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                                    <div>
+                                        <h3
+                                            class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                            Notificações do sistema</h3>
+                                        <p class="text-[13px] text-slate-500 mt-1 font-medium">Gerencie avisos e
+                                            comunicados
+                                            exibidos aos usuários.</p>
+                                    </div>
+                                    <button onclick="openNotifModal()"
+                                        class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
+                                        <i class='bx bx-bell-plus text-lg'></i>
+                                        Nova Notificação
+                                    </button>
+                                </div>
 
-                <!-- MODAL: Confirmação -->
-                <div id="modalConfirm"
-                    class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] hidden p-4">
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-sm overflow-hidden border-2 border-[#D61A21]/10 flex flex-col p-10 text-center">
-                        <div
-                            class="w-16 h-16 bg-rose-50 border-2 border-rose-100 text-[#D61A21] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class='bx bx-trash text-3xl'></i>
+                                <div id="notifStateLoading"
+                                    class="flex flex-col items-center justify-center py-32 text-slate-400">
+                                    <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                                    <p class="font-bold text-slate-600 text-sm normal-case [letter-spacing:normal]">
+                                        Carregando
+                                        notificações…</p>
+                                </div>
+
+                                <div id="notifTable" class="hidden overflow-x-auto">
+                                    <table class="min-w-full divide-y-2 divide-slate-100">
+                                        <thead class="bg-slate-50/80">
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Notificação</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Tipo</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Status</th>
+                                                <th
+                                                    class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
+                                                    Opções</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="notifTableBody" class="divide-y-2 divide-slate-50"></tbody>
+                                    </table>
+                                </div>
+
+                                <div id="notifEmpty"
+                                    class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
+                                    <div
+                                        class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
+                                        <i class='bx bx-search text-3xl text-slate-300'></i>
+                                    </div>
+                                    <h4 class="text-lg font-black text-slate-700 mb-2">Nenhuma notificação encontrada
+                                    </h4>
+                                    <p class="text-[13px] font-medium text-slate-500">Nenhum comunicado cadastrado até o
+                                        momento.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-black text-slate-800 mb-2" id="confirmModalTitle">Confirmar exclusão
-                        </h3>
-                        <p class="text-slate-500 font-medium text-[13px] mb-8" id="confirmModalMsg">Esta ação não pode
-                            ser desfeita.</p>
-                        <div class="flex gap-3">
-                            <button onclick="closeConfirmModal()"
-                                class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
-                            <button id="btnConfirmAction"
-                                class="flex-[2] bg-[#D61A21] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-red-700 shadow-xl shadow-red-200 transition-all">
-                                Excluir
-                            </button>
+
+                        <div id="tab-tipos_justificativa" class="tab-content hidden">
+                            <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
+                                <div
+                                    class="px-8 py-7 border-b-2 border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                                    <div>
+                                        <h3
+                                            class="text-xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]">
+                                            Tipos de Justificativa</h3>
+                                        <p class="text-[13px] text-slate-500 mt-1 font-medium">Configure os formulários
+                                            de
+                                            justificativa disponíveis para os usuários.</p>
+                                    </div>
+                                    <button onclick="openTipoModal()"
+                                        class="px-6 py-3 bg-[#003D5D] text-white text-[11px] font-black rounded-[1.2rem] hover:bg-slate-800 shadow-lg shadow-[#003D5D]/20 transition-all flex items-center gap-2 active:scale-95">
+                                        <i class='bx bx-plus text-lg'></i>
+                                        Novo Tipo
+                                    </button>
+                                </div>
+                                <div id="tiposStateLoading"
+                                    class="flex flex-col items-center justify-center py-32 text-slate-400">
+                                    <i class='bx bx-loader-alt text-5xl animate-spin mb-6 text-[#003D5D]'></i>
+                                    <p class="font-bold text-slate-600 text-sm">Carregando tipos…</p>
+                                </div>
+                                <div id="tiposTable" class="hidden overflow-x-auto">
+                                    <table class="min-w-full divide-y-2 divide-slate-100">
+                                        <thead class="bg-slate-50/80">
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Nome</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Campos</th>
+                                                <th
+                                                    class="px-6 py-4 text-left text-[11px] font-black text-slate-400 uppercase">
+                                                    Status</th>
+                                                <th
+                                                    class="px-6 py-4 text-right text-[11px] font-black text-slate-400 uppercase">
+                                                    Opções</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tiposTableBody" class="divide-y-2 divide-slate-50"></tbody>
+                                    </table>
+                                </div>
+                                <div id="tiposEmpty"
+                                    class="hidden flex flex-col items-center justify-center py-32 text-slate-400 text-center px-8">
+                                    <div
+                                        class="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center mb-6">
+                                        <i class='bx bx-list-ul text-3xl text-slate-300'></i>
+                                    </div>
+                                    <h4 class="text-lg font-black text-slate-700 mb-2">Nenhum tipo cadastrado</h4>
+                                    <p class="text-[13px] font-medium text-slate-500">Clique em "Novo Tipo" para
+                                        começar.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+
+                        <div id="tab-dados" class="tab-content hidden">
+                            <div class="bg-white border-2 border-slate-200 rounded-[1.5rem] overflow-hidden shadow-sm">
+                                <div class="px-8 py-10 text-center">
+                                    <div
+                                        class="w-20 h-20 bg-[#003D5D]/5 text-[#003D5D] rounded-[2rem] flex items-center justify-center mx-auto mb-6">
+                                        <i class='bx bx-cloud-upload text-4xl'></i>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-[#003D5D] mb-2 normal-case">Importação de Dados
+                                        (CSV)
+                                    </h3>
+                                    <p class="text-slate-500 font-medium text-[13px] max-w-md mx-auto mb-10">
+                                        Selecione o arquivo CSV contendo os restos a pagar.
+                                        <br><strong class="text-[#D61A21]">Aviso:</strong> A importação irá apagar todos
+                                        os
+                                        dados atuais da tabela de restos a pagar antes de inserir os novos.
+                                    </p>
+
+                                    <div class="max-w-md mx-auto">
+                                        <label
+                                            class="group relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-slate-200 rounded-[2rem] cursor-pointer hover:bg-slate-50 hover:border-[#003D5D]/30 transition-all">
+                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                <i
+                                                    class='bx bx-file text-3xl text-slate-400 group-hover:text-[#003D5D] mb-3 transition-colors'></i>
+                                                <p class="text-[11px] font-black text-slate-400 group-hover:text-slate-600 uppercase tracking-wider mb-1"
+                                                    id="fileNameDisplay">Selecionar arquivo CSV</p>
+                                                <p class="text-[10px] text-slate-400 font-medium">Delimitado por ponto e
+                                                    vírgula
+                                                    (;)</p>
+                                            </div>
+                                            <input id="csvFileInput" type="file" accept=".csv" class="hidden"
+                                                onchange="handleFileSelect(event)" />
+                                        </label>
+
+                                        <button id="btnImportCSV" onclick="handleImportCSV()" disabled
+                                            class="w-full mt-6 bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none">
+                                            <i class='bx bx-check-double text-lg'></i>
+                                            Iniciar Importação
+                                        </button>
+
+                                        <div id="importStatusAlert"
+                                            class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalUser"
+                            class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                            <div
+                                class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                                <div
+                                    class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                                    <div>
+                                        <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                            id="userModalTitle">Novo Usuário</h3>
+                                        <p
+                                            class="text-[11px] font-bold text-[#FCAE00] mt-1 normal-case [letter-spacing:normal]">
+                                            Preencha os dados de acesso</p>
+                                    </div>
+                                    <button onclick="closeUserModal()"
+                                        class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                        <i class='bx bx-x text-3xl'></i>
+                                    </button>
+                                </div>
+                                <div class="px-10 py-8 overflow-y-auto flex-1">
+                                    <div class="space-y-6">
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Username
+                                                / E-mail</label>
+                                            <input id="userFieldUsername" type="text"
+                                                placeholder="usuario@sefmg.mg.gov.br"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Role</label>
+                                            <div class="flex gap-4">
+                                                <label
+                                                    class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
+                                                    <input type="radio" name="userRole" value="user" class="hidden"
+                                                        checked>
+                                                    <div
+                                                        class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
+                                                        <i class='bx bx-user text-base'></i>
+                                                    </div>
+                                                    <span
+                                                        class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Usuário</span>
+                                                </label>
+                                                <label
+                                                    class="flex-1 flex items-center gap-3 border-2 border-border rounded-2xl p-4 cursor-pointer hover:bg-slate-50 transition-all has-[:checked]:border-[#003D5D] has-[:checked]:bg-[#003D5D]/5 group">
+                                                    <input type="radio" name="userRole" value="admin" class="hidden">
+                                                    <div
+                                                        class="w-8 h-8 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-slate-500 group-has-[:checked]:bg-[#003D5D] group-has-[:checked]:text-white group-has-[:checked]:border-[#003D5D] transition-all">
+                                                        <i class='bx bx-shield-quarter text-base'></i>
+                                                    </div>
+                                                    <span
+                                                        class="font-bold text-[13px] text-slate-500 group-has-[:checked]:text-[#003D5D]">Admin</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Unidade
+                                                Orçamentária (UO)</label>
+                                            <input id="userFieldUO" type="text" placeholder="Ex: 1401"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                            <p class="text-[10px] text-slate-400 mt-2 ml-1">Deixe em branco para admins
+                                                sem UO
+                                                vinculada.</p>
+                                        </div>
+                                        <div id="userModalAlert"
+                                            class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                                    </div>
+                                </div>
+                                <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                                    <button onclick="closeUserModal()"
+                                        class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                                    <button id="btnSaveUser" onclick="handleSaveUser()"
+                                        class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                        Salvar Usuário
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalLeg"
+                            class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                            <div
+                                class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
+                                <div
+                                    class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                                    <div>
+                                        <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                            id="legModalTitle">Nova Legislação</h3>
+                                        <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Preencha os dados do
+                                            normativo</p>
+                                    </div>
+                                    <button onclick="closeLegModal()"
+                                        class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                        <i class='bx bx-x text-3xl'></i>
+                                    </button>
+                                </div>
+                                <div class="px-10 py-8 overflow-y-auto flex-1">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="md:col-span-2">
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
+                                            <input id="legFieldTitulo" type="text"
+                                                placeholder="Ex: Lei Complementar nº 101/2000"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
+                                            <input id="legFieldTipo" type="text"
+                                                placeholder="Ex: Lei Complementar, Decreto…"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Número</label>
+                                            <input id="legFieldNumero" type="text" placeholder="Ex: 101"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ano</label>
+                                            <input id="legFieldAno" type="text" placeholder="Ex: 2000"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Esfera</label>
+                                            <select id="legFieldEsfera"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                                <option value="Federal">Federal</option>
+                                                <option value="Estadual">Estadual</option>
+                                                <option value="Municipal">Municipal</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Status</label>
+                                            <select id="legFieldStatus"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                                <option value="Vigente">Vigente</option>
+                                                <option value="Revogado">Revogado</option>
+                                                <option value="Suspenso">Suspenso</option>
+                                            </select>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Ementa</label>
+                                            <textarea id="legFieldEmenta" rows="3"
+                                                class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
+                                                placeholder="Descrição resumida do normativo…"></textarea>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">URL</label>
+                                            <input id="legFieldUrl" type="url" placeholder="https://…"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tags
+                                                <span class="normal-case font-medium">(separadas por
+                                                    vírgula)</span></label>
+                                            <input id="legFieldTags" type="text"
+                                                placeholder="Ex: Finanças Públicas, LRF, Orçamento"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                    </div>
+                                    <div id="legModalAlert"
+                                        class="hidden mt-6 px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                                </div>
+                                <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                                    <button onclick="closeLegModal()"
+                                        class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                                    <button id="btnSaveLeg" onclick="handleSaveLeg()"
+                                        class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                        Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalNotif"
+                            class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                            <div
+                                class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[85vh]">
+                                <div
+                                    class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                                    <div>
+                                        <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                            id="notifModalTitle">Nova Notificação</h3>
+                                        <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure a mensagem para
+                                            os
+                                            usuários</p>
+                                    </div>
+                                    <button onclick="closeNotifModal()"
+                                        class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                        <i class='bx bx-x text-3xl'></i>
+                                    </button>
+                                </div>
+                                <div class="px-10 py-8 overflow-y-auto flex-1">
+                                    <div class="space-y-6">
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Título</label>
+                                            <input id="notifFieldTitulo" type="text"
+                                                placeholder="Ex: Prazo de envio encerrado"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Mensagem</label>
+                                            <textarea id="notifFieldMensagem" rows="4"
+                                                class="w-full bg-slate-50 border-2 border-border rounded-2xl p-5 text-[13px] font-medium text-slate-700 resize-none focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all"
+                                                placeholder="Texto completo da notificação…"></textarea>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Tipo</label>
+                                            <select id="notifFieldTipo"
+                                                class="w-full px-5 py-4 bg-slate-50 border-2 border-border rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] outline-none transition-all cursor-pointer">
+                                                <option value="info">Informação</option>
+                                                <option value="aviso">Aviso</option>
+                                                <option value="urgente">Urgente</option>
+                                            </select>
+                                        </div>
+                                        <label
+                                            class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-border rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
+                                            <input id="notifFieldAtivo" type="checkbox" checked
+                                                class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
+                                            <span class="font-bold text-[13px] text-slate-600">Notificação ativa
+                                                (visível para
+                                                usuários)</span>
+                                        </label>
+                                        <div id="notifModalAlert"
+                                            class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                                    </div>
+                                </div>
+                                <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                                    <button onclick="closeNotifModal()"
+                                        class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                                    <button id="btnSaveNotif" onclick="handleSaveNotif()"
+                                        class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                        Salvar Notificação
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalTipo"
+                            class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+                            <div
+                                class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden border-2 border-[#003D5D]/10 flex flex-col max-h-[90vh]">
+                                <div
+                                    class="px-10 py-6 border-b-2 border-slate-50 flex items-start justify-between bg-slate-50/30 shrink-0">
+                                    <div>
+                                        <h3 class="text-2xl font-black text-[#003D5D] tracking-tight normal-case [letter-spacing:normal]"
+                                            id="tipoModalTitle">Novo Tipo de Justificativa</h3>
+                                        <p class="text-[11px] font-bold text-[#FCAE00] mt-1">Configure o formulário de
+                                            preenchimento</p>
+                                    </div>
+                                    <button onclick="closeTipoModal()"
+                                        class="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl text-slate-400 hover:bg-[#D61A21] hover:text-white transition-all">
+                                        <i class='bx bx-x text-3xl'></i>
+                                    </button>
+                                </div>
+                                <div class="px-10 py-8 overflow-y-auto flex-1 space-y-8">
+                                    <div>
+                                        <label
+                                            class="block text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">Nome
+                                            do Tipo</label>
+                                        <input id="tipoFieldNome" type="text" placeholder="Ex: Aguardando nada consta"
+                                            class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-[13px] font-medium text-slate-700 focus:bg-white focus:border-[#003D5D] focus:ring-8 focus:ring-[#003D5D]/5 outline-none transition-all">
+                                    </div>
+
+                                    <label
+                                        class="flex items-center gap-3 p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all">
+                                        <input id="tipoFieldAtivo" type="checkbox" checked
+                                            class="w-4 h-4 rounded border-2 border-slate-300 text-[#003D5D] focus:ring-[#003D5D]/20 cursor-pointer">
+                                        <span class="font-bold text-[13px] text-slate-600">Tipo ativo (visível para
+                                            usuários)</span>
+                                    </label>
+
+                                    <div>
+                                        <div class="flex items-center justify-between mb-4">
+                                            <p class="text-[11px] font-black text-slate-400 uppercase tracking-wider">
+                                                Campos do
+                                                Formulário</p>
+                                            <button onclick="addCampoRow()"
+                                                class="px-4 py-2 bg-[#003D5D]/5 text-[#003D5D] text-[10px] font-black rounded-xl hover:bg-[#003D5D]/10 transition-all flex items-center gap-1.5">
+                                                <i class='bx bx-plus'></i> Adicionar Campo
+                                            </button>
+                                        </div>
+                                        <div id="camposList" class="space-y-3"></div>
+                                        <p id="camposEmptyMsg"
+                                            class="text-center text-[12px] text-slate-400 py-6 font-medium">
+                                            Nenhum campo adicionado ainda.</p>
+                                    </div>
+
+                                    <div id="tipoModalAlert"
+                                        class="hidden px-5 py-4 rounded-2xl text-[11px] font-bold border-2"></div>
+                                </div>
+                                <div class="px-10 py-8 border-t-2 border-slate-50 flex gap-4 bg-slate-50/30 shrink-0">
+                                    <button onclick="closeTipoModal()"
+                                        class="flex-1 py-4 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                                    <button id="btnSaveTipo" onclick="handleSaveTipo()"
+                                        class="flex-[2] bg-[#003D5D] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-slate-800 shadow-xl shadow-[#003D5D]/20 transition-all flex items-center justify-center gap-3">
+                                        Salvar Tipo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalConfirm"
+                            class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] hidden p-4">
+                            <div
+                                class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-sm overflow-hidden border-2 border-[#D61A21]/10 flex flex-col p-10 text-center">
+                                <div
+                                    class="w-16 h-16 bg-rose-50 border-2 border-rose-100 text-[#D61A21] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                    <i class='bx bx-trash text-3xl'></i>
+                                </div>
+                                <h3 class="text-xl font-black text-slate-800 mb-2" id="confirmModalTitle">Confirmar
+                                    exclusão
+                                </h3>
+                                <p class="text-slate-500 font-medium text-[13px] mb-8" id="confirmModalMsg">Esta ação
+                                    não pode
+                                    ser desfeita.</p>
+                                <div class="flex gap-3">
+                                    <button onclick="closeConfirmModal()"
+                                        class="flex-1 py-4 bg-slate-50 border-2 border-border rounded-[1.5rem] text-[11px] font-bold text-slate-500 hover:bg-slate-100 transition-all">Cancelar</button>
+                                    <button id="btnConfirmAction"
+                                        class="flex-[2] bg-[#D61A21] py-4 rounded-[1.5rem] text-[11px] font-bold text-white tracking-wider hover:bg-red-700 shadow-xl shadow-red-200 transition-all">
+                                        Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

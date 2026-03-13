@@ -106,7 +106,6 @@ async function checkStatus(user, token) {
     return apiCall(API_URLS.checkStatus, { user, token });
 }
 
-// Admin APIs
 async function getUsers(user, token) {
     const url = await getAuthUrl();
     const res = await apiCall(url, { endpoint: 'get_users', user, token });
