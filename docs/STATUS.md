@@ -1,6 +1,6 @@
 # Documentação de Status dos Processos
 
-Esta seção descreve os estados possíveis para cada RPPN (Restos a Pagar Não Processados) no dashboard, baseados na combinação dos dados de **Decisão** e **Avaliação**.
+Esta seção descreve os estados possíveis para cada RPPN no dashboard, baseados na combinação dos dados de **Decisão** e **Avaliação**.
 
 ## Opções de Filtro (Painel de Filtros)
 
