@@ -1,4 +1,4 @@
-const session = requireSession("../login/index.html");
+const session = requireSession("/frontend/pages/login/index.html");
 let allLegislacoes = [];
 
 const iconMap = {

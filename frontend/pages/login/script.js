@@ -6,7 +6,7 @@
             if (res.ok && res.data?.success) {
                 const { token, role, uo } = res.data.data;
                 saveSession(s.user, token, role, uo);
-                window.location.href = "../dashboard/index.html";
+                window.location.href = "/frontend/pages/dashboard/index.html";
             } else {
                 clearSession();
             }
@@ -76,7 +76,7 @@ async function handleValidateOtp() {
     if (res.ok && res.data?.success) {
         const { token, role, uo } = res.data.data;
         saveSession(currentUser, token, role, uo);
-        window.location.href = "../dashboard/index.html";
+        window.location.href = "/frontend/pages/dashboard/index.html";
     } else {
         showAlert(res.data?.error || "Código de segurança inválido");
     }

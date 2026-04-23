@@ -1,4 +1,4 @@
-const session = requireSession("../login/index.html");
+const session = requireSession("/frontend/pages/login/index.html");
 
 if (typeof ChartDataLabels !== 'undefined') {
     Chart.register(ChartDataLabels);
@@ -30,9 +30,9 @@ let descriptiveData = {
 async function loadDescriptiveData() {
     try {
         const [u, p, e] = await Promise.all([
-            fetch("../../assets/json/unidades.json").then(r => r.json()),
-            fetch("../../assets/json/programas.json").then(r => r.json()),
-            fetch("../../assets/json/elemento_item.json").then(r => r.json())
+            fetch("/frontend/assets/json/unidades.json").then(r => r.json()),
+            fetch("/frontend/assets/json/programas.json").then(r => r.json()),
+            fetch("/frontend/assets/json/elemento_item.json").then(r => r.json())
         ]);
         descriptiveData.unidades = u;
         descriptiveData.programas = p;

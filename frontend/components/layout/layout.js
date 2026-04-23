@@ -1,6 +1,6 @@
 const Layout = {
     config: {
-        path: "../../components/layout/"
+        path: "/frontend/components/layout/"
     },
 
     ready: null,
@@ -155,7 +155,7 @@ const Layout = {
             console.error("Logout function not found");
             sessionStorage.clear();
             setTimeout(() => {
-                window.location.href = "../login/index.html";
+                window.location.href = "/frontend/pages/login/index.html";
             }, 500);
         }
     },
@@ -202,7 +202,7 @@ const Layout = {
                     }
                 } else if (res.status === 401 || res.status === 404) {
                     if (typeof clearSession === 'function') clearSession();
-                    window.location.href = "../login/index.html";
+                    window.location.href = "/frontend/pages/login/index.html";
                 }
             }
         } catch (e) {

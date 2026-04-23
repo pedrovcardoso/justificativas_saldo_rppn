@@ -33,7 +33,7 @@ function isAdmin() {
     return session?.role?.toLowerCase() === "admin";
 }
 
-function requireSession(loginPath = "../../pages/login/index.html") {
+function requireSession(loginPath = "/frontend/pages/login/index.html") {
     const session = getSession();
     if (!session) {
         window.location.href = loginPath;
@@ -42,7 +42,7 @@ function requireSession(loginPath = "../../pages/login/index.html") {
     return session;
 }
 
-function requireAdmin(redirectPath = "../dashboard/index.html") {
+function requireAdmin(redirectPath = "/frontend/pages/dashboard/index.html") {
     const session = requireSession();
     if (!session) return null;
     if (!isAdmin()) {
@@ -52,7 +52,7 @@ function requireAdmin(redirectPath = "../dashboard/index.html") {
     return session;
 }
 
-async function doLogout(loginPath = "../../pages/login/index.html") {
+async function doLogout(loginPath = "/frontend/pages/login/index.html") {
     const session = getSession();
     if (session) {
         try {

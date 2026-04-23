@@ -4,13 +4,7 @@ const ColumnMapper = {
     async load() {
         if (this._map) return this._map;
         try {
-            const isDashboard = window.location.href.includes('/pages/dashboard');
-            const isRelatorio = window.location.href.includes('/pages/relatorio');
-            let path = '../../assets/json/columns_mapping.json';
-
-            if (!isDashboard && !isRelatorio) {
-                path = '/frontend/assets/json/columns_mapping.json';
-            }
+            let path = '/frontend/assets/json/columns_mapping.json';
 
             const response = await fetch(path);
             this._map = await response.json();

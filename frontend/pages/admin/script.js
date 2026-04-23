@@ -1,4 +1,4 @@
-const session = requireAdmin("../dashboard/index.html");
+const session = requireAdmin("/frontend/pages/dashboard/index.html");
 
 let legData = [];
 let editingLegIndex = null;
@@ -160,9 +160,9 @@ async function loadStats() {
 
     try {
         const [u, p, e] = await Promise.all([
-            fetch("../../assets/json/unidades.json").then(r => r.json()),
-            fetch("../../assets/json/programas.json").then(r => r.json()),
-            fetch("../../assets/json/elemento_item.json").then(r => r.json())
+            fetch("/frontend/assets/json/unidades.json").then(r => r.json()),
+            fetch("/frontend/assets/json/programas.json").then(r => r.json()),
+            fetch("/frontend/assets/json/elemento_item.json").then(r => r.json())
         ]);
         statsDescriptiveData.unidades = u;
         statsDescriptiveData.programas = p;
