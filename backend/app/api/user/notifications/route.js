@@ -1,11 +1,11 @@
 import db from '@/lib/db';
-import { requireAuth } from '@/lib/auth'
+import { requireAuth } from '@/lib/auth';
 import { ok, serverError, authError } from '@/lib/response';
 
 export async function GET(request) {
     try {
-        const auth = await requireAuth(request)
-        if(auth.error) return authError(auth)
+        const auth = await requireAuth(request);
+        if (auth.error) return authError(auth);
 
         const [rows] = await db.query(`
             SELECT n.*, 

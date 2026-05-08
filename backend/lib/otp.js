@@ -38,7 +38,7 @@ async function sendOtpEmail(username, code) {
         tituloMensagem: 'Código de acesso - Gestão de RPNP',
         corpoMensagem: `
         <hr>
-        <h1>Sistema de Gestão e Monitoramento de Restos a Pagar da SCCG</h1>
+        <h1>Sistema de Gestão e Monitoramento de Restos a Pagar - SCCG</h1>
         <p>Seu código de acesso é: <b>${code}</b><p>
         Este código expira em ${expiryMinutes} minutos.<br>
         Se não foi você quem solicitou, ignore este e-mail.`,
